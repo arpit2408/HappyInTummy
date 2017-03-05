@@ -214,8 +214,8 @@ h4 {font-size:22px;line-height: 30px;}
 h5 {font-size:20px;line-height: 28px;} 
 h6 {font-size:16px;line-height: 24px;}
 
-header {padding: 16px 0px;z-index: 1;position: fixed;width: 100%;background: #fff;top: 0;}
-.logo-block {margin-top: 4px;}
+header {padding: 16px 0px;z-index: 1;position: fixed;width: 100%;background: #fff;top: 0;height: 90px;}
+.logo-block {margin-top: -28px;}
 header.green .logo-block {margin-top: 4px;}
 .logo-block figure {margin-bottom: 0;width: 240px;}
 .navbar-default {background-color: transparent;border-color: transparent;}
