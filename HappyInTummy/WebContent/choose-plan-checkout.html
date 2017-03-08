@@ -60,35 +60,18 @@ $.get("Menu_Options.html", function (data) {
     $("#menu_options").replaceWith(data);
 });
 </script>
-<body class="choose-plan-page">
+<script>
+$.get("Header.html", function (data) {
+    $("#websiteHeader").replaceWith(data);
+});
+</script>
+		<body >
+<div id="websiteHeader" style="z-index: 1111;"></div>
 	<!-- loader image before page load starts -->
 	<div class="se-pre-con"></div>
 	<!-- loader image before page load ends -->
 	<!-- main wrapper of the site starts -->
 	<div class="wrapper">
-		<!-- ============== Header starts ============== -->
-		<header class="logo-only-header">
-			<div class="container">
-				<div class="row">
-					<!-- ============== logo block starts ============== -->
-					<div class="col-xs-12 col-sm-12 text-center logo-block">
-						<figure>
-							<a href="/home-version1.html"><img class="img-responsive"
-								src="images/madang-logo.png" alt="Madang Logo" /></a>
-						</figure>
-					</div>
-					<!-- ============== logo block ends ============== -->
-				</div>
-			</div>
-		</header>
-		<!-- ============== Header ends ============== -->
-		<main> <!-- =============== choose your own plan title block starts ================== -->
-		<section class="choose-plan-block">
-			<div class="container">
-				<h5 class="text-center wow fadeInUp text-uppercase">CHOOSE YOUR
-					OWN PLANS</h5>
-			</div>
-		</section>
 		<!-- =============== choose your own plan title block ends ================== -->
 		<!-- =============== plan steps block starts ================== -->
 		<section class="plan-step">
