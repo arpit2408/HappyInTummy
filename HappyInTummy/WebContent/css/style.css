@@ -189,7 +189,7 @@ li {margin-bottom: 5px;}
 input[type=submit] {border: 0;}
 input[type=submit]:focus, .btn:hover, .btn:focus {color:#fff;outline: 0;}
 label {cursor: default;}
-.block {padding: 90px 0; }
+.block {padding: 44px 0; }
 .block p, .block .top-text{letter-spacing: 0.04em;}
 .features-block{font-family: 'Raleway', sans-serif;}
 .top-text {color: #575757;width: 61%;margin: 0 auto 65px;display: block;line-height: 27px;}
