@@ -40,8 +40,16 @@
  </style>  
   
  </head>  
- <body class="contact-us-page">  
-  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+$.get("Header.html", function (data) {
+    $("#websiteHeader").replaceWith(data);
+});
+</script>
+
+<body >
+<div id="websiteHeader" style="z-index: 1111;"></div>
+
  <!-- loader image before page load starts -->  
  <div class="se-pre-con"></div>  
  <!-- loader image before page load ends -->  
@@ -49,78 +57,20 @@
  <!-- main wrapper of the site starts -->  
  <div class="wrapper">  
   
- <!-- ============== Header starts ============== -->  
- <header>  
- <div class="container">  
- <div class="row">  
-  
- <!-- ============== Left logo block starts ============== -->  
- <div class="col-xs-12 col-sm-3 logo-block">  
- <figure><a href="/home-version1.html"><img class="img-responsive" src="images/madang-logo.png" alt="Madang Logo" /></a></figure>  
- </div>  
- <!-- ============== Left logo block ends ============== -->  
-  
- <!-- ============== Main navigation starts ============== -->  
- <div class="col-xs-12 col-sm-7 menu-block">  
- <nav class="navbar navbar-default">  
- <div class="container-fluid">  
- <!-- Brand and toggle get grouped for better mobile display -->  
- <div class="navbar-header">  
- <button type="button" class="navbar-toggle">  
- <span class="sr-only">Toggle navigation</span>  
- <span class="icon-bar"></span>  
- <span class="icon-bar"></span>  
- <span class="icon-bar"></span>  
- </button>  
- </div>  
-  
- <!-- Collect the nav links, forms, and other content for toggling -->  
- <div class="collapse">  
- <ul class="nav navbar-nav text-right pull-right">  
- <li class="active"><a href="/about-us.html">About Us</a></li>  
- <li><a href="/sample-menu.html">menu</a></li>  
- <li><a href="/program.html">programs</a></li>  
- <li><a href="/pricing.html">pricing</a></li>  
- <li><a href="/blog.html">blog</a></li>  
- </ul>  
- </div><!-- /.navbar-collapse -->  
- </div><!-- /.container-fluid -->  
- </nav>  
- </div>  
-  
- <div class="col-xs-12 col-sm-2 nav-right-btn">  
- <a class="btn border-btn-small" href="#">choose plan</a>  
- </div>  
- <!-- ============== Main navigation ends ============== -->  
-  
- </div>  
- </div>  
- </header>  
- <!-- ============== Header ends ============== -->  
-  
+ 
   
  <main>  
  
  <!-- ============== Contact form block starts ============== -->  
  <section class="block contact-form">  
  <div class="container">  
- <h2 class="wow fadeInUp">WE ARE EXCITED TO SEE YOU BACK</h2>  
- <div class="row">  
- <div class="col-xs-9 col-sm-4 contact-left-text wow fadeInLeft">  
-  
- <div class="phone">  
- <img src="images/phone-icon.png" alt="Phone icon" /> Call us : <a class="tel-link" href="tel:">(+1) 979-729-9876</a><br />
- <br>
-  <img src="images/footer_sm_icon_email.png" alt="Email icon" />Email us: <a class="mailto-link" href="mailto:hello@madang.store" target="_top">HappyTummy@gmail.com</a>  
- </div>  
- </div>  
- <div class="col-xs-9 col-sm-1 contact-left-text wow fadeInLeft">  
- 
- </div>  
- <div class="col-xs-12 col-sm-7 contact-right-form wow fadeInRight">  
+ <h3 class="wow fadeInUp wrapper" style="font-family: 'MV Boli', sans-serif !important;">WE ARE EXCITED TO SEE YOU BACK..!!</h3>  
+ <div class="row wrapper">  
+ <div class="col-xs-12 col-sm-3"></div>
+ <div class="col-xs-12 col-sm-9 ">  
  <form>  
  <fieldset><input  style="width:500px" type="text" placeholder="Your Email ID" /></fieldset>  
- <fieldset><input style="width:500px" type="text" placeholder="Your DOB" /> <img src="images/calendar.png" alt="Calendar icon" /> 
+ <fieldset><input style="width:500px" type="text" placeholder="Your DOB" /> <img src="images/Calendar.ico" alt="Calendar icon" /> 
  </fieldset>  
  
  <fieldset><button  style="width:500px" class="btn">Manage Your Order</button></fieldset>  
@@ -135,71 +85,7 @@
   
  <!-- ============== footer block starts ============== -->  
  <footer>  
- <div class="top-footer">  
- <div class="container">  
- <div class="row">  
- <div class="col-xs-12 col-sm-4 footer-logo">  
- <figure><a href="#"><img class="img-responsive" src="images/madang-logo-white.png" alt="Footer logo" /></a></figure>  
- </div>  
- <div class="col-xs-12 col-sm-2 footer-social-links pull-right hidden-md hidden-lg hidden-xs">  
- <ul>  
- <li><a href="#"><i class="fa fa-facebook hvr-wobble-top"></i></a></li>  
- <li><a href="#"><i class="fa fa-twitter hvr-wobble-top"></i></a></li>  
- <li><a href="#"><i class="fa fa-google-plus hvr-wobble-top"></i></a></li>  
- <li><a href="#"><i class="fa fa-instagram hvr-wobble-top"></i></a></li>  
- <li><a href="#"><i class="fa fa-tumblr hvr-wobble-top"></i></a></li>  
- </ul>  
- </div>  
- <div class="col-xs-12 col-sm-6 footer-menu">  
- <div class="row">  
- <div class="col-xs-12 col-sm-3 footer-links-col">  
- <span>about</span>  
- <ul>  
- <li><a href="#">about us</a></li>  
- <li><a href="#">contact us</a></li>  
- </ul>  
- </div>  
- <div class="col-xs-12 col-sm-3 footer-links-col">  
- <span>press</span>  
- <ul>  
- <li><a href="#">press release</a></li>  
- <li><a href="#">media</a></li>  
- </ul>  
- </div>  
- <div class="col-xs-12 col-sm-3 footer-links-col">  
- <span>company</span>  
- <ul>  
- <li><a href="#">team</a></li>  
- <li><a href="#">board</a></li>  
- </ul>  
- </div>  
- <div class="col-xs-12 col-sm-3 footer-links-col">  
- <span>term</span>  
- <ul>  
- <li><a href="#">privacy</a></li>  
- <li><a href="#">about cookies</a></li>  
- </ul>  
- </div>  
- </div>  
- </div>  
- <div class="col-xs-12 col-sm-2 footer-social-links pull-right hidden-sm">  
- <ul>  
- <li><a href="#"><i class="fa fa-facebook hvr-wobble-top"></i></a></li>  
- <li><a href="#"><i class="fa fa-twitter hvr-wobble-top"></i></a></li>  
- <li><a href="#"><i class="fa fa-google-plus hvr-wobble-top"></i></a></li>  
- <li><a href="#"><i class="fa fa-instagram hvr-wobble-top"></i></a></li>  
- <li><a href="#"><i class="fa fa-tumblr hvr-wobble-top"></i></a></li>  
- </ul>  
- </div>  
- </div>  
- </div>  
- </div>  
   
- <div class="bottom-footer">  
- <div class="container">  
- <div class="copyright-text text-center">&copy; 2014-2016 Madang, Inc. ALL RIGHT RESERVED.</div>  
- </div>  
- </div>  
  </footer>  
  <!-- ============== footer block ends ============== -->  
   

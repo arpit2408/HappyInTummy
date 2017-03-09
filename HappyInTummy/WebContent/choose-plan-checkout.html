@@ -65,255 +65,22 @@ $.get("Header.html", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
+<script>
+$.get("choose-plan-review.html", function (data) {
+    $("#reviewDetails").replaceWith(data);
+});
+</script>
+
 		<body >
 <div id="websiteHeader" style="z-index: 1111;"></div>
-	<!-- loader image before page load starts -->
-	<div class="se-pre-con"></div>
-	<!-- loader image before page load ends -->
-	<!-- main wrapper of the site starts -->
-	<div class="wrapper">
-		<!-- =============== choose your own plan title block ends ================== -->
-		<!-- =============== plan steps block starts ================== -->
-		<section class="plan-step">
-			<div class="steps-wrapper" data-wizard-init>
-				<!-- == step navigation starts ==-->
-				<div id="menu_options"></div>
-				<!-- == step navigation ends ==-->
-				<!-- == step content starts ==-->
-				<div class="step-content">
-					<!-- choose plan about us step starts -->
-					<div class="step1" style="display: none;">
-						<div class="col-xs-12 col-sm-6 wow fadeInUp left-form">
-							<h5 class="text-uppercase">TELL US ABOUT YOU, WE CAN
-								PREPARED YOUR HEALTHY MEALS AS WELL</h5>
-							<form class="about-us-form" action="">
-								<fieldset>
-									<div class="row">
-										<div class="col-xs-12 col-sm-6 pull-left">
-											<div class="light-font radio-btn radio-btn-men">
-												<input type="radio" name="gender" value="men" checked /> <span>Men</span>
-											</div>
-										</div>
-										<div class="col-xs-12 col-sm-6 pull-right">
-											<div class="light-font radio-btn radio-btn-women">
-												<input type="radio" name="gender" value="women" /> <span>Women</span>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-								<fieldset>
-									<input type="text" placeholder="Full Name" />
-								</fieldset>
-								<fieldset>
-									<input type="email" placeholder="E-mail" />
-								</fieldset>
-								<fieldset>
-									<input type="text" placeholder="Address" />
-								</fieldset>
-								<fieldset>
-									<input type="text" placeholder="ZIP Code" />
-								</fieldset>
-								<fieldset>
-									<input type="submit" value="next" />
-								</fieldset>
-							</form>
-						</div>
-						<div class="col-xs-12 col-sm-6 wow fadeInUp right-image">
-							<figure>
-								<img src="images/about-us-right-image.jpg" alt="About us image" />
-							</figure>
-						</div>
-					</div>
-					<!-- choose plan about us step ends -->
-					<!-- choose plan select program step starts -->
-					<div class="step2" style="display: none;">
-						<div class="container">
-							<!-- top text header starts -->
-							<div class="top-description">
-								<h3 class="text-uppercase wow fadeInUp text-center">SELECT
-									PROGRAM</h3>
-							</div>
-							<!-- top text header ends -->
-							<!-- Select program buttons block starts -->
-							<div class="row select-program-btns">
-								<div
-									class="col-xs-12 col-sm-4 wow fadeInLeft select-program-btn">
-									<a href="#"> <img class="img-responsive"
-										src="images/weight-loss.svg" alt="Weight loss icon" /> <span>Weight-Loss</span>
-									</a>
-								</div>
-								<div class="col-xs-12 col-sm-4 wow fadeInUp select-program-btn">
-									<a href="#"> <img class="img-responsive"
-										src="images/low-colestrol-icon.svg" alt="Low Colesterol Icon">
-										<span>Low Cholesterol</span>
-									</a>
-								</div>
-								<div
-									class="col-xs-12 col-sm-4 wow fadeInRight select-program-btn">
-									<a href="#"> <img class="img-responsive"
-										src="images/fitness-icon.svg"
-										alt="Fitness &amp; Performance Icon"> <span>Fitness
-											&amp; Performance</span>
-									</a>
-								</div>
-								<div
-									class="col-xs-12 col-sm-4 wow fadeInLeft select-program-btn">
-									<a href="#"> <img class="img-responsive"
-										src="images/vegeterian-icon.svg" alt="Vegeterian Icon">
-										<span>Vegetarian</span>
-									</a>
-								</div>
-								<div class="col-xs-12 col-sm-4 wow fadeInUp select-program-btn">
-									<a href="#"> <img class="img-responsive"
-										src="images/gulten-free-icon.svg" alt="Gluten Free Icon">
-										<span>Gluten Free</span>
-									</a>
-								</div>
-								<div
-									class="col-xs-12 col-sm-4 wow fadeInRight select-program-btn">
-									<a href="#"> <img class="img-responsive"
-										src="images/new-mom-icon.svg" alt="New Mom Icon"> <span>New
-											Mom</span>
-									</a>
-								</div>
-							</div>
-							<!-- Select program buttons block ends -->
-						</div>
-						<!-- ============== pricing block starts ============== -->
-						<section class="block pricing-block">
-							<div class="container">
-								<!-- top header text starts -->
-								<div class="top-text-header text-center">
-									<h3 class="wow fadeInUp text-center animated text-uppercase"
-										style="visibility: visible; animation-name: fadeInUp;">select
-										plan</h3>
-								</div>
-								<!-- top header text ends -->
-								<!-- == pricing box starts == -->
-								<div class="row pricing-block-gray">
-									<!-- pricing box single starts -->
-									<div class="col-xs-12 col-sm-4 wow fadeInLeft pricing-box">
-										<div class="text-center price-box-wrap">
-											<h5>2 WEEK PROGRAM</h5>
-											<div class="price-per-day">
-												<span class="price">$39</span> <span class="per-day">/day</span>
-											</div>
-											<p>Meals for Breakfast, Lunch, Dinner and Snack with 4
-												Week Rotation</p>
-											<p>
-												Calories<br />Female 1150-1350, Male 1300-1600
-											</p>
-											<p>
-												Protein Customization<br />Limited Protein Customization
-											</p>
-											<a href="#" class="btn box-btn order-now-btn test-uppercase">order
-												now</a>
-										</div>
-									</div>
-									<!-- pricing box single ends -->
-									<!-- pricing box single starts -->
-									<div
-										class="col-xs-12 col-sm-4 pricing-box wow fadeInUp popular">
-										<div class="text-center price-box-wrap">
-											<h5>3 WEEK PROGRAM</h5>
-											<div class="price-per-day">
-												<span class="price">$41</span> <span class="per-day">/day</span>
-											</div>
-											<p>Meals for Breakfast, Lunch, Dinner and Snack with 4
-												Week Rotation</p>
-											<p>
-												Calories<br />Female 1150-1350, Male 1300-1600
-											</p>
-											<p>
-												Protein Customization<br />Limited Protein Customization
-											</p>
-											<a href="#" class="btn box-btn order-now-btn test-uppercase">order
-												now</a>
-										</div>
-									</div>
-									<!-- pricing box single ends -->
-									<!-- pricing box single starts -->
-									<div class="col-xs-12 col-sm-4 wow fadeInRight pricing-box">
-										<div class="text-center price-box-wrap">
-											<h5>4 WEEK PROGRAM</h5>
-											<div class="price-per-day">
-												<span class="price">$43</span> <span class="per-day">/day</span>
-											</div>
-											<p>Meals for Breakfast, Lunch, Dinner and Snack with 4
-												Week Rotation</p>
-											<p>
-												Calories<br />Female 1150-1350, Male 1300-1600
-											</p>
-											<p>
-												Protein Customization<br />Limited Protein Customization
-											</p>
-											<a href="#" class="btn box-btn order-now-btn test-uppercase">order
-												now</a>
-										</div>
-									</div>
-									<!-- pricing box single ends -->
-								</div>
-								<!-- pricing box ends -->
-							</div>
-						</section>
-						<!-- ============== pricing block ends ============== -->
-					</div>
-					<!-- choose plan select program step ends -->
-					<!-- choose plan review step starts -->
-					<div class="step3" style="display: none;">
-						<div class="container">
-							<div class="row">
-								<div class="col-xs-12 col-sm-6 wow fadeInLeft review-left">
-									<div class="review-info">
-										<div class="title name">
-											<span>Your Name</span> <span>Rebecca Lawson</span>
-										</div>
-										<div class="title gender">
-											<span>Gender</span> <span>Female</span>
-										</div>
-										<div class="title email">
-											<span>Email</span> <span>Rebeca@gmail.com</span>
-										</div>
-										<div class="title address">
-											<span>Address</span> <span>Kadipiro Street No 988, CA<br />57644
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-6 wow fadeInRight review-right">
-									<div class="review-info">
-										<div class="title program">
-											<span>Your Program</span> <span>Accelerated Weight
-												Loss</span>
-										</div>
-										<div class="title plan">
-											<span>Plan</span> <span>3 Weeks</span>
-											<p>Meals for Breakfast, Lunch, Dinner and Snack with 4
-												Week Rotation</p>
-											<p>
-												Calories<br />Female 1150-1350, Male 1300-1600
-											</p>
-											<p>
-												Protein Customization<br />Limited Protein Customization
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="text-center big-buttons-group">
-								<a class="btn border-btn-x-big hvr-wobble-horizontal">edit</a> <a
-									class="btn btn-x-big hvr-wobble-horizontal">next</a>
-							</div>
-						</div>
-					</div>
-					<!-- == step content ends ==-->
+	<div id="reviewDetails"></div>
 					<!-- choose plan checkout step starts -->
 					<div class="step3">
 						<div class="container">
 							<!-- top text header starts -->
 							<div class="top-description">
 								<h5 class="text-uppercase wow fadeInUp text-center">SELECT
-									PROGRAM</h5>
+									PAYMENT OPTION</h5>
 							</div>
 							<!-- top text header ends -->
 							<!-- payment method block starts -->
@@ -394,18 +161,12 @@ $.get("Header.html", function (data) {
 							<!-- payment method block ends -->
 						</div>
 					</div>
-					<!-- choose plan checkout step ends -->
-				</div>
-			</div>
-		</section>
-		<!-- =============== plan steps block ends ================== --> </main>
 		<!-- ============== footer block starts ============== -->
 		<footer class="limited-footer">
-			<div class="container">&copy; 2014-2016 Madang, Inc. ALL RIGHT
-				RESERVED.</div>
+			
 		</footer>
 		<!-- ============== footer block ends ============== -->
-	</div>
+	
 	<!-- main wrapper of the site ends -->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>

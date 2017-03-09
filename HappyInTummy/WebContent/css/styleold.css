@@ -126,21 +126,21 @@ a:link{-webkit-tap-highlight-color:#fcd700}
 ins{background-color:#fcd700;color:#000;text-decoration:none}
 mark{background-color:#fcd700;color:#000;font-style:italic;font-weight:700}
 input[type=radio],.ie6 input{vertical-align:text-bottom}
-.text-lt{font-family: "Raleway", sans-serif;}
+.text-lt{font-family: "Montserrat-Light", sans-serif;}
 .text-sp{letter-spacing: 0.05em;}
 .text-spx{letter-spacing: 0.1em;}
-.font-reg { font-family: 'Raleway', sans-serif;}
+.font-reg { font-family: 'Montserrat-Regular', sans-serif;}
 
 /*=============== # Core styles =======================*/
-body { background:#fff; color:#848484; font-size:14px;font-family: 'Raleway', sans-serif;font-weight: 400;line-height: 29px;word-wrap: break-word;}
-p, /***.top-text,**/input, select, textarea, span, blockquote, a, li {font-family: 'Raleway', sans-serif;}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-family: 'Raleway', sans-serif;color: #575757;}
+body { background:#fff; color:#848484; font-size:14px;font-family: 'Montserrat-Regular', sans-serif;font-weight: 400;line-height: 29px;word-wrap: break-word;}
+p, /***.top-text,**/input, select, textarea, span, blockquote, a, li {font-family: 'Montserrat-Light', sans-serif;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-family: 'Montserrat-Regular', sans-serif;color: #575757;}
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {color: #60ba62;}
 .btn, input[type=submit], button {padding: 15px 31px;color: #fff;background: #60ba62;font-size: 14px;text-transform: uppercase;}
 .btn:hover, input[type=submit]:hover, button:hover {background: #575757;color: #fff;}
 .border-btn-small {border-radius: 0;border: 2px solid #60ba62;color: #60ba62;font-size: 13px;text-transform: uppercase;background: transparent;padding: 5px 21px;}
 .border-btn-big {border-radius: 0;border: 2px solid #60ba62;color: #60ba62;font-size: 23px;text-transform: capitalize;background: transparent;padding: 11px 55px;}
-.border-btn-x-big{font-family: 'Raleway', sans-serif;border-radius: 4px;border: 2px solid #60ba62;color: #60ba62;font-size: 25px;text-transform: uppercase;background: transparent;padding: 11px 55px;}
+.border-btn-x-big{font-family: 'Montserrat-Light', sans-serif;border-radius: 4px;border: 2px solid #60ba62;color: #60ba62;font-size: 25px;text-transform: uppercase;background: transparent;padding: 11px 55px;}
 
 .border-btn-small:hover, .border-btn-big:hover, .border-btn-x-big:hover {background: #60ba62;color: #fff;border: 2px solid #60ba62;}
 .btn.border-btn-small.cart-btn{ border:1px solid #62c14e; border-radius: 25px; margin-top: 10px; line-height:10px; padding:10px 25px; color: #000; text-transform: capitalize;}
@@ -180,18 +180,18 @@ blockquote:before {position: absolute;left: 0;top: 10px;content: '';background: 
 
 input:focus, textarea:focus, select:focus {border: 1px solid #60ba62;box-shadow: 1px 1px 17px 1px #ddd;}
 select {display: inline-block;width: auto;border: 1px solid #66ab79;cursor: pointer;color: #60ba62;padding: 12px 45px 12px 20px;font-size: 16px;background: url(../images/down-arrow.png) no-repeat;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;background-position: 94% 53%;}
-li span {font-family: 'Raleway', sans-serif;}
+li span {font-family: 'Montserrat-Regular', sans-serif;}
 li {margin-bottom: 5px;}
 
-.light-font {font-family: 'Raleway', sans-serif;}
-.regular-font {font-family: 'Raleway', sans-serif;}
+.light-font {font-family: 'Montserrat-Light', sans-serif;}
+.regular-font {font-family: 'Montserrat-Regular', sans-serif;}
 
 input[type=submit] {border: 0;}
 input[type=submit]:focus, .btn:hover, .btn:focus {color:#fff;outline: 0;}
 label {cursor: default;}
-.block {padding: 44px 0; }
+.block {padding: 90px 0; }
 .block p, .block .top-text{letter-spacing: 0.04em;}
-.features-block{font-family: 'Raleway', sans-serif;}
+.features-block{font-family: 'Montserrat-Light', sans-serif;}
 .top-text {color: #575757;width: 61%;margin: 0 auto 65px;display: block;line-height: 27px;}
 
 
@@ -214,13 +214,13 @@ h4 {font-size:22px;line-height: 30px;}
 h5 {font-size:20px;line-height: 28px;} 
 h6 {font-size:16px;line-height: 24px;}
 
-header {padding: 16px 0px;z-index: 1;position: fixed;width: 100%;background: #60ba62;top: 0;height: 90px;}
-.logo-block {margin-top: -28px;}
+header {padding: 16px 0px;z-index: 1;position: fixed;width: 100%;background: #fff;top: 0;}
+.logo-block {margin-top: 4px;}
 header.green .logo-block {margin-top: 4px;}
 .logo-block figure {margin-bottom: 0;width: 240px;}
 .navbar-default {background-color: transparent;border-color: transparent;}
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {color: #fff;background-color: transparent;}
-.navbar-default .navbar-nav>li>a {color: #fff;text-transform: uppercase;font-size: 13px;padding: 0 5px;position: relative;} 
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {color: #000;background-color: transparent;}
+.navbar-default .navbar-nav>li>a {color: #000;text-transform: uppercase;font-size: 13px;padding: 0 5px;position: relative;} 
 .navbar-default .navbar-nav>li>a:after{position: absolute;left: 0;right: 0;margin: auto;height: 3px;background: #60ba62;width: 0;bottom: -15px;content: '';}
 header.green .navbar-default .navbar-nav>li>a:after {background: #fff;}
 .navbar-default .navbar-nav>li>a:hover:after{width: 100%;}
@@ -256,7 +256,7 @@ header.green .border-btn-small:hover {background: #fff;color: #60ba62;}
 .features-item {margin-bottom: 100px;}
 .features-item.last-row{margin-bottom: 0;}
 .feature-item-wrap figure img {margin: auto;display: inline-block;}
-.feature-item-wrap h5 a {color: #575757;text-transform: capitalize;letter-spacing: 0.06em;font-family: 'Raleway', sans-serif;}
+.feature-item-wrap h5 a {color: #575757;text-transform: capitalize;letter-spacing: 0.06em;font-family: 'Montserrat-Light', sans-serif;}
 .feature-item-wrap h5 a:hover {color: #60ba62;}
 .how-it-works-block .feature-item-wrap p {margin-bottom: 0;}
 
@@ -274,7 +274,7 @@ header.green .border-btn-small:hover {background: #fff;color: #60ba62;}
 .subscribe-form button{width: 29.3%;float: left;}
 .subscribe-form {width: 51.3%;margin: auto;letter-spacing: 0.1em;}
 .subscribe-form button {border-top-left-radius: 0;border-bottom-left-radius: 0;padding: 20px;}
-.subscribe-block .top-text {margin-bottom: 30px;width: 44%;letter-spacing: 0.1em;font-family: 'Raleway', sans-serif;}
+.subscribe-block .top-text {margin-bottom: 30px;width: 44%;letter-spacing: 0.1em;font-family: 'Montserrat-Light', sans-serif;}
 
 /*======================= # Homepage type 1  ==================*/
 .home-page header {position: fixed;top: 0;width: 100%;}
@@ -309,7 +309,7 @@ a.btn:focus {color: #fff;text-decoration: none;}
 .home-banner2.home-banner #owl-demo .owl-item:nth-child(3) .banner-text {top: 20%;}
 
 /*======================= # Homepage type 3 ==================*/
-.home-banner .banner-text h1 {font-size: 50px;line-height: 65px;font-family: 'Raleway', sans-serif;margin-bottom: 35px;}
+.home-banner .banner-text h1 {font-size: 50px;line-height: 65px;font-family: 'Montserrat-Light', sans-serif;margin-bottom: 35px;}
 .home-banner .banner-text {top: 13%;}
 .banner-text h1 span {color: #60ba62;}
 .home-banner a.btn {font-size: 18px;text-transform: capitalize;padding: 13px 3%;border-radius: 0;}
@@ -333,7 +333,7 @@ a.btn:focus {color: #fff;text-decoration: none;}
 .bxslider1 .bx-wrapper {left: 0;right: 0;margin: auto;position: absolute;}
 .featured-menu-slider .bx-wrapper .bx-viewport {overflow: visible;}
 .featured-menu-slider .bx-wrapper figure {margin-bottom: 20px;overflow: hidden;}
-.featured-menu-slider h6 {font-family: 'Raleway', sans-serif;color: #60ba62;margin-bottom: 0;}
+.featured-menu-slider h6 {font-family: 'Montserrat-Regular', sans-serif;color: #60ba62;margin-bottom: 0;}
 .featured-menu-slider a, .featured-menu-slider span {color: #575757;}
 .featured-menu-slider a:hover h6, .featured-menu-slider a:hover span {color: #fff;}
 .featured-menu-slider a:hover {color: #fff;background: #60ba62;}
@@ -353,7 +353,7 @@ a.btn:focus {color: #fff;text-decoration: none;}
 .carousel-feature.feature-slide.active {box-shadow: 1px 1px 30px 1px #d4e5d5;overflow: visible;}
 .carousel-feature.feature-slide.active>a {display: block;overflow: hidden;}
 #carousel-left, #carousel-right {bottom: 0;z-index: 11;}
-.carousel-feature .carousel-caption p {line-height: 22px;font-size: 17px!important;color: #575757!important;font-family: "Raleway", sans-serif!important;width: 90%;margin: auto;font-weight: normal!important;text-shadow: none;letter-spacing: 1px;}
+.carousel-feature .carousel-caption p {line-height: 22px;font-size: 17px!important;color: #575757!important;font-family: "Montserrat-Light", sans-serif!important;width: 90%;margin: auto;font-weight: normal!important;text-shadow: none;letter-spacing: 1px;}
 .carousel-caption {left: 0;padding-bottom: 0!important;background: transparent!important;opacity: 1!important;bottom: -70px!important;padding-top: 0!important;}
 
 /*======================= # How it works section  ==================*/
@@ -388,7 +388,7 @@ select.select-program {width: 297px;}
 .top-text-header h4 {margin-bottom: 38px;}
 .top-text-header{margin-bottom: 55px;}
 .price-per-day>span {color: #60ba62;}
-.price-box-wrap .price {font-size: 60px;font-family: 'Raleway', sans-serif;line-height: 70px;display: block;}
+.price-box-wrap .price {font-size: 60px;font-family: 'Montserrat-Regular', sans-serif;line-height: 70px;display: block;}
 .price-box-wrap .per-day {font-size: 20px;}
 .price-box-wrap {font-size: 13px;line-height: 19px;border: 1px solid #60ba62; padding: 10% 0 0 0;}
 .price-box-wrap p{margin-bottom: 20px;    padding: 0 17%;}
@@ -406,7 +406,7 @@ select.select-program {width: 297px;}
 .home-version1-page .price-box-wrap.two-week{ background: url(../images/2-week-planning.png) no-repeat top; }
 .home-version1-page .price-box-wrap.three-week{ background: url(../images/3-week-planning.png) no-repeat top; }
 .home-version1-page .price-box-wrap.four-week{ background: url(../images/4-week-planning.png) no-repeat top; }
-.home-version1-page .price-box-wrap .price{ font-size: 50px; font-family: 'Raleway', sans-serif; }
+.home-version1-page .price-box-wrap .price{ font-size: 50px; font-family: 'Montserrat-Bold', sans-serif; }
 
 .cat-list-wrap{ padding-bottom: 0; margin-bottom: -25px; }
 .cat-list-wrap .top-text-header h4 { margin-bottom: 5px;}
@@ -419,7 +419,7 @@ select.select-program {width: 297px;}
 /*======================= # Full width video section  ==================*/
 .full-width-video {height: 540px;overflow: hidden;position: relative;}
 video {width: 100%;vertical-align: bottom;}
-.video-text h2 {font-size: 31px;color: #fff;font-family: 'Raleway', sans-serif;}
+.video-text h2 {font-size: 31px;color: #fff;font-family: 'Montserrat-Light', sans-serif;}
 .video-wrap {position: relative;height: 100%;transition: all 0.4s ease-in-out;}
 .video-wrap:before {position: absolute;content: '';background: rgba(0,0,0,.6);width: 100%;height: 100%;left: 0;transition: all 0.4s ease-in-out;}
 .hide-bg-overlay:before {z-index: -1;transition: all 0.4s ease-in-out;}
@@ -460,7 +460,7 @@ video {width: 100%;vertical-align: bottom;}
 
 /*======================= # Download app section ==================*/
 .download-app-block {padding: 80px 0;}
-.download-app-text h1 {font-size: 45px;line-height: 54px;font-family: 'Raleway', sans-serif;}
+.download-app-text h1 {font-size: 45px;line-height: 54px;font-family: 'Montserrat-Light', sans-serif;}
 .download-app-text h4 a {color: #60ba62;}
 .download-from a:first-child {margin-right: 25px;}
 .download-app-text h4 {margin-bottom: 12px;}
@@ -483,7 +483,7 @@ video {width: 100%;vertical-align: bottom;}
 .contact-block input {background: #f6f6f6;border: 1px solid #f6f6f6;padding: 19px;font-size: 15px;}
 .contact-block form fieldset {display: inline-block;margin: 0 7px;}
 .contact-block form fieldset:first-child {width: 51.1%;}
-.contact-block form fieldset:last-child input[type=submit] {font-size: 18px;background: #60ba62;font-family: "Raleway", sans-serif;padding: 18px;}
+.contact-block form fieldset:last-child input[type=submit] {font-size: 18px;background: #60ba62;font-family: "Montserrat", sans-serif;padding: 18px;}
 .contact-block form fieldset:last-child input[type=submit]:hover {background: #575757;}
 .contact-block form fieldset:last-child {width: 242px;}
 .download-app-wrap .contact-block {margin-bottom: 60px;}
@@ -507,7 +507,7 @@ button.close {opacity: 1;}
 .newsletter-inner {width: 75%;}
 .newsletter-subscribe-form input, .newsletter-subscribe-form textarea, .newsletter-subscribe-form select {border: 1px solid #fff;}
 .newsletter-subscribe-form form {width: 368px;}
-.newsletter-subscribe-form input[type=submit] {padding: 18px;font-size: 18px;font-family: "Raleway", sans-serif;width: 198px;}
+.newsletter-subscribe-form input[type=submit] {padding: 18px;font-size: 18px;font-family: "Montserrat", sans-serif;width: 198px;}
 .newsletter-popup .modal-content path {fill: #fff;}
 .modal-dialog {margin: 6% auto;}
 
@@ -515,7 +515,7 @@ button.close {opacity: 1;}
 .testimonials-block {background-size: cover;text-align: right;padding: 10.5% 0;width: 100%;background-color: #edf1fd;background-image: url(../images/testimonial-bg.jpg);background-repeat: no-repeat;background-position: left top;}
 .testimonials h3 {font-size: 26px;line-height: 38px;}
 .testimonials figure {display: inline-block;margin-right: 15px;height: 43px;width: 43px;border-radius: 43px;overflow: hidden;}
-.testimonials .writer {display: inline-block;font-size: 17px;font-family: 'Raleway', sans-serif;color: #575757;}
+.testimonials .writer {display: inline-block;font-size: 17px;font-family: 'Montserrat-Regular', sans-serif;color: #575757;}
 .testimonials {width: 46%;display: inline-block;vertical-align: middle;}
 .testimonial-author span, .testimonial-author figure {vertical-align: middle;margin-bottom: 0;}
 .testimonials .bx-wrapper {margin: 0;}
@@ -538,7 +538,7 @@ button.close {opacity: 1;}
 .instagram-image-row ul {display: inline-block;margin: 0 -50px;overflow: hidden;vertical-align: bottom;}
 .instagram-image-row ul li figure {margin-bottom: 0;overflow: hidden;}
 .instagram-image-row li img {width: 100%;}
-.follow-at {font-size: 17px;color: #60ba62;font-family: 'Raleway', sans-serif;}
+.follow-at {font-size: 17px;color: #60ba62;font-family: 'Montserrat-Regular', sans-serif;}
 .instagram-block h4 {margin-bottom: 5px;}
 .instagram-block .top-text-header {margin-bottom: 30px;}
 
@@ -562,7 +562,7 @@ button.close {opacity: 1;}
 .top-description h3.no-sub-text {margin-bottom: 47px;}
 
 /*======================= ## Menu single nutritions facts block ==================*/
-.facts-wrap {border: 1px solid #000;padding: 15px 15px 20px;font-family: 'Raleway';line-height: 21px;color: #000;float: left;width: 100%;}
+.facts-wrap {border: 1px solid #000;padding: 15px 15px 20px;font-family: 'Helvetica';line-height: 21px;color: #000;float: left;width: 100%;}
 .facts-wrap h1, .facts-wrap h2, .facts-wrap h3, .facts-wrap h4, .facts-wrap h5, .facts-wrap h6, .facts-wrap a {color: #000;}
 .facts-wrap h1 {font-size: 52px;line-height: 60px;font-weight: 600;margin-bottom: 5px;}
 .facts-wrap .title-block {border-bottom: 14px solid #000;padding-bottom: 10px;margin-bottom: 10px;border-top: 0;padding-top: 0;}
@@ -596,10 +596,9 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .steps-wrapper {background: #fdfdfd;}
 .steps-wrapper a{white-space: nowrap;}
 
-
 /*======================= ## Choose plan about us page ==================*/
 .radio-btn input[type=radio] {margin-top: 0;opacity: 0;position: relative;border: 1px solid #cecece;height: 83px;width: 100%;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;padding: 41px 30px;}
-.radio-btn span {font-family: "Raleway", sans-serif;text-transform: uppercase;font-size: 18px;color: #cecece;}
+.radio-btn span {font-family: "Montserrat", sans-serif;text-transform: uppercase;font-size: 18px;color: #cecece;}
 .radio-btn.checked {position: relative;border: 1px solid #60ba62;}
 .radio-btn.checked span{color: #60ba62;}
 .radio-btn:hover:after, .radio-btn:focus:after, .radio-btn.checked:after {border: 1px solid #60ba62;color: #60ba62;box-shadow: none;position: absolute;width: 100%;height: 100%;content: "";left: 0;top: 0;border-radius: 4px;}
@@ -612,7 +611,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .radio-btn span {position: absolute;left: 0;top: 34%;right: 0;margin: auto;text-align: center; z-index: 1;}
 .left-form fieldset {margin-bottom: 40px;}
 .left-form input, .left-form input[type=submit] {font-size: 18px;}
-.left-form input[type="submit"] {font-family: "Raleway", sans-serif;border: 0;padding: 18px 26px;}
+.left-form input[type="submit"] {font-family: "Montserrat", sans-serif;border: 0;padding: 18px 26px;}
 .radio-btn input:checked+span, .radio-btn input:hover+span, .radio-btn input:focus+span {color:#60ba62;}
 .left-form ::-webkit-input-placeholder {color: #cecece;}
 .left-form :-moz-placeholder {/* Firefox 18- */color: #cecece;}
@@ -629,7 +628,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .step-content {float: left;width: 100%;}
 .choose-plan-page .pricing-block {padding: 50px 0 85px;}
 .step-content .step2 {padding-top: 80px;}
-.step-content .title{font-family: "Raleway", sans-serif;letter-spacing: 0.1em;}
+.step-content .title{font-family: "Montserrat-Light", sans-serif;letter-spacing: 0.1em;}
 .step2 h3 {margin-bottom: 35px;}
 .select-program-btn a img {height: 47px;display: inline-block;margin-right: 24px;width: auto;}
 .select-program-btn a {display: block;text-align: center;border: 1px solid #cecece;padding: 22px;color: #848484;line-height: 42px;border-radius: 4px;position: relative;}
@@ -649,13 +648,13 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 
 /*======================= ## Choose plan review page ==================*/
 .step3 {padding: 60px 0;}
-.review-info .title span:first-child, .review-info .title span:first-of-type {font-size: 15px;color: #60ba62;display: block;font-family: 'Raleway', sans-serif;}
-.review-info .title span:last-child, .review-info .title span:last-of-type {margin-bottom: 8px;display: block;font-size: 25px;line-height: 42px;font-family: 'Raleway', sans-serif;}
+.review-info .title span:first-child, .review-info .title span:first-of-type {font-size: 15px;color: #60ba62;display: block;font-family: 'Montserrat-Regular', sans-serif;}
+.review-info .title span:last-child, .review-info .title span:last-of-type {margin-bottom: 8px;display: block;font-size: 25px;line-height: 42px;font-family: 'Montserrat-Light', sans-serif;}
 .review-info p {font-size: 13px;margin-bottom: 15px;line-height: 20px;}
 .review-info .title {margin-bottom: 20px;}
 .review-left, .review-right {padding-left: 6.5%;}
-.big-buttons-group .border-btn-x-big {font-size: 18px;font-family: 'Raleway', sans-serif;padding: 17px 5%;width: 297px;}
-.btn-x-big {font-size: 18px;font-family: 'Raleway', sans-serif;padding: 18px 5%;width: 297px;}
+.big-buttons-group .border-btn-x-big {font-size: 18px;font-family: 'Montserrat-Regular', sans-serif;padding: 17px 5%;width: 297px;}
+.btn-x-big {font-size: 18px;font-family: 'Montserrat-Regular', sans-serif;padding: 18px 5%;width: 297px;}
 .big-buttons-group a {margin: 0 10px;}
 .review-info {margin-bottom: 58px;}
 
@@ -670,7 +669,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .select-payment-btn a:hover span {color: #fff;}
 .select-payment-btn a:hover path {fill: #fff;}
 .select-payment-btns .select-payment-btn {width: 26.5%;float: none;display: inline-block;}
-.payment-form label {width: 100%;text-align: left;color: #000;font-size: 16px;width: 100%;font-family: "Raleway", sans-serif;margin-bottom: 12px;}
+.payment-form label {width: 100%;text-align: left;color: #000;font-size: 16px;width: 100%;font-family: "Montserrat-Light", sans-serif;margin-bottom: 12px;}
 .select-payment-btns {margin-bottom: 70px;}
 .payment-form form fieldset:first-of-type {width: 54.7%;}
 .payment-form form fieldset:nth-of-type(2) {width: 36.9%;}
@@ -687,7 +686,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .payment-form form fieldset:nth-of-type(5) input {background: url(../images/what-icon.svg) no-repeat;background-position: 89% 48%;}
 
 /*======================= ## choose plan page footer ==================*/
-footer.limited-footer {font-family: 'Raleway', sans-serif;background: #fdfdfd;padding: 13px 0;font-size: 10px;color: #848484;position: relative;float: left;width: 100%;height: auto;text-align: center;}
+footer.limited-footer {font-family: 'Montserrat-Light', sans-serif;background: #fdfdfd;padding: 13px 0;font-size: 10px;color: #848484;position: relative;float: left;width: 100%;height: auto;text-align: center;}
 
 /*======================= # About us page ==================*/
 .about-us-page header {background: transparent;}
@@ -711,7 +710,7 @@ footer.limited-footer {font-family: 'Raleway', sans-serif;background: #fdfdfd;pa
 .weight-loss-block {padding-bottom: 0;}
 .single-program-banner {height: 440px;}
 .single-program-banner img {position: absolute;left: -99999px;right: -99999px;margin: auto;}
-.weight-loss-block h3 {font-size: 26px;color: #000;font-family: 'Raleway', sans-serif;position: relative;padding-bottom: 30px;margin-bottom: 35px;}
+.weight-loss-block h3 {font-size: 26px;color: #000;font-family: 'Montserrat-Light', sans-serif;position: relative;padding-bottom: 30px;margin-bottom: 35px;}
 .img-text-center figure {width: 41px;height: 41px;margin: 0 auto 18px;}
 .weight-loss-block h3:after {position: absolute;bottom: 0;width: 88px;height: 1px;background: #878787;content: '';left: 0;right: 0;margin: auto;}
 .img-text-center p {width: 70%;margin: auto;}
@@ -748,7 +747,7 @@ footer.limited-footer {font-family: 'Raleway', sans-serif;background: #fdfdfd;pa
 .map-wrap {border-top: 1px solid #ddd;}
 
 /*======================= ## Contact form ==================*/
-.contact-form .location, .contact-form .phone, .contact-form .mailto-link, .contact-form .tel-link {font-family: 'Raleway', sans-serif;}
+.contact-form .location, .contact-form .phone, .contact-form .mailto-link, .contact-form .tel-link {font-family: 'Montserrat-Light', sans-serif;}
 .contact-form .mailto-link {color: #68bd6a;}
 .contact-form .tel-link:hover {color: #68bd6a;}
 .contact-form .mailto-link:hover {color: #575757;}
@@ -765,14 +764,14 @@ footer.limited-footer {font-family: 'Raleway', sans-serif;background: #fdfdfd;pa
 .contact-right-form ::-moz-placeholder {/* Firefox 19+ */color: #848484;}
 .contact-right-form :-ms-input-placeholder {color: #848484;}
 .contact-right-form form fieldset:last-child {margin-bottom: 0;}
-.sample-menu-banner {height: 149px;overflow: hidden;width: 100%;}
+.sample-menu-banner {height: 298px;overflow: hidden;width: 100%;}
 .select-menu-block select {text-align: center;}
 .sample-menu-banner figure img {position: absolute;left: -9999px;right: -9999px;margin: auto;}
 
 
-.sample-menu-page h3{font-family: 'Raleway', sans-serif; margin-bottom: 30px;}
+.sample-menu-page h3{font-family: 'Montserrat-Light', sans-serif; margin-bottom: 30px;}
 .menu-item-wrap h4 {text-transform: uppercase; margin-bottom: 0;}
-.menu-item-wrap h4 a {color: #60ba62;font-family: "Raleway", sans-serif;}
+.menu-item-wrap h4 a {color: #60ba62;font-family: "Montserrat-Light", sans-serif;}
 .menu-item-wrap figure {height: 265px;overflow: hidden;margin-bottom: 23px;}
 .menu-item-wrap h4 a:hover {color: #575757;}
 .sample-menu-block .top-description>p {width: 67%;margin: 0 auto 45px;}
@@ -784,7 +783,7 @@ footer.limited-footer {font-family: 'Raleway', sans-serif;background: #fdfdfd;pa
 
 .food-tab {background: #fafafa;margin-bottom: 34px;}
 ul.nav.nav-tabs {border-bottom: 0;}
-.nav-tabs>li>a {text-transform: uppercase;padding: 30px 44px;font-size: 37px;font-family: 'Raleway', sans-serif;color: #cecece;position: relative;border: 0;}
+.nav-tabs>li>a {text-transform: uppercase;padding: 30px 44px;font-size: 37px;font-family: 'Montserrat-Light', sans-serif;color: #cecece;position: relative;border: 0;}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {color: #60ba62;background-color: transparent;border: 0;}
 .nav>li>a:hover, .nav>li>a:focus {border: 0;background: transparent;color: #60ba62;outline: none;}
 .nav-tabs>li>a:after {content: '';position: absolute;bottom: 0;left: 0;right: 0;margin: auto;height: 4px;width: 0;background: #60ba62;}
@@ -798,12 +797,12 @@ ul.nav.nav-tabs {border-bottom: 0;}
 .food-listing-group .food-listing-row:nth-child(2n+1) figure:before {background: #60ba62;}
 .food-image {width: 18.3%;margin-right: 4.55%;}
 .food-type {width: 12%;margin-right: 2%;}
-.food-type h5 {margin-bottom: 0;text-transform: capitalize;font-family: 'Raleway', sans-serif; letter-spacing: 0.1em;}
+.food-type h5 {margin-bottom: 0;text-transform: capitalize;font-family: 'Montserrat-Light', sans-serif; letter-spacing: 0.1em;}
 .food-listing-group .food-listing-row:nth-child(2n) .food-type h5 a{color: #f7ca18;}
 .food-listing-group .food-listing-row:nth-child(2n+1) .food-type h5 a{color: #60ba62;}
 .food-type h5 a:hover{color: #545454; }
-.food-ingredients {font-size: 15px;font-family: 'Raleway', sans-serif;line-height: 23px;width: 40%;margin-right: 3%;}
-.food-category .border-btn-small {border: 1px solid #ddd;font-size: 11px;font-family: 'Raleway', sans-serif;color: #848484;padding: 7px 20px;}
+.food-ingredients {font-size: 15px;font-family: 'Montserrat-Light', sans-serif;line-height: 23px;width: 40%;margin-right: 3%;}
+.food-category .border-btn-small {border: 1px solid #ddd;font-size: 11px;font-family: 'Montserrat-Light', sans-serif;color: #848484;padding: 7px 20px;}
 .food-category .border-btn-small:hover{color: #fff;border: 1px solid #60ba62;}
 .food-listing-row {margin-bottom: 36px;padding-bottom: 36px;border-bottom: 1px solid #fafafa;}
 .food-category {width: 19%;text-align: right;}
@@ -820,7 +819,7 @@ ul.nav.nav-tabs {border-bottom: 0;}
 .banner-text .popular-tags {width: 65%;margin: auto;}
 .blog-banner-main .banner-text h1 {margin-bottom: 100px;}
 .banner-text .btn-tags-big {text-transform: uppercase;position: relative;margin: 0 10px;}
-.banner-text .btn-tags-big:hover, .banner-text .btn-tags-big.active {background: transparent;color: #60ba62;font-family: "Raleway";border: 1px solid #60ba62;}
+.banner-text .btn-tags-big:hover, .banner-text .btn-tags-big.active {background: transparent;color: #60ba62;font-family: "Montserrat";border: 1px solid #60ba62;}
 .banner-text .btn-tags-big:hover:after, .banner-text .btn-tags-big.active:after {border-radius: 22px;position: absolute;left: 0;top: 0;width: 100%;height: 100%;border: 1px solid #60ba62;content: "";}
 .blog-admin figure {display: block;width: 70px;height: 70px;border-radius: 70px;overflow: hidden;margin: 0 auto 13px;}
 .blog-admin .admin {font-size: 13px;line-height: 18px;display: inline-block;color: #848484;}
@@ -867,14 +866,14 @@ figure {overflow: hidden;}
 .top.admin {background: #f0f0f0;padding: 27px 30px;margin-bottom: 50px;}
 .top.admin h6{margin-bottom: 0;}
 .top.admin .right-text {display: inline-block;vertical-align: middle;}
-.top.admin .right-text a {font-size: 15px;color: #848484;font-family: 'Raleway', sans-serif;}
+.top.admin .right-text a {font-size: 15px;color: #848484;font-family: 'Montserrat-Light', sans-serif;}
 .top.admin .right-text a:hover {color: #60ba62;}
 .comment .children {padding-left: 7%;margin: 0 0 20px 0;}
-.comment-content {font-size: 12px;color: #979797;line-height: 17px;font-family: 'Raleway', sans-serif;}
+.comment-content {font-size: 12px;color: #979797;line-height: 17px;font-family: 'Montserrat-Light', sans-serif;}
 ol.comment-list {list-style: none;}
 .comment-body figure {margin: 0 25px 30px 0;float: left;}
 .comment-body figure, .top.admin figure {vertical-align: middle;width: 69px;margin: 0 35px 0 0;height: 69px;border-radius: 69px;overflow: hidden;display: inline-block;}
-.comment-header .comment-author {font-family: "Raleway", sans-serif;display: inline-block;vertical-align: top;color: #575757;font-size: 15px;margin-bottom: 6px;}
+.comment-header .comment-author {font-family: "Montserrat", sans-serif;display: inline-block;vertical-align: top;color: #575757;font-size: 15px;margin-bottom: 6px;}
 .comments-area h3.comments-title {font-size: 15px;color: #505050;}
 div.comment, .comment-respond {margin-left: 32px;}
 ol.comment-list {margin-left: 8px;}
@@ -906,7 +905,7 @@ p.comment-form-comment label {display: none;}
 .sidebar-widget h6 a {color: #575757;}
 .sidebar-widget h6 a:hover {color: #60ba62;}
 .sidebar-wrap .date {font-size: 13px;color: #cecece;}
-.sidebar-widget ul h6 {font-size: 15px;font-family: 'Raleway', sans-serif;margin-bottom: 3px;line-height: 25px;}
+.sidebar-widget ul h6 {font-size: 15px;font-family: 'Montserrat-Light', sans-serif;margin-bottom: 3px;line-height: 25px;}
 .sidebar-widget ul li {border-bottom: 1px solid #cecece;margin-bottom: 22px;padding-bottom: 22px;}
 .sidebar-widget ul li:last-child {border-bottom: 0;}
 
@@ -944,17 +943,17 @@ footer {color: #fff;}
 .footer-logo {width: 30%;}
 .footer-logo figure {margin-bottom: 0;}
 .footer-social-links {width: 19%;margin-top: 1.3%;}
-.top-footer {background: #60ba62;padding: 40px 0;font-family: 'Raleway', sans-serif;letter-spacing: 0.1em;}
+.top-footer {background: #60ba62;padding: 40px 0;font-family: 'Montserrat-Light', sans-serif;letter-spacing: 0.1em;}
 .footer-links-col {line-height: 23px;}
 .footer-links-col>span {font-weight: 700;text-transform: uppercase;display: block;margin-bottom: 2px;}
-.footer-links-col ul li a{color: #fff;font-family: 'Raleway', sans-serif;text-transform: capitalize;line-height: 17px;display: block;}
+.footer-links-col ul li a{color: #fff;font-family: 'Montserrat-Light', sans-serif;text-transform: capitalize;line-height: 17px;display: block;}
 .footer-links-col ul li {margin-bottom: 5px;}
 .footer-links-col ul li a:hover {text-decoration: none;padding-left: 5px;}
 .footer-social-links ul li{display: inline-block;margin: 0 5px;}
 .footer-social-links ul li:last-child {margin-right: 0;}
 .footer-social-links ul li i {color: #60ba62;background: #dff1e0;border-radius: 25px;width: 25px;height: 25px;text-align: center; line-height: 26px;display: inline-block;}
 .bottom-footer {background: #4ea950; padding: 27px 0;}
-.copyright-text {font-family: 'Raleway', sans-serif;letter-spacing: 0.15em;}
+.copyright-text {font-family: 'Montserrat-Light', sans-serif;letter-spacing: 0.15em;}
 
 /*======================== Cart page ==========================*/
 .shopping-cart .wrapper{ padding-top: 99px; }
@@ -977,7 +976,7 @@ footer {color: #fff;}
 .shop_table .product-name figure.product-thumb{ margin-right: 35px; width: 103px; height: 103px; overflow: hidden; }
 .shop_table .product-name figure.product-thumb img{ max-width: 100%; }
 .shop_table .product-name .prod-disc{ width: 50%; }
-.shop_table  h6{ margin-bottom: 0; font-family: 'Raleway', sans-serif; font-weight: 600;}
+.shop_table  h6{ margin-bottom: 0; font-family: 'Montserrat-Regular', sans-serif; font-weight: 600;}
 .shop_table .product-name .prod-disc span{ font-size: 13px; }
 .shop_table .product-name .prod-disc .facts-table{ margin: 0; }
 .shop_table .product-name .prod-disc .facts-table td{ padding: 0; line-height: 23px; }
@@ -1037,7 +1036,7 @@ input.txtacrescimo{ width: 30px; margin: 0; text-align: center; font-size: 16px;
 .seller-list ul li{ position: relative; margin-bottom: 20px; padding-bottom: 20px; width: 100%; float: left; }
 .seller-list ul li:after{ width: 110px; content: " "; display:block; height: 1px; background-color: #ebebeb; position: absolute; bottom: 0;}
 .seller-list ul li figure{ width: 110px; height: 90px; float: left; margin:0 20px 0 0; overflow: hidden; }
-.seller-list ul li h6{ margin-bottom: 10px; font-size: 15px; font-family: 'Raleway', sans-serif; letter-spacing: 0.1em; line-height: 20px;}
+.seller-list ul li h6{ margin-bottom: 10px; font-size: 15px; font-family: 'Montserrat-Light', sans-serif; letter-spacing: 0.1em; line-height: 20px;}
 .seller-list ul li h6 + h6{ margin: 0; }
 .seller-list ul li h6 a{ color: #60ba62; }
 .seller-list ul li h6 a:hover{ color: #000; }
@@ -1058,7 +1057,7 @@ input.txtacrescimo{ width: 30px; margin: 0; text-align: center; font-size: 16px;
 
 .facts-table{ margin: 5px 0 40px; }
 .facts-table table{ width: 100%; }
-.facts-table td{ text-align: left; font-family: "Raleway", sans-serif; letter-spacing: 0.05em; color: #575757; line-height: 25px;}
+.facts-table td{ text-align: left; font-family: "Montserrat-Light", sans-serif; letter-spacing: 0.05em; color: #575757; line-height: 25px;}
 .facts-table td:first-child{ border-bottom: 1px dotted #ddd;}
 .menu-listing-wrap .menu-item-wrap .facts-table td span{ display: inline-block; margin:0px; }
 .facts-table td span{ padding: 0 10px 0 0; position: relative; top: 9px; background-color: #fff; }
@@ -1130,12 +1129,12 @@ input.txtacrescimo{ width: 30px; margin: 0; text-align: center; font-size: 16px;
 .sucess-story .box .left{ padding: 4.5% 0 0 6%;}
 .sucess-story .sucess-img img{ display: inline-block; margin: 0; }
 ul.sucess-slide{}
-ul.sucess-slide li h2{ margin-bottom: 25px; color: #000; text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Raleway', sans-serif; line-height: 40px;}
+ul.sucess-slide li h2{ margin-bottom: 25px; color: #000; text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Montserrat-Regular', sans-serif; line-height: 40px;}
 ul.sucess-slide li h2 span{ display: block; font-size: 17px; color: #848484; text-transform: initial;}
 ul.sucess-slide li p{ padding-left: 50px; position: relative; font-style: italic; line-height: 23px; }
 ul.sucess-slide li p:before{ display: block; width: 32px; height: 32px; position: absolute; left: 0; top: 8px; content: " "; background: url(../images/single-quote.png) no-repeat top left;}
 .sucess-story .bx-controls.bx-has-controls-direction { position: absolute; bottom:10%; left: 5%;}
-.sucess-story .bx-wrapper .bx-controls-direction a { position: initial; width: initial; height: initial; display: inline-block; border: 1px solid #cecece; margin: 0 15px 0 0; padding: 8px 30px; border-radius: 50px; color: #cecece;	outline: 0;  font-family: 'Raleway', sans-serif; text-indent: initial;}
+.sucess-story .bx-wrapper .bx-controls-direction a { position: initial; width: initial; height: initial; display: inline-block; border: 1px solid #cecece; margin: 0 15px 0 0; padding: 8px 30px; border-radius: 50px; color: #cecece;	outline: 0;  font-family: 'Montserrat-Light', sans-serif; text-indent: initial;}
 .sucess-story .bx-wrapper .bx-controls-direction a:hover{ border-color: #848484; color: #848484; }
 .sucess-story .bx-wrapper .bx-controls-direction a i { font-size: 25px;  line-height: 30px; display: inline-block; vertical-align: top; padding: 0 5px;}
 .sucess-story .bx-wrapper .bx-controls-direction a.bx-prev i{ padding-left: 0; }
@@ -1176,7 +1175,7 @@ ul.sucess-slide li p:before{ display: block; width: 32px; height: 32px; position
 
 .block-wrap{margin-bottom: 90px; padding: 75px; color: #fff; line-height: 22px; overflow: hidden;}
 .block-wrap:last-child{margin-bottom: 0;}
-.block-wrap h2{ margin-bottom: 10px; font-family: "Raleway"; font-size: 43px; line-height: 50px; text-transform: uppercase; font-weight: 900; color: #fff; text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); -webkit-text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); -moz-text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); }
+.block-wrap h2{ margin-bottom: 10px; font-family: "Montserrat-Bold"; font-size: 43px; line-height: 50px; text-transform: uppercase; font-weight: 900; color: #fff; text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); -webkit-text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); -moz-text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); }
 .block-wrap table{ margin-bottom: 40px; }
 .block-wrap p{ margin-bottom: 20px; }
 .block-wrap .btn.btn-big{ padding: 20px 60px;  }
@@ -1577,7 +1576,7 @@ header.green {background: #60ba62;}
   .select-program-btn a {padding: 8px;}
   .testimonial-wrap .testimonial-box-wrap:first-child {margin-bottom: 50px;}
   .home-banner3.home-banner .banner-text h1 {margin-bottom: 10px;}
-  .sample-menu-page h3 {font-family: 'Raleway', sans-serif;}
+  .sample-menu-page h3 {font-family: 'Montserrat-Regular', sans-serif;}
   h1, h2, h3, h4, h5, h6, .download-app-text h4 {margin-bottom: 5px;}
   .features-item, .features-item.last-row, .sidebar-widget.popular-posts {margin-bottom: 40px;}
   .block, .download-app-block, .choose-plan-page .pricing-block, .block.menu-page-block {padding: 30px 0;}
@@ -1670,7 +1669,7 @@ header.green {background: #60ba62;}
   .blog-left-content-full blockquote {padding-left: 8.5%;}
   .comment-form-comment textarea {height: 130px;}
   .parallax-block-text {top: 26%;background: rgba(255,255,255,.5);padding: 10px 0 15px;}
-  .menu-item-wrap h4 a {font-family: "Raleway", sans-serif;}
+  .menu-item-wrap h4 a {font-family: "Montserrat", sans-serif;}
   .home-banner .banner-text h1 {margin-bottom: 3px;}
   .home-banner .banner-text h1 {font-size: 20px;line-height: 25px;}
   .home-banner .banner-text {width: 100%;padding: 15px 15px 20px;left: 0;}
@@ -1693,7 +1692,7 @@ header.green {background: #60ba62;}
   .download-app-wrap {font-size: 14px;line-height: 24px;padding-left: 0;margin-top: 0;}
   .download-from a {width: 48%;display: block;float: left;}
   .download-from a:first-child {margin-right: 4%;}
-  .testimonials h3 {font-size: 17px;line-height: 21px;font-family: "Raleway", sans-serif;}
+  .testimonials h3 {font-size: 17px;line-height: 21px;font-family: "Montserrat", sans-serif;}
   .testimonials-block .testimonials li p {line-height: 19px;font-size: 12px;margin-bottom: 15px;}
   .testimonials-block {height: 390px;}
   .featured-menu-slider .bx-wrapper .bx-viewport {height: 360px;overflow: hidden;}

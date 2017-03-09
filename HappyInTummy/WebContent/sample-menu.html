@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,14 +33,12 @@
 .no-js #loader {
 	display: none;
 }
-
 .js #loader {
 	display: block;
 	position: absolute;
 	left: 100px;
 	top: 0;
 }
-
 .se-pre-con {
 	position: fixed;
 	left: 0px;
@@ -54,15 +51,21 @@
 </style>
 
 </head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script>
-$.get("Header.html", function (data) {
-    $("#websiteHeader").replaceWith(data);
-});
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+	type="text/javascript"></script>
+<script type="text/javascript">
+	$.get("Header.html", function(data) {
+		$("#websiteHeader").replaceWith(data);
+	});
 </script>
-
-<body >
-<div id="websiteHeader" style="z-index: 1111;"></div>
+<script type="text/javascript">
+	$.get("showDishes.html", function(data) {
+		$("#showdishes").replaceWith(data);
+	});
+</script>
+<body>
+	<div id="websiteHeader" style="z-index: 1111;"></div>
 	<!-- loader image before page load starts -->
 	<div class="se-pre-con"></div>
 	<!-- loader image before page load ends -->
@@ -70,15 +73,14 @@ $.get("Header.html", function (data) {
 	<!-- main wrapper of the site starts -->
 	<div class="wrapper">
 
-		
+
 		<!-- ============== Sample menu banner starts ============== -->
 		<section class="banner sample-menu-banner">
 			<div class="bannerwrapmenu">
-				
+
 				<div class="banner-text text-center">
 					<h1 class="text-uppercase">
-						Healthy Choice<br>
-						<strong>Still delicious</strong>
+						Healthy Choice<br> <strong>Still delicious</strong>
 					</h1>
 				</div>
 			</div>
@@ -86,810 +88,92 @@ $.get("Header.html", function (data) {
 		<!-- ============== Sample menu banner starts ============== -->
 
 		<main> <!-- main content starts --> <!-- ============== Sample menu block starts ============== -->
-		
-			<div class="container">
-				<div class="text-center top-description wow fadeInUp">
-				<br>
-					<h3 class="text-center">See our menu and make your choice...</h3>
-					
-					
-					<br>
-				</div>
 
-				<!-- == menu listing starts == -->
-				<div class="row menu-listing">
-					<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
-						<div class="text-center menu-item-wrap">
-							<figure>
-								<a href="#"><img class="img-responsive"
-									src="images/porridge4blog_1_440x518.jpg" alt="Menu image" /></a>
-							</figure>
-							<h4>
-								<a href="#">PORRIDGE</a>
-							</h4>
-							<span>With fresh fruits</span>
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
-						<div class="text-center menu-item-wrap">
-							<figure>
-								<a href="#"><img class="img-responsive"
-									src="images/bakedsalmon_270x270.jpeg" alt="Menu image" /></a>
-							</figure>
-							<h4>
-								<a href="#">BAKED SALMON</a>
-							</h4>
-							<span>With fresh vegetables</span>
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
-						<div class="text-center menu-item-wrap">
-							<figure>
-								<a href="#"><img class="img-responsive"
-									src="images/salmon-salad-yogurt.jpg" alt="Menu image" /></a>
-							</figure>
-							<h4>
-								<a href="#">SALMON VEGGIE SALAD</a>
-							</h4>
-							<span>With Lemon Miso Dressing</span>
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
-						<div class="text-center menu-item-wrap">
-							<figure>
-								<a href="#"><img class="img-responsive"
-									src="images/menu-img4.jpg" alt="Menu image" /></a>
-							</figure>
-							<h4>
-								<a href="#">TOMATOES OMELET</a>
-							</h4>
-							<span>With Parsley and Feta Cheese</span>
-						</div>
+		<div class="container">
+			<div class="text-center top-description wow fadeInUp">
+				<br>
+				<h3 class="text-center">See our menu and make your choice...</h3>
+
+
+				<br>
+			</div>
+
+			<!-- == menu listing starts == -->
+			<div class="row menu-listing">
+				<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
+					<div class="text-center menu-item-wrap">
+						<figure>
+							<a href="#"><img class="img-responsive"
+								src="images/porridge4blog_1_440x518.jpg" alt="Menu image" /></a>
+						</figure>
+						<h4>
+							<a href="#">PORRIDGE</a>
+						</h4>
+						<span>With fresh fruits</span>
 					</div>
 				</div>
-				<!-- == menu listing ends == -->
+				<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
+					<div class="text-center menu-item-wrap">
+						<figure>
+							<a href="#"><img class="img-responsive"
+								src="images/bakedsalmon_270x270.jpeg" alt="Menu image" /></a>
+						</figure>
+						<h4>
+							<a href="#">BAKED SALMON</a>
+						</h4>
+						<span>With fresh vegetables</span>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
+					<div class="text-center menu-item-wrap">
+						<figure>
+							<a href="#"><img class="img-responsive"
+								src="images/salmon-salad-yogurt.jpg" alt="Menu image" /></a>
+						</figure>
+						<h4>
+							<a href="#">SALMON VEGGIE SALAD</a>
+						</h4>
+						<span>With Lemon Miso Dressing</span>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
+					<div class="text-center menu-item-wrap">
+						<figure>
+							<a href="#"><img class="img-responsive"
+								src="images/menu-img4.jpg" alt="Menu image" /></a>
+						</figure>
+						<h4>
+							<a href="#">TOMATOES OMELET</a>
+						</h4>
+						<span>With Parsley and Feta Cheese</span>
+					</div>
+				</div>
 			</div>
-		
+			<!-- == menu listing ends == -->
+		</div>
+
 		<!-- ============== Sample menu block ends ============== --> <!-- ============== select menu block starts ============== -->
 		<section class="block select-menu-block">
-	
- <br>
- 
-	 <h4 class="text-center">We are here to bake your day!!</h4>	
+			<!-- <div class="container">  
+ <h3 class="wow fadeInUp text-center">SELECT PROGRAM</h3>  
+ <div class="text-center wow flipInX">  
+ <select>  
+ <option value="">Accelerated Weight Loss</option>  
+ <option value="">Accelerated Weight Gain</option>  
+ <option value="">Accelerated Protein Free</option>  
+ <option value="">Accelerated Weight Loss</option>  
+ </select>  
+ </div>  
+ </div>   -->
+ 	<div id="showdishes"></div>
+			<!-- == Tab description ends == -->
 
-	<div class="text-center wow flipInX animated" style="visibility: visible; animation-name: flipInX;">
-<select class="select-program">
-<option value="">Select Program</option>
-<option selected="selected" value="">Vegan</option>
-<option value="">Non-Vegeterian</option>
-<option value="">Gluten-free</option>
-
-</select>
-</div>
-			
-					<div class='food-tab wow fadeInUp'>
-						<div class='container'>
-							<!-- Nav tabs -->
-							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="#breakfast"
-									role="tab" data-toggle="tab">Breakfast</a></li>
-								<li role="presentation"><a href="#lunch" role="tab"
-									data-toggle="tab">Lunch</a></li>
-								<li role="presentation"><a href="#dinner" role="tab"
-									data-toggle="tab">Dinner</a></li>
-							</ul>
-						</div>
-					</div> <!-- == menu tab part ends == --> <!-- == Tab description starts == -->
-					<div class='tab-description'>
-						<div class="container">
-							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane fade in active"
-									id="breakfast">
-									<!-- == food listing group starts == -->
-
-
-									<!--menu listing -->
-									<div class="row menu-listing-wrap list-view">
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class="menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img2.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">BAKED SALMON</a>
-													</h4>
-													<span>With Brokoli and Vegetables</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class=" menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img3.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">VEGETABLE SALAD</a>
-													</h4>
-													<span>With Cheese Feta</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class=" menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img4.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">TOMATOES OMELET</a>
-													</h4>
-													<span>With Parsley & Cheese Feta</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class=" menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img5.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">GADO-GADO SALAD</a>
-													</h4>
-													<span>With Eggs</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class=" menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img6.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">CHICKEN BURN</a>
-													</h4>
-													<span>With Ketchup</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class="menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img7.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">GUDANGAN MIX</a>
-													</h4>
-													<span>With Chicken & Eggs</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class=" menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img8.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">BAKED SALMON</a>
-													</h4>
-													<span>With Brokoli and Vegetables</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class=" menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img3.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">VEGETABLE SALAD</a>
-													</h4>
-													<span>With Cheese Feta</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class="menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img4.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">TOMATOES OMELET</a>
-													</h4>
-													<span>With Parsley & Cheese Feta</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class=" menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img5.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">GADO-GADO SALAD</a>
-													</h4>
-													<span>With Eggs</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class="menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img6.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">CHICKEN BURN</a>
-													</h4>
-													<span>With Ketchup</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-										<!--single menu -->
-										<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
-											<div class=" menu-item-wrap">
-												<figure>
-													<a href="#"><img class="img-responsive"
-														src="images/menu-img7.jpg" alt="Menu image"></a>
-												</figure>
-												<div class="mid">
-													<h4>
-														<a href="#">GUDANGAN MIX</a>
-													</h4>
-													<span>With Chicken & Eggs</span>
-													<div class="facts-table">
-														<table>
-															<tbody>
-																<tr>
-																	<td><span>Calories</span></td>
-																	<td><span>800</span></td>
-																</tr>
-
-																<tr>
-																	<td><span>Proteins</span></td>
-																	<td><span>90g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Fats</span></td>
-																	<td><span>48g</span></td>
-																</tr>
-																<tr>
-																	<td><span>Carbohydrates</span></td>
-																	<td><span>67g</span></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-											</div>
-										</div>
-										<!--single menu ends -->
-									</div>
-
-
-
-
-
-
-
-
-									<!-- == food listing group ends == -->
-
-								</div>
-								<div role="tabpanel" class="tab-pane fade" id="day2">
-									<!-- == food listing group starts == -->
-									<div class="food-listing-group">
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food2.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">lunch</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Chinese Noodle Bowl Mix
-												Vegetables with Shrimp</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">vegan</a>
-											</div>
-										</div>
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food3.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">dinner</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Roasted Hot and Spicy
-												Chicken Wings</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">vegan</a>
-											</div>
-										</div>
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food4.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">snack</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Cheddar Chees Grilled and
-												Bacon Sandwich</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">gluten-free</a>
-											</div>
-										</div>
-									</div>
-									<!-- == food listing group ends == -->
-								</div>
-								<div role="tabpanel" class="tab-pane fade" id="day3">
-									<!-- == food listing group starts == -->
-									<div class="food-listing-group">
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food1.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">Breakfast</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Tomatoes Omelet with
-												Parsley and Feta Cheese</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">vegan</a>
-											</div>
-										</div>
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food2.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">lunch</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Chinese Noodle Bowl Mix
-												Vegetables with Shrimp</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">vegan</a>
-											</div>
-										</div>
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food3.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">dinner</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Roasted Hot and Spicy
-												Chicken Wings</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">vegan</a>
-											</div>
-										</div>
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food4.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">snack</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Cheddar Chees Grilled and
-												Bacon Sandwich</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">gluten-free</a>
-											</div>
-										</div>
-									</div>
-									<!-- == food listing group ends == -->
-								</div>
-								<div role="tabpanel" class="tab-pane fade" id="day4">
-									<!-- == food listing group starts == -->
-									<div class="food-listing-group">
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food2.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">lunch</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Chinese Noodle Bowl Mix
-												Vegetables with Shrimp</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">vegan</a>
-											</div>
-										</div>
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food3.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">dinner</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Roasted Hot and Spicy
-												Chicken Wings</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">vegan</a>
-											</div>
-										</div>
-										<div class="food-listing-row wow fadeInLeft">
-											<div class="food-image">
-												<a href='#'><figure>
-														<img class="img-responsive" src="images/food4.jpg"
-															alt="Food image" />
-													</figure></a>
-											</div>
-											<div class="food-type">
-												<h5>
-													<a href="#">snack</a>
-												</h5>
-											</div>
-											<div class="food-ingredients">Cheddar Chees Grilled and
-												Bacon Sandwich</div>
-											<div class="food-category">
-												<a href="#" class="btn border-btn-small">organic</a> <a
-													href="#" class="btn border-btn-small">gluten-free</a>
-											</div>
-										</div>
-									</div>
-									<!-- == food listing group ends == -->
-								</div>
-							</div>
-						</div>
-					</div> <!-- == Tab description ends == -->
 		</section>
 		<!-- ============== select menu block starts ============== --> </main>
 		<!-- main content ends -->
 
 		<!-- ============== footer block starts ============== -->
-		<footer>
-			
-		</footer>
+		<footer> </footer>
 		<!-- ============== footer block ends ============== -->
 
 
