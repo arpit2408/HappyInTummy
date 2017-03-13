@@ -66,18 +66,103 @@ $.get("Header.html", function (data) {
 });
 </script>
 <script>
-$.get("choose-plan-review.html", function (data) {
+/* $.get("choose-plan-review.html", function (data) {
     $("#reviewDetails").replaceWith(data);
-});
+}); */
 function datatoShow()
 {
-	alert(sessionStorage.getItem('PlanId'));
+	  document.getElementById('Name').innerHTML = sessionStorage.getItem('Name');
+	  document.getElementById('Gender').innerHTML = sessionStorage.getItem('custgender');
+	  document.getElementById('Email').innerHTML = sessionStorage.getItem('Email');
+	  document.getElementById('Address').innerHTML = sessionStorage.getItem('Address');
+	  document.getElementById('Zip').innerHTML = sessionStorage.getItem('Zip');
+	  document.getElementById('Phone').innerHTML = sessionStorage.getItem('Phone');
+	  document.getElementById('DOB').innerHTML =sessionStorage.getItem('DOB');
+	  document.getElementById('Program').innerHTML = sessionStorage.getItem('PreferenceText');
+	  document.getElementById('Plan').innerHTML = sessionStorage.getItem('PlanIdText') + ' Week Plan at a cost of $'+ sessionStorage.getItem('PlanIdCost') + ' per day' ;
+	  
+}
+//Pending
+function placeOrder()
+{
+     
+	dataString = ""; //put entire session object here 
+	/* $.ajax({
+		    url: '',
+		    type: 'POST',      
+		    cache: false,
+		    data :  dataString,
+			dataType: "json",
+		    success: function(data) {	
+		    	//show copy message
+		    }
+			
+	
+	 }); */
 }
 </script>
 
-		<body onload="datatoShow();">
+<body onload="datatoShow();">
 <div id="websiteHeader" style="z-index: 1111;"></div>
-	<div id="reviewDetails"></div>
+<!-- 	<div id="reviewDetails"></div> -->
+	
+	
+	<div class="wrapper">
+		
+		<section class="plan-step">
+			<div class="steps-wrapper">
+				<div id="menu_options"></div>
+				
+				<div class="step-content">
+
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 wow fadeInLeft review-left">
+									<div class="review-info">
+										<div class="title name">
+											<span>Your Name</span> <span><label id="Name"></label></span>
+										</div>
+										<div class="title gender">
+											<span>Gender</span> <span><label id="Gender"></label></span>
+										</div>
+										<div class="title email">
+											<span>Email</span> <span><label id="Email"></label></span>
+										</div>
+										<div class="title address">
+											<span>Address</span> <span><label id="Address"></label><br /><label id="Zip"></label>
+											</span>
+										</div>
+										<div class="title Phone">
+											<span>Phone</span> <span><label id="Phone"></label>
+											</span>
+										</div>
+										<div class="title Date of Birth">
+											<span>Date of Birth</span> <span><label id="DOB"></label>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6 wow fadeInRight review-right">
+									<div class="review-info">
+										<div class="title program">
+											<span>Your Program</span> <span> <label id="Program"></label></span>
+										</div>
+										<div class="title plan">
+											<span>Plan</span> <span><label id="Plan"></label></span>
+											<p>Meals for Breakfast, Lunch and Dinner </p>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					
+					<!-- == step content ends ==-->
+				</div>
+			</div>
+		</section>
+		
+	</div>
 					<!-- choose plan checkout step starts -->
 					<div class="step3">
 						<div class="container">
@@ -120,7 +205,7 @@ function datatoShow()
 								
 										<fieldset>
 											<input class="btn btn-x-big hvr-wobble-horizontal"
-												type="submit" value="place order" />
+												type="submit" value="place order" onclick="placeOrder();" />
 										</fieldset>
 									</form>
 								</div>

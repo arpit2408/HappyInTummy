@@ -80,6 +80,8 @@ $.get("Menu_Options.html", function (data) {
 	 sessionStorage.setItem('Height', document.forms.chooseprogram.height.value);
 	 sessionStorage.setItem('Weight', document.forms.chooseprogram.weight.value);
 	 sessionStorage.setItem('Preference', document.forms.chooseprogram.preference.value);
+	 
+	 sessionStorage.setItem('PreferenceText',(document.forms.chooseprogram.preference.options[preference.selectedIndex].text));
 	 document.forms.chooseprogram.submit();
 	}
 </script>
