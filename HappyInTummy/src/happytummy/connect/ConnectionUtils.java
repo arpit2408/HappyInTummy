@@ -1,5 +1,7 @@
 package happytummy.connect;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -7,7 +9,7 @@ import java.sql.SQLException;
 public class ConnectionUtils {
  
 	   public static Connection getConnection()
-	             throws ClassNotFoundException, SQLException {
+	             throws ClassNotFoundException, SQLException,IOException,FileNotFoundException {
 	      
 	       return MysqlConnUtils.getMySQLConnection();
 	     }
