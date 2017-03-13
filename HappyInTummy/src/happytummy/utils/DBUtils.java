@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
  
+
 import happytummy.beans.MenuItems;
+import happytummy.beans.Plans;
 import happytummy.beans.UserAccount;
  
 public class DBUtils {
@@ -64,5 +66,26 @@ public class DBUtils {
       return list;
   }
  
+
+  public static List<Plans> getPlans(Connection conn,int preference) throws SQLException {
+      String sql = "select Plan_ID, Cost, NoWeeks from happytummy.plan where Preference_ID="+preference;
+      System.out.println("sql "+sql);
+      PreparedStatement pstm = conn.prepareStatement(sql);
  
+      ResultSet rs = pstm.executeQuery();
+      List<Plans> list = new ArrayList<Plans>();
+      while (rs.next()) {
+    	  int plan_id = rs.getInt("Plan_ID");
+    	  System.out.println("Plan_ID "+plan_id);
+          int Cost = rs.getInt("Cost");
+          int weeks = rs.getInt("NoWeeks");
+         
+          Plans plan = new Plans();
+          plan.setPlan_id(plan_id);
+          plan.setCost(Cost);
+          plan.setNoweeks(weeks);
+          list.add(plan);
+      }
+      return list;
+  }
 }

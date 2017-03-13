@@ -69,9 +69,13 @@ $.get("Header.html", function (data) {
 $.get("choose-plan-review.html", function (data) {
     $("#reviewDetails").replaceWith(data);
 });
+function datatoShow()
+{
+	alert(sessionStorage.getItem('PlanId'));
+}
 </script>
 
-		<body >
+		<body onload="datatoShow();">
 <div id="websiteHeader" style="z-index: 1111;"></div>
 	<div id="reviewDetails"></div>
 					<!-- choose plan checkout step starts -->

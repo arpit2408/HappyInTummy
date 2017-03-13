@@ -91,7 +91,7 @@
 	
 </script>
 <!-- <script type="text/javascript">
-	$.get("showDishes.jsp", function(data) {
+	$.get("showDishes.html", function(data) {
 		$("#showdishes").replaceWith(data);
 	});
 </script> -->

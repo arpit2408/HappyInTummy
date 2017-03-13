@@ -14,7 +14,19 @@
     <servlet-name>home</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
- 
+  
+  
+ <servlet>
+    <description></description>
+    <servlet-name>GetPlanServlet</servlet-name>
+    <servlet-class>happytummy.servlet.GetPlanServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GetPlanServlet</servlet-name>
+    <url-pattern>/GetPlanServlet</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <description></description>
     <servlet-name>MenuItemsList</servlet-name>

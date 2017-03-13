@@ -56,9 +56,61 @@
 </style>
 </head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
 
+function getPlans()
+{
+	dataString = "pref=" + sessionStorage.getItem('Preference'); 
+	$.ajax({
+		    url: 'GetPlanServlet',
+		    type: 'POST',      
+		    cache: false,
+		    data :  dataString,
+			dataType: "json",
+		    success: function(data) {	
+		    	setPlans(data);
+		    }
+			
+	
+	 });
+	
+}
+
+
+function setPlans(data) {
+	
+	  for (var i=0;i<data.length;++i)
+      {
+		  if(i==0){
+		  
+		  document.getElementById('plan1id').value = data[i].id;
+		  document.getElementById('plan1cost').innerHTML = '$'+data[i].cost;
+		  document.getElementById('plan1weeks').innerHTML = data[i].weeks+' WEEK PROGRAM';
+		  }
+		  if(i==1){
+		  document.getElementById('plan2id').value = data[i].id;
+		  document.getElementById('plan2cost').innerHTML = '$'+data[i].cost;
+		  document.getElementById('plan2weeks').innerHTML = data[i].weeks+' WEEKS PROGRAM';
+		  }
+		  if(i==2)
+		  {
+		  document.getElementById('plan3id').value = data[i].id;
+		  document.getElementById('plan3cost').innerHTML = '$'+data[i].cost;
+		  document.getElementById('plan3weeks').innerHTML = data[i].weeks+' WEEKS PROGRAM';
+		  }
+      }
+	
+}
+function submitform(element)
+{
+ //HTML5 session storage
+ alert("element is"+element);
+ sessionStorage.setItem('PlanId', document.getElementById(element).value);
+ document.forms.chooseplan.submit();
+}
+</script>
 </head>
-<body class="home-page home-version1-page">
+<body onload="getPlans();" class="home-page home-version1-page">
 <script>
 $.get("Header.html", function (data) {
     $("#websiteHeader").replaceWith(data);
@@ -82,6 +134,7 @@ $.get("Menu_Options.html", function (data) {
 				<!-- == step navigation ends ==-->
 				<!-- == step content starts ==-->
 				<div class="step-content">
+				<form id="chooseplan" method="POST" action="/HappyInTummy/choose-plan-checkout.html">
 					<h3 class="text-center" style="font-size: 2.2em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-12">Eating good without being on diet.</h3>
 						<!-- ============== pricing block starts ============== -->
 						<section class="block pricing-block">
@@ -92,52 +145,63 @@ $.get("Menu_Options.html", function (data) {
 									<!-- pricing box single starts -->
 									<div class="col-xs-12 col-sm-4 wow fadeInLeft pricing-box">
 										<div class="text-center price-box-wrap">
-											<h5>1 WEEK PROGRAM</h5>
+										<input type="hidden" id="plan1id">
+											<h5><label id="plan1weeks"> WEEK PROGRAM</label> </h5>
 											<div class="price-per-day">
-												<span class="price">$43</span> <span class="per-day">/day</span>
+											
+												<span class="price"><label id="plan1cost">$</label>
+												
+												</span> <span class="per-day">/day</span>
 											</div>
-											<p>Meals for Breakfast, Lunch, Dinner and Snack </p>
+											<p>Meals for Breakfast, Lunch, Dinner </p>
 											<p>
 												Calories<br />Female 1150-1350, Male 1300-1600
 											</p>
 											
-											<a href="#" class="btn box-btn order-now-btn test-uppercase">order
-												now</a>
+											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan1id');">order now</a>
 										</div>
 									</div>
 									<!-- pricing box single ends -->
 									<!-- pricing box single starts -->
 									<div
-										class="col-xs-12 col-sm-4 pricing-box wow fadeInUp popular">
+										class="col-xs-12 col-sm-4 pricing-box wow fadeInUp pricing-box">
 										<div class="text-center price-box-wrap">
-											<h5>3 WEEK PROGRAM</h5>
+											<input type="hidden" id="plan2id">
+											<h5><label id="plan2weeks"> WEEK PROGRAM</label> </h5>
 											<div class="price-per-day">
-												<span class="price">$41</span> <span class="per-day">/day</span>
+											
+												<span class="price"><label id="plan2cost">$</label>
+												
+												</span> <span class="per-day">/day</span>
 											</div>
-											<p>Meals for Breakfast, Lunch, Dinner and Snack </p>
+											<p>Meals for Breakfast, Lunch, Dinner </p>
 											<p>
 												Calories<br />Female 1150-1350, Male 1300-1600
 											</p>
 											
-											<a href="#" class="btn box-btn order-now-btn test-uppercase">order
-												now</a>
+											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan2id');">order now</a>
+									
 										</div>
 									</div>
 									<!-- pricing box single ends -->
 									<!-- pricing box single starts -->
 									<div class="col-xs-12 col-sm-4 wow fadeInRight pricing-box">
 										<div class="text-center price-box-wrap">
-											<h5>4 WEEK PROGRAM</h5>
+											<input type="hidden" id="plan3id">
+											<h5><label id="plan3weeks"> WEEK PROGRAM</label> </h5>
 											<div class="price-per-day">
-												<span class="price">$39</span> <span class="per-day">/day</span>
+											
+												<span class="price"><label id="plan3cost">$</label>
+												
+												</span> <span class="per-day">/day</span>
 											</div>
-											<p>Meals for Breakfast, Lunch, Dinner and Snack </p>
+											<p>Meals for Breakfast, Lunch, Dinner </p>
 											<p>
 												Calories<br />Female 1150-1350, Male 1300-1600
 											</p>
 											
-											<a href="#" class="btn box-btn order-now-btn test-uppercase">order
-												now</a>
+											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan3id');">order now</a>
+									
 										</div>
 									</div>
 									<!-- pricing box single ends -->
@@ -145,7 +209,7 @@ $.get("Menu_Options.html", function (data) {
 								<!-- pricing box ends -->
 							</div>
 						</section>
-						
+						</form>
 					<!-- choose plan select program step ends -->
 				</div>
 				<!-- == step content ends ==-->
