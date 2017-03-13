@@ -8,7 +8,7 @@
 <!-- favicon -->
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
-<title>Madang</title>
+<title>Happy Tummy</title>
 <!-- style lists -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
@@ -74,6 +74,14 @@ $.get("Menu_Options.html", function (data) {
 	$.get("showDishes.html", function(data) {
 		$("#showdishes").replaceWith(data);
 	});
+	function submitform()
+	{
+	 //HTML5 session storage
+	 sessionStorage.setItem('Height', document.forms.chooseprogram.height.value);
+	 sessionStorage.setItem('Weight', document.forms.chooseprogram.weight.value);
+	 sessionStorage.setItem('Preference', document.forms.chooseprogram.preference.value);
+	 document.forms.chooseprogram.submit();
+	}
 </script>
 <header  id="websiteHeader"></header>
 	<div class="wrapper">
@@ -87,15 +95,26 @@ $.get("Menu_Options.html", function (data) {
 				<!-- == step navigation ends ==-->
 				<!-- == step content starts ==-->
 				<div class="step-content">
+				
+				<form id="chooseprogram" method="POST" action="/HappyInTummy/ChooseYourPlan.html">
 					<div class="row">
 						<div class="col-sm-2"></div>
-						<label style="font-size: 1.3em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-4">Want more personalized suggestion?</label>
-						<input type="number" class="col-sm-2" placeholder="Enter your weight"></input>
-						<label class="col-sm-1" style="padding-left: 53px;">/</label>
-						<input type="number" class="col-sm-2" placeholder="Enter your height"></input>
-						
+						<label  style="font-size: 2.2em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-4"> Want more personalized suggestion?</label>
+						<input id="weight" type="number" class="col-sm-1" placeholder="Enter your weight"></input>
+						<label class="col-sm-1" style="padding-left: 10px;">kgs</label> 
+						<input id="height" type="number" class="col-sm-1" placeholder="Enter your height"></input>
+						<label class="col-sm-1" style="padding-left: 10px;">Cms</label> 
 					</div>
+					
 						<div id="showdishes"></div>
+						<div class="row">
+						<div class="col-sm-4"></div>
+						<div class="col-sm-4">
+						<input type="submit" value="Take me to Plans" onClick="submitform();"/>
+						</div>
+						<div class="col-sm-4"></div>
+						</div>
+				</form>
 				</div>
 				<!-- == step content ends ==-->
 			</div>
