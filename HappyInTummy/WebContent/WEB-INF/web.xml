@@ -36,4 +36,15 @@
     <servlet-name>MenuItemsList</servlet-name>
     <url-pattern>/menu</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <servlet-name>BmiMenu</servlet-name>
+    <servlet-class>happytummy.servlet.BmiBasedMenuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BmiMenu</servlet-name>
+    <url-pattern>/bmi-menu</url-pattern>
+  </servlet-mapping>
 </web-app>
