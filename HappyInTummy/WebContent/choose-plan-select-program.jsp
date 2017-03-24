@@ -60,7 +60,7 @@ function callBmiMenu() {
 	
 	if(document.getElementById("prefid").value>0) {
 	
-	dataString = "pref=" + document.getElementById("prefid").value+"&height=" + document.getElementById("height").value+"&weight=" + document.getElementById("weight").value; 
+	dataString = "pref=" + document.getElementById("prefid").value+"&height=" + document.getElementById("height").value+"&weight=" + document.getElementById("weight").value+"&gender=" + sessionStorage.getItem("custgender")+"&DOB=" + sessionStorage.getItem("DOB"); 
 	$.ajax({
 	    url: 'bmi-menu',
 	    type: 'POST',      
@@ -222,7 +222,7 @@ function submitform()
 	 sessionStorage.setItem('Height', document.getElementById("height").value);
 	 sessionStorage.setItem('Weight', document.getElementById("weight").value);
 	 sessionStorage.setItem('Preference', document.getElementById("prefid").value);
-	 sessionStorage.setItem('PreferenceText',(document.forms.chooseprogram.preference.options[preference.selectedIndex].text));
+	 sessionStorage.setItem('PreferenceText',(document.getElementById("prefid").options[prefid.selectedIndex].text));
 	 document.chooseprogram.submit();
 }
 

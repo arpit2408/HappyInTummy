@@ -55,7 +55,7 @@
 
 function getPlans()
 {
-	alert(" pref from session "+sessionStorage.getItem('Preference'));
+	//alert(" pref from session "+sessionStorage.getItem('Preference'));
 	dataString = "pref=" + sessionStorage.getItem('Preference'); 
 	$.ajax({
 		    url: 'GetPlanServlet',

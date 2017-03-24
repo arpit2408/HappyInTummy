@@ -3,9 +3,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
  
+
 
 import happytummy.beans.MenuItems;
 import happytummy.beans.Plans;
@@ -291,4 +293,20 @@ public class DBUtils {
 	  }
       return list;
   }
+  
+  
+  public static int insertRecord(Connection conn,int preference, int height, int weight, String gender, int age,String name, String phone, String email) throws SQLException {
+	  
+		  int inserted=0;
+		  conn.setAutoCommit(false);
+		  // create a Statement from the connection
+		  Statement statement = conn.createStatement();
+		  System.out.println(email);
+		  // insert the data
+		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','1987-11-12',"+age+",'"+gender+"',"+height+","+weight+",'','"+phone+"','77840','Paypal','CS','Texas')");
+		  System.out.println("inserted "+inserted);
+		  conn.commit();
+		  return inserted;
+	
+	  }
 }

@@ -85,20 +85,25 @@ function datatoShow()
 //Pending
 function placeOrder()
 {
-     
-	dataString = ""; //put entire session object here 
-	/* $.ajax({
-		    url: '',
+	
+	var dataString = "pref=" + sessionStorage.getItem("Preference")+"&height=" + sessionStorage.getItem('Height')+"&weight=" + sessionStorage.getItem('Weight')+"&gender=" + 
+	sessionStorage.getItem("custgender")+"&DOB=" + sessionStorage.getItem("DOB")+"&Name=" + sessionStorage.getItem("Name")+"&Email=" + sessionStorage.getItem("Email")+
+	"&Phone=" + sessionStorage.getItem("Phone")+"&Zip=" + sessionStorage.getItem("Zip")+"&Address=" + sessionStorage.getItem("Address");
+	
+	
+	$.ajax({
+		    url: 'checkout',
 		    type: 'POST',      
 		    cache: false,
 		    data :  dataString,
 			dataType: "json",
 		    success: function(data) {	
-		    	//show copy message
+		    	
 		    }
 			
 	
-	 }); */
+	 });
+	
 }
 </script>
 
@@ -201,7 +206,7 @@ function placeOrder()
 								<!-- Select payment method block ends -->
 								<!-- Select payment form block starts -->
 								<div class="payment-form">
-									<form action="">
+									<form id="checkout">
 								
 										<fieldset>
 											<input class="btn btn-x-big hvr-wobble-horizontal"

@@ -43,6 +43,7 @@ public class BmiBasedMenuServlet extends HttpServlet {
 		        conn.setAutoCommit(false);
 		        int preference=0;
 		        int height=0;
+		        String gender="";
 		        int weight=0;
 		        if(request.getParameter("pref")!=null)
 		        {
@@ -56,12 +57,16 @@ public class BmiBasedMenuServlet extends HttpServlet {
 		        {
 		        	height=Integer.parseInt(request.getParameter("height"));
 		        }
+		        if(request.getParameter("gender")!=null && !((request.getParameter("gender")).toString().equals("")))
+		        {
+		        	gender=(request.getParameter("gender")).toString();
+		        }
 		        String errorString = null;
-		        System.out.println("weight"+weight+"height"+height);
+		        System.out.println("weight"+weight+"height"+height+""+gender);
 		        List<MenuItems> menulist = null;
 		       
 		        try {
-		        	menulist = DBUtils.queryMenuBMI(conn,preference, height, weight, "Female", 29); //pending to change
+		        	menulist = DBUtils.queryMenuBMI(conn,preference, height, weight, gender, 29); //pending to change
 		       
 		            } 
 		        catch (SQLException e) {
