@@ -582,6 +582,23 @@
 				</div>
 			</div>
 			<div id="glutenfree" style="display: none;">
+			
+			
+			<!-- == menu tab part starts == -->
+				<div class='food-tab wow fadeInUp'>
+					<div class='container'>
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#breakfast"
+								role="tab" data-toggle="tab">Breakfast</a></li>
+							<li role="presentation"><a href="#lunch" role="tab"
+								data-toggle="tab">Lunch</a></li>
+							<li role="presentation"><a href="#dinner" role="tab"
+								data-toggle="tab">Dinner</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- == menu tab part ends == -->
 				<div class='tab-description'>
 					<div class="container">
 						<div class="tab-content">

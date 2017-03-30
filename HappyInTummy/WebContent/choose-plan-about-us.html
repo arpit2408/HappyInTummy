@@ -94,6 +94,8 @@ function submitform()
  sessionStorage.setItem('custgender',gender);
  sessionStorage.setItem('Phone', document.forms.aboutyou.phone.value);
  sessionStorage.setItem('Zip', document.forms.aboutyou.zip.value);
+ sessionStorage.setItem('City', document.forms.aboutyou.city.value);
+ sessionStorage.setItem('State', document.forms.aboutyou.state.value);
  sessionStorage.setItem('Address', document.forms.aboutyou.address.value);
  document.forms.aboutyou.submit();
 }
@@ -141,7 +143,7 @@ $.get("Header.html", function (data) {
 						<div class="col-xs-12 col-sm-6 wow fadeInLeft left-form">
 							<h5 class="text-uppercase">TELL US ABOUT YOU, WE WILL
 								PREPARE YOUR HEALTHY MEALS</h5>
-							<form id="aboutyou" class="about-us-form" method="POST" action="/HappyInTummy/choose-plan-select-program.html">
+							<form id="aboutyou" class="about-us-form" method="POST" action="/HappyInTummy/choose-plan-select-program.jsp">
 							
 								<fieldset>
 									<div  class="btn-group" id="custgender" class="row">
@@ -178,6 +180,12 @@ $.get("Header.html", function (data) {
 								</fieldset>
 								<fieldset>
 									<input type="text" id="address" placeholder="Address" />
+								</fieldset>
+								<fieldset>
+									<input type="text" id="city" placeholder="City" />
+								</fieldset>
+								<fieldset>
+									<input type="text" id="state" placeholder="State" />
 								</fieldset>
 								<fieldset>
 									<input type="text"  id="zip" placeholder="ZIP Code" />
