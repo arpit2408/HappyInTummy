@@ -3,6 +3,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -45,6 +50,9 @@ public class BmiBasedMenuServlet extends HttpServlet {
 		        int height=0;
 		        String gender="";
 		        int weight=0;
+		        String dob="";
+		        int age=0;
+		        int factor=0;
 		        if(request.getParameter("pref")!=null)
 		        {
 		         preference=Integer.parseInt(request.getParameter("pref"));
@@ -61,12 +69,31 @@ public class BmiBasedMenuServlet extends HttpServlet {
 		        {
 		        	gender=(request.getParameter("gender")).toString();
 		        }
+		        if(request.getParameter("DOB")!=null && !((request.getParameter("DOB")).toString().equals("")))
+		        {
+		        	dob=(request.getParameter("DOB")).toString();
+		        	System.out.println(dob);
+		        	DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		        	Date birthDate = format.parse(dob);
+		        	System.out.println("in Date format "+birthDate);
+		        	Calendar birth = new GregorianCalendar();
+		            Calendar today = new GregorianCalendar();
+		            Date currentDate = new Date(); //current date
+		            birth.setTime(birthDate);
+		            today.setTime(currentDate);
+		        	if(today.get(Calendar.DAY_OF_YEAR) < birth.get(Calendar.DAY_OF_YEAR)) {
+		                factor = -1; //birthday not celebrated
+		        	}
+		        	age = today.get(Calendar.YEAR) - birth.get(Calendar.YEAR) + factor;
+		        	System.out.println("AGE (years): "+age);
+		        	
+		        }
 		        String errorString = null;
 		        System.out.println("weight"+weight+"height"+height+""+gender);
 		        List<MenuItems> menulist = null;
 		       
 		        try {
-		        	menulist = DBUtils.queryMenuBMI(conn,preference, height, weight, gender, 29); //pending to change
+		        	menulist = DBUtils.queryMenuBMI(conn,preference, height, weight, gender, age); //pending to change
 		       
 		            } 
 		        catch (SQLException e) {
@@ -114,6 +141,10 @@ public class BmiBasedMenuServlet extends HttpServlet {
 		} catch (SQLException e1) {
 
 			e1.printStackTrace();
+		}
+		catch (Exception ex) {
+
+			ex.printStackTrace();
 		}
 		}
 	

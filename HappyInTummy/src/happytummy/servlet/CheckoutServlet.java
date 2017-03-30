@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -20,6 +24,8 @@ import happytummy.beans.MenuItems;
 import happytummy.beans.Plans;
 import happytummy.utils.DBUtils;
 import happytummy.connect.ConnectionUtils;
+
+import java.util.Date;
 
 /**
  * Servlet implementation class CheckoutServlet
@@ -63,7 +69,9 @@ public class CheckoutServlet extends HttpServlet {
 		        int weight=0;
 		        String zip="";
 		        String dob="";
+		        int age=0;
 		        int planId=0;
+		        int factor=0;
 		        ArrayList bkitems=new ArrayList<>();
 		        ArrayList litems=new ArrayList<>();
 		        ArrayList ditems=new ArrayList<>();
@@ -117,6 +125,20 @@ public class CheckoutServlet extends HttpServlet {
 		        if(request.getParameter("DOB")!=null && !((request.getParameter("DOB")).toString().equals("")))
 		        {
 		        	dob=(request.getParameter("DOB")).toString();
+		        	System.out.println(dob);
+		        	DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		        	Date birthDate = format.parse(dob);
+		        	System.out.println("in Date format "+birthDate);
+		        	Calendar birth = new GregorianCalendar();
+		            Calendar today = new GregorianCalendar();
+		            Date currentDate = new Date(); //current date
+		            birth.setTime(birthDate);
+		            today.setTime(currentDate);
+		        	if(today.get(Calendar.DAY_OF_YEAR) < birth.get(Calendar.DAY_OF_YEAR)) {
+		                factor = -1; //birthday not celebrated
+		        	}
+		        	age = today.get(Calendar.YEAR) - birth.get(Calendar.YEAR) + factor;
+		        	System.out.println("AGE (years): "+age);
 		        	
 		        }
 		        if(request.getParameter("PlanId")!=null && !((request.getParameter("PlanId")).toString().equals("")))
@@ -155,10 +177,8 @@ public class CheckoutServlet extends HttpServlet {
 		              
 		              }
 		        }
-		    
-		       
-		      
-		        DBUtils.insertRecord(conn,preference, height, weight, gender, 29,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
+
+		        DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
 		       
 		        } 
 		        catch (Exception e) {

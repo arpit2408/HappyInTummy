@@ -227,7 +227,7 @@ function submitform()
 	 var bkitems=new Array();
 	 var litems=new Array();
 	 var ditems=new Array();
-	 //alert(" selected"+ document.getElementById("prefid").value);
+	
 	 sessionStorage.setItem('Height', document.getElementById("height").value);
 	 sessionStorage.setItem('Weight', document.getElementById("weight").value);
 	 sessionStorage.setItem('Preference', document.getElementById("prefid").value);
@@ -247,14 +247,14 @@ function submitform()
 			 
 		 {
 			 litems[i]=document.getElementById('litemid'+i).value;
-			 //alert("l "+litems[i]);
+			
 		 }
 		
 		 if(document.getElementById('ditemid'+i)!=null && document.getElementById('ditemid'+i)!='undefined' && document.getElementById('ditemid'+i)!='')
 			 
 		 {
 			 ditems[i]=document.getElementById('ditemid'+i).value;
-			// alert(ditems[i]);
+			
 		 }
 		
      }
