@@ -71,17 +71,21 @@ function callBmiMenu() {
 	    	var htmlElementsBF='';
 	    	var htmlElementsL='';
 	    	var htmlElementsD='';
+	    	var bkcount=-1;
+	    	var lcount=-1;
+	    	var dcount=-1;
 	    	for (var i=0;i<data.length;++i)
 	        {
-	  		
+	  		 
 	  		 if(data[i].meal_Type=='Breakfast'){
+	  			bkcount=bkcount+1;
 	  			htmlElementsBF=htmlElementsBF+ ' <div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">'+ 
 			  		'<div class="menu-item-wrap" style="width: 2000px">'+
 			  		'<figure>'+
 			  		'<a href="#">'+
 			  		'<img class="img-responsive" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
 			  		'</figure>'+ 
-			  		'<input type="hidden" id="itemid" value='+data[i].itemid+'>'+ 
+			  		'<input type="hidden" id="bkitemid'+bkcount+'" value='+data[i].itemid+'>'+ 
 			  		'<div class="mid">'+
 			  		'<h4> <a href="#">'+data[i].itemname+'</a> </h4> <span>'+data[i].itemdesc+'</span>'+
 		
@@ -105,13 +109,14 @@ function callBmiMenu() {
 			  		'</div></div> </div>';
 	  		 }
 	  		 if(data[i].meal_Type=='Lunch'){
+	  			lcount=lcount+1;
 	  			htmlElementsL=htmlElementsL+'<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">'+ 
 			  		'<div class="menu-item-wrap" style="width: 2000px">'+
 			  		'<figure>'+
 			  		'<a href="#">'+
 			  		'<img class="img-responsive" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
 			  		'</figure>'+
-			  		'<input type="hidden" id="itemid" value='+data[i].itemid+'>'+ 
+			  		'<input type="hidden" id="litemid'+lcount+'" value='+data[i].itemid+'>'+ 
 			  		'<div class="mid">'+
 			  		'<h4> <a href="#">'+data[i].itemname+'</a> </h4> <span>'+data[i].itemdesc+'</span>'+
 		
@@ -135,13 +140,14 @@ function callBmiMenu() {
 			  		'</div></div> </div>';
 	  		 }
 	  		 if(data[i].meal_Type=='Dinner'){
+	  				dcount=dcount+1;
 		  			htmlElementsD=htmlElementsD+'<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">'+ 
 				  		'<div class="menu-item-wrap" style="width: 2000px">'+
 				  		'<figure>'+
 				  		'<a href="#">'+
 				  		'<img class="img-responsive" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
 				  		'</figure>'+ 
-				  		'<input type="hidden" id="itemid" value='+data[i].itemid+'>'+ 
+				  		'<input type="hidden" id="ditemid'+dcount+'" value='+data[i].itemid+'>'+ 
 				  		'<div class="mid">'+
 				  		'<h4> <a href="#">'+data[i].itemname+'</a> </h4> <span>'+data[i].itemdesc+'</span>'+
 			
@@ -218,11 +224,45 @@ function callBmiMenu() {
 function submitform()
 {
 	 //HTML5 session storage
-	 alert(" selected"+ document.getElementById("prefid").value);
+	 var bkitems=new Array();
+	 var litems=new Array();
+	 var ditems=new Array();
+	 //alert(" selected"+ document.getElementById("prefid").value);
 	 sessionStorage.setItem('Height', document.getElementById("height").value);
 	 sessionStorage.setItem('Weight', document.getElementById("weight").value);
 	 sessionStorage.setItem('Preference', document.getElementById("prefid").value);
 	 sessionStorage.setItem('PreferenceText',(document.getElementById("prefid").options[prefid.selectedIndex].text));
+	 for (var i=0;i<7;++i)
+     {
+		 //alert('in for loop bk.... '+i+'"bkitemid'+i+'"');
+		 //alert('in for loop bkm..............'+document.getElementById('bkitemid'+i).value);
+		 if(document.getElementById('bkitemid'+i)!=null && document.getElementById('bkitemid'+i)!='undefined' && document.getElementById('bkitemid'+i)!='')
+		 
+		 {
+			 bkitems[i]=document.getElementById('bkitemid'+i).value;
+			 //alert(" set "+bkitems[i]);
+		 }
+		
+		 if(document.getElementById('litemid'+i)!=null && document.getElementById('litemid'+i)!='undefined' && document.getElementById('litemid'+i)!='')
+			 
+		 {
+			 litems[i]=document.getElementById('litemid'+i).value;
+			 //alert("l "+litems[i]);
+		 }
+		
+		 if(document.getElementById('ditemid'+i)!=null && document.getElementById('ditemid'+i)!='undefined' && document.getElementById('ditemid'+i)!='')
+			 
+		 {
+			 ditems[i]=document.getElementById('ditemid'+i).value;
+			// alert(ditems[i]);
+		 }
+		
+     }
+	 
+	 sessionStorage.setItem('bkitems',JSON.stringify(bkitems));
+	 sessionStorage.setItem('litems',JSON.stringify(litems));
+	 sessionStorage.setItem('ditems',JSON.stringify(ditems));
+	
 	 document.chooseprogram.submit();
 }
 

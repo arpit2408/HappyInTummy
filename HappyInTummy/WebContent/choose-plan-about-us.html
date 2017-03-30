@@ -94,6 +94,8 @@ function submitform()
  sessionStorage.setItem('custgender',gender);
  sessionStorage.setItem('Phone', document.forms.aboutyou.phone.value);
  sessionStorage.setItem('Zip', document.forms.aboutyou.zip.value);
+ sessionStorage.setItem('City', document.forms.aboutyou.city.value);
+ sessionStorage.setItem('State', document.forms.aboutyou.state.value);
  sessionStorage.setItem('Address', document.forms.aboutyou.address.value);
  document.forms.aboutyou.submit();
 }
@@ -178,6 +180,12 @@ $.get("Header.html", function (data) {
 								</fieldset>
 								<fieldset>
 									<input type="text" id="address" placeholder="Address" />
+								</fieldset>
+								<fieldset>
+									<input type="text" id="city" placeholder="City" />
+								</fieldset>
+								<fieldset>
+									<input type="text" id="state" placeholder="State" />
 								</fieldset>
 								<fieldset>
 									<input type="text"  id="zip" placeholder="ZIP Code" />

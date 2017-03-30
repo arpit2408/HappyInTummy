@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import happytummy.beans.MenuItems;
 import happytummy.beans.Plans;
@@ -48,20 +50,25 @@ public class CheckoutServlet extends HttpServlet {
 		 Connection conn;
 		try {
 			    conn = ConnectionUtils.getConnection();
-		        // Set Auto commit to false
-		        conn.setAutoCommit(false);
+		       
 		        int preference=0;
 		        int height=0;
 		        String gender="";
 		        String name="";
 		        String phone="";
 		        String email="";
+		        String address="";
+		        String city="";
+		        String state="";
 		        int weight=0;
-		       /* var dataString = "pref=" + sessionStorage.getItem("Preference")+"&height=" + sessionStorage.getItem('Height')+"&weight=" + sessionStorage.getItem('Weight')+"&gender=" + 
-		        		sessionStorage.getItem("custgender")+"&DOB=" + sessionStorage.getItem("DOB")+"&Name=" + sessionStorage.getItem("Name")+"&Email=" + sessionStorage.getItem("Email")+
-		        		+"&Phone=" + sessionStorage.getItem("Phone")+"&Zip=" + sessionStorage.getItem("Zip")+"&Address=" + sessionStorage.getItem("Address");
-*/
-		        
+		        String zip="";
+		        String dob="";
+		        int planId=0;
+		        ArrayList bkitems=new ArrayList<>();
+		        ArrayList litems=new ArrayList<>();
+		        ArrayList ditems=new ArrayList<>();
+		        JSONParser parser = new JSONParser();
+		        try {    
 		        if(request.getParameter("pref")!=null)
 		        {
 		        	preference=Integer.parseInt(request.getParameter("pref"));
@@ -91,17 +98,72 @@ public class CheckoutServlet extends HttpServlet {
 		        {
 		        	email=(request.getParameter("Email")).toString();
 		        }
-		        String errorString = null;
-		        System.out.println("weight"+weight+"height"+height);
+		        if(request.getParameter("Address")!=null && !((request.getParameter("Address")).toString().equals("")))
+		        {
+		        	address=(request.getParameter("Address")).toString();
+		        }
+		        if(request.getParameter("City")!=null && !((request.getParameter("City")).toString().equals("")))
+		        {
+		        	city=(request.getParameter("City")).toString();
+		        }
+		        if(request.getParameter("State")!=null && !((request.getParameter("State")).toString().equals("")))
+		        {
+		        	state=(request.getParameter("State")).toString();
+		        }
+		        if(request.getParameter("Zip")!=null && !((request.getParameter("Zip")).toString().equals("")))
+		        {
+		        	zip=(request.getParameter("Zip")).toString();
+		        }
+		        if(request.getParameter("DOB")!=null && !((request.getParameter("DOB")).toString().equals("")))
+		        {
+		        	dob=(request.getParameter("DOB")).toString();
+		        	
+		        }
+		        if(request.getParameter("PlanId")!=null && !((request.getParameter("PlanId")).toString().equals("")))
+		        {
+		        	planId=Integer.parseInt(request.getParameter("PlanId"));
+		        	
+		        }
+		        if(request.getParameter("bkitems")!=null && !((request.getParameter("bkitems")).toString().equals("")))
+		        {
+		        	
+		        	JSONArray jsonarr = (JSONArray) parser.parse(request.getParameter("bkitems"));
+		        	
+		        	
+		        	for(int i=0;i<jsonarr.size();i++){
+		        		bkitems.add(jsonarr.get(i));
+		              
+		              }
+		        }
+		        if(request.getParameter("litems")!=null && !((request.getParameter("litems")).toString().equals("")))
+		        {
+		        	
+		        	JSONArray jsonarr = (JSONArray) parser.parse(request.getParameter("litems"));
+		        	
+		        	for(int i=0;i<jsonarr.size();i++){
+		        		litems.add(jsonarr.get(i));
+		              
+		              }
+		        }
+		        if(request.getParameter("ditems")!=null && !((request.getParameter("ditems")).toString().equals("")))
+		        {
+		        	
+		        	JSONArray jsonarr = (JSONArray) parser.parse(request.getParameter("ditems"));
+		        	
+		        	for(int i=0;i<jsonarr.size();i++){
+		        		ditems.add(jsonarr.get(i));
+		              
+		              }
+		        }
+		    
 		       
+		      
+		        DBUtils.insertRecord(conn,preference, height, weight, gender, 29,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
 		       
-		        try {
-		        	int result= DBUtils.insertRecord(conn,preference, height, weight, gender, 29,name,phone,email); //pending to change
-		       
-		            } 
+		        } 
 		        catch (Exception e) {
 		            e.printStackTrace();
-		            errorString = e.getMessage();
+		           
 		        }
 		       
 				

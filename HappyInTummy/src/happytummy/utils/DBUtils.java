@@ -294,18 +294,104 @@ public class DBUtils {
       return list;
   }
   
-  
-  public static int insertRecord(Connection conn,int preference, int height, int weight, String gender, int age,String name, String phone, String email) throws SQLException {
+  //need to handle update in case if customer record is already available and in case if active order is present then deactivate the previous one
+  public static int insertRecord(Connection conn,int preference, int height, int weight, String gender, int age,String name, String phone, String email,String address,String state,String city,String zip,
+		  ArrayList bkitems,ArrayList litems,ArrayList ditems, int planId) throws SQLException {
 	  
 		  int inserted=0;
-		  conn.setAutoCommit(false);
+		  int cust_id=0;
+		  int order_id=0;
+		  String dayString="";
+		  try{
+	      conn.setAutoCommit(false);
+		 
 		  // create a Statement from the connection
 		  Statement statement = conn.createStatement();
 		  System.out.println(email);
 		  // insert the data
-		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','1987-11-12',"+age+",'"+gender+"',"+height+","+weight+",'','"+phone+"','77840','Paypal','CS','Texas')");
-		  System.out.println("inserted "+inserted);
-		  conn.commit();
+		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','1987-11-12',"+age+",'"+gender+"',"+height+","+weight+",'"+address+"','"+phone+"','"+zip+"','Paypal','"+city+"','"+state+"')");
+		  System.out.println("inserted in customer "+inserted);
+		  ResultSet cust_id_rs=statement.executeQuery("select customer_id from happytummy.customerdetails where Email_Id='"+email+"'");
+		  while(cust_id_rs.next())
+		  {
+			  cust_id=cust_id_rs.getInt(1);
+		  }
+		  String sql_orderids="INSERT INTO happytummy.order_ids(Order_date,Customer_ID,Plan_ID,Active)VALUES(curdate(),"+cust_id+","+planId+",'A')";
+		  System.out.println(sql_orderids+"inserted in order_ids");
+		  inserted=statement.executeUpdate(sql_orderids);
+		  
+		  ResultSet order_rs=statement.executeQuery("select Order_ID from happytummy.order_ids where Customer_ID="+cust_id +" and Active='A'");
+		  while(order_rs.next())
+		  {
+			  order_id=order_rs.getInt(1);
+		  } 
+		  int bkitem=1; //change it to 0 once items are inserted
+		  int litem=1;
+		  int ditem=1;
+		  for(int i=0;i<7;i++)
+		  {
+			  switch (i) {
+	            case 1:  dayString = "Monday";
+	                     break;
+	            case 2:  dayString = "Tuesday";
+	                     break;
+	            case 3:  dayString = "Wednesday";
+	                     break;
+	            case 4:  dayString = "Thursday";
+	                     break;
+	            case 5:  dayString = "Friday";
+	                     break;
+	            case 6:  dayString = "Saturday";
+	                     break;
+	            case 0:  dayString = "Sunday";
+	                     break;
+			  }
+			  System.out.println(""+bkitems.size()+""+litems.size()+""+ditems.size());
+			  if(bkitems.size()>=(i+1))
+			  {
+			
+			  bkitem=Integer.parseInt(bkitems.get(i).toString());
+			  }
+			  else
+			  {
+				  bkitem=1;
+			  }
+			  if(litems.size()>=(i+1))
+			  {
+			 
+			  litem=Integer.parseInt(litems.get(i).toString());
+			  }
+			  else
+			  {
+				  litem=1;
+			  }
+			  if(ditems.size()>=(i+1))
+			  {
+			  ditem=Integer.parseInt(ditems.get(i).toString());
+			  }
+			  else
+			  {
+				  ditem=1;
+			  }
+		  
+		  inserted=statement.executeUpdate("INSERT INTO happytummy.order_details  (Day,Breakfast,Lunch,Dinner,Order_Id) VALUES ('"+dayString+"',"+bkitem+","+litem+","+ditem+","+order_id+")");
+		  
+		  }
+		  }
+		  catch(SQLException sqle)
+		  {
+			  sqle.printStackTrace();
+			  conn.rollback();
+		  }
+		  catch(Exception e)
+		  {
+			  e.printStackTrace();
+			  conn.rollback();
+		  }
+		  finally
+		  {
+			  conn.commit();
+		  }
 		  return inserted;
 	
 	  }
