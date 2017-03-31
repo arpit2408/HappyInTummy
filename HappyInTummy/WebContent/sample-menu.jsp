@@ -95,7 +95,7 @@
 		$("#showdishes").replaceWith(data);
 	});
 </script> -->
-<body>
+<body onload="showhide();">
 	<div id="websiteHeader" style="z-index: 1111;"></div>
 	<!-- loader image before page load starts -->
 	<div class="se-pre-con"></div>
@@ -106,30 +106,15 @@
 
 
 		<!-- ============== Sample menu banner starts ============== -->
-		<section class="banner sample-menu-banner">
-			<div class="bannerwrapmenu">
-
-				<div class="banner-text text-center">
-					<h1 class="text-uppercase">
-						Healthy Choice<br> <strong>Still delicious</strong>
-					</h1>
-				</div>
-			</div>
-		</section>
+		
 		<!-- ============== Sample menu banner starts ============== -->
 
 		<main> <!-- main content starts --> <!-- ============== Sample menu block starts ============== -->
 
 		<div class="container">
-			<div class="text-center top-description wow fadeInUp">
-				<br>
-				<h3 class="text-center">See our menu and make your choice...</h3>
-
-
-				<br>
-			</div>
-
+			
 			<!-- == menu listing starts == -->
+			<!-- 
 			<div class="row menu-listing">
 
 				<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
@@ -183,7 +168,7 @@
 						<span>With Parsley and Feta Cheese</span>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- == menu listing ends == -->
 		</div>
 
@@ -194,12 +179,13 @@
 	 	</div> -->
 			<!-- == Tab description ends == -->
 
-			<br>
-			<div class="text-center wow flipInX animated"
-				style="visibility: visible; animation-name: flipInX;">
-				<select id="prefid" class="select-program" onchange="showhide();">
-					<option value="" selected="selected">Select Program</option>
-					<option value="1" >Vegan</option>
+			<!-- <br> -->
+			<div class="text-center"
+				style="visibility: visible; padding-top: 30px;">
+				<h4>Select Preference: </h4>
+				<select id="prefid" onchange="showhide();">
+					<!-- <option value="">Select Program</option> -->
+					<option value="1" selected="selected">Vegan</option>
 					<option value="2">Non-Vegeterian</option>
 					<option value="3">Gluten-free</option>
 				</select>

@@ -134,6 +134,7 @@ public class CheckoutServlet extends HttpServlet {
 		            Date currentDate = new Date(); //current date
 		            birth.setTime(birthDate);
 		            today.setTime(currentDate);
+		            //https://www.experts-exchange.com/questions/22914928/Calculating-age-from-date-of-birth-using-java.html
 		        	if(today.get(Calendar.DAY_OF_YEAR) < birth.get(Calendar.DAY_OF_YEAR)) {
 		                factor = -1; //birthday not celebrated
 		        	}
