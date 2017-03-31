@@ -23,6 +23,7 @@
 <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="Fillform.js" type="text/javascript"></script>
 <!-- montserrat font embed -->
 <link
 	href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700'
@@ -227,6 +228,7 @@ function submitform()
 	 var bkitems=new Array();
 	 var litems=new Array();
 	 var ditems=new Array();
+	 //$("#SelectProgram").attr("href", "/HappyInTummy/choose-plan-select-program.jsp");
 	
 	 sessionStorage.setItem('Height', document.getElementById("height").value);
 	 sessionStorage.setItem('Weight', document.getElementById("weight").value);
@@ -264,12 +266,13 @@ function submitform()
 	 sessionStorage.setItem('ditems',JSON.stringify(ditems));
 	
 	 document.chooseprogram.submit();
+	 $("#ChoosePlan").attr("href", "/HappyInTummy/ChooseYourPlan.html");
 }
 
 </script>
 
 </head>
-<body class="home-page home-version1-page">
+<body onload="setCorrectActionAfterSubmit('About')" class="home-page home-version1-page">
 <script>
 $.get("Header.html", function (data) {
     $("#websiteHeader").replaceWith(data);
@@ -282,7 +285,6 @@ $.get("Menu_Options.html", function (data) {
 });
 
 </script>
-
 
 <header  id="websiteHeader"></header>
 	<div class="wrapper">

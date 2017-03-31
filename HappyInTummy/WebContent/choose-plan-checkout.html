@@ -21,6 +21,8 @@
 <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="Fillform.js" type="text/javascript"></script>
+
 <!-- montserrat font embed -->
 <link
 	href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700'
@@ -64,19 +66,7 @@ $.get("Header.html", function (data) {
 /* $.get("choose-plan-review.html", function (data) {
     $("#reviewDetails").replaceWith(data);
 }); */
-function datatoShow()
-{
-	  document.getElementById('Name').innerHTML = sessionStorage.getItem('Name');
-	  document.getElementById('Gender').innerHTML = sessionStorage.getItem('custgender');
-	  document.getElementById('Email').innerHTML = sessionStorage.getItem('Email');
-	  document.getElementById('Address').innerHTML = sessionStorage.getItem('Address');
-	  document.getElementById('Zip').innerHTML = sessionStorage.getItem('Zip');
-	  document.getElementById('Phone').innerHTML = sessionStorage.getItem('Phone');
-	  document.getElementById('DOB').innerHTML =sessionStorage.getItem('DOB');
-	  document.getElementById('Program').innerHTML = sessionStorage.getItem('PreferenceText');
-	  document.getElementById('Plan').innerHTML = sessionStorage.getItem('PlanIdText') + ' Week Plan at a cost of $'+ sessionStorage.getItem('PlanIdCost') + ' per day' ;
-	  
-}
+
 //Pending
 function placeOrder()
 {
@@ -98,6 +88,7 @@ function placeOrder()
 			dataType: "json",
 		    success: function(data) {	
 		   	 alert('Successfully Inserted');
+		   
 		    },
 			error: function(data) {	
 		   	 alert('Failure');
@@ -109,7 +100,7 @@ function placeOrder()
 }
 </script>
 
-<body onload="datatoShow();">
+<body onload="datatoShow();setCorrectActionAfterSubmit('ChoosePlan')">
 <div id="websiteHeader" style="z-index: 1111;"></div>
 <!-- 	<div id="reviewDetails"></div> -->
 	
@@ -232,6 +223,7 @@ function placeOrder()
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
 	<script src="js/Headroom.js" type="text/javascript"></script>
+	
 	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
 	<script src="js/jquery.bxslider.js" type="text/javascript"></script>

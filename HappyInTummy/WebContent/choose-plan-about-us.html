@@ -23,12 +23,7 @@
 <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
      -->
-<script>
-$(document).ready(function() {
-    $( "#datepicker13" ).datepicker();
-   
-   });
-</script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
 <!-- style lists -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
@@ -44,7 +39,7 @@ $(document).ready(function() {
 <link rel="stylesheet" href="css/feature-carousel.css">
 <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-
+<script src="Fillform.js" type="text/javascript"></script>
 <!-- montserrat font embed -->
 <link
 	href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700'
@@ -85,23 +80,21 @@ $(document).ready(function() {
 <script>
 function submitform()
 {
- //HTML5 session storage
-  
- sessionStorage.setItem('Name', document.forms.aboutyou.fullname.value);
- sessionStorage.setItem('Email', document.forms.aboutyou.email.value);
- var gender=$('#custgender input:radio:checked').val();
- sessionStorage.setItem('DOB', document.forms.aboutyou.datepicker13.value);
- sessionStorage.setItem('custgender',gender);
- sessionStorage.setItem('Phone', document.forms.aboutyou.phone.value);
- sessionStorage.setItem('Zip', document.forms.aboutyou.zip.value);
- sessionStorage.setItem('City', document.forms.aboutyou.city.value);
- sessionStorage.setItem('State', document.forms.aboutyou.state.value);
- sessionStorage.setItem('Address', document.forms.aboutyou.address.value);
- document.forms.aboutyou.submit();
+	 sessionStorage.setItem('Name', document.forms.aboutyou.Name.value);
+	 sessionStorage.setItem('Email', document.forms.aboutyou.Email.value);
+	 var gender=$('#Male').is(':checked')?"Male":"Female";
+	 sessionStorage.setItem('DOB', document.forms.aboutyou.DOB.value);
+	 sessionStorage.setItem('Gender',gender);
+	 sessionStorage.setItem('Phone', document.forms.aboutyou.Phone.value);
+	 sessionStorage.setItem('Zip', document.forms.aboutyou.Zip.value);
+	 sessionStorage.setItem('City', document.forms.aboutyou.City.value);
+	 sessionStorage.setItem('State', document.forms.aboutyou.State.value);
+	 sessionStorage.setItem('Address', document.forms.aboutyou.Address.value);
+	 document.forms.aboutyou.submit();
 }
 </script>
 
-<body class="choose-plan-page">
+<body onload="reloadFormAboutYou();" class="choose-plan-page">
 
 	<!-- loader image before page load starts -->
 	<div class="se-pre-con"></div>
@@ -146,49 +139,49 @@ $.get("Header.html", function (data) {
 							<form id="aboutyou" class="about-us-form" method="POST" action="/HappyInTummy/choose-plan-select-program.jsp">
 							
 								<fieldset>
-									<div  class="btn-group" id="custgender" class="row">
-										<div class="col-xs-12 col-sm-5 pull-left">
+									
+										<div class="col-sm-12 col-sm-6 pull-left">
 											<div class="light-font radio-btn radio-btn-men">
-												<input  class="radio-class" type="radio" name="gender"
+												<input  class="radio-class" type="radio" id="Male" name="gender"
 													value="Male" /> <span>Men</span>
 											</div>
 										</div>
-										<div class="col-xs-12 col-sm-7 pull-right">
+										<div class="col-sm-12 col-sm-6 pull-right">
 											<div class="light-font radio-btn radio-btn-women">
-												<input  class="radio-class" type="radio" name="gender"
+												<input  class="radio-class" type="radio" id="Female" name="gender"
 													value="Female" /> <span>Women</span>
 											</div>
 										</div>
-									</div>
+									
 								</fieldset>
 								<fieldset>
-									<input type="text" id="fullname" placeholder="Full Name" />
+									<input type="text" id="Name" placeholder="Full Name" />
 								</fieldset>
 								<fieldset>
-									<input type="email" id="email" placeholder="E-mail" />
+									<input type="email" id="Email" placeholder="E-mail" />
 								</fieldset>
 								<fieldset>
 								
-								<div class="input-group input-append date" >
-						                <input type="text" id = "datepicker13" placeholder="Date of Birth" />
-						                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-						        </div>
+								
+						                <input type="date" id = "DOB" placeholder="Date of Birth" />
+						               
+						       
 						        </fieldset>
 								
 								<fieldset>
-									<input type="text" id="phone" placeholder="Phone No." />
+									<input type="text" id="Phone" placeholder="Phone No." />
 								</fieldset>
 								<fieldset>
-									<input type="text" id="address" placeholder="Address" />
+									<input type="text" id="Address" placeholder="Address" />
 								</fieldset>
 								<fieldset>
-									<input type="text" id="city" placeholder="City" />
+									<input type="text" id="City" placeholder="City" />
 								</fieldset>
 								<fieldset>
-									<input type="text" id="state" placeholder="State" />
+									<input type="text" id="State" placeholder="State" />
 								</fieldset>
 								<fieldset>
-									<input type="text"  id="zip" placeholder="ZIP Code" />
+									<input type="text"  id="Zip" placeholder="ZIP Code" />
 								</fieldset>
 								<fieldset>
 									<input type="submit" value="next" onClick="submitform();"/>

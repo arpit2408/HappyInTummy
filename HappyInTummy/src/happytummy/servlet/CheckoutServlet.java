@@ -126,7 +126,7 @@ public class CheckoutServlet extends HttpServlet {
 		        {
 		        	dob=(request.getParameter("DOB")).toString();
 		        	System.out.println(dob);
-		        	DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		        	DateFormat format = new SimpleDateFormat("yyyy-mm-dd");
 		        	Date birthDate = format.parse(dob);
 		        	System.out.println("in Date format "+birthDate);
 		        	Calendar birth = new GregorianCalendar();
