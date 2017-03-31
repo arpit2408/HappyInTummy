@@ -26,7 +26,7 @@
 <script src="Fillform.js" type="text/javascript"></script>
 <!-- montserrat font embed -->
 <link
-	href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700'
+	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
 	rel='stylesheet' type='text/css'>
 
 <style type="text/css">
@@ -303,9 +303,9 @@ $.get("Menu_Options.html", function (data) {
 					<div class="row">
 						<div class="col-sm-2"></div>
 						<label  style="font-size: 2.2em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-4"> Want more personalized suggestion?</label>
-						<input id="weight" type="number" class="col-sm-1" placeholder="Enter your weight" onchange="callBmiMenu();"></input>
+						<input id="weight" type="number" class="col-sm-2" placeholder="Enter your weight" onchange="callBmiMenu();"></input>
 						<label class="col-sm-1" style="padding-left: 10px;">kgs</label> 
-						<input id="height" type="number" class="col-sm-1"  placeholder="Enter your height" onchange="callBmiMenu();"></input>
+						<input id="height" type="number" class="col-sm-2"  placeholder="Enter your height" onchange="callBmiMenu();"></input>
 						<label class="col-sm-1" style="padding-left: 10px;">Cms</label> 
 					</div>
 	
