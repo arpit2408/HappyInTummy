@@ -112,7 +112,7 @@ function submitform(element,elementweek,elementCost)
  
  sessionStorage.setItem('PlanId', document.getElementById(element).value);
  sessionStorage.setItem('PlanIdText', document.getElementById(elementweek).value);
- alert(" plan weeks "+ document.getElementById(elementweek).value);
+ //alert(" plan weeks "+ document.getElementById(elementweek).value);
  sessionStorage.setItem('PlanIdCost', document.getElementById(elementCost).value);
  document.forms.chooseplan.submit();
  $("#Checkout").attr("href", "/HappyInTummy/choose-plan-checkout.html");

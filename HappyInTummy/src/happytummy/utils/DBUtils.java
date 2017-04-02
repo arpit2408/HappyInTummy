@@ -36,7 +36,7 @@ public class DBUtils {
   }
  
   public static List<MenuItems> queryMenu(Connection conn,int preference) throws SQLException {
-      String sql = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference;
+      String sql = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference+" and portion="+2;
       System.out.println("sql "+sql);
       PreparedStatement pstm = conn.prepareStatement(sql);
  
