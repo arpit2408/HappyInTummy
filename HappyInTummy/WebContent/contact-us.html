@@ -10,7 +10,7 @@
  <!-- favicon -->  
  <link rel="shortcut icon" type="image/png" href="favicon.png"/>  
  <link rel="shortcut icon" type="image/png" href="favicon.png"/>  
- <title>Madang</title>  
+ <title>HappyTummy</title>  
   
  <!-- style lists -->  
  <link href="css/bootstrap.min.css" rel="stylesheet">  
@@ -68,12 +68,12 @@ $.get("Header.html", function (data) {
  <div class="row wrapper">  
  <div class="col-xs-12 col-sm-3"></div>
  <div class="col-xs-12 col-sm-9 ">  
- <form>  
- <fieldset><input  style="width:500px" type="text" placeholder="Your Email ID" /></fieldset>  
- <fieldset><input style="width:500px" type="text" placeholder="Your DOB" /> <img src="images/Calendar.ico" alt="Calendar icon" /> 
+ <form action ="EditUserDetails" method ="post">  
+ <fieldset><input style="width:500px" type="text" name="email" placeholder="Your Email ID" /></fieldset>  
+ <fieldset><input style="width:500px" type="text" name="dob" placeholder="Your DOB" /> <img src="images/Calendar.ico" alt="Calendar icon" /> 
  </fieldset>  
  
- <fieldset><button  style="width:500px" class="btn">Manage Your Order</button></fieldset>  
+ <fieldset><button style="width:500px" class="btn">Manage Your Order</button></fieldset>  
  </form>  
  </div>  
  </div>  
