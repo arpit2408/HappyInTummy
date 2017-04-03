@@ -2,9 +2,10 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>HappyInTummy</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>choose-plan-about-us.html</welcome-file>
     <welcome-file>home</welcome-file>
   </welcome-file-list>
+ 
   <servlet>
     <servlet-name>home</servlet-name>
     <servlet-class>happytummy.servlet.HomeServlet</servlet-class>
@@ -13,15 +14,19 @@
     <servlet-name>home</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
-  <servlet>
+  
+  
+ <servlet>
     <description></description>
     <servlet-name>GetPlanServlet</servlet-name>
     <servlet-class>happytummy.servlet.GetPlanServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>GetPlanServlet</servlet-name>
     <url-pattern>/GetPlanServlet</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <servlet-name>MenuItemsList</servlet-name>
@@ -31,14 +36,26 @@
     <servlet-name>MenuItemsList</servlet-name>
     <url-pattern>/menu</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet>
     <description></description>
-    <display-name>EditUserDetails</display-name>
-    <servlet-name>EditUserDetails</servlet-name>
-    <servlet-class>happytummy.servlet.EditUserDetails</servlet-class>
+    <servlet-name>BmiMenu</servlet-name>
+    <servlet-class>happytummy.servlet.BmiBasedMenuServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>EditUserDetails</servlet-name>
-    <url-pattern>/EditUserDetails</url-pattern>
+    <servlet-name>BmiMenu</servlet-name>
+    <url-pattern>/bmi-menu</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <servlet-name>checkout</servlet-name>
+    <servlet-class>happytummy.servlet.CheckoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>checkout</servlet-name>
+    <url-pattern>/checkout</url-pattern>
   </servlet-mapping>
 </web-app>
