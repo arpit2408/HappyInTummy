@@ -72,9 +72,9 @@ public class CheckoutServlet extends HttpServlet {
 		        int age=0;
 		        int planId=0;
 		        int factor=0;
-		        ArrayList bkitems=new ArrayList<>();
-		        ArrayList litems=new ArrayList<>();
-		        ArrayList ditems=new ArrayList<>();
+		        ArrayList bkitems=new ArrayList();
+		        ArrayList litems=new ArrayList();
+		        ArrayList ditems=new ArrayList();
 		        JSONParser parser = new JSONParser();
 		        try {    
 		        if(request.getParameter("pref")!=null)

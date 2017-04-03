@@ -51,7 +51,7 @@ function reloadFormAboutYou()
 }
 function setCorrectAction(e){
 	if(e.id=="About"){
-		$("#About").attr("href", "/HappyInTummy/choose-plan-about-us.html");
+		$("#About").attr("href", "/choose-plan-about-us.html");
 		$("#SelectProgram").attr("href", "#");
 		$("#ChoosePlan").attr("href", "#");
 		$("#Checkout").attr("href", "#");
@@ -77,19 +77,19 @@ function setCorrectAction(e){
 }
 function setCorrectActionAfterSubmit(e){
 	if(e=="About"){
-		$("#About").attr("href", "/HappyInTummy/choose-plan-about-us.html");
-		$("#SelectProgram").attr("href", "/HappyInTummy/choose-plan-select-program.jsp");
+		$("#About").attr("href", "/choose-plan-about-us.html");
+		$("#SelectProgram").attr("href", "/choose-plan-select-program.jsp");
 	}
 	if(e=="SelectProgram"){
-		$("#About").attr("href", "/HappyInTummy/choose-plan-about-us.html");
-		$("#SelectProgram").attr("href", "/HappyInTummy/choose-plan-select-program.jsp");
-		$("#ChoosePlan").attr("href", "/HappyInTummy/ChooseYourPlan.html");
+		$("#About").attr("href", "/choose-plan-about-us.html");
+		$("#SelectProgram").attr("href", "/choose-plan-select-program.jsp");
+		$("#ChoosePlan").attr("href", "/ChooseYourPlan.html");
 	}
 	if(e=="ChoosePlan"){
-		$("#About").attr("href", "/HappyInTummy/choose-plan-about-us.html");
-		$("#SelectProgram").attr("href", "/HappyInTummy/choose-plan-select-program.jsp");
-		$("#ChoosePlan").attr("href", "/HappyInTummy/ChooseYourPlan.html");
-		$("#Checkout").attr("href", "/HappyInTummy/choose-plan-checkout.html");
+		$("#About").attr("href", "/choose-plan-about-us.html");
+		$("#SelectProgram").attr("href", "/choose-plan-select-program.jsp");
+		$("#ChoosePlan").attr("href", "/ChooseYourPlan.html");
+		$("#Checkout").attr("href", "/choose-plan-checkout.html");
 	}
 }
 

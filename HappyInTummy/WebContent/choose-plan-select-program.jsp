@@ -52,8 +52,9 @@
 	background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
 </head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
 <script type="text/javascript">
 
 
@@ -299,7 +300,7 @@ $.get("Menu_Options.html", function (data) {
 				<!-- == step content starts ==-->
 				<div class="step-content">
 				
-				<form id="chooseprogram" method="POST" action="/HappyInTummy/ChooseYourPlan.html">
+				<form id="chooseprogram" method="POST" action="/ChooseYourPlan.html">
 					<div class="row">
 						<div class="col-sm-2"></div>
 						<label  style="font-size: 2.2em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-4"> Want more personalized suggestion?</label>
