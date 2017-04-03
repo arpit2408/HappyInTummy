@@ -215,7 +215,7 @@ h5 {font-size:20px;line-height: 28px;}
 h6 {font-size:16px;line-height: 24px;}
 
 header {padding: 16px 0px;z-index: 1;position: fixed;width: 100%;background: #60ba62;top: 0;height: 90px;}
-.logo-block {margin-top: -28px;}
+.logo-block {margin-top: -6px;max-width: 100%;}
 header.green .logo-block {margin-top: 4px;}
 .logo-block figure {margin-bottom: 0;width: 240px;}
 .navbar-default {background-color: transparent;border-color: transparent;}
@@ -1921,4 +1921,16 @@ header.green {background: #60ba62;}
   .video-wrap {height: 230px;}
   .video-pop-up .video-wrap{ height: initial; }
   .btn-tags-big {font-size: 10px;padding: 2px 10px;}
+}
+@media (max-width: 768px){
+	.logo-block img {
+	    transform: none;
+	    width: 28%;
+	    height: 33%;
+	    float: left;
+	    padding-top: 14px;
+	}
+	#WebsiteName {
+		padding-top: 23px;
+	}
 }

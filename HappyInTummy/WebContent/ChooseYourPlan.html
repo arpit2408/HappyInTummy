@@ -20,10 +20,11 @@
 <link rel="stylesheet" href="css/feature-carousel.css">
 <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+<script src="Fillform.js" type="text/javascript"></script>
 <!-- montserrat font embed -->
 <link
-	href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700'
+	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
 	rel='stylesheet' type='text/css'>
 
 <style type="text/css">
@@ -49,12 +50,14 @@
 	background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
 </style>
+<title>Happy Tummy</title>
 </head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>
 
 function getPlans()
 {
+	//alert(" pref from session "+sessionStorage.getItem('Preference'));
 	dataString = "pref=" + sessionStorage.getItem('Preference'); 
 	$.ajax({
 		    url: 'GetPlanServlet',
@@ -105,15 +108,18 @@ function setPlans(data) {
 function submitform(element,elementweek,elementCost)
 {
  //HTML5 session storage
-
+ //$("#ChoosePlan").attr("href", "/HappyInTummy/choose-plan-select-program.jsp");
+ 
  sessionStorage.setItem('PlanId', document.getElementById(element).value);
  sessionStorage.setItem('PlanIdText', document.getElementById(elementweek).value);
+ //alert(" plan weeks "+ document.getElementById(elementweek).value);
  sessionStorage.setItem('PlanIdCost', document.getElementById(elementCost).value);
  document.forms.chooseplan.submit();
+ $("#Checkout").attr("href", "/HappyInTummy/choose-plan-checkout.html");
 }
 </script>
 
-<body onload="getPlans();" class="home-page home-version1-page">
+<body onload="getPlans();setCorrectActionAfterSubmit('SelectProgram')" class="home-page home-version1-page">
 <script>
 $.get("Header.html", function (data) {
     $("#websiteHeader").replaceWith(data);
@@ -137,7 +143,7 @@ $.get("Menu_Options.html", function (data) {
 				<!-- == step navigation ends ==-->
 				<!-- == step content starts ==-->
 				<div class="step-content">
-				<form id="chooseplan" method="POST" action="/HappyInTummy/choose-plan-checkout.html">
+				<form id="chooseplan" method="POST" action="/choose-plan-checkout.html">
 					<h3 class="text-center" style="font-size: 2.2em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-12">Eating good without being on diet.</h3>
 						<!-- ============== pricing block starts ============== -->
 						<section class="block pricing-block">
@@ -203,7 +209,7 @@ $.get("Menu_Options.html", function (data) {
 												Calories<br />Female 1150-1350, Male 1300-1600
 											</p>
 											
-											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan3id','plan2weeks','plan3cost');">order now</a>
+											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan3id','plan3weeks','plan3cost');">order now</a>
 									
 										</div>
 									</div>
