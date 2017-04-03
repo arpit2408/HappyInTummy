@@ -17,7 +17,6 @@ import org.json.simple.JSONObject;
 import happytummy.beans.MenuItems;
 import happytummy.beans.Plans;
 import happytummy.utils.DBUtils;
-import happytummy.utils.MyUtils;
 import happytummy.connect.ConnectionUtils;
 public class GetPlanServlet extends HttpServlet {
 

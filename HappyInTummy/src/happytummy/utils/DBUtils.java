@@ -5,15 +5,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
- 
+
 
 import happytummy.beans.MenuItems;
 import happytummy.beans.Plans;
-import happytummy.beans.UserAccount;
+import happytummy.beans.User;
+
  
 public class DBUtils {
  
-  public static UserAccount findUser(Connection conn, String userName, String dob) throws SQLException {
+  public static User findUser(Connection conn, String userName, String dob) throws SQLException {
  
       String sql = ""; //need to work on this
  
@@ -24,9 +25,9 @@ public class DBUtils {
  
       if (rs.next()) {
           
-          UserAccount user = new UserAccount();
-          user.setUserName(userName);
-          user.setDob(dob);
+    	  User user = new User();
+          user.setCustomer_name(userName);
+          user.setBirth_date(dob);
      
           return user;
       }
@@ -65,7 +66,41 @@ public class DBUtils {
       }
       return list;
   }
- 
+
+  public static User getUserDetails(Connection conn, String emailID, String dob) throws SQLException {
+	  StringBuilder sql=new StringBuilder();
+	  sql.append("select c.Customer_Name,DATE_FORMAT(c.DOB,'%d-%b-%Y')'c.DOB', ");
+	  sql.append("c.Gender,c.Address,c.City, ");	  
+	  sql.append("c.State,c.Phone,c.Email_Id,p.NoWeeks, ");	  
+	  sql.append("c.Zip,pref.Preference_Type ");	  
+	  sql.append("from happytummy.order_ids o, happytummy.customerdetails c, ");	  
+	  sql.append("happytummy.plan p, happytummy.preference pref ");	  
+	  sql.append("where o.Customer_ID=c.Customer_ID ");
+	  sql.append("and o.Plan_ID=p.Plan_ID ");
+	  sql.append("and p.Preference_ID=pref.Preference_ID ");
+	  sql.append("and c.DOB=str_to_date('"+dob+"','%d-%M-%Y')");
+	  sql.append("and c.Email_Id='"+ emailID+"';");
+	  String query= sql.toString();
+	  System.out.println("Query: "+query);
+	  PreparedStatement pstm = conn.prepareStatement(query);	  
+      ResultSet rs = pstm.executeQuery();
+      User user = new User();
+      while (rs.next()){     
+      user.setCustomer_name(rs.getString("c.Customer_Name"));
+      user.setBirth_date(rs.getString("c.DOB"));
+      user.setGender(rs.getString("c.Gender"));
+      user.setAddress(rs.getString("c.Address"));
+      user.setCity(rs.getString("c.City"));
+      user.setState(rs.getString("c.State"));
+      user.setPostal_zip(rs.getInt("c.Zip"));
+      user.setPhone_number(rs.getString("c.Phone"));
+      user.setEmail_id(rs.getString("c.Email_Id"));
+      user.setPreference(rs.getString("pref.Preference_Type"));
+      user.setNoOfWeeks(rs.getString("p.NoWeeks"));
+      }
+      return user;
+	  
+  }
 
   public static List<Plans> getPlans(Connection conn,int preference) throws SQLException {
       String sql = "select Plan_ID, Cost, NoWeeks from happytummy.plan where Preference_ID="+preference;

@@ -134,10 +134,10 @@
 
 				<div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
 					<div class="text-center menu-item-wrap">
-						<figure>
+						<div class="food-item-display" style ="max-width:15%">
 							<a href="#"><img class="img-responsive"
 								src="images/porridge4blog_1_440x518.jpg" alt="Menu image" /></a>
-						</figure>
+						</div>
 						<h4>
 							<a href="#">PORRIDGE</a>
 						</h4>
