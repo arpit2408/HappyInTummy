@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,14 +48,14 @@ body {
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-</head>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>
 $.get("Header.html", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
-
+</head>
 <body >
 <div id="websiteHeader" style="z-index: 1111;"></div>
 
@@ -68,7 +71,7 @@ $.get("Header.html", function (data) {
 									</div>
 									<input id="Name (Full name)" name="Name (Full name)"
 										type="text" placeholder="Name (Full name)"
-										class="form-control input-md" value="Rachael Green" disabled>
+										class="form-control input-md" value="${ user.customer_name }" disabled>
 								</div>
 
 
@@ -90,7 +93,7 @@ $.get("Header.html", function (data) {
 									</div>
 									<input id="Date Of Birth" name="Date Of Birth" type="text"
 										placeholder="Date Of Birth" class="form-control input-md"
-										value="26-Jan-1990" disabled>
+										value="${ user.birth_date }" disabled>
 								</div>
 
 
@@ -101,18 +104,22 @@ $.get("Header.html", function (data) {
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="Gender"></label>
 							<div class="col-sm-5">
-								<label class="radio-inline" for="Gender-0"> <input
-									type="radio" name="Gender" id="Gender-0" value="1" disabled>
+								<label class="radio-inline" for="Gender-0"> 
+								<input type="radio" name="Gender" id="Gender-0" value="1" <s:if test="${user.gender}"==Male>checked</s:if> disabled/>
 									Male
-								</label> <label class="radio-inline" for="Gender-1"> <input
-									type="radio" name="Gender" id="Gender-1" value="2"
-									checked="checked" disabled> Female
+								</label> 
+								<label class="radio-inline" for="Gender-1"> 
+								<input type="radio" name="Gender" id="Gender-1" value="2" <s:if test="${user.gender}"==Female>checked</s:if> disabled/> Female
 								</label>
 							</div>
 						</div>
 						<!-- Text input-->
 
-
+<!-- <input type="radio" id="new" value="n" 
+<s:if test='patientSoapBean.radioInnerSubjective == "n"'>
+checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
+<label for="new">New</label>
+ -->
 
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="Permanent Address"></label>
@@ -120,7 +127,7 @@ $.get("Header.html", function (data) {
 								<input id="Permanent Address" name="Permanent Address"
 									type="text" placeholder="Street Address"
 									class="form-control input-md "
-									value="503 Cherry Street Apt. 134">
+									value="${user.address}" }>
 
 							</div>
 						</div>
@@ -130,7 +137,7 @@ $.get("Header.html", function (data) {
 							<div class="col-sm-5">
 								<input id="Permanent Address" name="Permanent Address"
 									type="text" placeholder="City" class="form-control input-md "
-									value="College Station">
+									value="${user.city}" }>
 
 							</div>
 						</div>
@@ -141,14 +148,14 @@ $.get("Header.html", function (data) {
 							<div class="col-md-2  col-xs-4">
 								<input id="Permanent Address" name="Permanent Address"
 									type="text" placeholder="State" class="form-control input-md "
-									value="Texas">
+									value="${user.state}" }>
 							</div>
 
 							<div class="col-md-2 col-xs-4">
 
 								<input id="Permanent Address" name="Permanent Address"
 									type="text" placeholder="ZIP Code"
-									class="form-control input-md " value="77840">
+									class="form-control input-md " value="${user.postal_zip}">
 							</div>
 
 
@@ -164,7 +171,7 @@ $.get("Header.html", function (data) {
 									</div>
 									<input id="Phone number " name="Phone number " type="text"
 										placeholder="Phone number " class="form-control input-md"
-										value="(979)721-1234">
+										value="${user.phone_number}">
 
 								</div>
 							</div>
@@ -181,7 +188,7 @@ $.get("Header.html", function (data) {
 									</div>
 									<input id="Email Address" name="Email Address" type="text"
 										placeholder="Email Address" class="form-control input-md"
-										value="r.green@gmail.com" disabled>
+										value="${user.email_id}" disabled>
 
 								</div>
 
@@ -199,7 +206,7 @@ $.get("Header.html", function (data) {
 									</div>
 									<input id="Meal Preference" name="Meal Preference" type="text"
 										placeholder="Meal Preference" class="form-control input-md"
-										value="Vegetarian" disabled>
+										value="${user.preference}" disabled>
 
 								</div>
 
@@ -218,7 +225,7 @@ $.get("Header.html", function (data) {
 									</div>
 									<input id="Plan Period" name="Plan Period" type="text"
 										placeholder="Plan Period" class="form-control input-md"
-										value="2 weeks" disabled>
+										value="${user.noOfWeeks} Week" disabled>
 								</div>
 
 							</div>
