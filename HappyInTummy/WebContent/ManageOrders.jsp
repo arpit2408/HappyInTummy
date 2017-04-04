@@ -1,0 +1,269 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Manage your order</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+	rel="stylesheet"
+	integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
+	crossorigin="anonymous">
+<!-- Bootstrap Core CSS -->
+<!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+ <link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet"
+	> 
+	
+	
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="css/style.css" rel="stylesheet">
+<!-- Custom CSS -->
+<style type="text/css">
+body {
+	padding-top: 70px;
+	/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.othertop {
+	margin-top: 10px;
+}
+</style>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+$.get("Header.html", function (data) {
+    $("#websiteHeader").replaceWith(data);
+});
+</script>
+</head>
+<body >
+<div id="websiteHeader" style="z-index: 1111;"></div>
+
+	<div class="container wrapper">
+	
+				<form class="form-horizontal" role="form" action="">
+				<div class="form-group">
+							<label class="col-sm-4 control-label" for="Name (Full name)"></label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-user"> </i>
+									</div>
+									<input id="Name (Full name)" name="Name (Full name)"
+										type="text" placeholder="Name (Full name)"
+										class="form-control input-md" value="${ user.customer_name }" disabled>
+								</div>
+
+
+							</div>
+
+
+						</div>
+
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Date Of Birth"></label>
+							<div class="col-sm-5">
+
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-birthday-cake"></i>
+
+									</div>
+									<input id="Date Of Birth" name="Date Of Birth" type="text"
+										placeholder="Date Of Birth" class="form-control input-md"
+										value="${ user.birth_date }" disabled>
+								</div>
+
+
+							</div>
+						</div>
+
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Gender"></label>
+							<div class="col-sm-5">
+								<label class="radio-inline" for="Gender-0"> 
+								<input type="radio" name="Gender" id="Gender-0" value="1" <s:if test="${user.gender}"==Male>checked</s:if> disabled/>
+									Male
+								</label> 
+								<label class="radio-inline" for="Gender-1"> 
+								<input type="radio" name="Gender" id="Gender-1" value="2" <s:if test="${user.gender}"==Female>checked</s:if> disabled/> Female
+								</label>
+							</div>
+						</div>
+						<!-- Text input-->
+
+<!-- <input type="radio" id="new" value="n" 
+<s:if test='patientSoapBean.radioInnerSubjective == "n"'>
+checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
+<label for="new">New</label>
+ -->
+
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Permanent Address"></label>
+							<div class="col-sm-5">
+								<input id="Permanent Address" name="Permanent Address"
+									type="text" placeholder="Street Address"
+									class="form-control input-md "
+									value="${user.address}" }>
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Permanent Address"></label>
+							<div class="col-sm-5">
+								<input id="Permanent Address" name="Permanent Address"
+									type="text" placeholder="City" class="form-control input-md "
+									value="${user.city}" }>
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-4 control-label col-xs-12"
+								for="Permanent Address"></label>
+							<div class="col-md-2  col-xs-4">
+								<input id="Permanent Address" name="Permanent Address"
+									type="text" placeholder="State" class="form-control input-md "
+									value="${user.state}" }>
+							</div>
+
+							<div class="col-md-2 col-xs-4">
+
+								<input id="Permanent Address" name="Permanent Address"
+									type="text" placeholder="ZIP Code"
+									class="form-control input-md " value="${user.postal_zip}">
+							</div>
+
+
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Phone number "></label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-mobile fa-1x" style="font-size: 20px;"></i>
+
+									</div>
+									<input id="Phone number " name="Phone number " type="text"
+										placeholder="Phone number " class="form-control input-md"
+										value="${user.phone_number}">
+
+								</div>
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Email Address"></label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-envelope-o"></i>
+
+									</div>
+									<input id="Email Address" name="Email Address" type="text"
+										placeholder="Email Address" class="form-control input-md"
+										value="${user.email_id}" disabled>
+
+								</div>
+
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Meal Preference"></label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-street-view"></i>
+
+									</div>
+									<input id="Meal Preference" name="Meal Preference" type="text"
+										placeholder="Meal Preference" class="form-control input-md"
+										value="${user.preference}" disabled>
+
+								</div>
+
+
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Plan Period"></label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-clock-o"></i>
+
+									</div>
+									<input id="Plan Period" name="Plan Period" type="text"
+										placeholder="Plan Period" class="form-control input-md"
+										value="${user.noOfWeeks} Week" disabled>
+								</div>
+
+							</div>
+						</div>
+
+						<!-- Multiple Radios -->
+						<div class="form-group">
+							<label class="col-sm-4 control-label" for="Cancel Order"></label>
+							<div class="col-sm-5">
+								<div class="checkbox">
+									<label for="Owns Vehicle-0"> <input type="checkbox"
+										name="Owns Vehicle" id="Owns Vehicle-0" value="1"> I
+										want to cancel my order.
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-4 control-label"></label>
+							<div class="col-md-2  col-xs-4">
+								<a href="#" class="btn btn-success"><span
+									class="glyphicon glyphicon-thumbs-up"></span> Submit </a>
+							</div>
+
+
+							<a href="#" class="btn btn-danger" value=""><span
+								class="glyphicon glyphicon-remove-sign"></span> Cancel </a>
+
+						</div>
+
+				</form>
+			
+		</div>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+</body>
+
+</html>
