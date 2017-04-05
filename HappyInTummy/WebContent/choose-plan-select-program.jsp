@@ -85,7 +85,7 @@ function callBmiMenu() {
 			  		'<div class="menu-item-wrap" style="width: 2000px">'+
 			  		'<figure>'+
 			  		'<a href="#">'+
-			  		'<img class="img-responsive" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
+			  		'<img class="img-responsive menubflunchDinner" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
 			  		'</figure>'+ 
 			  		'<input type="hidden" id="bkitemid'+bkcount+'" value='+data[i].itemid+'>'+ 
 			  		'<div class="mid">'+
@@ -116,7 +116,7 @@ function callBmiMenu() {
 			  		'<div class="menu-item-wrap" style="width: 2000px">'+
 			  		'<figure>'+
 			  		'<a href="#">'+
-			  		'<img class="img-responsive" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
+			  		'<img class="img-responsive menubflunchDinner" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
 			  		'</figure>'+
 			  		'<input type="hidden" id="litemid'+lcount+'" value='+data[i].itemid+'>'+ 
 			  		'<div class="mid">'+
@@ -147,7 +147,7 @@ function callBmiMenu() {
 				  		'<div class="menu-item-wrap" style="width: 2000px">'+
 				  		'<figure>'+
 				  		'<a href="#">'+
-				  		'<img class="img-responsive" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
+				  		'<img class="img-responsive menubflunchDinner" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
 				  		'</figure>'+ 
 				  		'<input type="hidden" id="ditemid'+dcount+'" value='+data[i].itemid+'>'+ 
 				  		'<div class="mid">'+
@@ -295,34 +295,36 @@ $.get("Menu_Options.html", function (data) {
 		<section class="plan-step">
 			<div class="steps-wrapper">
 				<!-- == step navigation starts ==-->
-				<div id="menu_options"></div>
+				<div id="letsee" style="display:display;">
+					<div id="menu_options" ></div>
+				</div>
 				<!-- == step navigation ends ==-->
 				<!-- == step content starts ==-->
 				<div class="step-content">
 				
 				<form id="chooseprogram" method="POST" action="/ChooseYourPlan.html">
-					<div class="row">
+					<div class="row bmiMenuSelect">
 						<div class="col-sm-2"></div>
-						<label  style="font-size: 2.2em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-4"> Want more personalized suggestion?</label>
-						<input id="weight" type="number" class="col-sm-2" placeholder="Enter your weight" onchange="callBmiMenu();"></input>
-						<label class="col-sm-1" style="padding-left: 10px;">kgs</label> 
-						<input id="height" type="number" class="col-sm-2"  placeholder="Enter your height" onchange="callBmiMenu();"></input>
-						<label class="col-sm-1" style="padding-left: 10px;">Cms</label> 
+						<label  style="font-size: 1.8em;font-family: 'Raleway', Serif !important;" class="col-sm-4"> Want personalized suggestion?</label>
+						<input id="weight" type="number" class="col-sm-2" placeholder="Enter your weight(kgs)" style="padding-left: 10px;" onchange="callBmiMenu();"></input>
+						<div style="height:2mm;"></div>
+						<input id="height" type="number" class="col-sm-2"  style="padding-left: 10px;" placeholder="Enter your height(cms)" onchange="callBmiMenu();"></input>
+						
 					</div>
 	
 		<!-- main wrapper of the site starts -->
 	<div class="wrapper">
 	<!-- ============== Sample menu banner starts ============== -->
 
-					<div class="text-center wow flipInX animated"
-					style="visibility: visible; animation-name: flipInX;">
-						<select id="prefid" class="select-program" onchange="callBmiMenu();">
+					<div class="text-center wow flipInX animated menuSelectOptions "
+					style="visibility: visible; animation-name: flipInX; padding-bottom:15px;" >
+						<select id="prefid" class="select-program " onchange="callBmiMenu();" >
 							<option value="" selected="selected">Select Program</option>
 							<option value="1" >Vegan</option>
 							<option value="2">Non-Vegeterian</option>
 							<option value="3">Gluten-free</option>
 						</select>
-						<label>(Required)</label>
+						
 					</div>
 					
 		<!-- ============== Sample menu block ends ============== --> <!-- ============== select menu block starts ============== -->
@@ -331,7 +333,7 @@ $.get("Menu_Options.html", function (data) {
 			<!-- == Tab description starts == -->
 			<div id="vegan" style="display: none;">
 				<!-- == menu tab part starts == -->
-				<div class='food-tab wow fadeInUp'>
+				<div class='food-tab wow fadeInUp bflunchDinnerMenu'>
 					<div class='container'>
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs" role="tablist">
@@ -395,7 +397,7 @@ $.get("Menu_Options.html", function (data) {
 			
 			<div id="non-veg" style="display: none;">
 				<!-- == menu tab part starts == -->
-				<div class='food-tab wow fadeInUp'>
+				<div class='food-tab wow fadeInUp bflunchDinnerMenu'>
 					<div class='container'>
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs" role="tablist">
@@ -459,7 +461,7 @@ $.get("Menu_Options.html", function (data) {
 			
 			<div id="glutenfree" style="display: none;">
 				<!-- == menu tab part starts == -->
-				<div class='food-tab wow fadeInUp'>
+				<div class='food-tab wow fadeInUp bflunchDinnerMenu'>
 					<div class='container'>
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs" role="tablist">

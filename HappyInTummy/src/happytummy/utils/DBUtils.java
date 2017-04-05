@@ -241,7 +241,7 @@ public class DBUtils {
       }
 	  else
 	  {
-		  String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' limit 7";
+		  String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and portion=1 and Meal_Type='Breakfast' limit 7";
 	      System.out.println("sql "+sqlbk);
 	      PreparedStatement pstm = conn.prepareStatement(sqlbk);
 	      ResultSet rs = pstm.executeQuery();
@@ -269,7 +269,7 @@ public class DBUtils {
 	          menuitem.setMeal_Type(meal_type);
 	          list.add(menuitem);
 	      }
-	      String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' limit 7";
+	      String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and portion=1  and Meal_Type='Lunch' limit 7";
 	      System.out.println("sql "+sqll);
 	       pstm = conn.prepareStatement(sqll);
 	       rs = pstm.executeQuery();
@@ -297,7 +297,7 @@ public class DBUtils {
 	          menuitem.setMeal_Type(meal_type);
 	          list.add(menuitem);
 	      }
-	      String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' limit 7";
+	      String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and portion=1  and Meal_Type='Dinner' limit 7";
 	      System.out.println("sql "+sqld);
 	       pstm = conn.prepareStatement(sqld);
 	       rs = pstm.executeQuery();

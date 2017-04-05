@@ -104,12 +104,11 @@ $.get("Header.html", function (data) {
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="Gender"></label>
 							<div class="col-sm-5">
-								<label class="radio-inline" for="Gender-0"> 
-								<input type="radio" name="Gender" id="Gender-0" value="1" <s:if test="${user.gender}"==Male>checked</s:if> disabled/>
+								<label class="radio-inline" for="Gender-0"> <input
+									type="radio" name="Gender" id="Gender-0" value="1" <c:if test="${user.gender=='Male'}">checked</c:if> disabled>
 									Male
-								</label> 
-								<label class="radio-inline" for="Gender-1"> 
-								<input type="radio" name="Gender" id="Gender-1" value="2" <s:if test="${user.gender}"==Female>checked</s:if> disabled/> Female
+								</label> <label class="radio-inline" for="Gender-1"> <input
+									type="radio" name="Gender" id="Gender-1" value="2" <c:if test="${user.gender=='Female'}">checked</c:if> disabled> Female
 								</label>
 							</div>
 						</div>

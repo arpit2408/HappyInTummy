@@ -1,4 +1,8 @@
 package happytummy.servlet;
+import happytummy.beans.MenuItems;
+import happytummy.connect.ConnectionUtils;
+import happytummy.utils.DBUtils;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -10,7 +14,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,13 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
-import com.sun.glass.ui.Window;
-
-import happytummy.beans.MenuItems;
-import happytummy.utils.DBUtils;
-import happytummy.utils.MyUtils;
-import happytummy.connect.ConnectionUtils;
 public class BmiBasedMenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

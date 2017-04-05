@@ -54,11 +54,9 @@
 	background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
 </head>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-	type="text/javascript"></script>
+
 <script type="text/javascript">
 	$.get("Header.html", function(data) {
 		$("#websiteHeader").replaceWith(data);
