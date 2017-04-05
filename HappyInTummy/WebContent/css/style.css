@@ -1361,7 +1361,7 @@ header.green {background: #60ba62;}
 
 @media (max-width: 992px){
   .steps-wrapper ul li a{display:block;width:100%;float:left;}
-  .steps-wrapper ul li{display:block;padding: 10px 0 0 0;height:30px;clear:both;text-align:left;}
+  .steps-wrapper ul li{display:inline;padding: 10px 0 0 0;height:30px;clear:both;text-align:left;}
   .team-member-block .top-text-header p, .payment-form, .download-popup .left-mobile img {width: 100%;}
   .top-text-header, .blog-block .top-text-header {margin-bottom: 25px;}
   .menu-block .container-fluid {padding-left: 0;}
@@ -1922,6 +1922,13 @@ header.green {background: #60ba62;}
   .video-pop-up .video-wrap{ height: initial; }
   .btn-tags-big {font-size: 10px;padding: 2px 10px;}
 }
+@media (max-width: 992px){
+	.menubflunchDinner {
+		height: 200px;
+	    max-width: 100%;
+	    width: 305px;
+	}
+}
 @media (max-width: 768px){
 	.logo-block img {
 	    transform: none;
@@ -1933,4 +1940,39 @@ header.green {background: #60ba62;}
 	#WebsiteName {
 		padding-top: 23px;
 	}
+	.menu-listing-wrap.list-view, .menu-listing-wrap.list-view .menu-item-wrap, .menu-pegination ul {
+    margin: 0;
+    max-width: 100%;
+	}
+	.bmiMenuSelect {
+	    font-size: 0.35em;
+		display:block;
+		max-width: 100%;
+    	padding-left: 17px;
+    	padding-bottom: 10px;
+	}
+	.menuSelectOptions{
+		max-width: 100%;
+		padding-left: 3px;
+    	padding-bottom: 10px;
+	}
+	.bflunchDinnerMenu{
+	    margin-bottom: 20px;
+	    max-width: 100%;
+	    height: 104px;
+	}
+	#letsee {
+		display: display;
+	}
+	.navbar-nav {
+	    margin: 0;
+	    float: left;
+	    width: 100%;
+	    background: #60ba62;
+	}
+}
+.required-field::after { 
+    content: "*";
+    color:red;
+    size: 10px;
 }
