@@ -307,7 +307,7 @@ $.get("Menu_Options.html", function (data) {
 						<div class="col-sm-2"></div>
 						<label  style="font-size: 1.8em;font-family: 'Raleway', Serif !important;" class="col-sm-4"> Want personalized suggestion?</label>
 						<input id="weight" type="number" class="col-sm-2" placeholder="Enter your weight(kgs)" style="padding-left: 10px;" onchange="callBmiMenu();"></input>
-						<div style="height:2mm;"></div>
+						
 						<input id="height" type="number" class="col-sm-2"  style="padding-left: 10px;" placeholder="Enter your height(cms)" onchange="callBmiMenu();"></input>
 						
 					</div>

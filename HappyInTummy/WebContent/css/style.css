@@ -1970,7 +1970,14 @@ header.green {background: #60ba62;}
 	    width: 100%;
 	    background: #60ba62;
 	}
+	
+	#weight {
+		margin-bottom:2mm;
+	}
 }
+#weight {
+		margin-right:2mm;
+	}
 .required-field::after { 
     content: "*";
     color:red;

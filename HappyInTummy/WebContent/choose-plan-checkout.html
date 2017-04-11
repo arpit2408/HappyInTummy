@@ -73,7 +73,7 @@ function placeOrder()
 	
 	var bkitems=[];
 	bkitems=JSON.parse(sessionStorage.getItem("bkitems"));
-	alert("bkitems length ====== "+bkitems.length);
+	//alert("bkitems length ====== "+bkitems.length);
 	var dataString = "pref=" + sessionStorage.getItem("Preference")+"&height=" + sessionStorage.getItem('Height')+"&weight=" + sessionStorage.getItem('Weight')+"&gender=" + 
 	sessionStorage.getItem("custgender")+"&DOB=" + sessionStorage.getItem("DOB")+"&Name=" + sessionStorage.getItem("Name")+"&Email=" + sessionStorage.getItem("Email")+
 	"&Phone=" + sessionStorage.getItem("Phone")+"&Zip=" + sessionStorage.getItem("Zip")+"&Address=" + sessionStorage.getItem("Address")+"&State=" + sessionStorage.getItem("State")+"&City=" + sessionStorage.getItem("City")+
@@ -86,10 +86,21 @@ function placeOrder()
 		    cache: false,
 		    data :  dataString,
 			dataType: "json",
-		    success: function(data) {	
-		   	 alert('Successfully Inserted');
-		   
-		    }
+			crossDomain:true,
+			success: function(data) {	
+				 //alert('Successfully Inserted');
+				 var containerMsg = document.getElementById("successMsg");
+				 containerMsg.innerHTML = '<h4 style="text-align:center"> Wow! You just made a Yummy Choice </h4>';
+				 var btn=document.getElementById("place"); 
+				 btn.disabled = true;
+		    },
+		    error: function(status,error) {	
+		    
+		    	 var containerMsg = document.getElementById("successMsg");
+				 containerMsg.innerHTML = '<h4> Sorry! Our basket is full, please try after some time </h4>';
+				 var btn=document.getElementById("place"); 
+				 btn.disabled = true;
+			}
 	
 	 });
 	
@@ -191,13 +202,16 @@ function placeOrder()
 								</div>
 								<!-- Select payment method block ends -->
 								<!-- Select payment form block starts -->
+								<div id="successMsg">
+									
+								</div>
 								<div class="payment-form">
 									<form id="checkout">
 								
 										<fieldset>
-											<input class="btn btn-x-big hvr-wobble-horizontal"
-												type="submit" value="place order" onclick="placeOrder();" />
-										</fieldset>
+											<input id="place" class="btn btn-x-big hvr-wobble-horizontal"
+												 type="button" value="place order" onclick="placeOrder();" />
+										</fieldset>	
 									</form>
 								</div>
 								<!-- Select payment form block starts -->
