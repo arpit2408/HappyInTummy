@@ -121,6 +121,7 @@ public class CheckoutServlet extends HttpServlet {
 		        if(request.getParameter("Zip")!=null && !((request.getParameter("Zip")).toString().equals("")))
 		        {
 		        	zip=(request.getParameter("Zip")).toString();
+		        	System.out.println("servlet "+zip);
 		        }
 		        if(request.getParameter("DOB")!=null && !((request.getParameter("DOB")).toString().equals("")))
 		        {
@@ -179,8 +180,19 @@ public class CheckoutServlet extends HttpServlet {
 		              }
 		        }
 
-		        DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
-		       
+		        //DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
+		        int value=DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
+                System.out.println("value="+value);
+                if(value>0)
+                {
+                    JSONObject json      = new JSONObject();
+                    json.put("result","success");
+                    System.out.println("json="+json.toJSONString());
+                    response.setContentType("application/json");
+                    response.getWriter().write(json.toString());
+                    response.getWriter().close();
+                }
+ 
 		        } 
 		        catch (Exception e) {
 		            e.printStackTrace();

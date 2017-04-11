@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-baseuri="${pageContext.request.contextPath}/">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
 <link href="css/style.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="Fillform.js" type="text/javascript"></script>
-<!-- montserrat font embed -->
+
 <link
 	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
 	rel='stylesheet' type='text/css'>
@@ -267,7 +267,9 @@ function submitform()
 	 sessionStorage.setItem('ditems',JSON.stringify(ditems));
 	
 	 document.chooseprogram.submit();
-	 $("#ChoosePlan").attr("href", "/HappyInTummy/ChooseYourPlan.html");
+	 var baseuri = $("html").data("baseuri");
+	 $("#ChoosePlan").attr("href", baseuri+"ChooseYourPlan.jsp");
+	 document.chooseprogram.submit();
 }
 
 </script>
@@ -275,13 +277,13 @@ function submitform()
 </head>
 <body onload="setCorrectActionAfterSubmit('About')" class="home-page home-version1-page">
 <script>
-$.get("Header.html", function (data) {
+$.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
 	
 <script>
-$.get("Menu_Options.html", function (data) {
+$.get("Menu_Options.jsp", function (data) {
     $("#menu_options").replaceWith(data);
 });
 
@@ -302,12 +304,12 @@ $.get("Menu_Options.html", function (data) {
 				<!-- == step content starts ==-->
 				<div class="step-content">
 				
-				<form id="chooseprogram" method="POST" action="/ChooseYourPlan.html">
+				<form id="chooseprogram" method="POST" action="${pageContext.request.contextPath}/ChooseYourPlan.jsp">
 					<div class="row bmiMenuSelect">
 						<div class="col-sm-2"></div>
 						<label  style="font-size: 1.8em;font-family: 'Raleway', Serif !important;" class="col-sm-4"> Want personalized suggestion?</label>
 						<input id="weight" type="number" class="col-sm-2" placeholder="Enter your weight(kgs)" style="padding-left: 10px;" onchange="callBmiMenu();"></input>
-						<div style="height:2mm;"></div>
+						<div style="width:2mm;"></div>
 						<input id="height" type="number" class="col-sm-2"  style="padding-left: 10px;" placeholder="Enter your height(cms)" onchange="callBmiMenu();"></input>
 						
 					</div>

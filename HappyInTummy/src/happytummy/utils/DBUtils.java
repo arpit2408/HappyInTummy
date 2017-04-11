@@ -151,9 +151,9 @@ public class DBUtils {
 	  {
 		  bmr = (float)((10 * weight) +( 6.25 * height)-(5 * age)+5);
 	  }
-	  calorieslunch=(int)(bmr*0.40);
-	  caloriesbk=(int)(bmr*0.40);
-	  caloriesdinner=(int)(bmr*0.2);
+	  calorieslunch=(int)(bmr*0.35);
+	  caloriesbk=(int)(bmr*0.30);
+	  caloriesdinner=(int)(bmr*0.35);
       String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and Calorie between ("+caloriesbk+"-20) and ("+caloriesbk+"+20)limit 7";
       System.out.println(caloriesbk+" - "+calorieslunch+" - "+caloriesdinner+"sql "+sqlbk);
       PreparedStatement pstm = conn.prepareStatement(sqlbk);

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +14,8 @@
 				<!-- ============== Left logo block starts ============== -->
 				<div class="col-sm-1 logo-block">
 					
-						<a href="/home-version1.html"><img class="img-responsive"
-							src="images/mascot25Orange.png" alt="Madang Logo" />
+						<a href="${pageContext.request.contextPath}/home-version1.html"><img class="img-responsive"
+							src="images/mascot25Orange.png" alt="HappyTummy Logo" />
 							</a>
 						
 				</div>
@@ -33,9 +36,9 @@
 							<!-- Collect the nav links, forms, and other content for toggling -->
 							<div class="collapse">
 								<ul class="nav navbar-nav text-right pull-right" >
-									<li class="active"><a href="/choose-plan-about-us.html">Home</a></li>
-									<li><a href="/ManageOrders.jsp">Your Order</a></li>
-									<li><a href="/menu">Pricing</a></li>
+									<li class="active"><a href="${pageContext.request.contextPath}/choose-plan-about-us.jsp">Home</a></li>
+									<li><a href="${pageContext.request.contextPath}/ManageOrders.jsp">Your Order</a></li>
+									<li><a href="${pageContext.request.contextPath}/menu">Pricing</a></li>
 
 								</ul>
 							</div>
