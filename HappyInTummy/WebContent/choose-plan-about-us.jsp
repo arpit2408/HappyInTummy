@@ -1,6 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-baseuri="${pageContext.request.contextPath}/">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +72,7 @@
 </head>
 
 <script type="text/javascript">
-	$.get("Menu_Options.html", function(data) {
+	$.get("Menu_Options.jsp", function(data) {
 		$("#menu_options").replaceWith(data);
 	});
 	
@@ -105,7 +107,7 @@ function submitform()
 
 <!-- ============== Header starts ============== -->
 <script>
-$.get("Header.html", function (data) {
+$.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
@@ -136,7 +138,7 @@ $.get("Header.html", function (data) {
 						<div class="col-xs-12 col-sm-6 wow fadeInLeft left-form">
 							<h5 class="text-uppercase">TELL US ABOUT YOU, WE WILL
 								PREPARE YOUR HEALTHY MEALS</h5>
-							<form id="aboutyou" class="about-us-form" method="POST" action="/choose-plan-select-program.jsp">
+							<form id="aboutyou" class="about-us-form" method="POST" action="${pageContext.request.contextPath}/choose-plan-select-program.jsp">
 							
 								<fieldset>
 									
@@ -161,7 +163,11 @@ $.get("Header.html", function (data) {
 									<input type="email" id="Email" placeholder="E-mail" />
 								</fieldset>
 								<fieldset>
+								
+								
 						                <input type="date" id = "DOB" placeholder="Date of Birth" />
+						               
+						       
 						        </fieldset>
 								
 								<fieldset>
@@ -189,7 +195,7 @@ $.get("Header.html", function (data) {
 						<div class="col-xs-12 col-sm-6 wow fadeInRight right-image">
 							<figure>
 								<img class="img-responsive" src="images/Food_long.jpg"
-									alt="About us image" style="padding-top:54px;"/>
+								 alt="About us image" style="padding-top:54px;"/>
 							</figure>
 						</div>
 					</div>
@@ -230,3 +236,4 @@ $.get("Header.html", function (data) {
 
 
 </html>
+    
