@@ -58,7 +58,7 @@
 </head>
 
 <script type="text/javascript">
-	$.get("Header.html", function(data) {
+	$.get("Header.jsp", function(data) {
 		$("#websiteHeader").replaceWith(data);
 	});
 
@@ -224,7 +224,7 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap" style="width: 2000px">
 													<figure>
-														<a href="#"><img class="img-responsive"
+														<a href="#"><img class="img-responsive menubflunchDinner"
 															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
@@ -277,8 +277,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -331,8 +331,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -410,7 +410,7 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap" style="width: 2000px">
 													<figure>
-														<a href="#"><img class="img-responsive"
+														<a href="#"><img class="img-responsive menubflunchDinner"
 															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
@@ -464,8 +464,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -518,8 +518,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -599,7 +599,7 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap" style="width: 2000px">
 													<figure>
-														<a href="#"><img class="img-responsive"
+														<a href="#"><img class="img-responsive menubflunchDinner"
 															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
@@ -652,8 +652,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -706,8 +706,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>

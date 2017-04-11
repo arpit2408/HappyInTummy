@@ -1,6 +1,9 @@
 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-baseuri="${pageContext.request.contextPath}/">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,12 +56,12 @@
 </style>
 </head>
 <script>
-$.get("Menu_Options.html", function (data) {
+$.get("Menu_Options.jsp", function (data) {
     $("#menu_options").replaceWith(data);
 });
 </script>
 <script>
-$.get("Header.html", function (data) {
+$.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
@@ -73,12 +76,11 @@ function placeOrder()
 	
 	var bkitems=[];
 	bkitems=JSON.parse(sessionStorage.getItem("bkitems"));
-	//alert("bkitems length ====== "+bkitems.length);
+
 	var dataString = "pref=" + sessionStorage.getItem("Preference")+"&height=" + sessionStorage.getItem('Height')+"&weight=" + sessionStorage.getItem('Weight')+"&gender=" + 
 	sessionStorage.getItem("custgender")+"&DOB=" + sessionStorage.getItem("DOB")+"&Name=" + sessionStorage.getItem("Name")+"&Email=" + sessionStorage.getItem("Email")+
 	"&Phone=" + sessionStorage.getItem("Phone")+"&Zip=" + sessionStorage.getItem("Zip")+"&Address=" + sessionStorage.getItem("Address")+"&State=" + sessionStorage.getItem("State")+"&City=" + sessionStorage.getItem("City")+
 	"&bkitems=" + sessionStorage.getItem("bkitems")+"&litems=" + sessionStorage.getItem("litems")+"&ditems=" + sessionStorage.getItem("ditems")+"&PlanId=" + sessionStorage.getItem("PlanId");
-	
 	
 	$.ajax({
 		    url: 'checkout',
@@ -86,9 +88,10 @@ function placeOrder()
 		    cache: false,
 		    data :  dataString,
 			dataType: "json",
+
 			crossDomain:true,
-			success: function(data) {	
-				 //alert('Successfully Inserted');
+		    success: function(data) {	
+
 				 var containerMsg = document.getElementById("successMsg");
 				 containerMsg.innerHTML = '<h4 style="text-align:center"> Wow! You just made a Yummy Choice </h4>';
 				 var btn=document.getElementById("place"); 
@@ -211,9 +214,10 @@ function placeOrder()
 										<fieldset>
 											<input id="place" class="btn btn-x-big hvr-wobble-horizontal"
 												 type="button" value="place order" onclick="placeOrder();" />
-										</fieldset>	
+										</fieldset>
 									</form>
 								</div>
+								
 								<!-- Select payment form block starts -->
 							</div>
 							<!-- payment method block ends -->

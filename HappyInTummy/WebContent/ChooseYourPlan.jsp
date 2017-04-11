@@ -1,6 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-baseuri="${pageContext.request.contextPath}/">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -115,19 +117,20 @@ function submitform(element,elementweek,elementCost)
  //alert(" plan weeks "+ document.getElementById(elementweek).value);
  sessionStorage.setItem('PlanIdCost', document.getElementById(elementCost).value);
  document.forms.chooseplan.submit();
- $("#Checkout").attr("href", "/HappyInTummy/choose-plan-checkout.html");
+ var baseuri = $("html").data("baseuri");
+ $("#Checkout").attr("href", baseuri+"choose-plan-checkout.jsp");
 }
 </script>
 
 <body onload="getPlans();setCorrectActionAfterSubmit('SelectProgram')" class="home-page home-version1-page">
 <script>
-$.get("Header.html", function (data) {
+$.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
 	
 <script>
-$.get("Menu_Options.html", function (data) {
+$.get("Menu_Options.jsp", function (data) {
     $("#menu_options").replaceWith(data);
 });
 </script>
@@ -143,7 +146,8 @@ $.get("Menu_Options.html", function (data) {
 				<!-- == step navigation ends ==-->
 				<!-- == step content starts ==-->
 				<div class="step-content">
-				<form id="chooseplan" method="POST" action="/choose-plan-checkout.html">
+				<form id="chooseplan" method="POST" action="${pageContext.request.contextPath}/choose-plan-checkout.jsp">
+					<h3 class="text-center" style="font-size: 2.2em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-12">Eating good without being on diet.</h3>
 						<!-- ============== pricing block starts ============== -->
 						<section class="block pricing-block">
 							<div class="container">
