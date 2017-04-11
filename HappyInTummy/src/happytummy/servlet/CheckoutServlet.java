@@ -1,15 +1,17 @@
 package happytummy.servlet;
 
+import happytummy.connect.ConnectionUtils;
+import happytummy.utils.DBUtils;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,13 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-import happytummy.beans.MenuItems;
-import happytummy.beans.Plans;
-import happytummy.utils.DBUtils;
-import happytummy.connect.ConnectionUtils;
-
-import java.util.Date;
 
 /**
  * Servlet implementation class CheckoutServlet

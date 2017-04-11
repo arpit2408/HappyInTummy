@@ -26,7 +26,7 @@
 	rel="stylesheet"
 	> 
 	
-	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 	
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="css/style.css" rel="stylesheet">
 <!-- Custom CSS -->
@@ -49,14 +49,15 @@ body {
     <![endif]-->
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+</head>
+<body >
 <script>
 $.get("Header.html", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
-</head>
-<body >
 <div id="websiteHeader" style="z-index: 1111;"></div>
 
 	<div class="container wrapper">
