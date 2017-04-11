@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -75,11 +76,7 @@ function placeOrder()
 	
 	var bkitems=[];
 	bkitems=JSON.parse(sessionStorage.getItem("bkitems"));
-<<<<<<< HEAD:HappyInTummy/WebContent/choose-plan-checkout.jsp
-	
-=======
-	//alert("bkitems length ====== "+bkitems.length);
->>>>>>> refs/remotes/origin/master:HappyInTummy/WebContent/choose-plan-checkout.html
+
 	var dataString = "pref=" + sessionStorage.getItem("Preference")+"&height=" + sessionStorage.getItem('Height')+"&weight=" + sessionStorage.getItem('Weight')+"&gender=" + 
 	sessionStorage.getItem("custgender")+"&DOB=" + sessionStorage.getItem("DOB")+"&Name=" + sessionStorage.getItem("Name")+"&Email=" + sessionStorage.getItem("Email")+
 	"&Phone=" + sessionStorage.getItem("Phone")+"&Zip=" + sessionStorage.getItem("Zip")+"&Address=" + sessionStorage.getItem("Address")+"&State=" + sessionStorage.getItem("State")+"&City=" + sessionStorage.getItem("City")+
@@ -91,15 +88,10 @@ function placeOrder()
 		    cache: false,
 		    data :  dataString,
 			dataType: "json",
-<<<<<<< HEAD:HappyInTummy/WebContent/choose-plan-checkout.jsp
-			
+
 			crossDomain:true,
 		    success: function(data) {	
-=======
-			crossDomain:true,
-			success: function(data) {	
->>>>>>> refs/remotes/origin/master:HappyInTummy/WebContent/choose-plan-checkout.html
-				 //alert('Successfully Inserted');
+
 				 var containerMsg = document.getElementById("successMsg");
 				 containerMsg.innerHTML = '<h4 style="text-align:center"> Wow! You just made a Yummy Choice </h4>';
 				 var btn=document.getElementById("place"); 
@@ -222,11 +214,7 @@ function placeOrder()
 										<fieldset>
 											<input id="place" class="btn btn-x-big hvr-wobble-horizontal"
 												 type="button" value="place order" onclick="placeOrder();" />
-<<<<<<< HEAD:HappyInTummy/WebContent/choose-plan-checkout.jsp
 										</fieldset>
-=======
-										</fieldset>	
->>>>>>> refs/remotes/origin/master:HappyInTummy/WebContent/choose-plan-checkout.html
 									</form>
 								</div>
 								
