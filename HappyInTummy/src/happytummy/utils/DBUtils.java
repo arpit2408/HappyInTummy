@@ -141,7 +141,7 @@ public class DBUtils {
 	  int caloriesbk=0;
 	  int calorieslunch=0;
 	  int caloriesdinner=0;
-	  
+	  boolean defaultmenu=false;
 	  List<MenuItems> list = new ArrayList<MenuItems>();
 	  if(height>0 && weight>0){
 		  
@@ -156,15 +156,18 @@ public class DBUtils {
 	  calorieslunch=(int)(bmr*0.35);
 	  caloriesbk=(int)(bmr*0.30);
 	  caloriesdinner=(int)(bmr*0.35);
-      String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and Calorie between ("+caloriesbk+"-20) and ("+caloriesbk+"+20)limit 7";
+      String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and Calorie between ("+caloriesbk+"-50) and ("+caloriesbk+"+50) limit 7";
       System.out.println(caloriesbk+" - "+calorieslunch+" - "+caloriesdinner+"sql "+sqlbk);
       PreparedStatement pstm = conn.prepareStatement(sqlbk);
       ResultSet rs = pstm.executeQuery();
-      
+      int countbk=0;
+      String items="";
       while (rs.next()) {
+    	  countbk=countbk+1;
     	  int item_ID = rs.getInt("Item_ID");
     	  System.out.println("item_ID "+item_ID);
           String item_Name = rs.getString("Item_Name");
+          items="'"+item_Name+"',"+items;
           String item_Desc = rs.getString("Item_Desc");
           int calorie = rs.getInt("Calorie");
           int proteins = rs.getInt("Proteins");
@@ -183,16 +186,58 @@ public class DBUtils {
           menuitem.setImage_Name(image_Name);
           menuitem.setMeal_Type(meal_type);
           list.add(menuitem);
+         
       }
-      String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' and Calorie between ("+calorieslunch+"-20) and ("+calorieslunch+"+20) limit 7";
+      if (items != null && items.length() > 0) {
+    	  items = items.substring(0, items.length()-1);
+        }
+      System.out.println(items+"countbk"+countbk);
+      if(countbk<7 && countbk>0)
+      {
+    	   sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and  portion=2 and item_name not in ("+items+") limit "+(7-countbk);
+        
+           pstm = conn.prepareStatement(sqlbk);
+           rs = pstm.executeQuery();
+         
+          while (rs.next()) {
+        	  
+        	  int item_ID = rs.getInt("Item_ID");
+        	  System.out.println("less than 7 case item_ID "+item_ID);
+              String item_Name = rs.getString("Item_Name");
+             
+              String item_Desc = rs.getString("Item_Desc");
+              int calorie = rs.getInt("Calorie");
+              int proteins = rs.getInt("Proteins");
+              int fats = rs.getInt("Fats");
+              int carbohydrates = rs.getInt("Carbohydrates");
+              String image_Name = rs.getString("Image_Name");
+              String meal_type=rs.getString("Meal_Type");
+              MenuItems menuitem = new MenuItems();
+              menuitem.setItem_id(item_ID);
+              menuitem.setItem_Name(item_Name);
+              menuitem.setItem_Desc(item_Desc);
+              menuitem.setCalorie(calorie);
+              menuitem.setProteins(proteins);
+              menuitem.setFats(fats);
+              menuitem.setCarbohydrates(carbohydrates);
+              menuitem.setImage_Name(image_Name);
+              menuitem.setMeal_Type(meal_type);
+              list.add(menuitem);
+             
+          }
+      }
+      String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' and Calorie between ("+calorieslunch+"-50) and ("+calorieslunch+"+50) limit 7";
       System.out.println("sql "+sqll);
        pstm = conn.prepareStatement(sqll);
        rs = pstm.executeQuery();
-      
+      int countlunch=0;
+      items="";
       while (rs.next()) {
+    	  countlunch=countlunch+1;
     	  int item_ID = rs.getInt("Item_ID");
     	  System.out.println("item_ID "+item_ID);
           String item_Name = rs.getString("Item_Name");
+          items="'"+item_Name+"',"+items;
           String item_Desc = rs.getString("Item_Desc");
           int calorie = rs.getInt("Calorie");
           int proteins = rs.getInt("Proteins");
@@ -212,15 +257,58 @@ public class DBUtils {
           menuitem.setMeal_Type(meal_type);
           list.add(menuitem);
       }
-      String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' and Calorie between ("+caloriesdinner+"-20) and ("+caloriesdinner+"+20) limit 7";
+      
+      if (items != null && items.length() > 0) {
+    	  items = items.substring(0, items.length()-1);
+        }
+      System.out.println(items+"countlunch"+countlunch);
+      if(countlunch<7 && countlunch>0)
+      {
+    	   sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' and  portion=2 and item_name not in ("+items+") limit "+(7-countlunch);
+        
+           pstm = conn.prepareStatement(sqll);
+           rs = pstm.executeQuery();
+         
+          while (rs.next()) {
+        	  
+        	  int item_ID = rs.getInt("Item_ID");
+        	  System.out.println("less than 7 case item_ID "+item_ID);
+              String item_Name = rs.getString("Item_Name");
+             
+              String item_Desc = rs.getString("Item_Desc");
+              int calorie = rs.getInt("Calorie");
+              int proteins = rs.getInt("Proteins");
+              int fats = rs.getInt("Fats");
+              int carbohydrates = rs.getInt("Carbohydrates");
+              String image_Name = rs.getString("Image_Name");
+              String meal_type=rs.getString("Meal_Type");
+              MenuItems menuitem = new MenuItems();
+              menuitem.setItem_id(item_ID);
+              menuitem.setItem_Name(item_Name);
+              menuitem.setItem_Desc(item_Desc);
+              menuitem.setCalorie(calorie);
+              menuitem.setProteins(proteins);
+              menuitem.setFats(fats);
+              menuitem.setCarbohydrates(carbohydrates);
+              menuitem.setImage_Name(image_Name);
+              menuitem.setMeal_Type(meal_type);
+              list.add(menuitem);
+             
+          }
+      }
+      
+      String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' and Calorie between ("+caloriesdinner+"-50) and ("+caloriesdinner+"+50) limit 7";
       System.out.println("sql "+sqld);
        pstm = conn.prepareStatement(sqld);
        rs = pstm.executeQuery();
-      
+      int countd=0;
+      items="";
       while (rs.next()) {
+    	  countd=countd+1;
     	  int item_ID = rs.getInt("Item_ID");
     	  System.out.println("item_ID "+item_ID);
           String item_Name = rs.getString("Item_Name");
+          items="'"+item_Name+"',"+items;
           String item_Desc = rs.getString("Item_Desc");
           int calorie = rs.getInt("Calorie");
           int proteins = rs.getInt("Proteins");
@@ -240,9 +328,57 @@ public class DBUtils {
           menuitem.setMeal_Type(meal_type);
           list.add(menuitem);
       }
+      
+      
+      if (items != null && items.length() > 0) {
+    	  items = items.substring(0, items.length()-1);
+        }
+      System.out.println(items+"countd"+countd);
+      if(countd<7 && countlunch>0)
+      {
+    	  sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' and  portion=2 and item_name not in ("+items+") limit "+(7-countd);
+        
+           pstm = conn.prepareStatement(sqld);
+           rs = pstm.executeQuery();
+         
+          while (rs.next()) {
+        	  
+        	  int item_ID = rs.getInt("Item_ID");
+        	  System.out.println("less than 7 case item_ID "+item_ID);
+              String item_Name = rs.getString("Item_Name");
+             
+              String item_Desc = rs.getString("Item_Desc");
+              int calorie = rs.getInt("Calorie");
+              int proteins = rs.getInt("Proteins");
+              int fats = rs.getInt("Fats");
+              int carbohydrates = rs.getInt("Carbohydrates");
+              String image_Name = rs.getString("Image_Name");
+              String meal_type=rs.getString("Meal_Type");
+              MenuItems menuitem = new MenuItems();
+              menuitem.setItem_id(item_ID);
+              menuitem.setItem_Name(item_Name);
+              menuitem.setItem_Desc(item_Desc);
+              menuitem.setCalorie(calorie);
+              menuitem.setProteins(proteins);
+              menuitem.setFats(fats);
+              menuitem.setCarbohydrates(carbohydrates);
+              menuitem.setImage_Name(image_Name);
+              menuitem.setMeal_Type(meal_type);
+              list.add(menuitem);
+             
+          }
       }
-	  else
+      if(countbk==0 || countd==0 || countlunch==0)
+      {
+    	  defaultmenu=true;
+      }
+      }
+	  else{
+		  defaultmenu=true;  
+	  }
+	  if(defaultmenu==true)
 	  {
+		  list = new ArrayList<MenuItems>();
 		  String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and portion=1 and Meal_Type='Breakfast' limit 7";
 	      System.out.println("sql "+sqlbk);
 	      PreparedStatement pstm = conn.prepareStatement(sqlbk);

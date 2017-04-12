@@ -15,16 +15,6 @@
 <title>HappyTummy</title>
 
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script> -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-<!-- <script src="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/src/js/bootstrap-datetimepicker.js"></script>
- -->
-<!-- 
-<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
-<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-     -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
 <!-- style lists -->
@@ -41,7 +31,9 @@
 <link rel="stylesheet" href="css/feature-carousel.css">
 <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/intlTelInput.css" />
 <script src="Fillform.js" type="text/javascript"></script>
+<script src="js/intlTelInput.min.js"></script>
 <!-- montserrat font embed -->
 <link
 	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
@@ -72,6 +64,7 @@
 </head>
 
 <script type="text/javascript">
+
 	$.get("Menu_Options.jsp", function(data) {
 		$("#menu_options").replaceWith(data);
 	});
@@ -97,7 +90,7 @@ function submitform()
 </script>
 
 <body onload="reloadFormAboutYou();" class="choose-plan-page">
-
+<form id="aboutyou"  data-toggle="validator" class="about-us-form"  method="POST" action="${pageContext.request.contextPath}/choose-plan-select-program.jsp">
 	<!-- loader image before page load starts -->
 	<div class="se-pre-con"></div>
 	<!-- loader image before page load ends -->
@@ -111,6 +104,7 @@ $.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
+
 	<header  id="websiteHeader"></header>
 		<!-- ============== Header ends ============== -->
 
@@ -138,7 +132,7 @@ $.get("Header.jsp", function (data) {
 						<div class="col-xs-12 col-sm-6 wow fadeInLeft left-form">
 							<h5 class="text-uppercase">TELL US ABOUT YOU, WE WILL
 								PREPARE YOUR HEALTHY MEALS</h5>
-							<form id="aboutyou" class="about-us-form" method="POST" action="${pageContext.request.contextPath}/choose-plan-select-program.jsp">
+						
 							
 								<fieldset>
 									
@@ -157,38 +151,45 @@ $.get("Header.jsp", function (data) {
 									
 								</fieldset>
 								<fieldset>
-									<input type="text" id="Name" placeholder="Full Name" />
+									<input type="text" class="form-control" id="Name" placeholder="Full Name" required>
 								</fieldset>
 								<fieldset>
-									<input type="email" id="Email" placeholder="E-mail" />
+									<input type="email" id="Email" placeholder="E-mail"   type="email"
+                				data-fv-emailaddress-message="The value is not a valid email address"/>
 								</fieldset>
 								<fieldset>
 								
 								
-						                <input type="date" id = "DOB" placeholder="Date of Birth" />
+						        <input type="date" id = "DOB" placeholder="Date of Birth" class="form-control" required/>
 						               
 						       
 						        </fieldset>
 								
 								<fieldset>
-									<input type="text" id="Phone" placeholder="Phone No." />
+									<input type="text" id="Phone" placeholder="Phone No." class="form-control"  
+									 data-fv-intphonenumber="true"
+									data-fv-intphonenumber-preferredcountries="US"
+							    data-fv-intphonenumber-utilsscript="js/utils.js"
+							    data-fv-intphonenumber-message="The phone number is not valid" 
+							    required/>
 								</fieldset>
 								<fieldset>
-									<input type="text" id="Address" placeholder="Address" />
+									<input type="text" id="Address" placeholder="Address" class="form-control" required/>
 								</fieldset>
 								<fieldset>
-									<input type="text" id="City" placeholder="City" />
+									<input type="text" id="City" placeholder="City" class="form-control" required/>
 								</fieldset>
 								<fieldset>
-									<input type="text" id="State" placeholder="State" />
+									<input type="text" id="State" placeholder="State" class="form-control" required/>
 								</fieldset>
 								<fieldset>
-									<input type="text"  id="Zip" placeholder="ZIP Code" />
+									<input type="text"  id="Zip" placeholder="ZIP Code" class="form-control" data-fv-zipcode="true"
+                data-fv-zipcode-country="US"   data-fv-zipcode-message="The value is not valid ZIP code" required/>
 								</fieldset>
 								<fieldset>
 									<input type="submit" value="next" onClick="submitform();"/>
 								</fieldset>
-							</form>
+							
 							
 						</div>
  						
@@ -231,6 +232,7 @@ $.get("Header.jsp", function (data) {
 	<script src="js/jquery.waypoints.js" type="text/javascript"></script>
 	<script src="js/jquery.counterup.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
+</form>
 </body>
 
 

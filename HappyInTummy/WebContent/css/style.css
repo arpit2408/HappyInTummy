@@ -242,6 +242,7 @@ header.green .border-btn-small:hover {background: #fff;color: #60ba62;}
 /*======================= ## Header banner ==================*/
 .banner {overflow: hidden;}
 .wrapper {padding-top: 80px;position: relative;}
+.wrapperforPref {padding-top: 50px;position: relative;}
 .banner-image {height: 406px;overflow: hidden;}
 .banner-text {position: absolute;top: 32%;width: 100%;}
 .banner-text h1 {color: #000;line-height: 56px;letter-spacing:0.05em;}

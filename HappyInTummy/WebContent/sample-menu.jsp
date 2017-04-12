@@ -88,11 +88,7 @@
 	}
 	
 </script>
-<!-- <script type="text/javascript">
-	$.get("showDishes.html", function(data) {
-		$("#showdishes").replaceWith(data);
-	});
-</script> -->
+
 <body onload="showhide();">
 	<div id="websiteHeader" style="z-index: 1111;"></div>
 	<!-- loader image before page load starts -->

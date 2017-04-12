@@ -96,6 +96,7 @@ function placeOrder()
 				 containerMsg.innerHTML = '<h4 style="text-align:center"> Wow! You just made a Yummy Choice </h4>';
 				 var btn=document.getElementById("place"); 
 				 btn.disabled = true;
+				 sessionStorage.clear();
 		    },
 		    error: function(status,error) {	
 		    
@@ -103,6 +104,7 @@ function placeOrder()
 				 containerMsg.innerHTML = '<h4> Sorry! Our basket is full, please try after some time </h4>';
 				 var btn=document.getElementById("place"); 
 				 btn.disabled = true;
+				 sessionStorage.clear();
 			}
 	
 	 });

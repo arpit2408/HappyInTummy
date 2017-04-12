@@ -20,6 +20,7 @@ function datatoShow()
 		document.getElementById('Plan').innerHTML = sessionStorage.getItem('PlanIdText') + ' Week Plan at a cost of $'+ sessionStorage.getItem('PlanIdCost') + ' per day' ;
 
 }
+
 function reloadFormAboutYou()
 {
 	if(sessionStorage.getItem('Name')!=null)
@@ -97,3 +98,23 @@ function setCorrectActionAfterSubmit(e){
     }
 }
 
+
+function validateEmail() {
+	
+    var x = document.forms["aboutus"]["Email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+}
+function reloadPref()
+{
+	if(sessionStorage.getItem('Preference')!=null)
+		document.getElementById('prefid').value = sessionStorage.getItem('Preference');
+	if(sessionStorage.getItem('Weight')!=null)
+		document.getElementById('weight').value = sessionStorage.getItem('Weight');
+	if(sessionStorage.getItem('Height')!=null)
+		document.getElementById('height').value = sessionStorage.getItem('Height');
+}
