@@ -5,7 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
 
 
 
@@ -331,7 +333,7 @@ public class DBUtils {
   
   //need to handle update in case if customer record is already available and in case if active order is present then deactivate the previous one
   public static int insertRecord(Connection conn,int preference, int height, int weight, String gender, int age,String name, String phone, String email,String address,String state,String city,String zip,
-		  ArrayList bkitems,ArrayList litems,ArrayList ditems, int planId) throws SQLException {
+		  ArrayList bkitems,ArrayList litems,ArrayList ditems, int planId, Date birthDate) throws SQLException {
 	  
 		  int inserted=0;
 		  int cust_id=0;
@@ -344,7 +346,9 @@ public class DBUtils {
 		  Statement statement = conn.createStatement();
 		  System.out.println(email);
 		  // insert the data
-		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','1987-11-12',"+age+",'"+gender+"',"+height+","+weight+",'"+address+"','"+phone+"','"+zip+"','Paypal','"+city+"','"+state+"')");
+		  java.sql.Date sqlDate = new java.sql.Date(birthDate.getTime());
+		  System.out.println("birthDate:" + birthDate);
+		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','"+sqlDate+"',"+age+",'"+gender+"',"+height+","+weight+",'"+address+"','"+phone+"','"+zip+"','Paypal','"+city+"','"+state+"')");
 		  System.out.println("inserted in customer "+inserted);
 		  ResultSet cust_id_rs=statement.executeQuery("select customer_id from happytummy.customerdetails where Email_Id='"+email+"'");
 		  while(cust_id_rs.next())

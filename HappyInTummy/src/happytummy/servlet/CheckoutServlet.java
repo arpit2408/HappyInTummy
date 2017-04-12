@@ -51,7 +51,7 @@ public class CheckoutServlet extends HttpServlet {
 		 Connection conn;
 		try {
 			    conn = ConnectionUtils.getConnection();
-		       
+			    Date birthDate =null;
 		        int preference=0;
 		        int height=0;
 		        String gender="";
@@ -87,6 +87,7 @@ public class CheckoutServlet extends HttpServlet {
 		        if(request.getParameter("gender")!=null && !((request.getParameter("gender")).toString().equals("")))
 		        {
 		        	gender=(request.getParameter("gender")).toString();
+		        	System.out.println("gender "+gender);
 		        }
 		        if(request.getParameter("Name")!=null && !((request.getParameter("Name")).toString().equals("")))
 		        {
@@ -122,8 +123,8 @@ public class CheckoutServlet extends HttpServlet {
 		        {
 		        	dob=(request.getParameter("DOB")).toString();
 		        	System.out.println(dob);
-		        	DateFormat format = new SimpleDateFormat("yyyy-mm-dd");
-		        	Date birthDate = format.parse(dob);
+		        	DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		        	birthDate = format.parse(dob);
 		        	System.out.println("in Date format "+birthDate);
 		        	Calendar birth = new GregorianCalendar();
 		            Calendar today = new GregorianCalendar();
@@ -176,7 +177,7 @@ public class CheckoutServlet extends HttpServlet {
 		        }
 
 		        //DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
-		        int value=DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
+		        int value=DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId,birthDate); //pending to change
                 System.out.println("value="+value);
                 if(value>0)
                 {

@@ -78,7 +78,7 @@ function placeOrder()
 	bkitems=JSON.parse(sessionStorage.getItem("bkitems"));
 
 	var dataString = "pref=" + sessionStorage.getItem("Preference")+"&height=" + sessionStorage.getItem('Height')+"&weight=" + sessionStorage.getItem('Weight')+"&gender=" + 
-	sessionStorage.getItem("custgender")+"&DOB=" + sessionStorage.getItem("DOB")+"&Name=" + sessionStorage.getItem("Name")+"&Email=" + sessionStorage.getItem("Email")+
+	sessionStorage.getItem("Gender")+"&DOB=" + sessionStorage.getItem("DOB")+"&Name=" + sessionStorage.getItem("Name")+"&Email=" + sessionStorage.getItem("Email")+
 	"&Phone=" + sessionStorage.getItem("Phone")+"&Zip=" + sessionStorage.getItem("Zip")+"&Address=" + sessionStorage.getItem("Address")+"&State=" + sessionStorage.getItem("State")+"&City=" + sessionStorage.getItem("City")+
 	"&bkitems=" + sessionStorage.getItem("bkitems")+"&litems=" + sessionStorage.getItem("litems")+"&ditems=" + sessionStorage.getItem("ditems")+"&PlanId=" + sessionStorage.getItem("PlanId");
 	
