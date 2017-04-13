@@ -24,7 +24,7 @@
 <link href="css/style.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
 <script src="Fillform.js" type="text/javascript"></script>
-<!-- montserrat font embed -->
+
 <link
 	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
 	rel='stylesheet' type='text/css'>
@@ -78,7 +78,16 @@ function getPlans()
 
 
 function setPlans(data) {
-	
+	  if( sessionStorage.getItem('Discount')==null)
+	  {
+	  document.getElementById('discounthid').value = Math.floor((Math.random() * 10) + 1);
+	  }
+	  else
+	  {
+		  document.getElementById('discounthid').value = sessionStorage.getItem('Discount');
+	  }
+	  sessionStorage.setItem('Discount', document.getElementById('discounthid').value);
+	  document.getElementById('discount').innerHTML= 'Order Immediately to get a discount of '+ document.getElementById('discounthid').value+'%';
 	  for (var i=0;i<data.length;++i)
       {
 		  if(i==0){
@@ -110,8 +119,6 @@ function setPlans(data) {
 function submitform(element,elementweek,elementCost)
 {
  //HTML5 session storage
- //$("#ChoosePlan").attr("href", "/HappyInTummy/choose-plan-select-program.jsp");
- 
  sessionStorage.setItem('PlanId', document.getElementById(element).value);
  sessionStorage.setItem('PlanIdText', document.getElementById(elementweek).value);
  //alert(" plan weeks "+ document.getElementById(elementweek).value);
@@ -147,7 +154,9 @@ $.get("Menu_Options.jsp", function (data) {
 				<!-- == step content starts ==-->
 				<div class="step-content">
 				<form id="chooseplan" method="POST" action="${pageContext.request.contextPath}/choose-plan-checkout.jsp">
-					<h3 class="text-center" style="font-size: 2.2em;font-family: 'Monotype Corsiva', sans-serif !important;" class="col-sm-12">Eating good without being on diet.</h3>
+					<h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;" class="col-sm-12">Eating good without being on diet.</h3>
+					<input type="hidden" id="discounthid">
+					<h3 class="text-center" style="font-size: 1.8em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label id="discount"> </label></h3>
 						<!-- ============== pricing block starts ============== -->
 						<section class="block pricing-block">
 							<div class="container">
@@ -165,10 +174,10 @@ $.get("Menu_Options.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<p>Meals for Breakfast, Lunch, Dinner </p>
-											<p>
-												Calories<br />Female 1150-1350, Male 1300-1600
-											</p>
+											<h6>Meals for Breakfast, Lunch, Dinner </h6>
+											<h6>
+												Calories as per your BMI<br />
+											</h6>
 											
 											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan1id','plan1weeks','plan1cost');">order now</a>
 										</div>
@@ -186,10 +195,10 @@ $.get("Menu_Options.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<p>Meals for Breakfast, Lunch, Dinner </p>
-											<p>
-												Calories<br />Female 1150-1350, Male 1300-1600
-											</p>
+											<h6>Meals for Breakfast, Lunch, Dinner </h6>
+											<h6>
+												Calories as per your BMI<br />
+											</h6>
 											
 											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan2id','plan2weeks','plan2cost');">order now</a>
 									
@@ -207,10 +216,10 @@ $.get("Menu_Options.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<p>Meals for Breakfast, Lunch, Dinner </p>
-											<p>
-												Calories<br />Female 1150-1350, Male 1300-1600
-											</p>
+											<h6>Meals for Breakfast, Lunch, Dinner </h6>
+											<h6>
+												Calories as per your BMI<br />
+											</h6>
 											
 											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan3id','plan3weeks','plan3cost');">order now</a>
 									

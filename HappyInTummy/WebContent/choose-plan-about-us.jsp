@@ -12,7 +12,7 @@
 
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
-<title>HappyTummy</title>
+<title>Happy Tummy</title>
 
 
 
@@ -78,6 +78,7 @@ function submitform()
 	 sessionStorage.setItem('Name', document.forms.aboutyou.Name.value);
 	 sessionStorage.setItem('Email', document.forms.aboutyou.Email.value);
 	 var gender=$('#Male').is(':checked')?"Male":"Female";
+
 	 sessionStorage.setItem('DOB', document.forms.aboutyou.DOB.value);
 	 sessionStorage.setItem('Gender',gender);
 	 sessionStorage.setItem('Phone', document.forms.aboutyou.Phone.value);
@@ -130,20 +131,19 @@ $.get("Header.jsp", function (data) {
 					<!-- choose plan about us step starts -->
 					<div class="step1">
 						<div class="col-xs-12 col-sm-6 wow fadeInLeft left-form">
-							<h5 class="text-uppercase">TELL US ABOUT YOU, WE WILL
-								PREPARE YOUR HEALTHY MEALS</h5>
-						
-							
+							<h5><strong>Tell us about yourself, We will prepare your healthy meals!</strong></h5>
+
 								<fieldset>
 									
 										<div class="col-sm-12 col-sm-6 pull-left">
-											<div class="light-font radio-btn radio-btn-men">
+											<div class="light-font radio-btn">
 												<input  class="radio-class" type="radio" id="Male" name="gender"
 													value="Male" /> <span>Men</span>
 											</div>
 										</div>
+										
 										<div class="col-sm-12 col-sm-6 pull-right">
-											<div class="light-font radio-btn radio-btn-women">
+											<div class="light-font radio-btn">
 												<input  class="radio-class" type="radio" id="Female" name="gender"
 													value="Female" /> <span>Women</span>
 											</div>
@@ -154,15 +154,12 @@ $.get("Header.jsp", function (data) {
 									<input type="text" class="form-control" id="Name" placeholder="Full Name" required>
 								</fieldset>
 								<fieldset>
-									<input type="email" id="Email" placeholder="E-mail"   type="email"
+									<input id="Email" placeholder="E-mail"  type="email" 
                 				data-fv-emailaddress-message="The value is not a valid email address"/>
 								</fieldset>
 								<fieldset>
-								
-								
+					
 						        <input type="date" id = "DOB" placeholder="Date of Birth" class="form-control" required/>
-						               
-						       
 						        </fieldset>
 								
 								<fieldset>

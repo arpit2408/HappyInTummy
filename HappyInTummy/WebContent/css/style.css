@@ -599,7 +599,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 
 
 /*======================= ## Choose plan about us page ==================*/
-.radio-btn input[type=radio] {margin-top: 0;opacity: 0;position: relative;border: 1px solid #cecece;height: 83px;width: 100%;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;padding: 41px 30px;}
+.radio-btn input[type=radio] {margin-top: 0;opacity: 0;position: relative;border: 1px solid #cecece;height: 50px;width: 100%;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;padding: 30px 30px;}
 .radio-btn span {font-family: "Raleway", sans-serif;text-transform: uppercase;font-size: 18px;color: #cecece;}
 .radio-btn.checked {position: relative;border: 1px solid #60ba62;}
 .radio-btn.checked span{color: #60ba62;}
@@ -620,10 +620,10 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .left-form ::-moz-placeholder {/* Firefox 19+ */color: #cecece;}
 .left-form :-ms-input-placeholder {color: #cecece;}
 .left-form>form>fieldset:last-child {margin-bottom: 0;}
-.about-us-form .radio-btn {border: 1px solid #cecece;border-radius: 5px;height: 84px;}
+.about-us-form .radio-btn {border: 1px solid #cecece;border-radius: 5px;height: 54px;}
 .right-image {padding: 0;}
 .right-image img {float: right;}
-.right-image figure {margin-bottom: 0;}
+.right-image figure {margin-bottom: 0;margin-left: 20px;margin-right: 40px;}
 
 /*======================= ## Choose plan select program page ==================*/
 .choose-plan-page main {margin-bottom: 0;}
@@ -663,7 +663,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 /*======================= ## Choose plan checkout page ==================*/
 .payment-method-block {padding: 40px 0 0;}
 .top-description h5 {font-size: 18px;margin-bottom: 0;}
-.select-payment-btn a {text-transform: uppercase;display: block;text-align: left;border: 1px solid #60ba62;padding: 19px 30px;color: #848484;line-height: 42px;border-radius: 4px;position: relative;}
+.select-payment-btn a {text-transform: uppercase;display: block;text-align: left;border: 1px solid #60ba62;padding: 19px 30px;color: black;line-height: 42px;border-radius: 4px;position: relative;}
 .select-payment-btn a img {display: inline-block;margin-right: 24px;}
 .select-payment-btn a span {font-size: 18px;color: #60ba62;}
 .select-payment-btns svg {vertical-align: middle;margin: -6px 28px 0 0;}
@@ -697,7 +697,7 @@ footer.limited-footer {font-family: 'Raleway', sans-serif;background: #fdfdfd;pa
 .about-us-banner.banner-image {height: 800px;overflow: hidden;top: 0;}
 .about-us-page .wrapper {padding-top: 0;}
 .about-us-banner.banner-image img {/*height: 800px;*/height: auto;}
-.top-description h2 {text-transform: uppercase;margin-bottom: 45px;}
+.top-description h2 {text-transform: uppercase;margin-bottom: 25px;}
 .top-description>p {width: 79%;margin: 0 auto 85px;}
 .top-description {width: 90%;margin: auto;}
 .small-image-wrap {margin-bottom: 30px;}

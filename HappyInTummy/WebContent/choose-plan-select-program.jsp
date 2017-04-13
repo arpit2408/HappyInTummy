@@ -280,7 +280,7 @@ function submitform()
 </script>
 
 </head>
-<body onload="setCorrectActionAfterSubmit('About');reloadPref();" class="home-page home-version1-page">
+<body onload="setCorrectActionAfterSubmit('About');reloadPref();callBmiMenu();" class="home-page home-version1-page">
 <script>
 $.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
@@ -312,7 +312,7 @@ $.get("Menu_Options.jsp", function (data) {
 				<form id="chooseprogram" method="POST" action="${pageContext.request.contextPath}/ChooseYourPlan.jsp">
 					<div class="row bmiMenuSelect">
 						<div class="col-sm-2"></div>
-						<label  style="font-size: 1.3em;font-family: 'Raleway', Serif !important;" class="col-sm-5"> Want personalized menu? Enter your height & weight</label>
+						<label  style="font-size: 1.3em;font-family: 'Raleway', Serif !important;" class="col-sm-5"> Want personalized menu? Enter your height & weight (optional)</label>
 						<input id="weight" type="number" class="col-sm-1" placeholder="Weight (kgs)" style="padding-left: 5px;" min="0" onchange="callBmiMenu();"></input>
 						<div style="width:2mm;"></div>
 						<input id="height" type="number" class="col-sm-1"  style="padding-left: 10px;" placeholder="Height (cms)"  min="0" onchange="callBmiMenu();"></input>

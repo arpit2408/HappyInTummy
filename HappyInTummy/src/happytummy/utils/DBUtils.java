@@ -156,7 +156,7 @@ public class DBUtils {
 	  calorieslunch=(int)(bmr*0.35);
 	  caloriesbk=(int)(bmr*0.30);
 	  caloriesdinner=(int)(bmr*0.35);
-      String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and Calorie between ("+caloriesbk+"-50) and ("+caloriesbk+"+50) limit 7";
+      String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and Calorie between ("+caloriesbk+"-20) and ("+caloriesbk+"+20) limit 7";
       System.out.println(caloriesbk+" - "+calorieslunch+" - "+caloriesdinner+"sql "+sqlbk);
       PreparedStatement pstm = conn.prepareStatement(sqlbk);
       ResultSet rs = pstm.executeQuery();
@@ -226,7 +226,7 @@ public class DBUtils {
              
           }
       }
-      String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' and Calorie between ("+calorieslunch+"-50) and ("+calorieslunch+"+50) limit 7";
+      String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' and Calorie between ("+calorieslunch+"-20) and ("+calorieslunch+"+20) limit 7";
       System.out.println("sql "+sqll);
        pstm = conn.prepareStatement(sqll);
        rs = pstm.executeQuery();
@@ -297,7 +297,7 @@ public class DBUtils {
           }
       }
       
-      String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' and Calorie between ("+caloriesdinner+"-50) and ("+caloriesdinner+"+50) limit 7";
+      String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' and Calorie between ("+caloriesdinner+"-20) and ("+caloriesdinner+"+20) limit 7";
       System.out.println("sql "+sqld);
        pstm = conn.prepareStatement(sqld);
        rs = pstm.executeQuery();
@@ -469,27 +469,52 @@ public class DBUtils {
   
   //need to handle update in case if customer record is already available and in case if active order is present then deactivate the previous one
   public static int insertRecord(Connection conn,int preference, int height, int weight, String gender, int age,String name, String phone, String email,String address,String state,String city,String zip,
-		  ArrayList bkitems,ArrayList litems,ArrayList ditems, int planId, Date birthDate) throws SQLException {
+		  ArrayList bkitems,ArrayList litems,ArrayList ditems, int planId, Date birthDate,String payment) throws SQLException {
 	  
 		  int inserted=0;
 		  int cust_id=0;
 		  int order_id=0;
 		  String dayString="";
+		  int updated=0;
 		  try{
 	      conn.setAutoCommit(false);
 		 
 		  // create a Statement from the connection
 		  Statement statement = conn.createStatement();
-		  System.out.println(email);
-		  // insert the data
-		  java.sql.Date sqlDate = new java.sql.Date(birthDate.getTime());
-		  System.out.println("birthDate:" + birthDate);
-		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','"+sqlDate+"',"+age+",'"+gender+"',"+height+","+weight+",'"+address+"','"+phone+"','"+zip+"','Paypal','"+city+"','"+state+"')");
+		  java.sql.Date sqlDate = new java.sql.Date(birthDate.getTime()); 
+		  ResultSet checkExistingEntry=statement.executeQuery("select customer_id from happytummy.customerdetails where Email_Id='"+email+"' and DOB='"+sqlDate+"'");
+		  while(checkExistingEntry.next())
+		  {
+			  cust_id=checkExistingEntry.getInt(1);
+		  }
+		  if(cust_id==0)
+		  {
+	
+		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','"+sqlDate+"',"+age+",'"+gender+"',"+height+","+weight+",'"+address+"','"+phone+"','"+zip+"','"+payment+"','"+city+"','"+state+"')");
 		  System.out.println("inserted in customer "+inserted);
+		  
 		  ResultSet cust_id_rs=statement.executeQuery("select customer_id from happytummy.customerdetails where Email_Id='"+email+"'");
 		  while(cust_id_rs.next())
 		  {
 			  cust_id=cust_id_rs.getInt(1);
+		  }
+		  }
+		  else
+		  {
+			  String updateCustomer="UPDATE happytummy.customerdetails"+
+				" SET  customer_Name = '"+ name+"',  Age = "+age+",Gender = '"+gender+"',"+
+				" Height = "+ height+", Weight = "+ weight+",Address = '"+address+"', Phone ='"+phone +"',"+
+				" Zip = "+Integer.parseInt(zip)+", Payment ='"+payment+"',city = '"+city+"', State = '"+state+"'"+
+				" WHERE Customer_ID =  "+cust_id;
+			  System.out.println(updateCustomer+"updated in order_ids");
+			  updated=statement.executeUpdate(updateCustomer);
+			  //set previous order as inactive
+			  String updateOrder="UPDATE happytummy.order_ids"+
+						" SET  Active='I'"+
+						" WHERE Customer_ID =  "+cust_id;
+					  System.out.println(updateOrder+" in updateOrder");
+					  updated=statement.executeUpdate(updateOrder);
+			   
 		  }
 		  String sql_orderids="INSERT INTO happytummy.order_ids(Order_date,Customer_ID,Plan_ID,Active)VALUES(curdate(),"+cust_id+","+planId+",'A')";
 		  System.out.println(sql_orderids+"inserted in order_ids");
@@ -567,7 +592,7 @@ public class DBUtils {
 		  {
 			  conn.commit();
 		  }
-		  return inserted;
+		  return order_id;
 	
 	  }
 }

@@ -67,6 +67,7 @@ public class CheckoutServlet extends HttpServlet {
 		        int age=0;
 		        int planId=0;
 		        int factor=0;
+		        String payment="";
 		        ArrayList bkitems=new ArrayList();
 		        ArrayList litems=new ArrayList();
 		        ArrayList ditems=new ArrayList();
@@ -144,6 +145,11 @@ public class CheckoutServlet extends HttpServlet {
 		        	planId=Integer.parseInt(request.getParameter("PlanId"));
 		        	
 		        }
+		        if(request.getParameter("Payment")!=null && !((request.getParameter("Payment")).toString().equals("")))
+		        {
+		        	payment=request.getParameter("Payment");
+		        	
+		        }
 		        if(request.getParameter("bkitems")!=null && !((request.getParameter("bkitems")).toString().equals("")))
 		        {
 		        	
@@ -177,12 +183,12 @@ public class CheckoutServlet extends HttpServlet {
 		        }
 
 		        //DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
-		        int value=DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId,birthDate); //pending to change
-                System.out.println("value="+value);
-                if(value>0)
+		        int order_id=DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId,birthDate,payment); //pending to change
+                System.out.println("value="+order_id);
+                if(order_id>0)
                 {
                     JSONObject json      = new JSONObject();
-                    json.put("result","success");
+                    json.put("result",order_id);
                     System.out.println("json="+json.toJSONString());
                     response.setContentType("application/json");
                     response.getWriter().write(json.toString());
