@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For allocating menu on the basis of age, gender, height and weight
+ */
 package happytummy.servlet;
 import happytummy.beans.MenuItems;
 import happytummy.connect.ConnectionUtils;

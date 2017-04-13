@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For reading property file for DB properties
+ */
 package happytummy.connect;
 
 import java.util.Locale;

@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For placing order at the last step
+ */
 package happytummy.servlet;
 
 import happytummy.connect.ConnectionUtils;

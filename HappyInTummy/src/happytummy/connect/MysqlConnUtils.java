@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For reading DB properties and handle driver
+ */
 package happytummy.connect;
 import java.util.Properties;
 import java.io.FileInputStream;
