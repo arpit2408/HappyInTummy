@@ -55,13 +55,22 @@ $.get("Header.html", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
+
+<script type="text/javascript">
+function submitform()
+{
+document.myform.submit();
+}
+</script>
+
 </head>
 <body >
 <div id="websiteHeader" style="z-index: 1111;"></div>
 
 	<div class="container wrapper">
 	
-				<form class="form-horizontal" role="form" action="">
+				<form name="myform" class="form-horizontal" role="form" action="UpdateUserDetails" method="post">
+				<input type="hidden" name="customerID" value="${ user.customer_id }">
 				<div class="form-group">
 							<label class="col-sm-4 control-label" for="Name (Full name)"></label>
 							<div class="col-sm-5">
@@ -71,7 +80,7 @@ $.get("Header.html", function (data) {
 									</div>
 									<input id="Name (Full name)" name="Name (Full name)"
 										type="text" placeholder="Name (Full name)"
-										class="form-control input-md" value="${ user.customer_name }" disabled>
+										class="form-control input-md" value="${ user.customer_name }" readonly="readonly">
 								</div>
 
 
@@ -93,7 +102,7 @@ $.get("Header.html", function (data) {
 									</div>
 									<input id="Date Of Birth" name="Date Of Birth" type="text"
 										placeholder="Date Of Birth" class="form-control input-md"
-										value="${ user.birth_date }" disabled>
+										value="${ user.birth_date }" readonly="readonly">
 								</div>
 
 
@@ -104,30 +113,24 @@ $.get("Header.html", function (data) {
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="Gender"></label>
 							<div class="col-sm-5">
-								<label class="radio-inline" for="Gender-0"> 
-								<input type="radio" name="Gender" id="Gender-0" value="1" <s:if test="${user.gender}"==Male>checked</s:if> disabled/>
+								<label class="radio-inline" for="Gender-0"> <input
+									type="radio" name="Gender" id="Gender-0" value="1" <c:if test="${user.gender=='Male'}">checked</c:if> disabled>
 									Male
 								</label> 
-								<label class="radio-inline" for="Gender-1"> 
-								<input type="radio" name="Gender" id="Gender-1" value="2" <s:if test="${user.gender}"==Female>checked</s:if> disabled/> Female
+								<label class="radio-inline" for="Gender-1"> <input
+									type="radio" name="Gender" id="Gender-1" value="2" <c:if test="${user.gender=='Female'}">checked</c:if> disabled> Female
 								</label>
 							</div>
 						</div>
 						<!-- Text input-->
 
-<!-- <input type="radio" id="new" value="n" 
-<s:if test='patientSoapBean.radioInnerSubjective == "n"'>
-checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
-<label for="new">New</label>
- -->
-
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="Permanent Address"></label>
 							<div class="col-sm-5">
-								<input id="Permanent Address" name="Permanent Address"
+								<input id="Street Address" name="Street Address"
 									type="text" placeholder="Street Address"
 									class="form-control input-md "
-									value="${user.address}" }>
+									value="${user.address}" required="required">
 
 							</div>
 						</div>
@@ -135,9 +138,9 @@ checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="Permanent Address"></label>
 							<div class="col-sm-5">
-								<input id="Permanent Address" name="Permanent Address"
+								<input id="City" name="City"
 									type="text" placeholder="City" class="form-control input-md "
-									value="${user.city}" }>
+									value="${user.city}" required="required">
 
 							</div>
 						</div>
@@ -146,16 +149,16 @@ checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
 							<label class="col-sm-4 control-label col-xs-12"
 								for="Permanent Address"></label>
 							<div class="col-md-2  col-xs-4">
-								<input id="Permanent Address" name="Permanent Address"
+								<input id="State" name="State"
 									type="text" placeholder="State" class="form-control input-md "
-									value="${user.state}" }>
+									value="${user.state}" required="required">
 							</div>
 
 							<div class="col-md-2 col-xs-4">
 
-								<input id="Permanent Address" name="Permanent Address"
+								<input id="ZIP Code" name="ZIP Code"
 									type="text" placeholder="ZIP Code"
-									class="form-control input-md " value="${user.postal_zip}">
+									class="form-control input-md " value="${user.postal_zip}" required="required">
 							</div>
 
 
@@ -169,9 +172,9 @@ checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
 										<i class="fa fa-mobile fa-1x" style="font-size: 20px;"></i>
 
 									</div>
-									<input id="Phone number " name="Phone number " type="text"
+									<input id="Phone number" name="Phone number" type="text"
 										placeholder="Phone number " class="form-control input-md"
-										value="${user.phone_number}">
+										value="${user.phone_number}" required="required">
 
 								</div>
 							</div>
@@ -188,7 +191,7 @@ checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
 									</div>
 									<input id="Email Address" name="Email Address" type="text"
 										placeholder="Email Address" class="form-control input-md"
-										value="${user.email_id}" disabled>
+										value="${user.email_id}" readonly="readonly">
 
 								</div>
 
@@ -225,7 +228,7 @@ checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
 									</div>
 									<input id="Plan Period" name="Plan Period" type="text"
 										placeholder="Plan Period" class="form-control input-md"
-										value="${user.noOfWeeks} Week" disabled>
+										value="${user.noOfWeeks} Week(s)" disabled>
 								</div>
 
 							</div>
@@ -233,13 +236,12 @@ checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
 
 						<!-- Multiple Radios -->
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="Cancel Order"></label>
+							<label class="col-sm-4 control-label"></label>
 							<div class="col-sm-5">
-								<div class="checkbox">
-									<label for="Owns Vehicle-0"> <input type="checkbox"
-										name="Owns Vehicle" id="Owns Vehicle-0" value="1"> I
-										want to cancel my order.
-									</label>
+							<div class="checkbox">				
+								<input type="checkbox" class="checkbox style-2"
+										name="Cancel Order" id="Cancel Order" value="1"> 
+									<label for="Cancel Order"><span> I want to cancel my order.</span> </label>
 								</div>
 							</div>
 						</div>
@@ -248,18 +250,17 @@ checked</s:if> name="patientSoapBean.radioInnerSubjective"/>
 						<div class="form-group">
 							<label class="col-sm-4 control-label"></label>
 							<div class="col-md-2  col-xs-4">
-								<a href="#" class="btn btn-success"><span
+								<a href="javascript: submitform()" class="btn btn-success"><span
 									class="glyphicon glyphicon-thumbs-up"></span> Submit </a>
 							</div>
 
 
-							<a href="#" class="btn btn-danger" value=""><span
+							<a href="contact-us.html" class="btn btn-danger" value=""><span
 								class="glyphicon glyphicon-remove-sign"></span> Cancel </a>
 
 						</div>
 
-				</form>
-			
+				</form>		
 		</div>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>

@@ -9,6 +9,7 @@ import java.util.List;
 
 
 
+
 import happytummy.beans.MenuItems;
 import happytummy.beans.Plans;
 import happytummy.beans.User;
@@ -16,24 +17,20 @@ import happytummy.beans.User;
  
 public class DBUtils {
  
-  public static User findUser(Connection conn, String userName, String dob) throws SQLException {
+  public static boolean userExists(Connection conn, String emailID, String dob) throws SQLException {
  
-      String sql = ""; //need to work on this
- 
-      PreparedStatement pstm = conn.prepareStatement(sql);
-      pstm.setString(1, userName);
-      pstm.setString(2, dob);
+      String sql = "select Customer_ID from happytummy.customerdetails where "; //need to work on this
+      sql=sql+"Email_Id ='"+ emailID.toString()+"'";
+      sql=sql+" and DOB=str_to_date('"+dob+"','%d-%M-%Y');";
+      System.out.println("Query: "+sql);
+      PreparedStatement pstm = conn.prepareStatement(sql);	  
       ResultSet rs = pstm.executeQuery();
- 
-      if (rs.next()) {
-          
-    	  User user = new User();
-          user.setCustomer_name(userName);
-          user.setBirth_date(dob);
-     
-          return user;
-      }
-      return null;
+      if (!rs.next()) {
+    	  System.out.println("No Customer ");
+    	  return false;
+    	}
+      System.out.println("Output: "+rs.getString("Customer_ID"));
+	  return true ;
   }
  
   public static List<MenuItems> queryMenu(Connection conn,int preference) throws SQLException {
@@ -68,10 +65,67 @@ public class DBUtils {
       }
       return list;
   }
-
+  /*started by Rini 04/12*/
+  public static String getActiveOrderID(Connection conn, String customerID)throws SQLException{
+	  String activeOrderID="Invalid";
+	  StringBuilder sql=new StringBuilder();
+	  sql.append("select Order_ID from happytummy.order_ids");
+	  sql.append(" where Customer_ID = "+ customerID.toString());
+	  sql.append(" and Active='A';");
+	  String query= sql.toString();
+	  System.out.println("Query: "+query);
+	  PreparedStatement pstm = conn.prepareStatement(query);	  
+      ResultSet rs = pstm.executeQuery();
+      if (!rs.next()) {
+    	  activeOrderID="None";
+    	}else{
+    		activeOrderID =rs.getString("Order_ID");
+    		}
+      System.out.println("Output: "+activeOrderID);
+	  return activeOrderID ;
+  }
+  
+  public static int updateInfo(Connection conn, String customerID, String orderID, String street, String city, String state, String zip, String phone, boolean cancelOrder)throws SQLException{
+	  int returnValue=0;
+	  StringBuilder sql=new StringBuilder();
+	  
+	  sql.append("UPDATE happytummy.customerdetails");
+	  sql.append(" SET Address = '"+street+"',");
+	  sql.append(" Phone = '"+phone+"',");
+	  sql.append(" Zip = '"+zip+"',");
+	  sql.append(" City = '"+city+"',");
+	  sql.append(" State = '"+state+"'");
+	  sql.append(" WHERE Customer_ID = '"+customerID+"';");
+	  String query= sql.toString();
+	  System.out.println("Query: "+query);
+	  PreparedStatement pstm = conn.prepareStatement(query);
+	  returnValue=pstm.executeUpdate();
+	  conn.commit();
+	  
+	  if (cancelOrder){
+		  /*if order has to be cancelled; update customer details and mark order inactive*/
+		  sql.setLength(0);
+		  query= sql.toString();
+		  System.out.println("Query: "+query);
+		  sql.append("UPDATE happytummy.order_ids");
+		  sql.append(" SET Active = 'I'");
+		  sql.append(" WHERE Order_ID = '"+orderID+"'");
+		  sql.append(" AND Customer_ID='"+customerID+"';");
+		  query= sql.toString();
+		  System.out.println("Query: "+query);
+		  pstm = conn.prepareStatement(query);
+		  returnValue=pstm.executeUpdate();
+		  conn.commit();
+ 
+	  }
+	  
+	  
+	  return returnValue;
+  }
+  /*ended by Rini 04/12*/
   public static User getUserDetails(Connection conn, String emailID, String dob) throws SQLException {
 	  StringBuilder sql=new StringBuilder();
-	  sql.append("select c.Customer_Name,DATE_FORMAT(c.DOB,'%d-%b-%Y')'c.DOB', ");
+	  sql.append("select c.Customer_ID, c.Customer_Name,DATE_FORMAT(c.DOB,'%d-%b-%Y')'c.DOB', ");
 	  sql.append("c.Gender,c.Address,c.City, ");	  
 	  sql.append("c.State,c.Phone,c.Email_Id,p.NoWeeks, ");	  
 	  sql.append("c.Zip,pref.Preference_Type ");	  
@@ -87,7 +141,8 @@ public class DBUtils {
 	  PreparedStatement pstm = conn.prepareStatement(query);	  
       ResultSet rs = pstm.executeQuery();
       User user = new User();
-      while (rs.next()){     
+      while (rs.next()){  
+      user.setCustomer_id(rs.getInt("c.Customer_ID"));
       user.setCustomer_name(rs.getString("c.Customer_Name"));
       user.setBirth_date(rs.getString("c.DOB"));
       user.setGender(rs.getString("c.Gender"));
