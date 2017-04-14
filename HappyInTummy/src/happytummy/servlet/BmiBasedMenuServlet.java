@@ -23,6 +23,7 @@ import com.sun.glass.ui.Window;
 
 import happytummy.beans.MenuItems;
 import happytummy.utils.DBUtils;
+import happytummy.utils.MyUtils;
 import happytummy.connect.ConnectionUtils;
 public class BmiBasedMenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

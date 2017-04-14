@@ -1,4 +1,5 @@
 package happytummy.beans;
+import java.text.SimpleDateFormat;
 
 public class User {
 	private int customer_id;

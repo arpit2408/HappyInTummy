@@ -1,18 +1,15 @@
 package happytummy.servlet;
 
-
+import happytummy.beans.Plans;
 import happytummy.beans.User;
 import happytummy.connect.ConnectionUtils;
 import happytummy.utils.DBUtils;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
-
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,7 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  * Servlet implementation class EditUserDetails
@@ -41,14 +39,7 @@ public class EditUserDetails extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-			}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		System.out.println("Entered doPost of EditUserDetails "+request.getParameter("email")+request.getParameter("dob")); //test
+		System.out.println("Entered doGet of EditUserDetails"+request.getParameter("email")+request.getParameter("dob")); //test
 		
 		Connection conn;
 		try {
@@ -58,12 +49,8 @@ public class EditUserDetails extends HttpServlet {
 			String emailID=request.getParameter("email");
 			String dob=request.getParameter("dob");
 			User user=new User();
-			try{	
-				DateFormat sourceFormat=new SimpleDateFormat("yyyy-MM-dd");
-				DateFormat destFormat=new SimpleDateFormat("dd-MMM-yyyy");
-				Date birthDate = sourceFormat.parse(dob);
-				dob=destFormat.format(birthDate);
-				user =DBUtils.getUserDetails(conn, emailID, dob);
+			try{	        
+	        user =DBUtils.getUserDetails(conn, emailID, dob);
 			} catch (Exception e) {
 	            e.printStackTrace();
 	            errorString = e.getMessage();
@@ -78,7 +65,15 @@ public class EditUserDetails extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		 System.out.println("Entered doPost of EditUserDetails"); //test
+		 doGet(request, response);
 	}
 
 }

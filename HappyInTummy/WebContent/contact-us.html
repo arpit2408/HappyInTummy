@@ -1,3 +1,5 @@
+
+
  <!DOCTYPE html>  
  <html lang="en">  
  <head>  
@@ -5,129 +7,104 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
  <meta name="viewport" content="width=device-width, initial-scale=1">  
   
- <!-- carrot in the tab bar -->   
+ <!-- favicon -->  
+ <link rel="shortcut icon" type="image/png" href="favicon.png"/>  
  <link rel="shortcut icon" type="image/png" href="favicon.png"/>  
  <title>HappyTummy</title>  
   
  <!-- style lists -->  
  <link href="css/bootstrap.min.css" rel="stylesheet">  
  <link href="css/animate.css" rel="stylesheet">  
+ <link href="css/hover.css" rel="stylesheet">  
+ <link href="css/font-awesome.css" rel="stylesheet">  
  <link href="css/jquery.bxslider.css" rel="stylesheet">  
+ <link href="css/<owl class="carousel"></owl>.css" rel="stylesheet">  
  <link href="css/owl.transitions.css" rel="stylesheet">  
- <link href="css/feature-carousel.css" rel="stylesheet" >  
+ <link rel="stylesheet" href="css/feature-carousel.css">  
  <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">  
  <link href="css/style.css" rel="stylesheet">  
   
  <!-- montserrat font embed -->  
- <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700' rel='stylesheet' type='text/css'>
-   
- <!-- loader image before page load  -->  
- <style>   
- .no-js #loader {display: none;}.js #loader { display: block; position: absolute; left: 100px; top: 0;}.se-pre-con {position: fixed;left: 0px;top: 0px;width: 100%;height: 100%;z-index: 9999;background: url(images/Preloader_4.gif) center no-repeat #fff;}  
- </style> 
+ <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700' rel='stylesheet' type='text/css'>  
   
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
- <script>
-	$.get("Header.html", function (data) {
-    $("#websiteHeader").replaceWith(data);
-	});
- </script> 
- <script>
-	function fieldValidations() {
-		
-    var emailID = document.getElementById("email");
-    var birthdate = document.getElementById("dob");
-   
-    if (emailID.value=="") {
-        document.getElementById("emailtip").innerHTML = "Email ID is a required field.";
-        return false;
-    }else{
-    	document.getElementById("emailtip").innerHTML = "";
-    }
-   
-    if (birthdate.value=="") {
-        document.getElementById("dobtip").innerHTML = "Date of birth is a required field.";
-        return false;
-    }else{
-    	document.getElementById("dobtip").innerHTML ="";
-    }
-    
-    $.ajax({
-    	url: 'CheckUserExists',
-	    type: 'POST',      
-	    cache: false,
-    	data:{
-    		"email_id" :emailID.value,
-    		"dob":birthdate.value
-    	},
-    	dataType:"json",
-    	success:function(data){
-    		if (data){
-    			document.forms.contactUS.submit();
-    		}else{
-    			document.getElementById("formtip").innerHTML="Sorry! We couldn't find you.";
-    		}
-    	}    	
-    }); 
-	}
- </script> 
-   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->  
-   <script src="js/jquery-3.1.1.min.js"></script>  
-  <script src="js/jquery-ui-1.9.2.custom.js"></script>  
-  <script src="js/modernizr.js"></script>  
-  <script src="js/bootstrap.min.js"></script>  
-  <script src="js/wow.min.js"></script>  
-  <script src="js/Headroom.js"></script>  
-  <script src="js/jquery.parallax-1.1.3.js"></script>  
-  <script src="js/jquery.featureCarousel.js"></script>  
-  <script src="js/jquery.bxslider.js"></script>  
-  <script src="js/owl.carousel.js"></script>  
-  <script src="js/jquery.counterup.js"></script>  
-  <script src="js/main.js"></script>  
+ <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->  
+ <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->  
+ <!--[if lt IE 9]>  
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>  
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>  
+  <![endif]-->  
+  
+ <style>  
+ /******* loader image before page load ******/  
+ .no-js #loader {display: none;}.js #loader { display: block; position: absolute; left: 100px; top: 0;}.se-pre-con {position: fixed;left: 0px;top: 0px;width: 100%;height: 100%;z-index: 9999;background: url(images/Preloader_4.gif) center no-repeat #fff;}  
+ </style>  
+  
  </head>  
- <body >
- <div id="websiteHeader" style="z-index: 1111;"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+$.get("Header.html", function (data) {
+    $("#websiteHeader").replaceWith(data);
+});
+</script>
+
+<body >
+<div id="websiteHeader" style="z-index: 1111;"></div>
 
  <!-- loader image before page load starts -->  
  <div class="se-pre-con"></div>  
  <!-- loader image before page load ends -->  
   
  <!-- main wrapper of the site starts -->  
- <div class="wrapper">   
+ <div class="wrapper">  
+  
  
- <main> 
+  
+ <main>  
+ 
  <!-- ============== Contact form block starts ============== -->  
  <section class="block contact-form">  
  <div class="container">  
- <h3  class="wow fadeInUp wrapper" style="font-family: 'Raleway', sans-serif !important;">We are excited to see you back!!!</h3>  
+ <h3 class="wow fadeInUp wrapper" style="font-size: 2.2em; font-family: 'Monotype Corsiva', sans-serif !important;">WE ARE EXCITED TO SEE YOU BACK!!</h3>  
  <div class="row wrapper">  
  <div class="col-xs-12 col-sm-3"></div>
  <div class="col-xs-12 col-sm-9 ">  
- <form id="contactUS" action ="EditUserDetails" method ="post">
- <fieldset>
- 	<p id="formtip" style="font-family : 'Raleway'; color: red"></p>
- </fieldset>  
- <fieldset>
-	 <input id ="email" style="max-width:500px" type="text" name="email" placeholder="Your email ID" required="required" autofocus="autofocus" /><br/>
-	 <p id="emailtip" style="font-family : 'Raleway'; color: red"></p>
- </fieldset>  
- <fieldset>
- 	<input id ="dob" name="dob" style="max-width:500px" type="date" required="required"/>
- 	<p id="dobtip" style="font-family : 'Raleway'; color: red"></p>
- </fieldset>
- 
- <fieldset>
- 	<input type="button" style="max-width:500px" value="Manage Your Order" onClick="fieldValidations();" class="btn"/>
+ <form action ="EditUserDetails" method ="post">  
+ <fieldset><input style="width:500px" type="text" name="email" placeholder="Your Email ID" /></fieldset>  
+ <fieldset><input style="width:500px" type="text" name="dob" placeholder="Your DOB" /> <img src="images/Calendar.ico" alt="Calendar icon" /> 
  </fieldset>  
  
+ <fieldset><button style="width:500px" class="btn">Manage Your Order</button></fieldset>  
  </form>  
  </div>  
  </div>  
  </div>  
  </section>  
  <!-- ============== Contact form block ends ============== -->  
- </main>   
+ </main>  
+  
+  
+ <!-- ============== footer block starts ============== -->  
+ <footer>  
+  
+ </footer>  
+ <!-- ============== footer block ends ============== -->  
+  
+  
  </div>  
  <!-- main wrapper of the site ends -->  
+  
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->  
+ <script src="js/jquery-3.1.1.min.js"></script>  
+ <script src="js/jquery-ui-1.9.2.custom.js"></script>  
+ <script src="js/modernizr.js"></script>  
+ <script src="js/bootstrap.min.js"></script>  
+ <script src="js/wow.min.js"></script>  
+ <script src="js/Headroom.js"></script>  
+ <script src="js/jquery.parallax-1.1.3.js"></script>  
+ <script src="js/jquery.featureCarousel.js"></script>  
+ <script src="js/jquery.bxslider.js"></script>  
+ <script src="js/owl.carousel.js"></script>  
+ <script src="js/jquery.counterup.js"></script>  
+ <script src="js/main.js"></script>  
  </body>  
  </html> 
