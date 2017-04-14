@@ -14,15 +14,13 @@
 <!-- style lists -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
-<link href="css/hover.css" rel="stylesheet">
-<link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/jquery.bxslider.css" rel="stylesheet">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.transitions.css" rel="stylesheet">
 <link rel="stylesheet" href="css/feature-carousel.css">
 <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
 <script src="Fillform.js" type="text/javascript"></script>
 
 <link
@@ -54,7 +52,7 @@
 </style>
 <title>Happy Tummy</title>
 </head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
 <script>
 
 function getPlans()
@@ -248,7 +246,7 @@ $.get("Menu_Options.jsp", function (data) {
 	<script src="js/modernizr.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
-	<script src="js/Headroom.js" type="text/javascript"></script>
+
 	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
 	<script src="js/jquery.bxslider.js" type="text/javascript"></script>

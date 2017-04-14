@@ -8,23 +8,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- favicon -->
-
-<link rel="shortcut icon" type="image/png" href="favicon.png" />
-<link rel="shortcut icon" type="image/png" href="favicon.png" />
 <title>Happy Tummy</title>
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
 <!-- style lists -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/build/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
 
-<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="css/animate.css" rel="stylesheet">
-<link href="css/hover.css" rel="stylesheet">
-<link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/jquery.bxslider.css" rel="stylesheet">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.transitions.css" rel="stylesheet">
@@ -34,7 +24,7 @@
 <link rel="stylesheet" href="css/intlTelInput.css" />
 <script src="Fillform.js" type="text/javascript"></script>
 <script src="js/intlTelInput.min.js"></script>
-<!-- montserrat font embed -->
+
 <link
 	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
 	rel='stylesheet' type='text/css'>
@@ -216,7 +206,7 @@ $.get("Header.jsp", function (data) {
 	<script src="js/modernizr.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
-	<script src="js/Headroom.js" type="text/javascript"></script>
+	
 	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
 	<script src="js/jquery.bxslider.js" type="text/javascript"></script>

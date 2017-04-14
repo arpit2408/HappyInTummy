@@ -333,7 +333,7 @@ public class DBUtils {
     	  items = items.substring(0, items.length()-1);
         }
       
-      if(countd<7 && countlunch>0)
+      if(countd<7 && countd>0)
       {
     	  sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' and  portion=2 and item_name not in ("+items+") limit "+(7-countd);
         

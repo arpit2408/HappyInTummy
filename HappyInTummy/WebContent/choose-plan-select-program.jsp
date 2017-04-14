@@ -14,8 +14,6 @@
 <!-- style lists -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
-<link href="css/hover.css" rel="stylesheet">
-<link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/jquery.bxslider.css" rel="stylesheet">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.transitions.css" rel="stylesheet">
@@ -52,7 +50,7 @@
 	background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->  
 </head>
 
 <script type="text/javascript">
@@ -558,7 +556,7 @@ $.get("Menu_Options.jsp", function (data) {
 	<script src="js/modernizr.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
-	<script src="js/Headroom.js" type="text/javascript"></script>
+	
 	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
 	<script src="js/jquery.bxslider.js" type="text/javascript"></script>

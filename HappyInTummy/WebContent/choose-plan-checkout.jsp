@@ -15,8 +15,6 @@
 <!-- style lists -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
-<link href="css/hover.css" rel="stylesheet">
-<link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/jquery.bxslider.css" rel="stylesheet">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.transitions.css" rel="stylesheet">
@@ -26,7 +24,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
 <script src="Fillform.js" type="text/javascript"></script>
 
-<!-- montserrat font embed -->
+
 <link
 	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
 	rel='stylesheet' type='text/css'>
@@ -198,7 +196,6 @@ $.get("Header.jsp", function (data) {
 	<script src="js/modernizr.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
-	<script src="js/Headroom.js" type="text/javascript"></script>
 	
 	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
