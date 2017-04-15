@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For creating Database connections
+ */
 package happytummy.connect;
 
 import java.io.FileNotFoundException;

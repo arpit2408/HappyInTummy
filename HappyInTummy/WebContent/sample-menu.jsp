@@ -16,8 +16,6 @@
 <!-- style lists -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
-<link href="css/hover.css" rel="stylesheet">
-<link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/jquery.bxslider.css" rel="stylesheet">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.transitions.css" rel="stylesheet">
@@ -88,11 +86,7 @@
 	}
 	
 </script>
-<!-- <script type="text/javascript">
-	$.get("showDishes.html", function(data) {
-		$("#showdishes").replaceWith(data);
-	});
-</script> -->
+
 <body onload="showhide();">
 	<div id="websiteHeader" style="z-index: 1111;"></div>
 	<!-- loader image before page load starts -->
@@ -776,7 +770,7 @@
 	<script src="js/modernizr.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
-	<script src="js/Headroom.js" type="text/javascript"></script>
+	
 	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
 	<script src="js/jquery.bxslider.js" type="text/javascript"></script>
