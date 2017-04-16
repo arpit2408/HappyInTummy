@@ -1,4 +1,4 @@
-
+//Method to handle flow among 4 steps added by Arpit Saxena
 
 function reloadFormAboutYou()
 {
@@ -29,6 +29,9 @@ function reloadFormAboutYou()
 	if(document.getElementById('DOB')!=null)
 		document.getElementById('DOB').value =sessionStorage.getItem('DOB');
 }
+
+
+//Method to handle flow among 4 steps added by Arpit Saxena
 function setCorrectAction(e){
     var baseuri = $("html").data("baseuri");
     
@@ -88,6 +91,8 @@ function setCorrectAction(e){
         //$("#Checkout").attr("href", "#");
     }
 }
+
+//Method to handle flow among 4 steps added by Arpit Saxena
 function setCorrectActionAfterSubmit(e){
     var baseuri = $("html").data("baseuri");
     //alert("hello"+baseuri);
@@ -111,7 +116,7 @@ function setCorrectActionAfterSubmit(e){
     }
 }
 
-
+//Method to set data on last page added by Neetika
 function datatoShow()
 {
 	var totalpayment=parseInt(sessionStorage.getItem('PlanIdCost')) * parseInt(sessionStorage.getItem('PlanIdText'));
@@ -137,6 +142,7 @@ function datatoShow()
 		document.getElementById('Plan').innerHTML = sessionStorage.getItem('PlanIdText') + ' Week Plan ($'+ sessionStorage.getItem('PlanIdCost') + ' per day) <br> Payment due after discount: $'+discounted;
 
 }
+//Method to call on checkout added by Neetika
 function placeOrder()
 {
 	if($('#Paypal').is(':checked')==false && $('#Bank').is(':checked')==false)
@@ -180,6 +186,7 @@ function placeOrder()
 	 });
 	
 }
+//Method to set preference from session on step 2 added by Neetika
 function reloadPref()
 {
 	if(sessionStorage.getItem('Preference')!=null)
@@ -189,3 +196,4 @@ function reloadPref()
 	if(sessionStorage.getItem('Height')!=null)
 		document.getElementById('height').value = sessionStorage.getItem('Height');
 }
+
