@@ -6,7 +6,9 @@
 	<artifactId>HappyInTummy</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	
 	<build>
+	
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
 			<resource>
@@ -22,7 +24,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
-					<webXml>\Users\arpit2408\Documents\HappyInTummy\HappyInTummy\WebContent\WEB-INF\web.xml</webXml>
+					<webXml>\Users\arpit2408\Documents\HappyInTummy\HappyInTummy\HappyInTummy\WebContent\WEB-INF\web.xml</webXml>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -34,5 +36,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
 	</build>
 </project>

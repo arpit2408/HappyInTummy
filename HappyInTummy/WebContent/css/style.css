@@ -136,7 +136,7 @@ body { background:#fff; color:#848484; font-size:14px;font-family: 'Raleway', sa
 p, /***.top-text,**/input, select, textarea, span, blockquote, a, li {font-family: 'Raleway', sans-serif;}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-family: 'Raleway', sans-serif;color: #575757;}
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {color: #60ba62;}
-.btn, input[type=submit], button {padding: 15px 31px;color: #fff;background: #60ba62;font-size: 14px;text-transform: uppercase;}
+.btn, input[type=submit], button {padding: 15px 31px;color: #fff;background: #60ba62;font-size: 12px;text-transform: uppercase;}
 .btn:hover, input[type=submit]:hover, button:hover {background: #575757;color: #fff;}
 .border-btn-small {border-radius: 0;border: 2px solid #60ba62;color: #60ba62;font-size: 13px;text-transform: uppercase;background: transparent;padding: 5px 21px;}
 .border-btn-big {border-radius: 0;border: 2px solid #60ba62;color: #60ba62;font-size: 23px;text-transform: capitalize;background: transparent;padding: 11px 55px;}
@@ -1929,6 +1929,9 @@ header.green {background: #60ba62;}
 	    width: 305px;
 	}
 }
+#mobileRadio {
+		display: none ;
+	}
 @media (max-width: 768px){
 	.logo-block img {
 	    transform: none;
@@ -1974,12 +1977,128 @@ header.green {background: #60ba62;}
 	#weight {
 		margin-bottom:2mm;
 	}
+	#DesktopRadio {
+		display: none !important;
+	}
+	#mobileRadio {
+		display: display !important;
+	}
+	#radioButtonChoose {
+		padding-left: 94px;
+	}
+	#menulistingLanding {
+		width: 127px;
+		margin-top: 0px;
+	}
+	#happyTummyad {
+		display: none;
+	/*
+		    width: 42% !important;
+		    margin-top: 7% !important;
+		    margin-left: 1% !important;
+		    margin-bottom: 8% !important;
+		    height: 45px !important;
+		    */
+	}
+	#happyTummyloc {
+		display: none;
+	/*
+		    width: 40% !important;
+		    margin-top: 29% !important;
+		    margin-left: 1% !important;
+		    margin-bottom: 44% !important;
+		    height: 48px !important;
+		    */
+	}
+	#happyTummylocm
+	{
+			display: block !important;
+			max-width: 98%;
+		    padding-left: 6%;
+	}
+	#happyTummyadm
+	{
+				display: block !important;
+			    max-width: 71%;
+			    margin-left: 18%;
+			    border: 0px;
+			    padding-bottom: 27px;
+	}
+	#optionsLandingPage
+	{
+	    height: 161px !important;
+	    margin-top: 25px !important;
+	    margin-left: 0px !important;
+	}
 }
+.menulistingLanding {
+		margin-top: 32px;
+	}
 #weight {
 		margin-right:2mm;
 	}
+#happyTummylocm
+	{
+		display:none;
+	}
+	#happyTummyadm
+	{
+		display:none;
+	}
+#happyTummyloc {
+	width: 66%;
+    margin-top: 35%;
+    margin-left: 9%;
+    margin-bottom: 63%;
+    height: 35px;
+}
+#happyTummyad {
+	width: 67%;
+    margin-top: 4%;
+    margin-left: 8%;
+    margin-bottom: 8%;
+    height: 24px;
+}
+#optionsLandingPage
+{
+    height: 161px;
+    margin-top: 133px;
+    margin-left: -129px;
+}
 .required-field::after { 
     content: "*";
     color:red;
     size: 10px;
+}
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
+}
+.tiltedButtons {
+    padding-top: 7px;
+    
+    /* Rotate div */
+    -ms-transform: rotate(-3deg); /* IE 9 */
+    -webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
+    transform: rotate(-3deg);
+}
+.selectedMenu {
+	background: #60ba62 !important;
 }
