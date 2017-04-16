@@ -11,13 +11,11 @@
 <!-- favicon -->
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
-<title>HappyInTummy</title>
+<title>HappyTummy</title>
 
 <!-- style lists -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
-<link href="css/hover.css" rel="stylesheet">
-<link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/jquery.bxslider.css" rel="stylesheet">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.transitions.css" rel="stylesheet">
@@ -54,13 +52,11 @@
 	background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
 </head>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-	type="text/javascript"></script>
+
 <script type="text/javascript">
-	$.get("Header.html", function(data) {
+	$.get("Header.jsp", function(data) {
 		$("#websiteHeader").replaceWith(data);
 	});
 
@@ -90,11 +86,7 @@
 	}
 	
 </script>
-<!-- <script type="text/javascript">
-	$.get("showDishes.html", function(data) {
-		$("#showdishes").replaceWith(data);
-	});
-</script> -->
+
 <body onload="showhide();">
 	<div id="websiteHeader" style="z-index: 1111;"></div>
 	<!-- loader image before page load starts -->
@@ -226,7 +218,7 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap" style="width: 2000px">
 													<figure>
-														<a href="#"><img class="img-responsive"
+														<a href="#"><img class="img-responsive menubflunchDinner"
 															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
@@ -279,8 +271,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -333,8 +325,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -412,7 +404,7 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap" style="width: 2000px">
 													<figure>
-														<a href="#"><img class="img-responsive"
+														<a href="#"><img class="img-responsive menubflunchDinner"
 															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
@@ -466,8 +458,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -520,8 +512,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -601,7 +593,7 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap" style="width: 2000px">
 													<figure>
-														<a href="#"><img class="img-responsive"
+														<a href="#"><img class="img-responsive menubflunchDinner"
 															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
@@ -654,8 +646,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -708,8 +700,8 @@
 											<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">
 												<div class="menu-item-wrap">
 													<figure>
-														<a href="#"><img class="img-responsive"
-															src="images//${product.image_Name}" alt="Menu image"></a>
+														<a href="#"><img class="img-responsive menubflunchDinner"
+															src="images/${product.image_Name}" alt="Menu image"></a>
 													</figure>
 													<div class="mid">
 														<h4>
@@ -775,10 +767,10 @@
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
-	<script src="js/modernizr.js" type="text/javascript"></script>
+
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
-	<script src="js/Headroom.js" type="text/javascript"></script>
+	
 	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
 	<script src="js/jquery.bxslider.js" type="text/javascript"></script>

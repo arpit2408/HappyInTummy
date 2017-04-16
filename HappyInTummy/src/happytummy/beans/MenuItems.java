@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For showing sample menu to the user
+ */
 package happytummy.beans;
 
 public class MenuItems {

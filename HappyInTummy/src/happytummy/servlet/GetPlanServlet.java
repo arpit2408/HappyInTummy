@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For getting plan ids and details from Database when user gives the food preference
+ */
 package happytummy.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;

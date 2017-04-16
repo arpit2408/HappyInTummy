@@ -61,7 +61,7 @@ public class EditUserDetails extends HttpServlet {
 	                .getRequestDispatcher("/ManageOrders.jsp");
 	        dispatcher.forward(request, response);	        
 			
-		}catch (ClassNotFoundException | SQLException e) {
+		}catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -5,7 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
 
 
 
@@ -104,6 +106,7 @@ public class DBUtils {
 	  
   }
 
+  //Method to get plans based on preference
   public static List<Plans> getPlans(Connection conn,int preference) throws SQLException {
       String sql = "select Plan_ID, Cost, NoWeeks from happytummy.plan where Preference_ID="+preference;
       System.out.println("sql "+sql);
@@ -126,20 +129,19 @@ public class DBUtils {
       return list;
   }
   
-  
+ 
 
   public static List<MenuItems> queryMenuBMI(Connection conn,int preference, int height, int weight, String gender, int age) throws SQLException {
      
       
       //For men: BMR = 10 x weight (kg) + 6.25 x height (cm) – 5 x age (years) + 5
       //For women: BMR = 10 x weight (kg) + 6.25 x height (cm) – 5 x age (years) – 161
-      //write function when all values are present and when height weight are not there
-	  //pending: scenario when enough items are not there in calorie range
+	  
 	  float bmr=0;
 	  int caloriesbk=0;
 	  int calorieslunch=0;
 	  int caloriesdinner=0;
-	  
+	  boolean defaultmenu=false;
 	  List<MenuItems> list = new ArrayList<MenuItems>();
 	  if(height>0 && weight>0){
 		  
@@ -151,18 +153,20 @@ public class DBUtils {
 	  {
 		  bmr = (float)((10 * weight) +( 6.25 * height)-(5 * age)+5);
 	  }
-	  calorieslunch=(int)(bmr*0.40);
-	  caloriesbk=(int)(bmr*0.40);
-	  caloriesdinner=(int)(bmr*0.2);
-      String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and Calorie between ("+caloriesbk+"-20) and ("+caloriesbk+"+20)limit 7";
-      System.out.println(caloriesbk+" - "+calorieslunch+" - "+caloriesdinner+"sql "+sqlbk);
+	  calorieslunch=(int)(bmr*0.35);
+	  caloriesbk=(int)(bmr*0.30);
+	  caloriesdinner=(int)(bmr*0.35);
+      String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and Calorie between ("+caloriesbk+"-20) and ("+caloriesbk+"+20) limit 7";
+      System.out.println(caloriesbk+" - "+calorieslunch+" - "+caloriesdinner);
       PreparedStatement pstm = conn.prepareStatement(sqlbk);
       ResultSet rs = pstm.executeQuery();
-      
+      int countbk=0;
+      String items="";
       while (rs.next()) {
+    	  countbk=countbk+1;
     	  int item_ID = rs.getInt("Item_ID");
-    	  System.out.println("item_ID "+item_ID);
           String item_Name = rs.getString("Item_Name");
+          items="'"+item_Name+"',"+items;
           String item_Desc = rs.getString("Item_Desc");
           int calorie = rs.getInt("Calorie");
           int proteins = rs.getInt("Proteins");
@@ -181,16 +185,58 @@ public class DBUtils {
           menuitem.setImage_Name(image_Name);
           menuitem.setMeal_Type(meal_type);
           list.add(menuitem);
+         
+      }
+      if (items != null && items.length() > 0) {
+    	  items = items.substring(0, items.length()-1);
+        }
+     
+      if(countbk<7 && countbk>0)
+      {
+    	   sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' and  portion=2 and item_name not in ("+items+") limit "+(7-countbk);
+        
+           pstm = conn.prepareStatement(sqlbk);
+           rs = pstm.executeQuery();
+         
+          while (rs.next()) {
+        	  
+        	  int item_ID = rs.getInt("Item_ID");
+        	  System.out.println("less than 7 case item_ID "+item_ID);
+              String item_Name = rs.getString("Item_Name");
+             
+              String item_Desc = rs.getString("Item_Desc");
+              int calorie = rs.getInt("Calorie");
+              int proteins = rs.getInt("Proteins");
+              int fats = rs.getInt("Fats");
+              int carbohydrates = rs.getInt("Carbohydrates");
+              String image_Name = rs.getString("Image_Name");
+              String meal_type=rs.getString("Meal_Type");
+              MenuItems menuitem = new MenuItems();
+              menuitem.setItem_id(item_ID);
+              menuitem.setItem_Name(item_Name);
+              menuitem.setItem_Desc(item_Desc);
+              menuitem.setCalorie(calorie);
+              menuitem.setProteins(proteins);
+              menuitem.setFats(fats);
+              menuitem.setCarbohydrates(carbohydrates);
+              menuitem.setImage_Name(image_Name);
+              menuitem.setMeal_Type(meal_type);
+              list.add(menuitem);
+             
+          }
       }
       String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' and Calorie between ("+calorieslunch+"-20) and ("+calorieslunch+"+20) limit 7";
       System.out.println("sql "+sqll);
        pstm = conn.prepareStatement(sqll);
        rs = pstm.executeQuery();
-      
+      int countlunch=0;
+      items="";
       while (rs.next()) {
+    	  countlunch=countlunch+1;
     	  int item_ID = rs.getInt("Item_ID");
-    	  System.out.println("item_ID "+item_ID);
+    	 
           String item_Name = rs.getString("Item_Name");
+          items="'"+item_Name+"',"+items;
           String item_Desc = rs.getString("Item_Desc");
           int calorie = rs.getInt("Calorie");
           int proteins = rs.getInt("Proteins");
@@ -210,15 +256,58 @@ public class DBUtils {
           menuitem.setMeal_Type(meal_type);
           list.add(menuitem);
       }
+      
+      if (items != null && items.length() > 0) {
+    	  items = items.substring(0, items.length()-1);
+        }
+      
+      if(countlunch<7 && countlunch>0)
+      {
+    	   sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' and  portion=2 and item_name not in ("+items+") limit "+(7-countlunch);
+        
+           pstm = conn.prepareStatement(sqll);
+           rs = pstm.executeQuery();
+         
+          while (rs.next()) {
+        	  
+        	  int item_ID = rs.getInt("Item_ID");
+        	  System.out.println("less than 7 case item_ID "+item_ID);
+              String item_Name = rs.getString("Item_Name");
+             
+              String item_Desc = rs.getString("Item_Desc");
+              int calorie = rs.getInt("Calorie");
+              int proteins = rs.getInt("Proteins");
+              int fats = rs.getInt("Fats");
+              int carbohydrates = rs.getInt("Carbohydrates");
+              String image_Name = rs.getString("Image_Name");
+              String meal_type=rs.getString("Meal_Type");
+              MenuItems menuitem = new MenuItems();
+              menuitem.setItem_id(item_ID);
+              menuitem.setItem_Name(item_Name);
+              menuitem.setItem_Desc(item_Desc);
+              menuitem.setCalorie(calorie);
+              menuitem.setProteins(proteins);
+              menuitem.setFats(fats);
+              menuitem.setCarbohydrates(carbohydrates);
+              menuitem.setImage_Name(image_Name);
+              menuitem.setMeal_Type(meal_type);
+              list.add(menuitem);
+             
+          }
+      }
+      
       String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' and Calorie between ("+caloriesdinner+"-20) and ("+caloriesdinner+"+20) limit 7";
-      System.out.println("sql "+sqld);
+     
        pstm = conn.prepareStatement(sqld);
        rs = pstm.executeQuery();
-      
+      int countd=0;
+      items="";
       while (rs.next()) {
+    	  countd=countd+1;
     	  int item_ID = rs.getInt("Item_ID");
     	  System.out.println("item_ID "+item_ID);
           String item_Name = rs.getString("Item_Name");
+          items="'"+item_Name+"',"+items;
           String item_Desc = rs.getString("Item_Desc");
           int calorie = rs.getInt("Calorie");
           int proteins = rs.getInt("Proteins");
@@ -238,11 +327,61 @@ public class DBUtils {
           menuitem.setMeal_Type(meal_type);
           list.add(menuitem);
       }
+      
+      
+      if (items != null && items.length() > 0) {
+    	  items = items.substring(0, items.length()-1);
+        }
+      
+      if(countd<7 && countd>0)
+      {
+    	  sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' and  portion=2 and item_name not in ("+items+") limit "+(7-countd);
+        
+           pstm = conn.prepareStatement(sqld);
+           rs = pstm.executeQuery();
+         
+          while (rs.next()) {
+        	  
+        	  int item_ID = rs.getInt("Item_ID");
+        	  System.out.println("less than 7 case item_ID "+item_ID);
+              String item_Name = rs.getString("Item_Name");
+             
+              String item_Desc = rs.getString("Item_Desc");
+              int calorie = rs.getInt("Calorie");
+              int proteins = rs.getInt("Proteins");
+              int fats = rs.getInt("Fats");
+              int carbohydrates = rs.getInt("Carbohydrates");
+              String image_Name = rs.getString("Image_Name");
+              String meal_type=rs.getString("Meal_Type");
+              MenuItems menuitem = new MenuItems();
+              menuitem.setItem_id(item_ID);
+              menuitem.setItem_Name(item_Name);
+              menuitem.setItem_Desc(item_Desc);
+              menuitem.setCalorie(calorie);
+              menuitem.setProteins(proteins);
+              menuitem.setFats(fats);
+              menuitem.setCarbohydrates(carbohydrates);
+              menuitem.setImage_Name(image_Name);
+              menuitem.setMeal_Type(meal_type);
+              list.add(menuitem);
+             
+          }
       }
-	  else
+      if(countbk==0 || countd==0 || countlunch==0)
+      {
+    	  defaultmenu=true;
+      }
+      }
+	  
+	  else //When height and weight are not given, show predefined menu
 	  {
-		  String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Breakfast' limit 7";
-	      System.out.println("sql "+sqlbk);
+		  defaultmenu=true;  
+	  }
+	  if(defaultmenu==true)
+	  {
+		  list = new ArrayList<MenuItems>();
+		  String sqlbk = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and portion=1 and Meal_Type='Breakfast' limit 7";
+	      
 	      PreparedStatement pstm = conn.prepareStatement(sqlbk);
 	      ResultSet rs = pstm.executeQuery();
 	      
@@ -269,14 +408,14 @@ public class DBUtils {
 	          menuitem.setMeal_Type(meal_type);
 	          list.add(menuitem);
 	      }
-	      String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Lunch' limit 7";
-	      System.out.println("sql "+sqll);
+	      String sqll = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and portion=1  and Meal_Type='Lunch' limit 7";
+	      
 	       pstm = conn.prepareStatement(sqll);
 	       rs = pstm.executeQuery();
 	      
 	      while (rs.next()) {
 	    	  int item_ID = rs.getInt("Item_ID");
-	    	  System.out.println("item_ID "+item_ID);
+	    	
 	          String item_Name = rs.getString("Item_Name");
 	          String item_Desc = rs.getString("Item_Desc");
 	          int calorie = rs.getInt("Calorie");
@@ -297,14 +436,14 @@ public class DBUtils {
 	          menuitem.setMeal_Type(meal_type);
 	          list.add(menuitem);
 	      }
-	      String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and Meal_Type='Dinner' limit 7";
-	      System.out.println("sql "+sqld);
+	      String sqld = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference +" and portion=1  and Meal_Type='Dinner' limit 7";
+	      
 	       pstm = conn.prepareStatement(sqld);
 	       rs = pstm.executeQuery();
 	      
 	      while (rs.next()) {
 	    	  int item_ID = rs.getInt("Item_ID");
-	    	  System.out.println("item_ID "+item_ID);
+	    	 
 	          String item_Name = rs.getString("Item_Name");
 	          String item_Desc = rs.getString("Item_Desc");
 	          int calorie = rs.getInt("Calorie");
@@ -329,27 +468,54 @@ public class DBUtils {
       return list;
   }
   
-  //need to handle update in case if customer record is already available and in case if active order is present then deactivate the previous one
+  //Method to insert allocated menu and customer details in database
   public static int insertRecord(Connection conn,int preference, int height, int weight, String gender, int age,String name, String phone, String email,String address,String state,String city,String zip,
-		  ArrayList bkitems,ArrayList litems,ArrayList ditems, int planId) throws SQLException {
+		  ArrayList bkitems,ArrayList litems,ArrayList ditems, int planId, Date birthDate,String payment) throws SQLException {
 	  
 		  int inserted=0;
 		  int cust_id=0;
 		  int order_id=0;
 		  String dayString="";
+		  int updated=0;
 		  try{
 	      conn.setAutoCommit(false);
 		 
 		  // create a Statement from the connection
 		  Statement statement = conn.createStatement();
-		  System.out.println(email);
-		  // insert the data
-		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','1987-11-12',"+age+",'"+gender+"',"+height+","+weight+",'"+address+"','"+phone+"','"+zip+"','Paypal','"+city+"','"+state+"')");
+		  java.sql.Date sqlDate = new java.sql.Date(birthDate.getTime()); 
+		  ResultSet checkExistingEntry=statement.executeQuery("select customer_id from happytummy.customerdetails where Email_Id='"+email+"' and DOB='"+sqlDate+"'");
+		  while(checkExistingEntry.next())
+		  {
+			  cust_id=checkExistingEntry.getInt(1);
+		  }
+		  if(cust_id==0)
+		  {
+	
+		  inserted=statement.executeUpdate("INSERT INTO happytummy.customerdetails(Customer_Name,Email_Id,DOB,Age,Gender,Height,Weight,Address,Phone,Zip,Payment,City,State)VALUES('"+name+"','"+email+"','"+sqlDate+"',"+age+",'"+gender+"',"+height+","+weight+",'"+address+"','"+phone+"','"+zip+"','"+payment+"','"+city+"','"+state+"')");
 		  System.out.println("inserted in customer "+inserted);
+		  
 		  ResultSet cust_id_rs=statement.executeQuery("select customer_id from happytummy.customerdetails where Email_Id='"+email+"'");
 		  while(cust_id_rs.next())
 		  {
 			  cust_id=cust_id_rs.getInt(1);
+		  }
+		  }
+		  else
+		  {
+			  String updateCustomer="UPDATE happytummy.customerdetails"+
+				" SET  customer_Name = '"+ name+"',  Age = "+age+",Gender = '"+gender+"',"+
+				" Height = "+ height+", Weight = "+ weight+",Address = '"+address+"', Phone ='"+phone +"',"+
+				" Zip = "+Integer.parseInt(zip)+", Payment ='"+payment+"',city = '"+city+"', State = '"+state+"'"+
+				" WHERE Customer_ID =  "+cust_id;
+			  System.out.println(updateCustomer+"updated in order_ids");
+			  updated=statement.executeUpdate(updateCustomer);
+			  //set previous order as inactive
+			  String updateOrder="UPDATE happytummy.order_ids"+
+						" SET  Active='I'"+
+						" WHERE Customer_ID =  "+cust_id;
+					  System.out.println(updateOrder+" in updateOrder");
+					  updated=statement.executeUpdate(updateOrder);
+			   
 		  }
 		  String sql_orderids="INSERT INTO happytummy.order_ids(Order_date,Customer_ID,Plan_ID,Active)VALUES(curdate(),"+cust_id+","+planId+",'A')";
 		  System.out.println(sql_orderids+"inserted in order_ids");
@@ -427,7 +593,7 @@ public class DBUtils {
 		  {
 			  conn.commit();
 		  }
-		  return inserted;
+		  return order_id;
 	
 	  }
 }

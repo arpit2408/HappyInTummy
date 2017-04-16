@@ -1,15 +1,22 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For placing order at the last step
+ */
 package happytummy.servlet;
 
+import happytummy.connect.ConnectionUtils;
+import happytummy.utils.DBUtils;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,13 +26,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-import happytummy.beans.MenuItems;
-import happytummy.beans.Plans;
-import happytummy.utils.DBUtils;
-import happytummy.connect.ConnectionUtils;
-
-import java.util.Date;
 
 /**
  * Servlet implementation class CheckoutServlet
@@ -56,7 +56,7 @@ public class CheckoutServlet extends HttpServlet {
 		 Connection conn;
 		try {
 			    conn = ConnectionUtils.getConnection();
-		       
+			    Date birthDate =null;
 		        int preference=0;
 		        int height=0;
 		        String gender="";
@@ -72,6 +72,7 @@ public class CheckoutServlet extends HttpServlet {
 		        int age=0;
 		        int planId=0;
 		        int factor=0;
+		        String payment="";
 		        ArrayList bkitems=new ArrayList();
 		        ArrayList litems=new ArrayList();
 		        ArrayList ditems=new ArrayList();
@@ -92,6 +93,7 @@ public class CheckoutServlet extends HttpServlet {
 		        if(request.getParameter("gender")!=null && !((request.getParameter("gender")).toString().equals("")))
 		        {
 		        	gender=(request.getParameter("gender")).toString();
+		        	System.out.println("gender "+gender);
 		        }
 		        if(request.getParameter("Name")!=null && !((request.getParameter("Name")).toString().equals("")))
 		        {
@@ -121,13 +123,14 @@ public class CheckoutServlet extends HttpServlet {
 		        if(request.getParameter("Zip")!=null && !((request.getParameter("Zip")).toString().equals("")))
 		        {
 		        	zip=(request.getParameter("Zip")).toString();
+		        	System.out.println("servlet "+zip);
 		        }
 		        if(request.getParameter("DOB")!=null && !((request.getParameter("DOB")).toString().equals("")))
 		        {
 		        	dob=(request.getParameter("DOB")).toString();
 		        	System.out.println(dob);
-		        	DateFormat format = new SimpleDateFormat("yyyy-mm-dd");
-		        	Date birthDate = format.parse(dob);
+		        	DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		        	birthDate = format.parse(dob);
 		        	System.out.println("in Date format "+birthDate);
 		        	Calendar birth = new GregorianCalendar();
 		            Calendar today = new GregorianCalendar();
@@ -145,6 +148,11 @@ public class CheckoutServlet extends HttpServlet {
 		        if(request.getParameter("PlanId")!=null && !((request.getParameter("PlanId")).toString().equals("")))
 		        {
 		        	planId=Integer.parseInt(request.getParameter("PlanId"));
+		        	
+		        }
+		        if(request.getParameter("Payment")!=null && !((request.getParameter("Payment")).toString().equals("")))
+		        {
+		        	payment=request.getParameter("Payment");
 		        	
 		        }
 		        if(request.getParameter("bkitems")!=null && !((request.getParameter("bkitems")).toString().equals("")))
@@ -179,8 +187,19 @@ public class CheckoutServlet extends HttpServlet {
 		              }
 		        }
 
-		        DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
-		       
+		        //DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId); //pending to change
+		        int order_id=DBUtils.insertRecord(conn,preference, height, weight, gender, age,name,phone,email,address,state,city,zip,bkitems,litems,ditems,planId,birthDate,payment); //pending to change
+                System.out.println("value="+order_id);
+                if(order_id>0)
+                {
+                    JSONObject json      = new JSONObject();
+                    json.put("result",order_id);
+                    System.out.println("json="+json.toJSONString());
+                    response.setContentType("application/json");
+                    response.getWriter().write(json.toString());
+                    response.getWriter().close();
+                }
+ 
 		        } 
 		        catch (Exception e) {
 		            e.printStackTrace();
