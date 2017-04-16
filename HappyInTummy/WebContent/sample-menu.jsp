@@ -11,7 +11,7 @@
 <!-- favicon -->
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
-<title>HappyInTummy</title>
+<title>HappyTummy</title>
 
 <!-- style lists -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
