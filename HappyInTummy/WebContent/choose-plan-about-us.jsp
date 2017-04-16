@@ -94,28 +94,49 @@ var flagforvalidforDOB = false;
  */
 
 //Methods added by Neetika for Validations on About you page
-
-
- 
-function isValidEmailAddress(emailAddress) {
+function validateSpecialChars(inputtxt)
+{
+	
+		  var regex = /^[a-zA-Z ]*$/;
+		  var str = document.getElementById(inputtxt).value;
+		
+		  if (regex.test(str)) {
+		   
+		    return true;
+		 
+		  } else {
+			
+			return false;
+		  }
+}
+function isValidEmailAddress(emailAddress) 
+{
 		 var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
 		 return pattern.test(emailAddress);
 }
 
 function validatePhone(inputtxt)
 {
-	var phoneno = /^\d{10}$/;
-	if(document.getElementById(inputtxt).value.match(phoneno))
-	      {
-	    		return true;
-	      }
-	    else
-	      {
-	     		 return false;
-	      }
+		var phoneno = /^\d{10}$/;
+		if(document.getElementById(inputtxt).value.match(phoneno))
+		      {
+		    		return true;
+		      }
+		    else
+		      {
+		     		return false;
+		      }
 }
 
-function validatefields() {
+function validateZip(zip) 
+{
+			var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zip);
+			return isValidZip;
+}
+
+
+function validatefields() 
+{
 	
 			var maleSelected=$('#Male').is(':checked')?"Male":"NONE";
 			var femaleSelected=$('#Female').is(':checked')?"Female":"NONE";
@@ -163,12 +184,19 @@ function validatefields() {
 	        }
 	        
 	        else {
+	        	if (validateSpecialChars('Name')) {
 	            $('#Name').closest('.input-group').removeClass('has-error').addClass('has-success');
 	            $('#nameerror').text("");
 	            flagforvalidforName = true;
 	            //sessionStorage.setItem('flagforvalidforName', true);
 	           
-	           
+	        	}
+	        	else
+	        	{
+	        		$('#Name').closest('.input-group').removeClass('success').addClass('has-error');
+	 	            $('#nameerror').text("Please enter a valid name");
+	 	            flagforvalidforName = false;
+	        	}
 	        }
 
 	
@@ -232,10 +260,18 @@ function validatefields() {
 	            //sessionStorage.setItem('flagforvalidforAddr', false);
 	        }
 	        else {
-	            $('#Address').closest('.input-group').removeClass('has-error').addClass('has-success');
-	            $('#Addresserror').text("");
-	            //sessionStorage.setItem('flagforvalidforAddr', true);
-	            flagforvalidforAddr = true;
+	        	if (validateSpecialChars('Address')) {
+		            $('#Address').closest('.input-group').removeClass('has-error').addClass('has-success');
+		            $('#Addresserror').text("");
+		            //sessionStorage.setItem('flagforvalidforAddr', true);
+		            flagforvalidforAddr = true;
+	        	}
+	        	else
+	        	{
+	        		$('#Address').closest('.input-group').removeClass('success').addClass('has-error');
+	 	            $('#Addresserror').text("Please enter a valid address");
+	 	           flagforvalidforAddr = false;
+	        	}
 	         
 	        }
 	  
@@ -253,10 +289,19 @@ function validatefields() {
 	            //sessionStorage.setItem('flagforvalidforCity', false);
 	        }
 	        else {
-	            $('#City').removeClass('has-error').addClass('has-success');
-	            $('#Cityerror').text("");
-	           // sessionStorage.setItem('flagforvalidforCity', true);
-	            flagforvalidforCity = true;
+	        	
+	        	if (validateSpecialChars('City')) {
+		            $('#City').removeClass('has-error').addClass('has-success');
+		            $('#Cityerror').text("");
+		           // sessionStorage.setItem('flagforvalidforCity', true);
+		            flagforvalidforCity = true;
+	        	}
+	        	else	
+	        	{
+	        		$('#City').closest('.input-group').removeClass('success').addClass('has-error');
+	 	            $('#Cityerror').text("Please enter a valid city");
+	 	            flagforvalidforCity = false;
+	        	}
 	         
 	        }
 	   
@@ -276,19 +321,27 @@ function validatefields() {
 	            flagforvalidforState = false;
 	        }
 	        else {
-	        	
-	            $('#State').removeClass('has-error').addClass('has-success');
-	            $('#Stateerror').text("");
-	            //sessionStorage.setItem('flagforvalidforState', true);
-	            flagforvalidforState = true;
-	         
+	        	if (validateSpecialChars('State')) {
+		            $('#State').removeClass('has-error').addClass('has-success');
+		            $('#Stateerror').text("");
+		            //sessionStorage.setItem('flagforvalidforState', true);
+		            flagforvalidforState = true;
+	        	}
+	        	else	
+	        	{
+	        	   $('#State').closest('.input-group').removeClass('success').addClass('has-error');
+	 	           $('#Stateerror').text("Please enter a valid state");
+	 	           flagforvalidforState = false;
+	        	}
 	        }
 
 	        if (document.getElementById('Zip') != null && document.getElementById('Zip').value.length < 5) {
-	            $('#Zip').removeClass('success').addClass('has-error');
-	            $('#zipCodeerror').text("Please enter a valid zip");
-	            //sessionStorage.setItem('flagforvalidforZip', false);
-	            flagforvalidforZip= false;
+
+		            $('#Zip').removeClass('success').addClass('has-error');
+		            $('#zipCodeerror').text("Please enter a valid zip of 5 digits");
+		            //sessionStorage.setItem('flagforvalidforZip', false);
+		            flagforvalidforZip= false;
+	        	
 	        }
 	        else  if (document.getElementById('Zip') != null && document.getElementById('Zip').value.length > 5) {
 	            $('#Zip').removeClass('success').addClass('has-error');
@@ -297,10 +350,12 @@ function validatefields() {
 	            flagforvalidforZip= false;
 	        }
 	        else {
-	            $('#Zip').removeClass('has-error').addClass('has-success');
-	            $('#zipCodeerror').text("");
-	            //sessionStorage.setItem('flagforvalidforZip', true);
-	            flagforvalidforZip = true;
+		        	if (validateZip('Zip')) {
+		            $('#Zip').removeClass('has-error').addClass('has-success');
+		            $('#zipCodeerror').text("");
+		            //sessionStorage.setItem('flagforvalidforZip', true);
+		            flagforvalidforZip = true;
+	        	}
 	        }
 
 	    
@@ -326,11 +381,19 @@ function validatefieldsonblur() {
 	        }
 	        
 	        else {
+	        	if (validateSpecialChars('Name')) {
 	            $('#Name').closest('.input-group').removeClass('has-error').addClass('has-success');
 	            $('#nameerror').text("");
 	            flagforvalidforName = true;
 	          
-	           
+	        	}
+		        
+	        	else
+	        	{
+	        		$('#Name').closest('.input-group').removeClass('success').addClass('has-error');
+	 	            $('#nameerror').text("Please enter a valid name");
+	 	            flagforvalidforName = false;
+	        	}
 	        }
 	    });
 	 
@@ -400,11 +463,12 @@ function validatefieldsonblur() {
 	            
 	        }
 	        else {
+	        	if (validateSpecialChars('Address')) {
 	            $('#Address').closest('.input-group').removeClass('has-error').addClass('has-success');
 	            $('#Addresserror').text("");
 	            
 	            flagforvalidforAddr = true;
-	         
+	        	}
 	        }
 	    });
 	    
@@ -423,11 +487,12 @@ function validatefieldsonblur() {
 	           
 	        }
 	        else {
-	            $('#City').removeClass('has-error').addClass('has-success');
-	            $('#Cityerror').text("");
-	           
-	            flagforvalidforCity = true;
-	         
+	        	if (validateSpecialChars('City')) {
+		            $('#City').removeClass('has-error').addClass('has-success');
+		            $('#Cityerror').text("");
+		           
+		            flagforvalidforCity = true;
+	        	}
 	        }
 	    });
 	    
@@ -447,20 +512,24 @@ function validatefieldsonblur() {
 	            flagforvalidforState = false;
 	        }
 	        else {
+	        	if (validateSpecialChars('State')) {
 	            $('#State').removeClass('has-error').addClass('has-success');
 	            $('#Stateerror').text("");
 	            
 	            flagforvalidforState = true;
-	         
+	        	}
 	        }
 	    });
 	    
 	    $('#Zip').blur(function (e) {
 	        if (document.getElementById('Zip') != null && document.getElementById('Zip').value.length < 5) {
+	        	
+	        
 	            $('#Zip').removeClass('success').addClass('has-error');
-	            $('#zipCodeerror').text("Please enter a valid zip");
+	            $('#zipCodeerror').text("Please enter a valid zip of 5 digits");
 	           
 	            flagforvalidforZip= false;
+	        	
 	        }
 	        else  if (document.getElementById('Zip') != null && document.getElementById('Zip').value.length > 5) {
 	            $('#Zip').removeClass('success').addClass('has-error');
@@ -469,10 +538,12 @@ function validatefieldsonblur() {
 	            flagforvalidforZip= false;
 	        }
 	        else {
+	        	if (validateZip('Zip')) {
 	            $('#Zip').removeClass('has-error').addClass('has-success');
 	            $('#zipCodeerror').text("");
 	            
 	            flagforvalidforZip = true;
+	        	}
 	        }
 	    });
 	   
@@ -667,4 +738,4 @@ function submitform()
 
 
 
-</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+</html>
