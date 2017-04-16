@@ -311,9 +311,9 @@ $.get("Menu_Options.jsp", function (data) {
 					<div class="row bmiMenuSelect">
 						<div class="col-sm-2"></div>
 						<label  style="font-size: 1.3em;font-family: 'Raleway', Serif !important;" class="col-sm-5"> Want personalized menu? Enter your height & weight (optional)</label>
-						<input id="weight" type="number" class="col-sm-1" placeholder="Weight (kgs)" style="padding-left: 5px;" min="0" onchange="callBmiMenu();"></input>
+						<input id="weight" type="number" class="col-sm-1"  placeholder="Weight (kgs)" style="padding-left: 5px;" min="0" onchange="callBmiMenu();"></input>
 						<div style="width:2mm;"></div>
-						<input id="height" type="number" class="col-sm-1"  style="padding-left: 10px;" placeholder="Height (cms)"  min="0" onchange="callBmiMenu();"></input>
+						<input id="height" type="number" class="col-sm-1"  style="padding-left: 10px;"  placeholder="Height (cms)"  min="0" onchange="callBmiMenu();"></input>
 						
 					</div>
 	
@@ -553,7 +553,7 @@ $.get("Menu_Options.jsp", function (data) {
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
-	<script src="js/modernizr.js" type="text/javascript"></script>
+	
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
 	

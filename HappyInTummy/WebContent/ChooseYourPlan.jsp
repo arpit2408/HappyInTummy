@@ -10,7 +10,7 @@
 <!-- favicon -->
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
-
+<title>Happy Tummy</title>
 <!-- style lists -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/animate.css" rel="stylesheet">
@@ -50,7 +50,7 @@
 	background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
 </style>
-<title>Happy Tummy</title>
+
 </head>
 
 <script>
@@ -243,7 +243,7 @@ $.get("Menu_Options.jsp", function (data) {
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
-	<script src="js/modernizr.js" type="text/javascript"></script>
+	
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/wow.min.js" type="text/javascript"></script>
 

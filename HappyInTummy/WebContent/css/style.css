@@ -522,7 +522,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .radio-btn:hover:after, .radio-btn:focus:after, .radio-btn.checked:after {border: 1px solid #60ba62;color: #60ba62;box-shadow: none;position: absolute;width: 100%;height: 100%;content: "";left: 0;top: 0;border-radius: 4px;}
 .radio-btn:checked, .radio-btn:hover, .radio-btn:focus {border: 1px solid #60ba62;outline: none;color: #60ba62;}
 .radio-btn:checked span, .radio-btn:hover span, .radio-btn:focus span {color: #60ba62;}
-.left-form {padding: 50px 5.6% 55px 11%;}
+.left-form {padding: 15px 5.6% 45px 8%;}
 .left-form h5 {margin-bottom: 35px;font-size: 18px;}
 .left-form input, .left-form textarea, .left-form select {border: 1px solid #cecece;padding: 18px 30px;border-radius: 5px;}
 .radio-btn {position: relative;}
@@ -577,7 +577,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .review-info {margin-bottom: 58px;}
 
 /*======================= ## Choose plan checkout page ==================*/
-.payment-method-block {padding: 40px 0 0;}
+.payment-method-block {padding: 25px 0 0;}
 .top-description h5 {font-size: 18px;margin-bottom: 0;}
 .select-payment-btn a {text-transform: uppercase;display: block;text-align: left;border: 1px solid #60ba62;padding: 19px 30px;color: black;line-height: 42px;border-radius: 4px;position: relative;}
 .select-payment-btn a img {display: inline-block;margin-right: 24px;}
@@ -1755,4 +1755,49 @@ header.green {background: #60ba62;}
     content: "*";
     color:red;
     size: 10px;
+}
+
+#aboutyou .form-control::-moz-placeholder {
+  color: #60ba62;
+  opacity: 1;
+ 
+}
+#aboutyou .form-control:-ms-input-placeholder {
+  color: #60ba62;
+  opacity: 1;
+  
+}
+#aboutyou .form-control::-webkit-input-placeholder {
+  color: #60ba62;
+  opacity: 1;
+}
+
+#chooseprogram .col-sm-1::-moz-placeholder {
+  color: #60ba62;
+  opacity: 1;
+ 
+}
+#chooseprogram .col-sm-1:-ms-input-placeholder {
+  color: #60ba62;
+  opacity: 1;
+  
+}
+#chooseprogram .col-sm-1::-webkit-input-placeholder {
+  color: #60ba62;
+  opacity: 1;
+}
+
+
+.has-error label.error {
+    color: #60ba62;
+    display:inline;
+}
+/* Color of valid field */
+.has-success .control-label
+{
+    color: #3c763d;
+}
+.form-group .control-label:after {
+  content:"  *";
+  color:red;
 }
