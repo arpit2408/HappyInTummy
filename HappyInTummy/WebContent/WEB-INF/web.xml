@@ -2,11 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>HappyInTummy</display-name>
   <welcome-file-list>
-<<<<<<< HEAD
     <welcome-file>LandingPage.jsp</welcome-file>
-=======
-    <welcome-file>choose-plan-about-us.jsp</welcome-file>
->>>>>>> 4e76f0bc8f6e036176edf12817cd454a600dfeb0
     <welcome-file>home</welcome-file>
   </welcome-file-list>
  
