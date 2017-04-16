@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For showing plan details on the step 3 of placing order
+ */
 package happytummy.beans;
 
 public class Plans {

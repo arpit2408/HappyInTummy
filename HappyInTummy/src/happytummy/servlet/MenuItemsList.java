@@ -1,3 +1,8 @@
+/**
+ * Created by Neetika Mittal
+ *
+ * For getting menu from Database for sample menu
+ */
 package happytummy.servlet;
 import java.io.IOException;
 import java.sql.Connection;
