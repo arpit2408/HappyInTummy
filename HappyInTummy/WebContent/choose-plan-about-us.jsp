@@ -12,18 +12,19 @@
 <title>Happy Tummy</title>
  
 <!-- style lists -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet"/>
-<link href="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/build/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
-
-<link href="css/animate.css" rel="stylesheet">
-<link href="css/jquery.bxslider.css" rel="stylesheet">
-<link href="css/owl.carousel.css" rel="stylesheet">
-<link href="css/owl.transitions.css" rel="stylesheet">
-<link rel="stylesheet" href="css/feature-carousel.css">
-<link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+
+
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 <script src="Fillform.js" type="text/javascript"></script>
 
 
@@ -54,7 +55,17 @@
 </head>
 
 <script type="text/javascript">
-
+$(document).ready(function(){
+    var date_input=$('input[name="date"]'); //our date input has the name "date"
+    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    var options={
+      format: 'mm/dd/yyyy',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,
+    };
+    date_input.datepicker(options);
+  });
 $.get("Menu_Options.jsp", function(data) {
 	$("#menu_options").replaceWith(data);
 });
@@ -153,7 +164,7 @@ function validatefields()
 			}
 			
 			
-			if (document.forms.aboutyou.DOB.value == null || document.forms.aboutyou.DOB.value == "") {
+			if (document.forms.aboutyou.date.value == null || document.forms.aboutyou.date.value == "") {
 	           
 	            $('#txtdoberror').text("Please select DOB");
 	            flagforvalidforDOB = false;
@@ -243,7 +254,7 @@ function validatefields()
 	
 	        else{
 	        	$('#Phone').closest('.input-group').removeClass('success').addClass('has-error');
-            	$('#txtPhoneerror').text("Please enter telephone number");
+            	$('#txtPhoneerror').text("Enter correct telephone number");
            	 	flagforvalidforPhone = false;
 	        }
 	   
@@ -442,7 +453,7 @@ function validatefieldsonblur() {
 	        }
 	        else{
 	        	$('#Phone').closest('.input-group').removeClass('success').addClass('has-error');
-            	$('#txtPhoneerror').text("Please enter telephone number");
+            	$('#txtPhoneerror').text("Enter correct telephone number");
            	 	flagforvalidforPhone = false;
 	        }
 	   
@@ -569,7 +580,7 @@ function submitform()
 		 sessionStorage.setItem('Name', document.forms.aboutyou.Name.value);
 		 sessionStorage.setItem('Email', document.forms.aboutyou.Email.value);
 		 var gender=$('#Male').is(':checked')?"Male":"Female";
-		 sessionStorage.setItem('DOB', document.forms.aboutyou.DOB.value);
+		 sessionStorage.setItem('DOB', document.forms.aboutyou.date.value);
 		 sessionStorage.setItem('Gender',gender);
 		 sessionStorage.setItem('Phone', document.forms.aboutyou.Phone.value);
 		 sessionStorage.setItem('Zip', document.forms.aboutyou.Zip.value);
@@ -617,16 +628,15 @@ function submitform()
 				<!-- == step navigation ends ==-->
 
 				<!-- == step content starts ==-->
-				<div class="step-content">
+				<div id="desktopView" class="step-content">
 
 					<!-- choose plan about us step starts -->
 					<div class="step1">
-						<div class="col-xs-12 col-sm-6 wow fadeInLeft left-form">
-							<h5><strong>Tell us about yourself, We will prepare your healthy meals!</strong></h5>
-								
-								<fieldset>
+						<div class="col-xs-12 col-sm-6 wow fadeInLeft " style="padding-left:100px;">
+								<h6><strong>Tell us about yourself, We will prepare your healthy meals!</strong></h6>
+							<fieldset>
 									
-										<div class="col-sm-12 col-sm-6 pull-left">
+										<div class="col-sm-12 col-sm-6 pull-left alignProperAboutus">
 											<div class="light-font radio-btn">
 												<input  class="radio-class" type="radio" id="Male" name="gender"
 													value="Male" /> <span style="font-weight:bold;">Men</span>
@@ -642,6 +652,7 @@ function submitform()
 									<span class="errorspan" id="gendererror"></span>
 								</fieldset>
 								
+								
 								<fieldset>
 									<input type="text" class="form-control" id="Name" placeholder="Full Name" required="required" >
 									<span class="errorspan" id="nameerror"></span>
@@ -653,15 +664,33 @@ function submitform()
 								</fieldset>
 								
 								<fieldset>
-						        <input type="date" id = "DOB" placeholder="Date of Birth"  required="required" />
-						          <span class="errorspan" id="txtdoberror"></span>
+                            		<div class="input-group">
+                            		
+        
+ 
+                            		
+                            		
+                            		<div class="col-sm-6 alignProperAboutus" >
+                            		       <input class="form-control" id="date" name="date" 
+                            		       placeholder="Date of Birth" type="text"/>
+     
+                            		<span class="errorspan" id="txtdoberror"></span>
+                            		</div>
+                            		<div class="col-sm-1">
+									
+									</div>
+                            		<div class="col-sm-5" style="    padding-right: 60px;">
+									<input type="text" id="Phone" placeholder="Phone" 
+									 class="form-control expandFieldAboutus" required="required" />
+									<span class="errorspan" id="txtPhoneerror"></span>
+									</div>
+									
+									</div>
+								
+								
 						        </fieldset>
 								
-								<fieldset>
-									<input type="text" id="Phone" placeholder="Phone No." class="form-control"  
-							    required="required" />
-							     <span class="errorspan" id="txtPhoneerror"></span>
-								</fieldset>
+								
 								
 								<fieldset>
 									<input type="text" id="Address" placeholder="Address" class="form-control" required="required" />
@@ -671,7 +700,7 @@ function submitform()
 								<fieldset>
 								<div>
                             		<div class="input-group">
-                            		<div class="col-sm-5">
+                            		<div class="col-sm-5 alignProperAboutus">
                             		<input type="text" id="City" placeholder="City" class="form-control" required="required" />
                             		<span class="errorspan" id="Cityerror"></span>
                             		</div>
@@ -680,7 +709,7 @@ function submitform()
 									<span class="errorspan" id="Stateerror"></span>
 									</div>
 									<div class="col-sm-3">
-									<input type="text"  id="Zip" placeholder="ZIP" class="form-control"  required="required" />
+									<input type="text"  id="Zip" placeholder="ZIP" class="form-control expandFieldZip"  required="required" />
 									<span class="errorspan" id="zipCodeerror"></span>
 									</div>
 									</div>
@@ -695,8 +724,79 @@ function submitform()
  						
 						<div class="col-xs-12 col-sm-6 wow fadeInRight right-image">
 							<figure>
-								<img class="img-responsive" src="images/Image_About1.jpg"
-								 alt="About us image" style="padding-top:14px;"/>
+								<img class="img-responsive" src="images/about-us.jpg"
+								 alt="About us image" style="padding-top:14px; height: 444px; width:100%;"/>
+							</figure>
+						</div>
+					</div>
+					<!-- choose plan about us step ends -->
+				</div>
+				<!-- == step content ends ==-->
+				<!-- == step content starts ==-->
+				<div id="mobileView" class="step-content">
+
+					<!-- choose plan about us step starts -->
+					<div class="step1">
+						<div class="col-xs-12 col-sm-6 wow fadeInLeft left-form">
+							<h5 class="text-uppercase">TELL US ABOUT YOU, WE WILL
+								PREPARE YOUR HEALTHY MEALS</h5>
+							
+								<fieldset>
+									
+										<div class="col-sm-12 col-sm-6 pull-left">
+											<div class="light-font radio-btn radio-btn-men">
+												<input  class="radio-class" type="radio" id="Male" name="gender"
+													value="Male" /> <span>Men</span>
+											</div>
+										</div>
+										<div class="col-sm-12 col-sm-6 pull-right">
+											<div class="light-font radio-btn radio-btn-women">
+												<input  class="radio-class" type="radio" id="Female" name="gender"
+													value="Female" /> <span>Women</span>
+											</div>
+										</div>
+									
+								</fieldset>
+								<fieldset>
+									<input type="text" id="Name" placeholder="Full Name" />
+								</fieldset>
+								<fieldset>
+									<input type="email" id="Email" placeholder="E-mail" />
+								</fieldset>
+								<fieldset>
+								
+								
+						                <input type="date" id = "date" placeholder="Date of Birth" />
+						               
+						       
+						        </fieldset>
+								
+								<fieldset>
+									<input type="text" id="Phone" placeholder="Phone No." />
+								</fieldset>
+								<fieldset>
+									<input type="text" id="Address" placeholder="Address" />
+								</fieldset>
+								<fieldset>
+									<input type="text" id="City" placeholder="City" />
+								</fieldset>
+								<fieldset>
+									<input type="text" id="State" placeholder="State" />
+								</fieldset>
+								<fieldset>
+									<input type="text"  id="Zip" placeholder="ZIP Code" />
+								</fieldset>
+								<fieldset>
+									<input type="submit" value="next" onClick="submitform();"/>
+								</fieldset>
+							
+							
+						</div>
+ 						
+						<div class="col-xs-12 col-sm-6 wow fadeInRight right-image">
+							<figure>
+								<img class="img-responsive" src="images/Food_long.jpg"
+								 alt="About us image" style="padding-top:54px;"/>
 							</figure>
 						</div>
 					</div>
@@ -720,7 +820,7 @@ function submitform()
 	<!-- main wrapper of the site ends -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	
 	<script src="js/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
 	
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>

@@ -1525,6 +1525,12 @@ header.green {background: #60ba62;}
 	    margin-top: 25px !important;
 	    margin-left: 0px !important;
 	}
+	#mobileView{
+		display: block !important;
+	}
+	#desktopView{
+		display: none !important;
+	}
 }
 .menulistingLanding {
 		margin-top: 32px;
@@ -1640,11 +1646,24 @@ header.green {background: #60ba62;}
 .has-success .control-label
 {
     color: #3c763d;
- 
- 
- 
 }
+
 .form-group .control-label:after {
   content:"  *";
   color:red;
+}
+.alignProperAboutus {
+	margin-left:-3%;
+}
+.expandFieldAboutus {
+	width:160% !important;
+}
+.expandFieldZip {
+	width:131% !important;
+}
+#mobileView{
+	display: none;
+}
+#desktopView{
+	display: block;
 }
