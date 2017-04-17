@@ -106,6 +106,7 @@ function isValidState(state){
 		document.getElementById("stateTip").innerHTML="State can only have 2 - 45 characters.";
 		return false;
 	}
+	return true;
 	
 }
 
