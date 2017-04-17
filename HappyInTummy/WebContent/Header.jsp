@@ -14,7 +14,7 @@
 				<!-- ============== Left logo block starts ============== -->
 				<div class="col-sm-1 logo-block">
 					
-						<a href="${pageContext.request.contextPath}/home-version1.html"><img class="img-responsive"
+						<a href="${pageContext.request.contextPath}/LandingPage.jsp"><img class="img-responsive"
 							src="images/mascot25Orange.png" alt="HappyTummy Logo" />
 							</a>
 						
