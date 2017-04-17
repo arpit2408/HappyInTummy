@@ -68,7 +68,7 @@
 											data-toggle="estadotwo" data-value="Y"
 											style="background-color: #286090; width: 179px; height: 43px; display: inline-block;"
 											id="vegmenuid" onclick="getAccMenu(this)">
-											Vegeterian</span>
+											Vegan</span>
 									</div>
 									<div class="row">
 
@@ -87,6 +87,7 @@
 									</div>
 								</div>
 								<input type="hidden" name="estadotwo" id="estadotwo">
+							
 							</div>
 						</div>
 						<div class="col-sm-2 col-md-2"
@@ -94,15 +95,15 @@
 							style="padding-top: 25px;">
 							<span class="btn btn-warning btn-sm  tiltedButtons"
 								data-value="N"
-								style="background-color: #f0ad4e; width: 179px; color: black;">
-								New here..!!</span>
+								style="background-color: #f0ad4e; width: 185px; color: black;">
+								New? See our Menu..!!</span>
 						</div>
-
+						
 						<div class="col-sm-2 col-md-2" style="padding-top: 10px;"
 							onclick='window.location="${pageContext.request.contextPath}/choose-plan-about-us.jsp"'>
 							<span class="btn btn-warning btn-sm tiltedButtons" data-value="N"
-								style="background-color: #f0ad4e; width: 179px; color: black;">
-								Already familiar..!!</span>
+								style="background-color: #f0ad4e; width: 185px; color: black;">
+								Already Familiar..!!</span>
 						</div>
 						<div class="col-sm-1 col-md-1"></div>
 					</div>
