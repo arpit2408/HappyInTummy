@@ -50,9 +50,7 @@ public class UpdateUserDetails extends HttpServlet {
 			boolean cancelOrder=false;
 			String errorString = null;
 			String customerID=request.getParameter("customerID");
-			System.out.println(customerID);
 			String street=request.getParameter("Street Address");
-			System.out.println(street);
 			String city=request.getParameter("City");
 			String state=request.getParameter("State");
 			String zip=request.getParameter("ZIP Code");

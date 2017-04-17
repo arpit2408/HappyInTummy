@@ -58,4 +58,33 @@
     <servlet-name>checkout</servlet-name>
     <url-pattern>/checkout</url-pattern>
   </servlet-mapping>
+  
+	  <!-- Added by Rini Shaji  -->
+	<servlet>
+	<description/>
+	<servlet-name>EditUserDetails</servlet-name>
+	<servlet-class>happytummy.servlet.EditUserDetails</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>EditUserDetails</servlet-name>
+	<url-pattern>/EditUserDetails</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	<description/>
+	<servlet-name>CheckUserExists</servlet-name>
+	<servlet-class>happytummy.servlet.CheckUserExists</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>CheckUserExists</servlet-name>
+	<url-pattern>/CheckUserExists</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	<description/>
+	<servlet-name>UpdateUserDetails</servlet-name>
+	<servlet-class>happytummy.servlet.UpdateUserDetails</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>UpdateUserDetails</servlet-name>
+	<url-pattern>/UpdateUserDetails</url-pattern>
+	</servlet-mapping>
 </web-app>
