@@ -1,17 +1,16 @@
 package happytummy.servlet;
 
-import happytummy.beans.User;
 import happytummy.connect.ConnectionUtils;
 import happytummy.utils.DBUtils;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,15 +18,15 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Servlet implementation class EditUserDetails
+ * Servlet implementation class CheckUserExists
  */
-public class EditUserDetails extends HttpServlet {
+public class CheckUserExists extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditUserDetails() {
+    public CheckUserExists() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,35 +42,34 @@ public class EditUserDetails extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		System.out.println("Entered doPost of EditUserDetails "+request.getParameter("email")+request.getParameter("dob")); //test
-		
+		System.out.println("Entered doPost of CheckUSerExists "+ request.getParameter("email_id")+" "+request.getParameter("dob")); //test
 		Connection conn;
-		try {			
+		try {
+			boolean userFound=false;
 			conn = ConnectionUtils.getConnection();
 			conn.setAutoCommit(false);
 			String errorString = null;
-			String emailID=request.getParameter("email");
-			String dob=request.getParameter("dob");
-			User user=new User();
-			try{
+			String emailID=request.getParameter("email_id");
+			String dob=request.getParameter("dob");			
+			try{	   
 				DateFormat sourceFormat=new SimpleDateFormat("yyyy-MM-dd");
 				DateFormat destFormat=new SimpleDateFormat("dd-MMM-yyyy");
 				Date birthDate = sourceFormat.parse(dob);
 				dob=destFormat.format(birthDate);
-				user =DBUtils.getUserDetails(conn, emailID, dob);
-				System.out.println(user);
+				userFound =DBUtils.userExists(conn, emailID, dob);
 			} catch (Exception e) {
 	            e.printStackTrace();
 	            errorString = e.getMessage();
-			}
-			request.setAttribute("errorString", errorString);
-	        request.setAttribute("user", user);
-	        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/ManageOrders.jsp");
-	        dispatcher.forward(request, response);	        
+	        }
+			response.setContentType("application/json");
+	        response.setHeader("Cache-control", "no-cache, no-store");
+	        response.setCharacterEncoding("utf-8");
+	        PrintWriter out = response.getWriter();
+	        out.print(userFound);
 		}catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		}
 	}
+
+}
