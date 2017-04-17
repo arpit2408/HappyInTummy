@@ -50,232 +50,8 @@
 	background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
 </style>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->  
+
 </head>
-
-<script type="text/javascript">
-
-
-function callBmiMenu() {
-	
-	if(document.getElementById("prefid").value>0) {
-	
-	dataString = "pref=" + document.getElementById("prefid").value+"&height=" + document.getElementById("height").value+"&weight=" + document.getElementById("weight").value+"&gender=" + sessionStorage.getItem("Gender")+"&DOB=" + sessionStorage.getItem("DOB"); 
-	$.ajax({
-	    url: 'bmi-menu',
-	    type: 'POST',      
-	    cache: false,
-	    data :  dataString,
-		dataType: "json",
-	    success: function(data) {
-	    	var htmlElementsBF='';
-	    	var htmlElementsL='';
-	    	var htmlElementsD='';
-	    	var bkcount=-1;
-	    	var lcount=-1;
-	    	var dcount=-1;
-	    	for (var i=0;i<data.length;++i)
-	        {
-	  		 
-	  		 if(data[i].meal_Type=='Breakfast'){
-	  			bkcount=bkcount+1;
-	  			htmlElementsBF=htmlElementsBF+ ' <div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">'+ 
-			  		'<div class="menu-item-wrap" style="width: 2000px">'+
-			  		'<figure>'+
-			  		'<a href="#">'+
-			  		'<img class="img-responsive menubflunchDinner" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
-			  		'</figure>'+ 
-			  		'<input type="hidden" id="bkitemid'+bkcount+'" value='+data[i].itemid+'>'+ 
-			  		'<div class="mid">'+
-			  		'<h4> <a href="#">'+data[i].itemname+'</a> </h4> <span>'+data[i].itemdesc+'</span>'+
-		
-			  		'<div class="facts-table">'+
-			  		'<table><tbody><tr>'+
-			  		'<td><span>Calories</span></td>'+
-			  		'<td><span>'+data[i].calorie+'</span></td>'+
-			  		'</tr><tr>'+
-			  		'<td><span>Proteins</span></td>'+
-			  		'<td><span>'+data[i].proteins+'g</span></td>'+
-			  		'</tr><tr>'+
-			  		'<td><span>Fats</span></td>'+
-			  		'<td><span>'+data[i].fats+'g</span></td>'+
-			  		'</tr><tr>'+
-			  		'<td><span>Carbohydrates</span></td>'+
-			  		'<td><span>'+data[i].carbohydrates+'g</span></td>'+
-			  		'</tr>'+
-			  		'</tbody>'+
-			  		'</table>'+
-			  		'</div>'+
-			  		'</div></div> </div>';
-	  		 }
-	  		 if(data[i].meal_Type=='Lunch'){
-	  			lcount=lcount+1;
-	  			htmlElementsL=htmlElementsL+'<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">'+ 
-			  		'<div class="menu-item-wrap" style="width: 2000px">'+
-			  		'<figure>'+
-			  		'<a href="#">'+
-			  		'<img class="img-responsive menubflunchDinner" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
-			  		'</figure>'+
-			  		'<input type="hidden" id="litemid'+lcount+'" value='+data[i].itemid+'>'+ 
-			  		'<div class="mid">'+
-			  		'<h4> <a href="#">'+data[i].itemname+'</a> </h4> <span>'+data[i].itemdesc+'</span>'+
-		
-			  		'<div class="facts-table">'+
-			  		'<table><tbody><tr>'+
-			  		'<td><span>Calories</span></td>'+
-			  		'<td><span>'+data[i].calorie+'</span></td>'+
-			  		'</tr><tr>'+
-			  		'<td><span>Proteins</span></td>'+
-			  		'<td><span>'+data[i].proteins+'g</span></td>'+
-			  		'</tr><tr>'+
-			  		'<td><span>Fats</span></td>'+
-			  		'<td><span>'+data[i].fats+'g</span></td>'+
-			  		'</tr><tr>'+
-			  		'<td><span>Carbohydrates</span></td>'+
-			  		'<td><span>'+data[i].carbohydrates+'g</span></td>'+
-			  		'</tr>'+
-			  		'</tbody>'+
-			  		'</table>'+
-			  		'</div>'+
-			  		'</div></div> </div>';
-	  		 }
-	  		 if(data[i].meal_Type=='Dinner'){
-	  				dcount=dcount+1;
-		  			htmlElementsD=htmlElementsD+'<div class="col-xs-12 col-sm-12 menu-item wow fadeInLeft">'+ 
-				  		'<div class="menu-item-wrap" style="width: 2000px">'+
-				  		'<figure>'+
-				  		'<a href="#">'+
-				  		'<img class="img-responsive menubflunchDinner" src="images/'+ data[i].image +'" alt="Menu image"></a>'+
-				  		'</figure>'+ 
-				  		'<input type="hidden" id="ditemid'+dcount+'" value='+data[i].itemid+'>'+ 
-				  		'<div class="mid">'+
-				  		'<h4> <a href="#">'+data[i].itemname+'</a> </h4> <span>'+data[i].itemdesc+'</span>'+
-			
-				  		'<div class="facts-table">'+
-				  		'<table><tbody><tr>'+
-				  		'<td><span>Calories</span></td>'+
-				  		'<td><span>'+data[i].calorie+'</span></td>'+
-				  		'</tr><tr>'+
-				  		'<td><span>Proteins</span></td>'+
-				  		'<td><span>'+data[i].proteins+'g</span></td>'+
-				  		'</tr><tr>'+
-				  		'<td><span>Fats</span></td>'+
-				  		'<td><span>'+data[i].fats+'g</span></td>'+
-				  		'</tr><tr>'+
-				  		'<td><span>Carbohydrates</span></td>'+
-				  		'<td><span>'+data[i].carbohydrates+'g</span></td>'+
-				  		'</tr>'+
-				  		'</tbody>'+
-				  		'</table>'+
-				  		'</div>'+
-				  		'</div></div> </div>';
-		  		 }
-	        }
-	   	 		
-	    	   
-		     	if (document.getElementById("prefid").value == 1) 
-		    	{
-	     		 	var containerBF = document.getElementById("breakfastvitems");
-		    		containerBF.innerHTML = htmlElementsBF;
-			     	 
-			     	var containerLunch = document.getElementById("lunchvitems");
-			     	containerLunch.innerHTML = htmlElementsL;
-			     	 
-			     	var containerDinner = document.getElementById("dinnervitems");
-			     	containerDinner.innerHTML = htmlElementsD;	
-			    	document.getElementById("vegan").style.display = "block";
-			    	document.getElementById("non-veg").style.display = "none";
-			    	document.getElementById("glutenfree").style.display = "none";
-		    	}
-		    	else if (document.getElementById("prefid").value == 2) {
-		    		var containerBF = document.getElementById("breakfastnvitems");
-		    		containerBF.innerHTML = htmlElementsBF;
-			     	 
-			     	var containerLunch = document.getElementById("lunchnvitems");
-			     	containerLunch.innerHTML = htmlElementsL;
-			     	 
-			     	var containerDinner = document.getElementById("dinnernvitems");
-			     	containerDinner.innerHTML = htmlElementsD;	
-			    	document.getElementById("non-veg").style.display = "block";
-			    	document.getElementById("vegan").style.display = "none";
-			    	document.getElementById("glutenfree").style.display = "none";
-		    	}
-		    	else if (document.getElementById("prefid").value == 3) {
-		    		var containerBF = document.getElementById("breakfastitems");
-		    		containerBF.innerHTML = htmlElementsBF;
-			     	 
-			     	var containerLunch = document.getElementById("lunchitems");
-			     	containerLunch.innerHTML = htmlElementsL;
-			     	 
-			     	var containerDinner = document.getElementById("dinneritems");
-			     	containerDinner.innerHTML = htmlElementsD;	
-			    	document.getElementById("non-veg").style.display = "none";
-			    	document.getElementById("vegan").style.display = "none";
-			    	document.getElementById("glutenfree").style.display = "block";
-		    	
-		    	} 
-		     
-	    } 
-
- 	});
-	}
-	else if(document.getElementById("prefid").value==""){
-		document.getElementById("non-veg").style.display = "none";
-    	document.getElementById("vegan").style.display = "none";
-    	document.getElementById("glutenfree").style.display = "none";
-	}
-	
-}
-function submitform()
-{
-	 //HTML5 session storage
-	 var bkitems=new Array();
-	 var litems=new Array();
-	 var ditems=new Array();
-	 //$("#SelectProgram").attr("href", "/HappyInTummy/choose-plan-select-program.jsp");
-	
-	 sessionStorage.setItem('Height', document.getElementById("height").value);
-	 sessionStorage.setItem('Weight', document.getElementById("weight").value);
-	 sessionStorage.setItem('Preference', document.getElementById("prefid").value);
-	 sessionStorage.setItem('PreferenceText',(document.getElementById("prefid").options[prefid.selectedIndex].text));
-	 for (var i=0;i<7;++i)
-     {
-		 //alert('in for loop bk.... '+i+'"bkitemid'+i+'"');
-		 //alert('in for loop bkm..............'+document.getElementById('bkitemid'+i).value);
-		 if(document.getElementById('bkitemid'+i)!=null && document.getElementById('bkitemid'+i)!='undefined' && document.getElementById('bkitemid'+i)!='')
-		 
-		 {
-			 bkitems[i]=document.getElementById('bkitemid'+i).value;
-			 //alert(" set "+bkitems[i]);
-		 }
-		
-		 if(document.getElementById('litemid'+i)!=null && document.getElementById('litemid'+i)!='undefined' && document.getElementById('litemid'+i)!='')
-			 
-		 {
-			 litems[i]=document.getElementById('litemid'+i).value;
-			
-		 }
-		
-		 if(document.getElementById('ditemid'+i)!=null && document.getElementById('ditemid'+i)!='undefined' && document.getElementById('ditemid'+i)!='')
-			 
-		 {
-			 ditems[i]=document.getElementById('ditemid'+i).value;
-			
-		 }
-		
-     }
-	 
-	 sessionStorage.setItem('bkitems',JSON.stringify(bkitems));
-	 sessionStorage.setItem('litems',JSON.stringify(litems));
-	 sessionStorage.setItem('ditems',JSON.stringify(ditems));
-	
-	 document.chooseprogram.submit();
-	 var baseuri = $("html").data("baseuri");
-	 $("#ChoosePlan").attr("href", baseuri+"ChooseYourPlan.jsp");
-	 document.chooseprogram.submit();
-}
-
-</script>
 
 </head>
 <body onload="setCorrectActionAfterSubmit('About');reloadPref();callBmiMenu();" class="home-page home-version1-page">
@@ -288,6 +64,10 @@ $.get("Header.jsp", function (data) {
 <script>
 $.get("Menu_Options.jsp", function (data) {
     $("#menu_options").replaceWith(data);
+});
+
+$(document).ready(function () {
+validateOnblurSelectProgram();
 });
 
 </script>
@@ -311,10 +91,11 @@ $.get("Menu_Options.jsp", function (data) {
 					<div class="row bmiMenuSelect">
 						<div class="col-sm-2"></div>
 						<label  style="font-size: 1.3em;font-family: 'Raleway', Serif !important;" class="col-sm-5"> Want personalized menu? Enter your height & weight (optional)</label>
-						<input id="weight" type="number" class="col-sm-1"  placeholder="Weight (kgs)" style="padding-left: 5px;" min="0" onchange="callBmiMenu();"></input>
+						<input id="weight" type="number" class="col-sm-1"  placeholder="Weight (kgs)" style="padding-left: 5px;"  onchange="callBmiMenu();"></input>
+							<span class="errorspan" id="weighterror"></span>
 						<div style="width:2mm;"></div>
-						<input id="height" type="number" class="col-sm-1"  style="padding-left: 10px;"  placeholder="Height (cms)"  min="0" onchange="callBmiMenu();"></input>
-						
+						<input id="height" type="number" class="col-sm-1"  style="padding-left: 10px;"  placeholder="Height (cms)"   onchange="callBmiMenu();"></input>
+								<span class="errorspan" id="heighterror"></span>
 					</div>
 	
 		<!-- main wrapper of the site starts -->
@@ -322,16 +103,16 @@ $.get("Menu_Options.jsp", function (data) {
 	<!-- ============== Sample menu banner starts ============== -->
 
 					<div class="text-center wow flipInX animated menuSelectOptions "
-					style="visibility: visible; animation-name: flipInX; padding-bottom:15px;" >
+					style="visibility: visible; animation-name: flipInX; padding-top:15px;padding-bottom:15px;" >
 					<div class="col-sm-2"></div>
 					<label style="font-size: 1.3em;font-family: 'Raleway', Serif !important;" class="col-sm-3">Select Preference <font color="red"><bold>* </bold></font> </label>
-						<select  id="prefid" class="select-program" onchange="callBmiMenu();" required="required" >
+						<select  id="prefid" class="select-program" onchange="callBmiMenu();" >
 							<option value="" >Select Program</option>
 							<option value="1" >Vegan</option>
 							<option value="2">Non-Vegeterian</option>
 							<option value="3">Gluten-free</option>
 						</select>
-					
+					<span class="errorspan" id="preferror"></span>
 					</div>
 					
 		<!-- ============== Sample menu block ends ============== --> <!-- ============== select menu block starts ============== -->
@@ -536,7 +317,7 @@ $.get("Menu_Options.jsp", function (data) {
 			<div class="row">
 						<div class="col-sm-4"></div>
 						<div class="col-sm-4">
-						<input type="submit" value="Take me to Plans" onClick="submitform();"/>
+						<input type="button" class="btn" value="Take me to Plans" onClick="submitformselectprogram();"/>
 						</div>
 						<div class="col-sm-4"></div>
 				</div>

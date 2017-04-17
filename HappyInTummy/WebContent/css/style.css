@@ -1525,6 +1525,12 @@ header.green {background: #60ba62;}
 	    margin-top: 25px !important;
 	    margin-left: 0px !important;
 	}
+	#mobileView{
+		display: block !important;
+	}
+	#desktopView{
+		display: none !important;
+	}
 }
 .menulistingLanding {
 		margin-top: 32px;
@@ -1599,52 +1605,110 @@ header.green {background: #60ba62;}
 }
 
 
+
 #aboutyou .form-control::-moz-placeholder {
-  color: #60ba62;
+  color: #AED581;
   opacity: 1;
  
 }
 #aboutyou .form-control:-ms-input-placeholder {
-  color: #60ba62;
+  color: #AED581;
   opacity: 1;
   
 }
  
 #aboutyou .form-control::-webkit-input-placeholder {
-  color: #60ba62;
+  color: #AED581;
   opacity: 1;
 }
  
 #chooseprogram .col-sm-1::-moz-placeholder {
-  color: #60ba62;
+  color: #AED581;
   opacity: 1;
- 
+  font-size: 1.3em;
 }
 #chooseprogram .col-sm-1:-ms-input-placeholder {
-  color: #60ba62;
+  color: #AED581;
   opacity: 1;
+  font-size: 1.3em;
   
 }
  
 #chooseprogram .col-sm-1::-webkit-input-placeholder {
-  color: #60ba62;
+  color:#AED581;
   opacity: 1;
+  font-size: 1.3em;
 }
  
+#contactUS .form-control::-moz-placeholder {
+  color: #AED581;
+  opacity: 1;
+  font-size: 1.3em;
+}
+#contactUS .form-control:-ms-input-placeholder {
+  color: #AED581;
+  opacity: 1;
+  font-size: 1.3em;
+  
+}
  
+#contactUS  .form-control::-webkit-input-placeholder {
+  color:#AED581;
+  opacity: 1;
+  font-size: 1.3em;
+}
+#myform ..form-control::-moz-placeholder {
+  color: #AED581;
+  opacity: 1;
+  font-size: 1.3em;
+}
+#myform .form-control:-ms-input-placeholder {
+  color: #AED581;
+  opacity: 1;
+  font-size: 1.3em;
+  
+}
+ 
+#myform  .form-control::-webkit-input-placeholder {
+  color:#AED581;
+  opacity: 1;
+  font-size: 1.3em;
+}
+
 .has-error label.error {
-    color: #60ba62;
+    color: #800000;
     display:inline;
 }
-/* Color of valid field */
+
+
 .has-success .control-label
 {
     color: #3c763d;
- 
- 
- 
+
 }
 .form-group .control-label:after {
   content:"  *";
-  color:red;
+  color:#800000;
 }
+
+.errorspan{
+	color: #800000;
+}
+.alignProperAboutus {
+	margin-left:-3%;
+}
+.expandFieldAboutus {
+	width:160% !important;
+}
+.expandFieldZip {
+	width:131% !important;
+}
+#mobileView{
+	display: none;
+}
+#desktopView{
+	display: block;
+}
+
+
+

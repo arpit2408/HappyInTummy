@@ -1,3 +1,5 @@
+//Created by Arpit Saxena for Landing Page 
+
 $(document).ready(function(){
     // Use only for V1
     $('#radioBtn span').on('click', function(){
@@ -16,4 +18,17 @@ function getAccMenu(e){
 	document.getElementById('vegmenu').style.display = 'none';
 	document.getElementById('glutenfreemenu').style.display = 'none';
 	document.getElementById(e.id.replace("id","")).style.display = 'block';
+
+	if(e.id.replace("id","")=="nonvegmenu") 
+	{
+		sessionStorage.setItem('PreferenceLand',2);
+	}
+	if(e.id.replace("id","")=="glutenfreemenu") 
+	{
+		sessionStorage.setItem('PreferenceLand',3);
+	}
+	if(e.id.replace("id","")=="vegmenu") 
+	{
+		sessionStorage.setItem('PreferenceLand',1);
+	}
 }
