@@ -61,7 +61,10 @@
 	});
 
 	function showhide() {
-		
+		if( sessionStorage.getItem('PreferenceLand')!=null)
+			{
+				document.getElementById("prefid").value =sessionStorage.getItem('PreferenceLand');
+			}
 		if (document.getElementById("prefid").value == 1) {
 			document.getElementById("vegan").style.display = "block";
 			document.getElementById("non-veg").style.display = "none";
