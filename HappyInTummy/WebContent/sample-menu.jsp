@@ -61,7 +61,7 @@
 	});
 
 	function showhide() {
-		if( sessionStorage.getItem('PreferenceLand')!=null)
+			if( sessionStorage.getItem('PreferenceLand')!=null)
 			{
 				document.getElementById("prefid").value =sessionStorage.getItem('PreferenceLand');
 			}
@@ -87,7 +87,30 @@
 
 		}
 	}
-	
+	function showhideonchange() {
+		
+	if (document.getElementById("prefid").value == 1) {
+		document.getElementById("vegan").style.display = "block";
+		document.getElementById("non-veg").style.display = "none";
+		document.getElementById("glutenfree").style.display = "none";
+
+	} else if (document.getElementById("prefid").value == 2) {
+
+		document.getElementById("non-veg").style.display = "block";
+		document.getElementById("vegan").style.display = "none";
+		document.getElementById("glutenfree").style.display = "none";
+		
+
+	}
+	else if (document.getElementById("prefid").value == 3) {
+
+		document.getElementById("non-veg").style.display = "none";
+		document.getElementById("vegan").style.display = "none";
+		document.getElementById("glutenfree").style.display = "block";
+		
+
+	}
+}
 </script>
 
 <body onload="showhide();">
@@ -178,7 +201,7 @@
 			<div class="text-center"
 				style="visibility: visible; padding-top: 30px;">
 				<h4>Select Preference: </h4>
-				<select id="prefid" onchange="showhide();">
+				<select id="prefid" onchange="showhideonchange();">
 					<!-- <option value="">Select Program</option> -->
 					<option value="1" selected="selected">Vegan</option>
 					<option value="2">Non-Vegeterian</option>
