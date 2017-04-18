@@ -139,6 +139,7 @@ $.get("Menu_Options.jsp", function (data) {
     $("#menu_options").replaceWith(data);
 });
 </script>
+<input type="hidden" id="pagecontext" value="${pageContext.request.contextPath}/">
 <header  id="websiteHeader"></header>
 	<div class="wrapper">
 

@@ -95,69 +95,13 @@ function reloadFormAboutYou()
 }
 
 
-//Method to handle flow among 4 steps added by Arpit Saxena
-function setCorrectAction(e){
-    var baseuri = $("html").data("baseuri");
-    alert("setCorrectAction in js"+baseuri);
-    if(e.id=="About"){
-        $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
-        $("#step1").attr("class", "wow fadeInUp step1 current");
-        $("#SelectProgram").attr("href", "#");
-        $("#ChoosePlan").attr("href", "#");
-        $("#Checkout").attr("href", "#");
-    }
-    if(e.id=="SelectProgram"){
-        //$("#About").attr("href", "/HappyInTummy/choose-plan-about-us.html");
-        //$("#SelectProgram").attr("href", "#");
-    	// alert("setCorrectAction in jse mail "+sessionStorage.getItem("Email"));
-        if(sessionStorage.getItem("Email")==null)
-        {
-	        $("#SelectProgram").attr("href", "#");	
-	        $("#ChoosePlan").attr("href", "#");
-	        $("#Checkout").attr("href", "#");
-	        	
-        }
-        else
-        {
-        	alert("shd go here");
-        	$("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
-        	$("#step2").attr("class", "wow fadeInUp step2 current");
-        	
-            $("#ChoosePlan").attr("href", "#");
-            $("#Checkout").attr("href", "#");
-            
-        }
-        
-    }
-    if(e.id=="ChoosePlan"){
-       
-    	// alert("setCorrectAction in jse Preference "+sessionStorage.getItem("Preference"));
-    	if(sessionStorage.getItem("Preference")==null)
-        {
-	       
-	        $("#ChoosePlan").attr("href", "#");
-	        $("#Checkout").attr("href", "#");
-	        	
-        }
-        else
-        {
-        	$("#ChoosePlan").attr("href", baseuri+"/ChooseYourPlan.jsp");
-        	$("#step3").attr("class", "wow fadeInUp step3 current");
-            $("#Checkout").attr("href", "#");
-            
-        }
-    	 
-    }
-    if(e.id=="Checkout"){
-    	$("#step4").attr("class", "wow fadeInUp step4 current");
-      
-    }
-}
+
 
 //Method to handle flow among 4 steps added by Arpit Saxena
 function setCorrectActionAfterSubmit(e){
-    var baseuri = $("html").data("baseuri");
-    alert(baseuri);
+    //var baseuri = $("html").data("baseuri");
+    var baseuri=document.getElementById('pagecontext').value;
+    alert(baseuri+"baseuri..afterusbmit");
     if(e=="About"){
         $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
         $("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
@@ -1572,4 +1516,66 @@ function placeOrder()
 			
 			 });
 		}
+}
+
+
+//Method to handle flow among 4 steps added by Arpit Saxena
+function setCorrectAction(e){
+  // baseuri = $("html").data("baseuri");
+ 
+   var baseuri=document.getElementById('pagecontext').value;
+  alert(baseuri+"baseuri..");
+  if(e.id=="About"){
+      $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
+      $("#step1").attr("class", "wow fadeInUp step1 current");
+      $("#SelectProgram").attr("href", "#");
+      $("#ChoosePlan").attr("href", "#");
+      $("#Checkout").attr("href", "#");
+  }
+  if(e.id=="SelectProgram"){
+      //$("#About").attr("href", "/HappyInTummy/choose-plan-about-us.html");
+      //$("#SelectProgram").attr("href", "#");
+  	// alert("setCorrectAction in jse mail "+sessionStorage.getItem("Email"));
+      if(sessionStorage.getItem("Email")==null)
+      {
+	        $("#SelectProgram").attr("href", "#");	
+	        $("#ChoosePlan").attr("href", "#");
+	        $("#Checkout").attr("href", "#");
+	        	
+      }
+      else
+      {
+      	
+      	$("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
+      	$("#step2").attr("class", "wow fadeInUp step2 current");
+      	
+          $("#ChoosePlan").attr("href", "#");
+          $("#Checkout").attr("href", "#");
+          
+      }
+      
+  }
+  if(e.id=="ChoosePlan"){
+     
+  	// alert("setCorrectAction in jse Preference "+sessionStorage.getItem("Preference"));
+  	if(sessionStorage.getItem("Preference")==null)
+      {
+	       
+	        $("#ChoosePlan").attr("href", "#");
+	        $("#Checkout").attr("href", "#");
+	        	
+      }
+      else
+      {
+      	$("#ChoosePlan").attr("href", baseuri+"/ChooseYourPlan.jsp");
+      	$("#step3").attr("class", "wow fadeInUp step3 current");
+          $("#Checkout").attr("href", "#");
+          
+      }
+  	 
+  }
+  if(e.id=="Checkout"){
+  	$("#step4").attr("class", "wow fadeInUp step4 current");
+    
+  }
 }

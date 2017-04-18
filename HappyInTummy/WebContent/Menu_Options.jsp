@@ -6,9 +6,13 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<script>
+
+</script>
 <body>
 	<div class="container">
-	
+	<input type="hidden" id="pagecontext" value="${pageContext.request.contextPath}/">
+
 	<ul class="text-center steps">
 			<li id="step1" class="wow fadeInUp step1">
 	
