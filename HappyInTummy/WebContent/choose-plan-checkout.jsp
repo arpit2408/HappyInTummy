@@ -67,6 +67,7 @@ $.get("Header.jsp", function (data) {
 
 <body onload="datatoShow();setCorrectActionAfterSubmit('ChoosePlan')">
 <form id="checkout">
+<input type="hidden" id="pagecontext" value="${pageContext.request.contextPath}/">
 <div id="websiteHeader" style="z-index: 1111;"></div>
 <!-- 	<div id="reviewDetails"></div> -->
 	

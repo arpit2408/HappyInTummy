@@ -71,7 +71,7 @@ validateOnblurSelectProgram();
 });
 
 </script>
-
+<input type="hidden" id="pagecontext" value="${pageContext.request.contextPath}/">
 <header  id="websiteHeader"></header>
 	<div class="wrapper">
 

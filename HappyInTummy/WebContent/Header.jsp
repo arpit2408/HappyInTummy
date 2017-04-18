@@ -36,10 +36,10 @@
 							<!-- Collect the nav links, forms, and other content for toggling -->
 							<div class="collapse">
 								<ul class="nav navbar-nav text-right pull-right" >
-									<li class="active"><a href="${pageContext.request.contextPath}/LandingPage.jsp">Home</li>
+									<li class="active"><a href="${pageContext.request.contextPath}/LandingPage.jsp" onclick="sessionStorage.clear();">Home</li>
 									<li><a href="${pageContext.request.contextPath}/choose-plan-about-us.jsp" onclick="sessionStorage.clear();">Place Order</a></li>
-									<li><a href="${pageContext.request.contextPath}/contact-us.html">Your Order</a></li>
-									<li><a href="${pageContext.request.contextPath}/Pricing.jsp">Pricing</a></li>
+									<li><a href="${pageContext.request.contextPath}/contact-us.html" onclick="sessionStorage.clear();">Your Order</a></li>
+									<li><a href="${pageContext.request.contextPath}/Pricing.jsp" onclick="sessionStorage.clear();">Pricing</a></li>
 
 								</ul>
 							</div>

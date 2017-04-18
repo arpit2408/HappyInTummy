@@ -100,7 +100,7 @@
 						</div>
 						
 						<div class="col-sm-2 col-md-2" style="padding-top: 10px;"
-							onclick='window.location="${pageContext.request.contextPath}/choose-plan-about-us.jsp"'>
+							onclick='sessionStorage.clear();window.location="${pageContext.request.contextPath}/choose-plan-about-us.jsp"'>
 							<span class="btn btn-warning btn-sm tiltedButtons" data-value="N"
 								style="background-color: #f0ad4e; width: 185px; color: black;">
 								Already Familiar..!!</span>

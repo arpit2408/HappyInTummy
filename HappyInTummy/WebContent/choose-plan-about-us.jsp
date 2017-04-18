@@ -118,6 +118,7 @@ $.get("Header.jsp", function (data) {
 <!--   -->
 <body class="choose-plan-page" onload="reloadFormAboutYou();">
 <form id="aboutyou"   class="about-us-form"  method="POST" action="${pageContext.request.contextPath}/choose-plan-select-program.jsp">
+<input type="hidden" id="pagecontext" value="${pageContext.request.contextPath}/">
 	<!-- loader image before page load starts -->
 	<div class="se-pre-con"></div>
 
