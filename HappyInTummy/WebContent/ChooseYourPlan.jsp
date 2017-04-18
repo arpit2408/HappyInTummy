@@ -85,7 +85,7 @@ function setPlans(data) {
 		  document.getElementById('discounthid').value = sessionStorage.getItem('Discount');
 	  }
 	  sessionStorage.setItem('Discount', document.getElementById('discounthid').value);
-	  document.getElementById('discount').innerHTML= 'Order Immediately to get a discount of '+ document.getElementById('discounthid').value+'%';
+	  document.getElementById('discount').innerHTML= 'Order Immediately to get '+ document.getElementById('discounthid').value+'% discount';
 	  for (var i=0;i<data.length;++i)
       {
 		  if(i==0){
