@@ -1550,7 +1550,7 @@ header.green {background: #60ba62;}
 	width: 66%;
     margin-top: 35%;
     margin-left: 9%;
-    margin-bottom: 63%;
+    margin-bottom: 53%;
     height: 35px;
 }
 #happyTummyad {
@@ -1558,7 +1558,7 @@ header.green {background: #60ba62;}
     margin-top: 4%;
     margin-left: 8%;
     margin-bottom: 8%;
-    height: 24px;
+    height: 30px;
 }
 #optionsLandingPage
 {
@@ -1715,5 +1715,17 @@ header.green {background: #60ba62;}
 	border-color:green;
 	width: 179px;
 	height: 43px;
+}
+#tiltedButtonsHide {
+	display: none;
+}
+.stylebuttonVal  
+{ 
+	background-color: #f0ad4e;
+    width: 220px;
+    color: black;
+    padding-left: 4px;
+    padding-top: 11px;
+    margin-left: -103px;
 }
 
