@@ -98,7 +98,7 @@ function reloadFormAboutYou()
 //Method to handle flow among 4 steps added by Arpit Saxena
 function setCorrectAction(e){
     var baseuri = $("html").data("baseuri");
-    
+    alert("setCorrectAction in js"+baseuri);
     if(e.id=="About"){
         $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
         $("#step1").attr("class", "wow fadeInUp step1 current");
@@ -109,7 +109,7 @@ function setCorrectAction(e){
     if(e.id=="SelectProgram"){
         //$("#About").attr("href", "/HappyInTummy/choose-plan-about-us.html");
         //$("#SelectProgram").attr("href", "#");
-    	
+    	// alert("setCorrectAction in jse mail "+sessionStorage.getItem("Email"));
         if(sessionStorage.getItem("Email")==null)
         {
 	        $("#SelectProgram").attr("href", "#");	
@@ -119,7 +119,10 @@ function setCorrectAction(e){
         }
         else
         {
+        	alert("shd go here");
+        	$("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
         	$("#step2").attr("class", "wow fadeInUp step2 current");
+        	
             $("#ChoosePlan").attr("href", "#");
             $("#Checkout").attr("href", "#");
             
@@ -128,7 +131,7 @@ function setCorrectAction(e){
     }
     if(e.id=="ChoosePlan"){
        
-    	
+    	// alert("setCorrectAction in jse Preference "+sessionStorage.getItem("Preference"));
     	if(sessionStorage.getItem("Preference")==null)
         {
 	       
@@ -138,6 +141,7 @@ function setCorrectAction(e){
         }
         else
         {
+        	$("#ChoosePlan").attr("href", baseuri+"/ChooseYourPlan.jsp");
         	$("#step3").attr("class", "wow fadeInUp step3 current");
             $("#Checkout").attr("href", "#");
             
@@ -153,7 +157,7 @@ function setCorrectAction(e){
 //Method to handle flow among 4 steps added by Arpit Saxena
 function setCorrectActionAfterSubmit(e){
     var baseuri = $("html").data("baseuri");
-  
+    alert(baseuri);
     if(e=="About"){
         $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
         $("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
@@ -1552,7 +1556,7 @@ function placeOrder()
 				    success: function(data) {	
 		
 						 var containerMsg = document.getElementById("successMsg");
-						 containerMsg.innerHTML = '<h4 style="text-align:center"><strong> Wow! You just made a Yummy Choice. Your Order ID is '+data.result+'. </strong> </h4>';
+						 containerMsg.innerHTML = '<h4 style="text-align:center;color:#60ba62"><strong> Wow! You just made a Yummy Choice. Your Order ID is '+data.result+'. </strong> </h4>';
 						 var btn=document.getElementById("place"); 
 						 btn.style.display = "none";
 						 sessionStorage.clear();
@@ -1560,7 +1564,7 @@ function placeOrder()
 				    error: function(status,error) {	
 				    
 				    	 var containerMsg = document.getElementById("successMsg");
-						 containerMsg.innerHTML = '<h4 style="text-align:center"> Sorry! Our basket is full, please try after some time.</h4>';
+						 containerMsg.innerHTML = '<h4 style="text-align:center;color:#60ba62"> Sorry! Our basket is full, please try after some time.</h4>';
 						 var btn=document.getElementById("place"); 
 						 btn.style.display = "none";
 						 sessionStorage.clear();
