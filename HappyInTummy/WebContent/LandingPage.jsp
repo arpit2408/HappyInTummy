@@ -64,24 +64,23 @@
 							<div class="input-group" style="margin-bottom: 20px;">
 								<div id="radioBtn" class="btn-group">
 									<div class="row">
-										<span class="btn btn-primary btn-sm active fa fa-check-circle"
+										<span class="buttonstyle btn btn-primary btn-sm fa fa-check-circle active"
 											data-toggle="estadotwo" data-value="Y"
-											style="background-color: #286090; width: 179px; height: 43px; display: inline-block;"
 											id="vegmenuid" onclick="getAccMenu(this)">
 											Vegan</span>
 									</div>
 									<div class="row">
 
-										<span class="btn btn-danger btn-sm notActive"
+										<span class="buttonstyle btn btn-danger btn-sm notActive "
 											data-toggle="estadotwo" data-value="N"
-											style="background-color: #d9534f; width: 179px; height: 43px;"
+											
 											id="nonvegmenuid" onclick="getAccMenu(this)">
 											Non-Vegeterian</span>
 									</div>
 									<div class="row ">
-										<span class="btn btn-info btn-sm notActive"
+										<span class="buttonstyle btn btn-info btn-sm notActive"
 											data-toggle="estadotwo" data-value="Q"
-											style="background-color: #31b0d5; width: 179px; height: 43px;"
+											
 											id="glutenfreemenuid" onclick="getAccMenu(this)"> 
 											Gluten-Free </span>
 									</div>

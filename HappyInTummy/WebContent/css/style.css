@@ -1709,6 +1709,11 @@ header.green {background: #60ba62;}
 #desktopView{
 	display: block;
 }
-
-
+.buttonstyle {
+	background-color: #fff !important;
+	color:green !important;
+	border-color:green;
+	width: 179px;
+	height: 43px;
+}
 
