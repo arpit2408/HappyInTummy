@@ -78,7 +78,7 @@ function getPlans()
 function setPlans(data) {
 	  if( sessionStorage.getItem('Discount')==null)
 	  {
-	  document.getElementById('discounthid').value = Math.floor((Math.random() * 10) + 1);
+	  document.getElementById('discounthid').value = Math.floor(Math.random() * 15) + 5;
 	  }
 	  else
 	  {
@@ -161,7 +161,7 @@ $.get("Menu_Options.jsp", function (data) {
 							<div class="container">
 								
 								<!-- == pricing box starts == -->
-								<div class="row pricing-block-gray">
+								<div id="pricingview" style="display: block;" class="row pricing-block-gray">
 									<!-- pricing box single starts -->
 									<div class="col-xs-12 col-sm-4 wow fadeInLeft pricing-box">
 										<div class="text-center price-box-wrap">

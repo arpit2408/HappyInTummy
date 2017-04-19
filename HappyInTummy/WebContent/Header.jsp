@@ -22,7 +22,7 @@
 				<div id="WebsiteName" style="color:white; font-size:2.5em !important; font-family: 'Raleway', Serif !important;" class="col-md-2">Happy Tummy</div>
 				<!-- ============== Left logo block ends ============== -->
 				<!-- ============== Main navigation starts ============== -->
-				<div class="col-xs-12 col-sm-8 menu-block">
+				<div class="col-xs-12 col-sm-9 menu-block">
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">
 							<!-- Brand and toggle get grouped for better mobile display -->
@@ -34,12 +34,14 @@
 								</button>
 							</div>
 							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div class="collapse">
-								<ul class="nav navbar-nav text-right pull-right" >
+							<div class="collapse" >
+								<ul class="nav navbar-nav text-right pull-right" style="padding-left:35px">
 									<li class="active"><a href="${pageContext.request.contextPath}/LandingPage.jsp" onclick="sessionStorage.clear();">Home</li>
-									<li><a href="${pageContext.request.contextPath}/choose-plan-about-us.jsp" onclick="sessionStorage.clear();">Place Order</a></li>
-									<li><a href="${pageContext.request.contextPath}/contact-us.html" onclick="sessionStorage.clear();">Your Order</a></li>
+									<li><a href="${pageContext.request.contextPath}/menu">Menu</a></li>
 									<li><a href="${pageContext.request.contextPath}/Pricing.jsp" onclick="sessionStorage.clear();">Pricing</a></li>
+									<li><a href="${pageContext.request.contextPath}/choose-plan-about-us.jsp" onclick="sessionStorage.clear();">Place Order</a></li>
+									<li><a href="${pageContext.request.contextPath}/contact-us.html" onclick="sessionStorage.clear();">Manage Order</a></li>
+								
 
 								</ul>
 							</div>
