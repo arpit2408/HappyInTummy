@@ -91,7 +91,7 @@ validateOnblurSelectProgram();
 					<div class="row bmiMenuSelect">
 						<div class="col-sm-2"></div>
 						<label  style="font-size: 1.3em;font-family: 'Raleway', Serif !important;" class="col-sm-5"> Want personalized menu? Enter your height & weight (optional)</label>
-						<input id="weight" type="number" class="col-sm-1"  placeholder="Weight (kgs)" style="padding-left: 5px;"  onchange="callBmiMenu();"></input>
+						<input id="weight" type="number" class="col-sm-1"  placeholder="Weight (lbs)" style="padding-left: 5px;"  onchange="callBmiMenu();"></input>
 							<span class="errorspan" id="weighterror"></span>
 						<div style="width:2mm;"></div>
 						<input id="height" type="number" class="col-sm-1"  style="padding-left: 10px;"  placeholder="Height (cms)"   onchange="callBmiMenu();"></input>

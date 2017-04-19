@@ -1569,12 +1569,13 @@ function setCorrectAction(e){
   // baseuri = $("html").data("baseuri");
  
    var baseuri=document.getElementById('pagecontext').value;
-   if(baseuri=="")
+   alert(baseuri+"baseuri..");
+   if(baseuri==null || baseuri==" " || baseuri=="")
 	{
 	   baseuri="/HappyInTummy/";
 	}
 
-  alert(baseuri+"baseuri..");
+
   if(e.id=="About"){
       $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
       $("#step1").attr("class", "wow fadeInUp step1 current");

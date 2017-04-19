@@ -16,8 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONObject;
-
 
 /**
  * Servlet implementation class CheckUserExists
@@ -44,10 +42,10 @@ public class CheckUserExists extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Entered doPost of CheckUserExists "+ request.getParameter("email_id")+" "+request.getParameter("dob")); //test
+		System.out.println("Entered doPost of CheckUSerExists "+ request.getParameter("email_id")+" "+request.getParameter("dob")); //test
 		Connection conn;
 		try {
-			String userFound=null;
+			boolean userFound=false;
 			conn = ConnectionUtils.getConnection();
 			conn.setAutoCommit(false);
 			String errorString = null;
@@ -59,7 +57,6 @@ public class CheckUserExists extends HttpServlet {
 				Date birthDate = sourceFormat.parse(dob);
 				dob=destFormat.format(birthDate);
 				userFound =DBUtils.userExists(conn, emailID, dob);
-				System.out.println("CheckUserExists "+ userFound); //test
 			} catch (Exception e) {
 	            e.printStackTrace();
 	            errorString = e.getMessage();
@@ -67,12 +64,8 @@ public class CheckUserExists extends HttpServlet {
 			response.setContentType("application/json");
 	        response.setHeader("Cache-control", "no-cache, no-store");
 	        response.setCharacterEncoding("utf-8");
-	        JSONObject json = new JSONObject();
-	        json.put("user",userFound);
-	        System.out.println("CheckUserExists "+ json); //test
-	        
-	        PrintWriter out = response.getWriter();	        
-	        out.print(json);
+	        PrintWriter out = response.getWriter();
+	        out.print(userFound);
 		}catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

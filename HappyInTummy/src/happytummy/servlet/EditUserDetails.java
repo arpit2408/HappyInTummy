@@ -44,7 +44,7 @@ public class EditUserDetails extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Entered doPost of EditUserDetails "+request.getParameter("email")+request.getParameter("date")); //test
+		System.out.println("Entered doPost of EditUserDetails "+request.getParameter("email")+request.getParameter("dob")); //test
 		
 		Connection conn;
 		try {			
@@ -52,7 +52,7 @@ public class EditUserDetails extends HttpServlet {
 			conn.setAutoCommit(false);
 			String errorString = null;
 			String emailID=request.getParameter("email");
-			String dob=request.getParameter("date");
+			String dob=request.getParameter("dob");
 			User user=new User();
 			try{
 				DateFormat sourceFormat=new SimpleDateFormat("yyyy-MM-dd");

@@ -27,44 +27,25 @@
   
  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
 <script>
-
 $.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
+</script>
 
-var date = new Date();
-var d = new Date();        
-d.setDate(date.getDate());
-$(document).ready(function(){
-	var date_input=$('input[name="date"]'); //our date input has the name "date"
-	var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-	var options={
-	      format: 'yyyy-mm-dd',
-	      container: container,
-	      todayHighlight: true,
-	      autoclose: true,
-	      endDate: d,   
-	    };
-	    date_input.datepicker(options);
- });
+<script>
 	function isValidEmail(){
 		document.getElementById("emailtip").innerHTML = "";
 		var emailID = document.getElementById("email").value;
 		var regExEmail = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
 	    if (emailID =="") {
-	        document.getElementById("emailtip").innerHTML = "Email ID is required.";
+	        document.getElementById("emailtip").innerHTML = "Email ID is a required field.";
 	        
 	        return false;
 	    }
 	    
 	    if (!regExEmail.test(emailID)){
-	    	document.getElementById("emailtip").innerHTML = "Enter a correct email address.";
+	    	document.getElementById("emailtip").innerHTML = "Please enter a correct email address.";
 	    	
 	        return false;
 	    }
@@ -73,15 +54,15 @@ $(document).ready(function(){
 	
 	function isValidDOB(){
 		document.getElementById("dobtip").innerHTML ="";
-		var birthdate = document.getElementById("date").value;
+		var birthdate = document.getElementById("dob").value;
 		var regExDate = /^\d{4}-\d{2}-\d{2}$/;
 	    if (birthdate=="") {
-	        document.getElementById("dobtip").innerHTML = "Select date of birth.";
+	        document.getElementById("dobtip").innerHTML = "Date of birth is a required field.";
 	        return false;
 	    }
 	    
 	    if (!regExDate.test(birthdate)) {
-	        document.getElementById("dobtip").innerHTML = "Enter date of birth in YYYY-MM-DD format.";
+	        document.getElementById("dobtip").innerHTML = "Please enter date of birth in YYYY-MM-DD format.";
 	        
 	        return false;
 	    }
@@ -95,31 +76,30 @@ $(document).ready(function(){
 	}
 	if(!isValidDOB()){
 		return false;
-	}	
+	}
+	
     $.ajax({
     	url: 'CheckUserExists',
 	    type: 'POST',      
 	    cache: false,
     	data:{
     		"email_id" :document.getElementById("email").value,
-    		"dob":document.getElementById("date").value
+    		"dob":document.getElementById("dob").value
     	},
     	dataType:"json",
-    	success:function(data){ 
-    		if (data.user=="No User"){
-    			document.getElementById("msgs").innerHTML="Did you put in the right details?";
-    		}else if(data.user=="No Oder") {
-    			document.getElementById("msgs").innerHTML="You do not have an active order.";
-    		}else{
+    	success:function(data){
+    		if (data){
     			document.forms.contactUS.submit();
+    		}else{
+    			document.getElementById("formtip").innerHTML="Sorry! We couldn't find you.";
     		}
     	}    	
     }); 
-    	return true;
+    return true;
 	}
  </script> 
    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->  
-   
+   <script src="js/jquery-3.1.1.min.js"></script>  
   <script src="js/jquery-ui-1.9.2.custom.js"></script>  
 
   <script src="js/bootstrap.min.js"></script>  
@@ -132,7 +112,7 @@ $(document).ready(function(){
   <script src="js/jquery.counterup.js"></script>  
   <script src="js/main.js"></script>  
  </head>  
-<body>
+<body >
 <div id="websiteHeader" style="z-index: 1111;"></div>
 
  <!-- loader image before page load starts -->  
@@ -148,27 +128,21 @@ $(document).ready(function(){
  
  <!-- ============== Contact form block starts ============== -->  
  <section class="block contact-form">  
- <div class="step-content"> 
- <div class="step1"> 
- <div class="col-sm-1"></div>
- <div class="col-sm-5 wow fadeInLeft left-image" style="padding-top:2%">
- <figure>
- <img class="img-responsive" src="images/rsz_food-delivery.png" alt="Meal delivery service" style="padding-top:14px;"/>
- </figure>
- </div>    
- <div class="col-sm-6 wow fadeInRight right-form" style="padding-top:4%"> 
- 	<h3 id="msgs" class="wow fadeInUp wrapper" style="font-family: 'Raleway', sans-serif !important;">
-    	Oh dear, so glad to see you again!</h3>    
+ <div class="container">  
+  <h3  class="wow fadeInUp wrapper" style="font-family: 'Raleway', sans-serif !important;">We are excited to see you back!!!</h3>    
+ <div class="row wrapper">  
+ <div class="col-xs-12 col-sm-3"></div>
+ <div class="col-xs-12 col-sm-9 ">  
  <form id="contactUS" action ="EditUserDetails" method ="post">
  <fieldset>
- 	<div id="formtip" style="font-family : 'Raleway'; color: #800000"></div>
+ 	<div id="formtip" style="font-family : 'Raleway'; color: red"></div>
  </fieldset>  
  <fieldset>
 	 <input id ="email" style="max-width:500px" type="email" class="form-control" name="email" placeholder="Your email ID" required="required" onblur="isValidEmail()"/><br/>
 	 <div id="emailtip" style="font-family : 'Raleway'; color: #800000"></div>
  </fieldset>  
  <fieldset>
- 	<input id ="date" name="date" style="max-width:500px" class="form-control" placeholder="Your date of birth" type="text" onblur="isValidDOB()" required="required"/>
+ 	<input id ="dob" name="dob" style="max-width:500px" class="form-control" type="date" onblur="isValidDOB()" required="required"/>
  	<div id="dobtip" style="font-family : 'Raleway'; color: #800000"></div>
  </fieldset>
  

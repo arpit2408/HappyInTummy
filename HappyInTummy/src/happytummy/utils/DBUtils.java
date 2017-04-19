@@ -18,8 +18,8 @@ import happytummy.beans.User;
  
 public class DBUtils {
  
-public static String userExists(Connection conn, String emailID, String dob) throws SQLException {
-	 	  String output=null;	
+public static boolean userExists(Connection conn, String emailID, String dob) throws SQLException {
+	 
 		  String sql = "select Customer_ID from happytummy.customerdetails where "; //need to work on this
 	      sql=sql+"Email_Id ='"+ emailID.toString()+"'";
 	      sql=sql+" and DOB=str_to_date('"+dob+"','%d-%M-%Y');";
@@ -27,18 +27,11 @@ public static String userExists(Connection conn, String emailID, String dob) thr
 	      PreparedStatement pstm = conn.prepareStatement(sql);
 	      ResultSet rs = pstm.executeQuery();
 	      if (!rs.next()) {
-	    	  output= "No User";
-	    	}else{
-		      System.out.println("userExists: CustomerID: "+rs.getString("Customer_ID"));
-		      String activeOrderId=getActiveOrderID(conn, rs.getString("Customer_ID")); 
-		      System.out.println("userExists: OrderID: "+ activeOrderId);
-		      if(activeOrderId.equals("Invalid")||activeOrderId.equals("None")){
-		    	  output="No Oder";
-		      }else{
-		    	  output=activeOrderId;
-		      }	 
+	    	  System.out.println("No Customer ");
+	    	  return false;
 	    	}
-		  return output;
+	      System.out.println("Output: "+rs.getString("Customer_ID"));
+		  return true ;
 }
  
   public static List<MenuItems> queryMenu(Connection conn,int preference) throws SQLException {
@@ -206,11 +199,11 @@ public static String userExists(Connection conn, String emailID, String dob) thr
 		  
 	  if(gender.equalsIgnoreCase("Female"))
 	  {
-		  bmr = (float)((10 * weight) +( 6.25 * height)-(5 * age)-161);
+		  bmr = (float)((10 * 0.453 * weight) +( 6.25 * height)-(5 * age)-161);
 	  }
 	  else
 	  {
-		  bmr = (float)((10 * weight) +( 6.25 * height)-(5 * age)+5);
+		  bmr = (float)((10 * 0.453 * weight) +( 6.25 * height)-(5 * age)+5);
 	  }
 	  calorieslunch=(int)(bmr*0.35);
 	  caloriesbk=(int)(bmr*0.30);
