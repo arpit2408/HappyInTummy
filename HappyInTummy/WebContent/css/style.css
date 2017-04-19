@@ -489,7 +489,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .right-image {padding: 0;}
 .right-image img {float: right;}
 .right-image figure {margin-bottom: 0;margin-left: 20px;margin-right: 40px;}
-
+.radiochecked {border: 1px solid #60ba62;outline: none;color: #60ba62;}
 
 /*======================= ## Choose plan select program page ==================*/
 .choose-plan-page main {margin-bottom: 0;}
