@@ -122,7 +122,7 @@ $.get("Header.jsp", function (data) {
 		<!-- =============== plan steps block starts ================== -->
 		<section class="plan-step">
 			<div class="text-center"
-				style="visibility: visible; padding-top: 30px;padding-bottom: 30px;">
+				style="visibility: visible; padding-top: 30px;padding-bottom: 60px;">
 				<label style="font-size: 1.5em;padding-right:15px;">Select Preference: </label>
 				<select id="prefidplan" onchange="getPlans();">
 					
