@@ -36,11 +36,10 @@
 							<!-- Collect the nav links, forms, and other content for toggling -->
 							<div class="collapse" >
 								<ul class="nav navbar-nav text-right pull-right" style="padding-left:35px">
-									<li class="active"><a href="${pageContext.request.contextPath}/LandingPage.jsp" onclick="sessionStorage.clear();">Home</li>
-									<li><a href="${pageContext.request.contextPath}/menu">Menu</a></li>
-									<li><a href="${pageContext.request.contextPath}/Pricing.jsp" onclick="sessionStorage.clear();">Pricing</a></li>
-									<li><a href="${pageContext.request.contextPath}/choose-plan-about-us.jsp" onclick="sessionStorage.clear();">Place Order</a></li>
-									<li><a href="${pageContext.request.contextPath}/contact-us.html" onclick="sessionStorage.clear();">Manage Order</a></li>
+									<li class="active"><a class="home" href="${pageContext.request.contextPath}/LandingPage.jsp" onclick="sessionStorage.clear();">Home</a></li>
+									<li><a class="pricing" href="${pageContext.request.contextPath}/Pricing.jsp" onclick="sessionStorage.clear();">Pricing</a></li>
+									<li><a class="placeorder" href="${pageContext.request.contextPath}/choose-plan-about-us.jsp" onclick="sessionStorage.clear();">Place Order</a></li>
+									<li><a class="yourorder" href="${pageContext.request.contextPath}/contact-us.html" onclick="sessionStorage.clear();">Manage Order</a></li>
 								
 
 
