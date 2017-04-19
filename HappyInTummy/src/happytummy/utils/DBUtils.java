@@ -18,8 +18,8 @@ import happytummy.beans.User;
  
 public class DBUtils {
  
-public static boolean userExists(Connection conn, String emailID, String dob) throws SQLException {
-	 
+public static String userExists(Connection conn, String emailID, String dob) throws SQLException {
+	 	  String output=null;	
 		  String sql = "select Customer_ID from happytummy.customerdetails where "; //need to work on this
 	      sql=sql+"Email_Id ='"+ emailID.toString()+"'";
 	      sql=sql+" and DOB=str_to_date('"+dob+"','%d-%M-%Y');";
@@ -27,11 +27,18 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 	      PreparedStatement pstm = conn.prepareStatement(sql);
 	      ResultSet rs = pstm.executeQuery();
 	      if (!rs.next()) {
-	    	  System.out.println("No Customer ");
-	    	  return false;
+	    	  output= "No User";
+	    	}else{
+		      System.out.println("userExists: CustomerID: "+rs.getString("Customer_ID"));
+		      String activeOrderId=getActiveOrderID(conn, rs.getString("Customer_ID")); 
+		      System.out.println("userExists: OrderID: "+ activeOrderId);
+		      if(activeOrderId.equals("Invalid")||activeOrderId.equals("None")){
+		    	  output="No Oder";
+		      }else{
+		    	  output=activeOrderId;
+		      }	 
 	    	}
-	      System.out.println("Output: "+rs.getString("Customer_ID"));
-		  return true ;
+		  return output;
 }
  
   public static List<MenuItems> queryMenu(Connection conn,int preference) throws SQLException {
