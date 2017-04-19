@@ -47,20 +47,20 @@ $.get("Header.jsp", function (data) {
 function isValidStreet(){
 	document.getElementById("streetTip").innerHTML="";
 	var street = document.getElementById("Street Address").value;	
-	var regExStreet=/([0-9a-zA-Z]+)|([0-9a-zA-Z][0-9a-zA-Z\\s]+[0-9a-zA-Z]+)/;
+	var regExStreet=/^[a-zA-Z0-9,.!? ]*$/;
 	
 	if (street==""){
-		document.getElementById("streetTip").innerHTML="Street Address is required.";		
+		document.getElementById("streetTip").innerHTML="Enter street address.";		
 		return false;
 	}
 	
 	if (!regExStreet.test(street)){
-		document.getElementById("streetTip").innerHTML="Street Address can not have special characters.";		
+		document.getElementById("streetTip").innerHTML="Enter a valid street address.";		
 		return false;
 	}
 	
 	if(street.length < 2 || street.length > 100){
-		document.getElementById("streetTip").innerHTML="Street Address can only have 2 - 100 characters.";		
+		document.getElementById("streetTip").innerHTML="Limit street address to 2 - 100 characters.";		
 		return false;
 	}
 	return true;
@@ -73,16 +73,16 @@ function isValidCity(city){
 	
 	
 	if (city==""){
-		document.getElementById("cityTip").innerHTML="City is required.";
+		document.getElementById("cityTip").innerHTML="Enter city.";
 		return false;
 	}
 	
 	if (!regExCity.test(city)){
-		document.getElementById("cityTip").innerHTML="Please enter a valid city.";
+		document.getElementById("cityTip").innerHTML="Enter a valid city.";
 		return false;
 	}
 	if (city.length < 2 || city.length > 45){
-		document.getElementById("cityTip").innerHTML="City can only have 2 - 45 characters.";
+		document.getElementById("cityTip").innerHTML="Limit city to 2 - 45 characters.";
 		return false;
 	}
 	
@@ -95,15 +95,15 @@ function isValidState(state){
 	var regExState=/^[a-zA-Z][a-zA-Z\s]+$/;
 	
 	if (state==""){
-		document.getElementById("stateTip").innerHTML="State is required.";
+		document.getElementById("stateTip").innerHTML="Enter state.";
 		return false;
 	}
 	if (!regExState.test(state)){
-		document.getElementById("stateTip").innerHTML="Please enter a valid state.";
+		document.getElementById("stateTip").innerHTML="Enter a valid state.";
 		return false;
 	}
 	if (state.length < 2 || state.length > 45){
-		document.getElementById("stateTip").innerHTML="State can only have 2 - 45 characters.";
+		document.getElementById("stateTip").innerHTML="Limit state to 2 - 45 characters.";
 		return false;
 	}
 	return true;
@@ -113,15 +113,15 @@ function isValidState(state){
 function isValidZip(zip){
 	document.getElementById("zipTip").innerHTML="";
 	var zip = document.getElementById("ZIP Code").value;	
-	var regExZip=/(^\d{5}$)|(^\d{5}-\d{4}$)/;
+	var regExZip=/^\s*\d{5}\s*$/;
 	
 	if (zip==""){
-		document.getElementById("zipTip").innerHTML="ZIP Code is required.";
+		document.getElementById("zipTip").innerHTML="Enter zip code.";
 		return false;
 	}
 	
 	if (!regExZip.test(zip)){
-		document.getElementById("zipTip").innerHTML="Please enter a valid zip code.";
+		document.getElementById("zipTip").innerHTML="Enter a valid zip code.";
 		return false;
 	}
 	
@@ -132,15 +132,15 @@ function isValidZip(zip){
 function isValidPhone(phone){
 	document.getElementById("phoneTip").innerHTML = "";
 	var phone= document.getElementById("Phone number").value;
-	var regExPhone=/^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/;
+	var regExPhone=/^\d{10}$/;
 	
 	if (phone==""){
-		document.getElementById("phoneTip").innerHTML="Phone Number is required.";
+		document.getElementById("phoneTip").innerHTML="Enter phone number.";
 		return false;
 	}
 	
 	if (!regExPhone.test(phone)){
-		document.getElementById("phoneTip").innerHTML="Please enter only numbers in Phone Number.";
+		document.getElementById("phoneTip").innerHTML="Enter 10 digit phone number.";
 		return false;
 	}
 	return true;	
@@ -221,26 +221,26 @@ function submitform()
 	<div class="col-sm-5">
 	<input id="Street Address" name="Street Address" type="text" placeholder="Street Address"
 		class="form-control input-md" value="${user.address}" onblur="isValidStreet()" required="required">
-	<div id="streetTip" style="font-family : 'Raleway'; color: red"></div>
+	<div id="streetTip" style="font-family : 'Raleway'; color: #800000"></div>
 	</div>
 	</div>
 
 	<div class="form-group">
 	<label class="col-sm-4 control-label col-xs-12"></label>
 	<div class="col-sm-2">
-	<input id="City" name="City" type="text" placeholder="City" 
-	      class="form-control input-md" value="${user.city}" onblur="isValidCity()" required="required">
-	<div id="cityTip" style="font-family : 'Raleway'; color: red"></div>
+	<input class="form-control input-md" id="City" name="City" type="text" placeholder="City" 
+	       value="${user.city}" onblur="isValidCity()" required="required">
+	<div id="cityTip" style="font-family : 'Raleway'; color: #800000"></div>
 	</div>	
 	<div class="col-sm-2">
 	<input id="State" name="State" type="text" placeholder="State" 
 	       class="form-control input-md" value="${user.state}" onblur="isValidState()" required="required">
-	<div id="stateTip" style="font-family : 'Raleway'; color: red"></div>
+	<div id="stateTip" style="font-family : 'Raleway'; color: #800000"></div>
 	</div>
 	<div class="col-sm-1">
 	<input id="ZIP Code" name="ZIP Code" type="text" placeholder="ZIP Code"
 		   class="form-control input-md " value="${user.postal_zip}" onblur="isValidZip()" required="required">
-	<div id="zipTip" style="font-family : 'Raleway'; color: red"></div>
+	<div id="zipTip" style="font-family : 'Raleway'; color: #800000"></div>
 	</div>
 	</div>
 	
@@ -253,7 +253,7 @@ function submitform()
 	<input id="Phone number" name="Phone number" type="text" placeholder="Phone number " 
 		class="form-control input-md" value="${user.phone_number}" onblur="isValidPhone()" required="required">
 	</div>
-	<div id="phoneTip" style="font-family : 'Raleway'; color: red"></div>
+	<div id="phoneTip" style="font-family : 'Raleway'; color: #800000"></div>
 	</div>
 	</div>
 
