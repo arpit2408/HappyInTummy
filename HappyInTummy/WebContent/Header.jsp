@@ -29,7 +29,7 @@
 							<div class="navbar-header">
 								<button type="button" class="navbar-toggle">
 									<span class="sr-only">Toggle navigation</span> <span
-										class="icon-bar"></span> <span class="icon-bar"></span> <span
+										clas="icon-bar"></span> <span class="icon-bar"></span> <span
 										class="icon-bar"></span>
 								</button>
 							</div>
@@ -42,6 +42,7 @@
 									<li><a href="${pageContext.request.contextPath}/choose-plan-about-us.jsp" onclick="sessionStorage.clear();">Place Order</a></li>
 									<li><a href="${pageContext.request.contextPath}/contact-us.html" onclick="sessionStorage.clear();">Manage Order</a></li>
 								
+
 
 								</ul>
 							</div>

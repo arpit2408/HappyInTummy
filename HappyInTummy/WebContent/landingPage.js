@@ -10,14 +10,16 @@ $(document).ready(function(){
         $('span[data-toggle="'+tog+'"]').not('[data-value="'+sel+'"]').removeClass('active selectedMenu fa fa-check-circle').addClass('notActive btn-default');
         $('span[data-toggle="'+tog+'"][data-value="'+sel+'"]').removeClass('notActive btn-default').addClass('active selectedMenu fa fa-check-circle');
     });
-    
-   
 });
 function getAccMenu(e){
-	document.getElementById('nonvegmenu').style.display = 'none';
+	$("#nonvegmenu").fadeOut(500);
+	$("#vegmenu").fadeOut(500);
+	$("#glutenfreemenu").fadeOut(500);
+	$("#"+e.id.replace("id","")).fadeIn(700);
+	/*document.getElementById('nonvegmenu').style.display = 'none';
 	document.getElementById('vegmenu').style.display = 'none';
 	document.getElementById('glutenfreemenu').style.display = 'none';
-	document.getElementById(e.id.replace("id","")).style.display = 'block';
+	document.getElementById(e.id.replace("id","")).style.display = 'block';*/
 
 	if(e.id.replace("id","")=="nonvegmenu") 
 	{

@@ -46,7 +46,7 @@
 							allowfullscreen></iframe>
 					</div>
 					<div id="happyTummyad" class="cols-md-2">
-						<iframe style="background-image: url('images/YogurtAd.PNG')"
+						<iframe src="https://www.yogurt-land.com/"
 							width="600" height="645%" frameborder="0" style="border: 0"
 							allowfullscreen></iframe>
 					</div>
@@ -64,24 +64,23 @@
 							<div class="input-group" style="margin-bottom: 20px;">
 								<div id="radioBtn" class="btn-group">
 									<div class="row">
-										<span class="btn btn-primary btn-sm active fa fa-check-circle"
+										<span class="buttonstyle btn btn-primary btn-sm fa fa-check-circle active"
 											data-toggle="estadotwo" data-value="Y"
-											style="background-color: #286090; width: 179px; height: 43px; display: inline-block;"
 											id="vegmenuid" onclick="getAccMenu(this)">
 											Vegan</span>
 									</div>
 									<div class="row">
 
-										<span class="btn btn-danger btn-sm notActive"
+										<span class="buttonstyle btn btn-danger btn-sm notActive "
 											data-toggle="estadotwo" data-value="N"
-											style="background-color: #d9534f; width: 179px; height: 43px;"
+											
 											id="nonvegmenuid" onclick="getAccMenu(this)">
-											Non-Vegeterian</span>
+											Non-Vegetarian</span>
 									</div>
 									<div class="row ">
-										<span class="btn btn-info btn-sm notActive"
+										<span class="buttonstyle btn btn-info btn-sm notActive"
 											data-toggle="estadotwo" data-value="Q"
-											style="background-color: #31b0d5; width: 179px; height: 43px;"
+											
 											id="glutenfreemenuid" onclick="getAccMenu(this)"> 
 											Gluten-Free </span>
 									</div>
@@ -90,24 +89,33 @@
 							
 							</div>
 						</div>
-						<div class="col-sm-2 col-md-2"
-							onclick='window.location="${pageContext.request.contextPath}/menu"'
-							style="padding-top: 25px;">
-							<span class="btn btn-warning btn-sm  tiltedButtons"
-								data-value="N"
-								style="background-color: #f0ad4e; width: 185px; color: black;">
-								New? See our Menu..!!</span>
+						<div id="tiltedButtonsHide">
+							<div class="col-sm-2 col-md-2"
+								onclick='window.location="${pageContext.request.contextPath}/menu"'
+								style="padding-top: 25px;">
+								<span class="btn btn-warning btn-sm  tiltedButtons"
+									data-value="N"
+									style="background-color: #f0ad4e; width: 185px; color: black;">
+									New? See our Menu..!!</span>
+							</div>
+							
+							<div class="col-sm-2 col-md-2" style="padding-top: 10px;"
+								onclick='sessionStorage.clear();window.location="${pageContext.request.contextPath}/choose-plan-about-us.jsp"'>
+								<span class="btn btn-warning btn-sm tiltedButtons" data-value="N"
+									style="background-color: #f0ad4e; width: 185px; color: black;">
+									Already Familiar..!!</span>
+							</div>
+							<div class="col-sm-1 col-md-1"></div>
 						</div>
-						
-						<div class="col-sm-2 col-md-2" style="padding-top: 10px;"
-							onclick='sessionStorage.clear();window.location="${pageContext.request.contextPath}/choose-plan-about-us.jsp"'>
-							<span class="btn btn-warning btn-sm tiltedButtons" data-value="N"
-								style="background-color: #f0ad4e; width: 185px; color: black;">
-								Already Familiar..!!</span>
-						</div>
-						<div class="col-sm-1 col-md-1"></div>
 					</div>
-
+					<div id="InterestedMore" style="padding-top: 134px;height: 80px;">
+						<div class="col-sm-2 col-md-2" style="padding-top: 10px;display:none;"
+									onclick='sessionStorage.clear();window.location="${pageContext.request.contextPath}/choose-plan-about-us.jsp"'>
+									<span class="btn btn-warning btn-sm tiltedButtons stylebuttonVal" data-value="N">
+										Interested.!! Want to see more</span>
+						</div>
+						<a href="${pageContext.request.contextPath}/menu" style="margin-left: 72px;"><u>Interested? See more..</u></a>
+					</div>
 					<!-- == menu listing starts == -->
 					<div id="vegmenu" class="row menu-listing"
 						style="margin-top: 14px; padding-left: 22px;">
