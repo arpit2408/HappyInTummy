@@ -230,6 +230,12 @@
 			width="600" height="645%" frameborder="0" style="border: 0"
 			allowfullscreen no-repeat></iframe>
 	</div>
-
+	<div id="footer">
+    </div>
 </body>
+<script type="text/javascript">
+	$.get("footer.html", function(data) {
+		$("#footer").replaceWith(data);
+	});
+</script>
 </html>

@@ -466,7 +466,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 /*======================= ## Choose plan about us page ==================*/
 .radio-btn input[type=radio] {margin-top: 0;opacity: 0;position: relative;border: 1px solid #cecece;height: 50px;width: 100%;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;padding: 30px 30px;}
 .radio-btn span {font-family: "Raleway", sans-serif;text-transform: uppercase;font-size: 18px;color: #cecece;}
-.radio-btn.checked {position: relative;border: 1px solid #60ba62;}
+.radio-btn.checked {position: relative;border: 1px solid #60ba62;background-color: gainsboro;}
 .radio-btn.checked span{color: #60ba62;}
 .radio-btn:hover:after, .radio-btn:focus:after, .radio-btn.checked:after {border: 1px solid #60ba62;color: #60ba62;box-shadow: none;position: absolute;width: 100%;height: 100%;content: "";left: 0;top: 0;border-radius: 4px;}
 .radio-btn:checked, .radio-btn:hover, .radio-btn:focus {border: 1px solid #60ba62;outline: none;color: #60ba62;}
@@ -1754,3 +1754,42 @@ header.green {background: #60ba62;}
 .navbar-default .navbar-nav>.active>a.pricing:before,
 .navbar-nav>li>a.pricing:before {  background-image:  url(../images/Icons/price-tag.png); }
 
+
+#footer {
+    border-top: 5px solid #CDB380;
+    background: #033649 none repeat scroll 0% 0%;
+    padding-top: 30px;
+    margin-top: 60px;
+    clear: both;
+    color: #AAA;
+    display: block;
+}
+
+#footer .widgettitle {
+    margin: 0px;
+    padding: 0px 0px 15px;
+    border-bottom: medium none;
+}
+#footer h4 {
+    color: #FFF;
+}
+
+#footer ul {
+    list-style: outside none none;
+}
+
+#footer li {
+    padding: 7px 0px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+    margin: 0px;
+}
+
+#footer li a {
+    color: #DDD;
+}
+
+#sub-floor {
+    color: #AAA;
+    background: #031634 none repeat scroll 0% 0%;
+    padding: 10px 0px;
+}

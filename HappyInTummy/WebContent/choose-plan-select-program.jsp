@@ -22,7 +22,8 @@
 <link href="css/style.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="Fillform.js" type="text/javascript"></script>
-
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 <link
 	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
 	rel='stylesheet' type='text/css'>
@@ -177,7 +178,13 @@ validateOnblurSelectProgram();
 					</div>
 				</div>
 				<br>
-				
+				<div class="row" style="    margin-top: -59px;">
+						<div class="col-sm-4"></div>
+						<div class="col-sm-4">
+						<input type="button" class="btn" value="Take me to Plans" onClick="submitformselectprogram();"/>
+						</div>
+						<div class="col-sm-4"></div>
+				</div>
 			</div>
 			
 			
@@ -241,7 +248,13 @@ validateOnblurSelectProgram();
 					</div>
 				</div>
 				<br>
-				
+				<div class="row" style="margin-top: -59px;">
+						<div class="col-sm-4"></div>
+						<div class="col-sm-4">
+						<input type="button" class="btn" value="Take me to Plans" onClick="submitformselectprogram();"/>
+						</div>
+						<div class="col-sm-4"></div>
+				</div>
 			</div>
 			
 			
@@ -305,7 +318,13 @@ validateOnblurSelectProgram();
 					</div>
 				</div>
 				<br>
-				
+				<div class="row" style="margin-top: -59px;">
+						<div class="col-sm-4"></div>
+						<div class="col-sm-4">
+						<input type="button" class="btn" value="Take me to Plans" onClick="submitformselectprogram();"/>
+						</div>
+						<div class="col-sm-4"></div>
+				</div>
 			</div>
 
 		</section>
@@ -314,13 +333,7 @@ validateOnblurSelectProgram();
 	</div>
 	<!-- main wrapper of the site ends -->
 	
-			<div class="row">
-						<div class="col-sm-4"></div>
-						<div class="col-sm-4">
-						<input type="button" class="btn" value="Take me to Plans" onClick="submitformselectprogram();"/>
-						</div>
-						<div class="col-sm-4"></div>
-				</div>
+			
 				</form>
 				</div>
 				<!-- == step content ends ==-->
@@ -345,5 +358,12 @@ validateOnblurSelectProgram();
 	<script src="js/jquery.waypoints.js" type="text/javascript"></script>
 	<script src="js/jquery.counterup.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
+<div id="footer">
+    </div>
 </body>
+<script type="text/javascript">
+	$.get("footer.html", function(data) {
+		$("#footer").replaceWith(data);
+	});
+</script>
 </html>

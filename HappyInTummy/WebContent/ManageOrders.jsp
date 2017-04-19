@@ -323,5 +323,12 @@ function submitform()
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
+<div id="footer">
+    </div>
 </body>
+<script type="text/javascript">
+	$.get("footer.html", function(data) {
+		$("#footer").replaceWith(data);
+	});
+</script>
 </html>

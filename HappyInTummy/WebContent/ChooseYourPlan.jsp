@@ -255,5 +255,12 @@ $.get("Menu_Options.jsp", function (data) {
 	<script src="js/jquery.waypoints.js" type="text/javascript"></script>
 	<script src="js/jquery.counterup.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
+<div id="footer">
+    </div>
 </body>
+<script type="text/javascript">
+	$.get("footer.html", function(data) {
+		$("#footer").replaceWith(data);
+	});
+</script>
 </html>

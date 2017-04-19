@@ -23,7 +23,8 @@
 <link href="css/style.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
 <script src="Fillform.js" type="text/javascript"></script>
-
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 <link
 	href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700'
@@ -144,15 +145,15 @@ $.get("Header.jsp", function (data) {
 								<div class="row text-center select-payment-btns">
 								
 										<div class="col-xs-12 col-sm-6 fadeInUp select-payment-btn">
-											<div class="light-font radio-btn">
+											<div class="light-font radio-btn checked">
 												<input  class="radio-btn" type="radio" id="Paypal" name="payment"
-													value="Paypal" checked = "checked" /> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31">
+													value="Paypal"  /> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31">
 										<path id="Paypal_icon" data-name="Paypal icon" fill="#60ba62"  d="M19.472,0H5.979L0,27.606H7.919l1.939-9.148h5.656A11.049,11.049,0,0,0,26.663,9.4C28.034,2.935,23.428,0,19.472,0Zm-5.9,13.172h-2.58l1.7-7.552h3.878a2.673,2.673,0,0,1,2.668,1.968,2.817,2.817,0,0,0-.513-0.081H14.841ZM19.229,9.4a4.954,4.954,0,0,1-4.379,3.762l0.928-4.142h3.515A3.8,3.8,0,0,1,19.229,9.4Zm9.59,1.886a8.454,8.454,0,0,0-.372-5.272c1.283,1.54,1.948,3.773,1.31,6.781a11.05,11.05,0,0,1-11.149,9.062H12.951L11.012,31H3.094l0.329-1.509h6.652l1.939-9.147H17.67A11.048,11.048,0,0,0,28.818,11.282Z" />
 										</svg><span style="font-weight:bold;">Paypal</span>
 											</div>
 										</div>
 										
-										<div class="col-xs-12 col-sm-6 fadeInRight select-payment-btn">
+										<div class="col-xs-12 col-sm-6 fadeInRight select-payment-btn" style="border:1px solid ;">
 											<div class="light-font radio-btn">
 												<input  class="radio-btn" type="radio" id="Bank" name="payment"
 													value="Bank" /> <svg xmlns="http://www.w3.org/2000/svg" width="27" height="35"
@@ -190,9 +191,7 @@ $.get("Header.jsp", function (data) {
 						</div>
 					</div>
 		<!-- ============== footer block starts ============== -->
-		<footer class="limited-footer">
-			
-		</footer>
+		
 		<!-- ============== footer block ends ============== -->
 </form>	
 	<!-- main wrapper of the site ends -->
@@ -210,6 +209,12 @@ $.get("Header.jsp", function (data) {
 	<script src="js/jquery.waypoints.js" type="text/javascript"></script>
 	<script src="js/jquery.counterup.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
-
+<div id="footer">
+    </div>
 </body>
+<script type="text/javascript">
+	$.get("footer.html", function(data) {
+		$("#footer").replaceWith(data);
+	});
+</script>
 </html>
