@@ -1729,3 +1729,28 @@ header.green {background: #60ba62;}
     margin-left: -103px;
 }
 
+/*For styling the header*/
+.navbar-default .navbar-nav>.active>a:before,
+.navbar-nav>li>a:before {
+    background-repeat: no-repeat;
+    background-position: 0 top;
+    content: "";
+    display: inline-block;
+    height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 32px;
+}
+
+.navbar-default .navbar-nav>.active>a.home:before,
+.navbar-nav>li>a.home:before { background-image: url(../images/Icons/cooker.png) !important; }
+
+.navbar-default .navbar-nav>.active>a.placeorder:before,
+.navbar-nav>li>a.placeorder:before {  background-image: url(../images/Icons/Menu2.png); }
+
+.navbar-default .navbar-nav>.active>a.yourorder:before,
+.navbar-nav>li>a.yourorder:before {  background-image:  url(../images/Icons/pencil.png); }
+
+.navbar-default .navbar-nav>.active>a.pricing:before,
+.navbar-nav>li>a.pricing:before {  background-image:  url(../images/Icons/price-tag.png); }
+
