@@ -1572,7 +1572,7 @@ function setCorrectAction(e){
    alert(baseuri+"baseuri..");
    if(baseuri==null || baseuri=="/" || baseuri=="")
 	{
-	   baseuri="/HappyInTummy/";
+	   baseuri="/"+"";
 	}
 
 
