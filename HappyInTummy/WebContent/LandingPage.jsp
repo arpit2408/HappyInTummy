@@ -124,7 +124,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/V_L_8.jpg" alt="Menu image" /></a> </figure>
+									src="images/V_D_14.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -133,7 +133,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/V_L_100.jpg" alt="Menu image" /></a> </figure>
+									src="images/V_D_4.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -142,7 +142,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/V_L_1.jpg" alt="Menu image" /></a> </figure>
+									src="images/V_D_1.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
