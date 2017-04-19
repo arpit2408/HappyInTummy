@@ -1570,7 +1570,7 @@ function setCorrectAction(e){
  
    var baseuri=document.getElementById('pagecontext').value;
    alert(baseuri+"baseuri..");
-   if(baseuri==null || baseuri==" " || baseuri=="")
+   if(baseuri==null || baseuri=="/" || baseuri=="")
 	{
 	   baseuri="/HappyInTummy/";
 	}
