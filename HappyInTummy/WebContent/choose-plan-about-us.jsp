@@ -155,17 +155,18 @@ $.get("Header.jsp", function (data) {
 								<h6><strong>Tell us about yourself, We will prepare your healthy meals!</strong></h6>
 							<fieldset>
 									
-										<div class="col-sm-12 col-sm-6 pull-left">
+										<div class="col-sm-12 col-sm-6 pull-left" style="margin-left: -16px;">
 											<div class="light-font radio-btn">
-												<input  class="radio-btn" type="radio" id="Male" name="gender"
-													value="Male" checked = "checked"/> <span style="font-weight:bold;">Men</span>
+
+												<input  class="radio-class" type="radio" id="Male" name="gender"
+													value="Male"  checked = "checked"/> <span style="font-weight:bold;margin-top: -3px;">Men</span>
 											</div>
 										</div>
 										
-										<div class="col-sm-12 col-sm-6 pull-right">
+										<div class="col-sm-12 col-sm-6 pull-right" style="margin-right:-14px;">
 											<div class="light-font radio-btn">
 												<input  class="radio-class" type="radio" id="Female" name="gender"
-													value="Female" /> <span style="font-weight:bold;">Women</span>
+													value="Female" /> <span style="font-weight:bold;margin-top: -3px;">Women</span>
 											</div>
 										</div>
 									<span class="errorspan" id="gendererror"></span>
