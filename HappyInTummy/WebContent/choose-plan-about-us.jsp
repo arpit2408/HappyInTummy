@@ -157,8 +157,8 @@ $.get("Header.jsp", function (data) {
 									
 										<div class="col-sm-12 col-sm-6 pull-left">
 											<div class="light-font radio-btn">
-												<input  class="radio-class" type="radio" id="Male" name="gender"
-													value="Male"  checked = "checked"/> <span style="font-weight:bold;">Men</span>
+												<input  class="radio-btn" type="radio" id="Male" name="gender"
+													value="Male" checked = "checked"/> <span style="font-weight:bold;">Men</span>
 											</div>
 										</div>
 										

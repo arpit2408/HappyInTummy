@@ -199,11 +199,11 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 		  
 	  if(gender.equalsIgnoreCase("Female"))
 	  {
-		  bmr = (float)((10 * weight) +( 6.25 * height)-(5 * age)-161);
+		  bmr = (float)((10 * 0.453 * weight) +( 6.25 * height)-(5 * age)-161);
 	  }
 	  else
 	  {
-		  bmr = (float)((10 * weight) +( 6.25 * height)-(5 * age)+5);
+		  bmr = (float)((10 * 0.453 * weight) +( 6.25 * height)-(5 * age)+5);
 	  }
 	  calorieslunch=(int)(bmr*0.35);
 	  caloriesbk=(int)(bmr*0.30);

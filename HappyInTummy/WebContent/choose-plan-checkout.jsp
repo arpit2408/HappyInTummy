@@ -145,8 +145,8 @@ $.get("Header.jsp", function (data) {
 								
 										<div class="col-xs-12 col-sm-6 fadeInUp select-payment-btn">
 											<div class="light-font radio-btn">
-												<input  class="radio-class" type="radio" id="Paypal" name="payment"
-													value="Paypal" /> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31">
+												<input  class="radio-btn" type="radio" id="Paypal" name="payment"
+													value="Paypal" checked = "checked" /> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31">
 										<path id="Paypal_icon" data-name="Paypal icon" fill="#60ba62"  d="M19.472,0H5.979L0,27.606H7.919l1.939-9.148h5.656A11.049,11.049,0,0,0,26.663,9.4C28.034,2.935,23.428,0,19.472,0Zm-5.9,13.172h-2.58l1.7-7.552h3.878a2.673,2.673,0,0,1,2.668,1.968,2.817,2.817,0,0,0-.513-0.081H14.841ZM19.229,9.4a4.954,4.954,0,0,1-4.379,3.762l0.928-4.142h3.515A3.8,3.8,0,0,1,19.229,9.4Zm9.59,1.886a8.454,8.454,0,0,0-.372-5.272c1.283,1.54,1.948,3.773,1.31,6.781a11.05,11.05,0,0,1-11.149,9.062H12.951L11.012,31H3.094l0.329-1.509h6.652l1.939-9.147H17.67A11.048,11.048,0,0,0,28.818,11.282Z" />
 										</svg><span style="font-weight:bold;">Paypal</span>
 											</div>
@@ -154,7 +154,7 @@ $.get("Header.jsp", function (data) {
 										
 										<div class="col-xs-12 col-sm-6 fadeInRight select-payment-btn">
 											<div class="light-font radio-btn">
-												<input  class="radio-class" type="radio" id="Bank" name="payment"
+												<input  class="radio-btn" type="radio" id="Bank" name="payment"
 													value="Bank" /> <svg xmlns="http://www.w3.org/2000/svg" width="27" height="35"
 												viewBox="0 0 27 35"> <path id="Bank_Transfer_Icon" data-name="Bank Transfer Icon"
 													fill="#60ba62"
