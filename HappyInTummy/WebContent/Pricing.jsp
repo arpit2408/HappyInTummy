@@ -122,8 +122,8 @@ $.get("Header.jsp", function (data) {
 		<!-- =============== plan steps block starts ================== -->
 		<section class="plan-step">
 			<div class="text-center"
-				style="visibility: visible; padding-top: 30px;padding-bottom: 30px;">
-				<label>Select Preference: </label>
+				style="visibility: visible; padding-top: 30px;padding-bottom: 60px;">
+				<label style="font-size: 1.5em;padding-right:15px;">Select Preference: </label>
 				<select id="prefidplan" onchange="getPlans();">
 					
 					<option value="1" selected="selected">Vegan</option>
@@ -138,8 +138,8 @@ $.get("Header.jsp", function (data) {
 				
 				<div class="step-content">
 				<form id="chooseplan" method="POST" action="${pageContext.request.contextPath}/choose-plan-checkout.jsp">
-					<h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;" class="col-sm-12"> Our meals are so healthy, you might not like it ;)  </h3>
-					<h3 class="text-center" style="font-size: 1.6em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label> Place Order to get customized meals and promotional discount</label></h3>
+					<!-- <h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;" class="col-sm-12"> Our meals are so healthy, you might not like it ;)  </h3> -->
+					<h3 class="text-center" style="font-size: 1.6em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label> Place order to get customized meals and promotional discount</label></h3>
 					<h3 class="text-center" style="font-size: 1.8em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"></h3>
 						<!-- ============== pricing block starts ============== -->
 						<section class="block pricing-block">

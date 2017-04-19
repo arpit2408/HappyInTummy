@@ -158,7 +158,7 @@ $.get("Header.jsp", function (data) {
 										<div class="col-sm-12 col-sm-6 pull-left">
 											<div class="light-font radio-btn">
 												<input  class="radio-class" type="radio" id="Male" name="gender"
-													value="Male" /> <span style="font-weight:bold;">Men</span>
+													value="Male"  checked = "checked"/> <span style="font-weight:bold;">Men</span>
 											</div>
 										</div>
 										
@@ -260,13 +260,13 @@ $.get("Header.jsp", function (data) {
 									
 										<div class="col-sm-12 col-sm-6 pull-left">
 											<div class="light-font radio-btn radio-btn-men">
-												<input  class="radio-class" type="radio" id="Malem" name="gender"
-													value="Male" /> <span>Men</span>
+												<input  class="radio-class" type="radio" id="Malem" name="genderm"
+													value="Male"  checked = "checked"/> <span>Men</span>
 											</div>
 										</div>
 										<div class="col-sm-12 col-sm-6 pull-right">
 											<div class="light-font radio-btn radio-btn-women">
-												<input  class="radio-class" type="radio" id="Femalem" name="gender"
+												<input  class="radio-class" type="radio" id="Femalem" name="genderm"
 													value="Female" /> <span>Women</span>
 											</div>
 										</div>
@@ -281,10 +281,14 @@ $.get("Header.jsp", function (data) {
 									 <span class="errorspan" id="emailerrorm"></span>
 								</fieldset>
 								<fieldset>
-								<input class="form-control" id="datem" name="datem" 
-                            		       placeholder="Date of Birth" type="text"/>
-						        <!-- <input type="date" id = "datem" placeholder="Date of Birth" />  -->
+								<!-- <input class="form-control" id="datem" name="datem" 
+                            		       placeholder="Date of Birth" type="text"/> -->
+                            	<div class="form-group">
+                            	<label style="font-family: 'Raleway', Serif !important;"> Date of Birth
+                            	</label>
+						        <input type="date" id = "datem" placeholder="Date of Birth" />  
 					             <span class="errorspan" id="txtdoberrorm"></span>
+					             </div>
 						        </fieldset>
 								
 								<fieldset>
@@ -307,9 +311,9 @@ $.get("Header.jsp", function (data) {
 									<input type="text"  class="form-control" id="Zipm" placeholder="ZIP Code" />
 									<span class="errorspan" id="zipCodeerrorm"></span>
 								</fieldset>
-								<fieldset>
+								
 									 <input type="button" class="btn" id="usrsubmitm" onclick="submitformForMobile();" value="Next"/>
-								</fieldset>
+								
 							
 							
 						</div>
@@ -327,6 +331,7 @@ $.get("Header.jsp", function (data) {
 		<!-- ============== footer block starts ============== -->
 		<footer class="limited-footer">
 			<div class="container">&copy; 2017 MIS Copyrights.</div>
+			
 		</footer>
 		<!-- ============== footer block ends ============== -->
 

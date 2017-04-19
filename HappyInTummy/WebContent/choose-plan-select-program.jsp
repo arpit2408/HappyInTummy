@@ -107,8 +107,8 @@ validateOnblurSelectProgram();
 					<div class="col-sm-2"></div>
 					<label style="font-size: 1.3em;font-family: 'Raleway', Serif !important;" class="col-sm-3">Select Preference <font color="red"><bold>* </bold></font> </label>
 						<select  id="prefid" class="select-program" onchange="callBmiMenu();" >
-							<option value="" >Select Program</option>
-							<option value="1" >Vegan</option>
+							
+							<option value="1" selected="selected" >Vegan</option>
 							<option value="2">Non-Vegeterian</option>
 							<option value="3">Gluten-free</option>
 						</select>

@@ -191,7 +191,7 @@
 		</div>
 
 		<!-- ============== Sample menu block ends ============== --> <!-- ============== select menu block starts ============== -->
-		<section class="block select-menu-block">
+		<section class="plan-step">
 			<%-- <%@ include file="showDishes.jsp"%> --%>
 			<!-- 	<div id="showdishes">
 	 	</div> -->
@@ -199,8 +199,8 @@
 
 			<!-- <br> -->
 			<div class="text-center"
-				style="visibility: visible; padding-top: 30px;">
-				<h4>Select Preference: </h4>
+				style="visibility: visible; padding-top: 30px;padding-bottom: 70px;">
+				<label style="font-size: 1.5em;padding-right:15px;">Select Preference: </label>
 				<select id="prefid" onchange="showhideonchange();">
 					<!-- <option value="">Select Program</option> -->
 					<option value="1" selected="selected">Vegan</option>

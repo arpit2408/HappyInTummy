@@ -1,5 +1,19 @@
-//Method to handle flow among 4 steps added by Arpit Saxena
 
+//Validation Code added by Neetika Mittal
+var flagforvalidforName = false;
+var flagforvalidforEmail = false;
+
+var flagforvalidforPhone = false;
+var flagforvalidforAddr = false;
+
+var flagforvalidforState = false;
+var flagforvalidforCity = false;
+var flagforvalidforZip = false;
+
+var flagforvalidforGender = false;
+var flagforvalidforDOB = false;
+
+//Method to handle flow among 4 steps added by Arpit Saxen
 function reloadFormAboutYou()
 {		
 	if(sessionStorage.getItem('Name')!=null){
@@ -86,11 +100,12 @@ function reloadFormAboutYou()
 		}
 	if($('#desktopView').css('display') == 'block'){
 	if(sessionStorage.getItem('DOB')!=null)
+	
 		document.getElementById('date').value =sessionStorage.getItem('DOB');
 	}
 	if($('#mobileView').css('display') == 'block'){
 		if(sessionStorage.getItem('DOB')!=null)
-			document.getElementById('datem').value =sessionStorage.getItem('DOB');
+			document.getElementById('datem').value =reformat(sessionStorage.getItem('DOB'));
 		}
 }
 
@@ -101,7 +116,7 @@ function reloadFormAboutYou()
 function setCorrectActionAfterSubmit(e){
     //var baseuri = $("html").data("baseuri");
     var baseuri=document.getElementById('pagecontext').value;
-    alert(baseuri+"baseuri..afterusbmit");
+    	
     if(e=="About"){
         $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
         $("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
@@ -160,19 +175,7 @@ function reloadPref()
 		document.getElementById('height').value = sessionStorage.getItem('Height');
 }
 //Methods added by Neetika for Validations on About you page
-//Validation Code added by Neetika Mittal
-var flagforvalidforName = false;
-var flagforvalidforEmail = false;
 
-var flagforvalidforPhone = false;
-var flagforvalidforAddr = false;
-
-var flagforvalidforState = false;
-var flagforvalidforCity = false;
-var flagforvalidforZip = false;
-
-var flagforvalidforGender = false;
-var flagforvalidforDOB = false;
 function validateSpecialChars(inputtxt)
 {
 		  var str = document.getElementById(inputtxt).value;
@@ -249,9 +252,16 @@ function validatefieldsMobile()
 	        }
 	        
 			else {
-	           
-	            $('#txtdoberrorm').text("");
-	            flagforvalidforDOB = true;
+	           if(isNotFutureDate(format(document.forms.aboutyou.datem.value))==true)
+	        	   {
+			            $('#txtdoberrorm').text("");
+			            flagforvalidforDOB = true;
+	        	   }
+	           else
+	        	   {
+	        	   	$('#txtdoberrorm').text("Select Valid Date of Birth");
+	        	   	flagforvalidforDOB = false;
+	        	   }
 
 	        }
 
@@ -1118,7 +1128,42 @@ function submitform()
 	 }
 	
 }
-
+function format(inputDate) {
+    var date = new Date(inputDate);
+    if (!isNaN(date.getTime())) {
+    	var d=parseInt(date.getDate())+1;
+        // Months use 0 index.
+        return date.getMonth() + 1 + '/' + d+ '/' + date.getFullYear();
+    }
+}
+// mm/dd/yyyy to yyyy-mm-dd 
+function reformat(inputDate) {
+		
+		var yourdate = inputDate.split("/");
+		var tmp=[];
+		tmp[0] = yourdate[2];
+		
+		tmp[1] = yourdate[0]; //month
+		if(yourdate[0]<10)
+		{
+			tmp[1]="0"+yourdate[0];
+		}
+		tmp[2] = yourdate[1];
+		if(yourdate[1]<10)
+		{
+			tmp[2]="0"+yourdate[1];
+		}
+		yourdate = tmp.join("-");
+		
+		return yourdate;
+}
+function isNotFutureDate(idate){
+    var today = new Date().getTime();
+        idate = idate.split("/");
+  
+    idate = new Date(idate[2], idate[0]-1,idate[1]).getTime();
+    return (today - idate) < 0 ? false : true;
+}
 function  submitformForMobile()
 {
 	 validatefieldsMobile();
@@ -1132,7 +1177,7 @@ function  submitformForMobile()
 		 sessionStorage.setItem('Email', document.forms.aboutyou.Emailm.value);
 		 var gender=$('#Malem').is(':checked')?"Male":"Female";
 		 
-		 sessionStorage.setItem('DOB', document.forms.aboutyou.datem.value);
+		 sessionStorage.setItem('DOB', format(document.forms.aboutyou.datem.value));
 		 sessionStorage.setItem('Gender',gender);
 		 sessionStorage.setItem('Phone', document.forms.aboutyou.Phonem.value);
 		 sessionStorage.setItem('Zip', document.forms.aboutyou.Zipm.value);
@@ -1524,6 +1569,11 @@ function setCorrectAction(e){
   // baseuri = $("html").data("baseuri");
  
    var baseuri=document.getElementById('pagecontext').value;
+   if(baseuri=="")
+	{
+	   baseuri="/HappyInTummy/";
+	}
+
   alert(baseuri+"baseuri..");
   if(e.id=="About"){
       $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
@@ -1536,7 +1586,18 @@ function setCorrectAction(e){
       //$("#About").attr("href", "/HappyInTummy/choose-plan-about-us.html");
       //$("#SelectProgram").attr("href", "#");
   	// alert("setCorrectAction in jse mail "+sessionStorage.getItem("Email"));
-      if(sessionStorage.getItem("Email")==null)
+	  if($('#desktopView').css('display') == 'block'){
+		  	$("#SelectProgram").attr("href", "#");	
+	        $("#ChoosePlan").attr("href", "#");
+	        $("#Checkout").attr("href", "#");
+	  }
+	  else if($('#mobileView').css('display') == 'block'){
+
+	        $("#SelectProgram").attr("href", "#");	
+	        $("#ChoosePlan").attr("href", "#");
+	        $("#Checkout").attr("href", "#");
+	  }
+	  else if(sessionStorage.getItem("Email")==null)
       {
 	        $("#SelectProgram").attr("href", "#");	
 	        $("#ChoosePlan").attr("href", "#");
@@ -1545,12 +1606,13 @@ function setCorrectAction(e){
       }
       else
       {
+    	  	
       	
-      	$("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
-      	$("#step2").attr("class", "wow fadeInUp step2 current");
+      		$("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
+      		$("#step2").attr("class", "wow fadeInUp step2 current");
       	
-          $("#ChoosePlan").attr("href", "#");
-          $("#Checkout").attr("href", "#");
+      		$("#ChoosePlan").attr("href", "#");
+      		$("#Checkout").attr("href", "#");
           
       }
       
@@ -1558,7 +1620,13 @@ function setCorrectAction(e){
   if(e.id=="ChoosePlan"){
      
   	// alert("setCorrectAction in jse Preference "+sessionStorage.getItem("Preference"));
-  	if(sessionStorage.getItem("Preference")==null)
+	  if($('#desktopView').css('display') == 'block' || $('#mobileView').css('display') == 'block' || $('#vegan').css('display') == 'block'  || $('#non-veg').css('display') == 'block' || $('#glutenfree').css('display') == 'block'){
+		  
+		  	$("#ChoosePlan").attr("href", "#");
+	        $("#Checkout").attr("href", "#");
+	        	
+	  }
+	  else if(sessionStorage.getItem("Preference")==null)
       {
 	       
 	        $("#ChoosePlan").attr("href", "#");
@@ -1569,13 +1637,23 @@ function setCorrectAction(e){
       {
       	$("#ChoosePlan").attr("href", baseuri+"/ChooseYourPlan.jsp");
       	$("#step3").attr("class", "wow fadeInUp step3 current");
-          $("#Checkout").attr("href", "#");
+        $("#Checkout").attr("href", "#");
           
       }
   	 
   }
   if(e.id=="Checkout"){
-  	$("#step4").attr("class", "wow fadeInUp step4 current");
+	  
+	  if($('#desktopView').css('display') == 'block' || $('#mobileView').css('display') == 'block' || $('#vegan').css('display') == 'block'  || $('#non-veg').css('display') == 'block' || $('#glutenfree').css('display') == 'block'   || $('#pricingview').css('display') == 'block'){
+		  
+		  	$("#ChoosePlan").attr("href", "#");
+	        $("#Checkout").attr("href", "#");
+	        	
+	  }
+	  else{
+		  $("#step4").attr("class", "wow fadeInUp step4 current");
+	  }
+  	
     
   }
 }
