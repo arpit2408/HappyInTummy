@@ -116,7 +116,10 @@ function reloadFormAboutYou()
 function setCorrectActionAfterSubmit(e){
     //var baseuri = $("html").data("baseuri");
     var baseuri=document.getElementById('pagecontext').value;
-    	
+    if(baseuri==null || baseuri=="/")
+	{
+	   baseuri="";
+	}
     if(e=="About"){
         $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
         $("#SelectProgram").attr("href", baseuri+"/choose-plan-select-program.jsp");
@@ -1570,12 +1573,12 @@ function setCorrectAction(e){
  
    var baseuri=document.getElementById('pagecontext').value;
    alert(baseuri+"baseuri..");
-   if(baseuri==null || baseuri=="/" || baseuri=="")
+   if(baseuri==null || baseuri=="/")
 	{
-	   baseuri="/"+"";
+	   baseuri="";
 	}
 
-
+   alert(baseuri+"after baseuri..");
   if(e.id=="About"){
       $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
       $("#step1").attr("class", "wow fadeInUp step1 current");
