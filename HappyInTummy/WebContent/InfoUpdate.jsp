@@ -41,7 +41,7 @@
  </head>  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>
-$.get("Header.html", function (data) {
+$.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
 });
 </script>
@@ -63,7 +63,7 @@ $.get("Header.html", function (data) {
  <!-- ============== Contact form block starts ============== -->  
  <section class="block contact-form">  
  <div class="container">  
- <h3 class="wow fadeInUp wrapper" style="font-size: 2.2em; font-family: 'Raleway', sans-serif !important;">${displayMessage}</h3>  
+ <h3 class="wow fadeInUp wrapper" style="font-size: 1.5em; font-family: 'Raleway', sans-serif !important;color:#60ba62">${displayMessage}</h3>  
  <div class="row wrapper">  
  <div class="col-xs-12 col-sm-3"></div>
  <div class="col-xs-12 col-sm-9 ">  
@@ -101,5 +101,16 @@ $.get("Header.html", function (data) {
  <script src="js/owl.carousel.js"></script>  
  <script src="js/jquery.counterup.js"></script>  
  <script src="js/main.js"></script>  
- </body>  
- </html> 
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+<div id="footer">
+    </div>
+</body>
+<script type="text/javascript">
+	$.get("footer.html", function(data) {
+		$("#footer").replaceWith(data);
+	});
+</script>
+</html>
