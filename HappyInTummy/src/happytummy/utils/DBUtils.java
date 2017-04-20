@@ -17,9 +17,9 @@ import happytummy.beans.User;
 
  
 public class DBUtils {
- 
-public static boolean userExists(Connection conn, String emailID, String dob) throws SQLException {
-	 
+
+public static String userExists(Connection conn, String emailID, String dob) throws SQLException {
+	 	  String output=null;	
 		  String sql = "select Customer_ID from happytummy.customerdetails where "; //need to work on this
 	      sql=sql+"Email_Id ='"+ emailID.toString()+"'";
 	      sql=sql+" and DOB=str_to_date('"+dob+"','%d-%M-%Y');";
@@ -27,23 +27,32 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 	      PreparedStatement pstm = conn.prepareStatement(sql);
 	      ResultSet rs = pstm.executeQuery();
 	      if (!rs.next()) {
-	    	  System.out.println("No Customer ");
-	    	  return false;
+	    	  output= "No User";
+	    	}else{
+		      System.out.println("userExists: CustomerID: "+rs.getString("Customer_ID"));
+		      String activeOrderId=getActiveOrderID(conn, rs.getString("Customer_ID")); 
+		      System.out.println("userExists: OrderID: "+ activeOrderId);
+		      if(activeOrderId.equals("Invalid")||activeOrderId.equals("None")){
+		    	  output="No Oder";
+		      }else{
+		    	  output=activeOrderId;
+		      }	 
 	    	}
-	      System.out.println("Output: "+rs.getString("Customer_ID"));
-		  return true ;
+		  return output;
 }
  
   public static List<MenuItems> queryMenu(Connection conn,int preference) throws SQLException {
       String sql = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference+" and portion="+2;
       System.out.println("sql "+sql);
+      List<MenuItems> list = new ArrayList<MenuItems>();
+      try{
       PreparedStatement pstm = conn.prepareStatement(sql);
  
       ResultSet rs = pstm.executeQuery();
-      List<MenuItems> list = new ArrayList<MenuItems>();
+     
       while (rs.next()) {
     	  int item_ID = rs.getInt("Item_ID");
-    	  System.out.println("item_ID "+item_ID);
+    	
           String item_Name = rs.getString("Item_Name");
           String item_Desc = rs.getString("Item_Desc");
           int calorie = rs.getInt("Calorie");
@@ -64,6 +73,16 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
           menuitem.setMeal_Type(meal_type);
           list.add(menuitem);
       }
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+	  }
+	  finally{
+		  if(preference==3){
+		  conn.close();
+		  }
+	  }
       return list;
   }
   /*started by Rini 04/12*/
@@ -75,6 +94,7 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 	  sql.append(" and Active='A';");
 	  String query= sql.toString();
 	  System.out.println("Query: "+query);
+	  try{
 	  PreparedStatement pstm = conn.prepareStatement(query);	  
       ResultSet rs = pstm.executeQuery();
       if (!rs.next()) {
@@ -83,6 +103,14 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
     		activeOrderID =rs.getString("Order_ID");
     		}
       System.out.println("Output: "+activeOrderID);
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+	  }
+	  finally{
+		  conn.close();
+	  }
 	  return activeOrderID ;
   }
   
@@ -102,7 +130,7 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 	  PreparedStatement pstm = conn.prepareStatement(query);
 	  returnValue=pstm.executeUpdate();
 	  conn.commit();
-	  
+	  try{
 	  if (cancelOrder){
 		  /*if order has to be cancelled; update customer details and mark order inactive*/
 		  sql.setLength(0);
@@ -119,7 +147,14 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 		  conn.commit();
  
 	  }
-	  
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+	  }
+	  finally{
+		  conn.close();
+	  }
 	  
 	  return returnValue;
   }
@@ -137,11 +172,13 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 	  sql.append("and p.Preference_ID=pref.Preference_ID ");
 	  sql.append("and c.DOB=str_to_date('"+dob+"','%d-%M-%Y')");
 	  sql.append("and c.Email_Id='"+ emailID+"';");
+	  User user = new User();
+	  try{
 	  String query= sql.toString();
 	  System.out.println("Query: "+query);
 	  PreparedStatement pstm = conn.prepareStatement(query);	
       ResultSet rs = pstm.executeQuery();
-      User user = new User();
+      
       while (rs.next()){     
       user.setCustomer_id(rs.getInt("c.Customer_ID"));
       user.setCustomer_name(rs.getString("c.Customer_Name"));
@@ -156,6 +193,14 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
       user.setPreference(rs.getString("pref.Preference_Type"));
       user.setNoOfWeeks(rs.getString("p.NoWeeks"));
       }
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+	  }
+	  finally{
+		  conn.close();
+	  }
       return user;
   }
   //Method to get plans based on preference
@@ -188,13 +233,15 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
       
       //For men: BMR = 10 x weight (kg) + 6.25 x height (cm) – 5 x age (years) + 5
       //For women: BMR = 10 x weight (kg) + 6.25 x height (cm) – 5 x age (years) – 161
-	  
+	  List<MenuItems> list = new ArrayList<MenuItems>();
 	  float bmr=0;
 	  int caloriesbk=0;
 	  int calorieslunch=0;
 	  int caloriesdinner=0;
 	  boolean defaultmenu=false;
-	  List<MenuItems> list = new ArrayList<MenuItems>();
+	  try{
+	  
+	 
 	  if(height>0 && weight>0){
 		  
 	  if(gender.equalsIgnoreCase("Female"))
@@ -517,6 +564,16 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 	          list.add(menuitem);
 	      }
 	  }
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+		
+	  }
+	  finally
+	  {
+		  conn.close();
+	  }
       return list;
   }
   
@@ -628,7 +685,7 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 			  }
 		  
 		  inserted=statement.executeUpdate("INSERT INTO happytummy.order_details  (Day,Breakfast,Lunch,Dinner,Order_Id) VALUES ('"+dayString+"',"+bkitem+","+litem+","+ditem+","+order_id+")");
-		  
+		  conn.commit();
 		  }
 		  }
 		  catch(SQLException sqle)
@@ -643,7 +700,7 @@ public static boolean userExists(Connection conn, String emailID, String dob) th
 		  }
 		  finally
 		  {
-			  conn.commit();
+			  conn.close();
 		  }
 		  return order_id;
 	

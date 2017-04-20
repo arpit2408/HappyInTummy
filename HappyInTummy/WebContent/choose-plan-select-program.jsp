@@ -71,6 +71,39 @@ $(document).ready(function () {
 validateOnblurSelectProgram();
 });
 
+//code used from http://stackoverflow.com/questions/995183/how-to-allow-only-numeric-0-9-in-html-inputbox-using-jquery
+$(document).ready(function() {
+    $("#weight").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+              
+                // Allow: home, end, left, right, down, up
+               (e.keyCode >= 35 && e.keyCode <= 40)) {
+                    // let it happen, don't do anything
+                    return;
+           }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) 
+        {
+            e.preventDefault();
+        }
+    });
+});
+$(document).ready(function() {
+    $("#height").keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                
+                // Allow: home, end, left, right, down, up
+               (e.keyCode >= 35 && e.keyCode <= 40)) {
+                    // let it happen, don't do anything
+                    return;
+           }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) 
+        {
+            e.preventDefault();
+        }
+    });
+});
 </script>
 <input type="hidden" id="pagecontext" value="${pageContext.request.contextPath}/">
 <header  id="websiteHeader"></header>
@@ -181,7 +214,7 @@ validateOnblurSelectProgram();
 				<div class="row" style="    margin-top: -59px;">
 						<div class="col-sm-4"></div>
 						<div class="col-sm-4">
-						<input type="button" class="btn" value="Take me to Plans" onClick="submitformselectprogram();"/>
+						<input type="button" class="btn" style="font-size: 1.3em;" value="Take me to Plans" onClick="submitformselectprogram();"/>
 						</div>
 						<div class="col-sm-4"></div>
 				</div>

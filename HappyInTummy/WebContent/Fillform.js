@@ -1521,14 +1521,14 @@ function submitformselectprogram()
 //Method to call on checkout added by Neetika
 function placeOrder()
 {
-	if($('#Paypal').is(':checked')==false && $('#Bank').is(':checked')==false)
+	/*if($('#Paypal').is(':checked')==false && $('#Bank').is(':checked')==false)
 	{
 	      $('#Paymenterror').text("Select Payment Option!");
 	    
           return false;
 	}
 	else
-		{
+		{*/
 			var payment=$('#Paypal').is(':checked')?"Paypal":"Bank";
 			 $('#Paymenterror').text("");
 			sessionStorage.setItem("Payment",payment);
@@ -1563,7 +1563,7 @@ function placeOrder()
 					}
 			
 			 });
-		}
+		//}
 }
 
 
@@ -1572,13 +1572,12 @@ function setCorrectAction(e){
   // baseuri = $("html").data("baseuri");
  
    var baseuri=document.getElementById('pagecontext').value;
-   alert(baseuri+"baseuri..");
+   
    if(baseuri==null || baseuri=="/")
 	{
 	   baseuri="";
 	}
 
-   alert(baseuri+"after baseuri..");
   if(e.id=="About"){
       $("#About").attr("href", baseuri+"/choose-plan-about-us.jsp");
       $("#step1").attr("class", "wow fadeInUp step1 current");
@@ -1661,3 +1660,122 @@ function setCorrectAction(e){
     
   }
 }
+
+
+//Written by Rini Shaji for Manage Order functionality
+
+	function isValidEmail(){
+		document.getElementById("emailtip").innerHTML = "";
+		var emailID = document.getElementById("email").value;
+		var regExEmail = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+	    if (emailID =="") {
+	        document.getElementById("emailtip").innerHTML = "Email ID is required.";
+	        
+	        return false;
+	    }
+	    
+	    if (!regExEmail.test(emailID)){
+	    	document.getElementById("emailtip").innerHTML = "Enter a correct email address.";
+	    	
+	        return false;
+	    }
+	    return true;
+	}
+	
+	function isValidDOB(){
+		document.getElementById("dobtip").innerHTML ="";
+		var birthdate = document.getElementById("date").value;
+		
+		var regExDate = /^\d{4}-\d{2}-\d{2}$/;
+	    if (birthdate=="") {
+	        document.getElementById("dobtip").innerHTML = "Select date of birth.";
+	        return false;
+	    }	    
+	    if (!regExDate.test(birthdate)) {
+	        document.getElementById("dobtip").innerHTML = "Enter date of birth in YYYY-MM-DD format.";	        
+	        return false;
+	    }
+		return true;
+	}
+	
+	function isValidMDOB(){
+		document.getElementById("dobtip").innerHTML ="";
+		var birthdate = document.getElementById("datem").value;
+		
+		var regExDate = /^\d{4}-\d{2}-\d{2}$/;
+	    if (birthdate==null) {
+	        document.getElementById("dobtip").innerHTML = "Select date of birth.";
+	        return false;
+	    }
+	    if (birthdate=="") {
+	        document.getElementById("dobtip").innerHTML = "Select date of birth.";
+	        return false;
+	    }
+	    if (!regExDate.test(birthdate)) {
+	        document.getElementById("dobtip").innerHTML = "Enter date of birth in YYYY-MM-DD format.";	        
+	        return false;
+	    }
+		return true;
+	}
+	
+	function fieldValidations() {
+	document.getElementById("formtip").innerHTML="";
+	if (!isValidEmail()){
+		return false;
+	}
+	
+	if($('#desktopView').css('display') == 'block'){
+				
+		if(!isValidDOB()){
+			return false;
+		}	
+		var dataStringdesk = "email_id=" + document.getElementById("email").value+"&dob=" + document.getElementById("date").value;
+		document.getElementById("dob").value=document.getElementById("date").value;
+		$.ajax({
+	    	url: 'CheckUserExists',
+		    type: 'POST',      
+		    cache: false,
+		    data :  dataStringdesk,
+	    	
+	    	dataType:"json",
+	    	success:function(data){ 
+	    		if (data.user=="No User"){
+	    			document.getElementById("msgs").innerHTML="Did you put in the right details?";
+	    		}else if(data.user=="No Oder") {
+	    			document.getElementById("msgs").innerHTML="You do not have an active order.";
+	    		}else{
+	    			document.forms.contactUS.submit();
+	    		}
+	    	}    	
+	    }); 
+	}
+	
+	if($('#mobileView').css('display') == 'block'){
+	
+		if(!isValidMDOB()){
+			return false;
+		}	
+		var dataString = "email_id=" + document.getElementById("email").value+"&dob=" + document.getElementById("datem").value;
+		document.getElementById("dob").value=document.getElementById("datem").value;
+		$.ajax({
+	    	url: 'CheckUserExists',
+		    type: 'POST',      
+		    cache: false,
+		    data :  dataString,
+	    	
+	    	dataType:"json",
+	    	success:function(data){ 
+	    		if (data.user=="No User"){
+	    			document.getElementById("msgs").innerHTML="Did you put in the right details?";
+	    		}else if(data.user=="No Oder") {
+	    			document.getElementById("msgs").innerHTML="You do not have an active order.";
+	    		}else{
+	    			document.forms.contactUS.submit();
+	    		}
+	    	}    	
+	    }); 
+	}
+	
+
+    	return true;
+	}

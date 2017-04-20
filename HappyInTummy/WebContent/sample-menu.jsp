@@ -204,7 +204,7 @@
 				<select id="prefid" onchange="showhideonchange();">
 					<!-- <option value="">Select Program</option> -->
 					<option value="1" selected="selected">Vegan</option>
-					<option value="2">Non-Vegeterian</option>
+					<option value="2">Non-Vegetarian</option>
 					<option value="3">Gluten-free</option>
 				</select>
 
@@ -804,5 +804,11 @@
 	<script src="js/jquery.waypoints.js" type="text/javascript"></script>
 	<script src="js/jquery.counterup.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
+	<div id="footer">
 </body>
+<script type="text/javascript">
+	$.get("footer.html", function(data) {
+		$("#footer").replaceWith(data);
+	});
+</script>
 </html>

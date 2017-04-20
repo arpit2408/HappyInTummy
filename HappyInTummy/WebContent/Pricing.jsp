@@ -127,7 +127,7 @@ $.get("Header.jsp", function (data) {
 				<select id="prefidplan" onchange="getPlans();">
 					
 					<option value="1" selected="selected">Vegan</option>
-					<option value="2">Non-Vegeterian</option>
+					<option value="2">Non-Vegetarian</option>
 					<option value="3">Gluten-free</option>
 				</select>
 
@@ -139,8 +139,8 @@ $.get("Header.jsp", function (data) {
 				<div class="step-content">
 				<form id="chooseplan" method="POST" action="${pageContext.request.contextPath}/choose-plan-checkout.jsp">
 					<!-- <h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;" class="col-sm-12"> Our meals are so healthy, you might not like it ;)  </h3> -->
-					<h3 class="text-center" style="font-size: 1.6em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label> Place order to get customized meals and promotional discount</label></h3>
-					<h3 class="text-center" style="font-size: 1.8em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"></h3>
+					<h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label> Place order to get customized meals and promotional discount</label></h3>
+					
 						<!-- ============== pricing block starts ============== -->
 						<section class="block pricing-block">
 							<div class="container">
@@ -158,10 +158,10 @@ $.get("Header.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<h6>Meals for Breakfast, Lunch, Dinner </h6>
-											<h6>
-												Calories as per your BMI<br />
-											</h6>
+											   <h5>Meals for Breakfast, Lunch, Dinner </h5>
+                                            <h5>
+                                                Calories as per your BMI<br />
+                                            </h5>
 											
 											
 										</div>
@@ -179,11 +179,10 @@ $.get("Header.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<h6>Meals for Breakfast, Lunch, Dinner </h6>
-											<h6>
-												Calories as per your BMI<br />
-											</h6>
-											
+											   <h5>Meals for Breakfast, Lunch, Dinner </h5>
+                                            <h5>
+                                                Calories as per your BMI<br />
+                                            </h5>
 											
 									
 										</div>
@@ -200,10 +199,10 @@ $.get("Header.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<h6>Meals for Breakfast, Lunch, Dinner </h6>
-											<h6>
-												Calories as per your BMI<br />
-											</h6>
+											   <h5>Meals for Breakfast, Lunch, Dinner </h5>
+                                            <h5>
+                                                Calories as per your BMI<br />
+                                            </h5>
 											
 											
 									
@@ -240,5 +239,11 @@ $.get("Header.jsp", function (data) {
 	<script src="js/jquery.waypoints.js" type="text/javascript"></script>
 	<script src="js/jquery.counterup.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
+	<div id="footer">
 </body>
+<script type="text/javascript">
+	$.get("footer.html", function(data) {
+		$("#footer").replaceWith(data);
+	});
+</script>
 </html>

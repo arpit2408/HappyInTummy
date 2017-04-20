@@ -39,7 +39,7 @@
 									<li class="active"><a class="home" href="${pageContext.request.contextPath}/LandingPage.jsp" onclick="sessionStorage.clear();">Home</a></li>
 									<li><a class="pricing" href="${pageContext.request.contextPath}/Pricing.jsp" onclick="sessionStorage.clear();">Pricing</a></li>
 									<li><a class="placeorder" href="${pageContext.request.contextPath}/choose-plan-about-us.jsp" onclick="sessionStorage.clear();">Place Order</a></li>
-									<li><a class="yourorder" href="${pageContext.request.contextPath}/contact-us.html" onclick="sessionStorage.clear();">Manage Order</a></li>
+									<li><a class="yourorder" href="${pageContext.request.contextPath}/contact-us.jsp" onclick="sessionStorage.clear();">Manage Order</a></li>
 								
 
 

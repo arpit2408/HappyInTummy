@@ -22,17 +22,18 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
 	type="text/javascript"></script>
+<script src="landingPage.js" type="text/javascript"></script>
+</head>
 <script type="text/javascript">
 	$.get("Header.jsp", function(data) {
 		$("#websiteHeader").replaceWith(data);
 	});
 </script>
-<script src="landingPage.js" type="text/javascript"></script>
 
-</head>
 <body>
 
-	<div id="websiteHeader" style="z-index: 9999"></div>
+	<form id="land">
+	<header  id="websiteHeader"></header>
 
 	<div class="container-full">
 
@@ -232,10 +233,29 @@
 	</div>
 	<div id="footer">
     </div>
+    </form>
+    
+    <!-- main wrapper of the site ends -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
+	
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/wow.min.js" type="text/javascript"></script>
+	
+	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
+	<script src="js/jquery.bxslider.js" type="text/javascript"></script>
+	<script src="js/owl.carousel.js" type="text/javascript"></script>
+	<script src="js/jquery.waypoints.js" type="text/javascript"></script>
+	<script src="js/jquery.counterup.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
 </body>
+
 <script type="text/javascript">
 	$.get("footer.html", function(data) {
 		$("#footer").replaceWith(data);
 	});
 </script>
+</form> 
 </html>

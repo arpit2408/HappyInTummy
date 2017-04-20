@@ -153,11 +153,14 @@ $.get("Menu_Options.jsp", function (data) {
 				<!-- == step content starts ==-->
 				<div class="step-content">
 				<form id="chooseplan" method="POST" action="${pageContext.request.contextPath}/choose-plan-checkout.jsp">
-					<h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;" class="col-sm-12">Eating good without being on diet.</h3>
-					<input type="hidden" id="discounthid">
-					<h3 class="text-center" style="font-size: 1.8em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label id="discount"> </label></h3>
-						<!-- ============== pricing block starts ============== -->
-						<section class="block pricing-block">
+ 
+                
+                    <input type="hidden" id="discounthid">
+                    
+                    <h3 class="text-center" style="padding-top:10px;padding-bottom:10px;font-size: 1.7em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label id="discount"> </label></h3>
+                            <h3 class="text-center" style="font-size: 1.25em;font-family: 'Raleway', sans-serif !important;font-weight: bold" class="col-sm-12">'Eating good without being on diet.'</h3>
+                        <!-- ============== pricing block starts ============== -->
+                        <section class="block pricing-block">
 							<div class="container">
 								
 								<!-- == pricing box starts == -->
@@ -173,10 +176,10 @@ $.get("Menu_Options.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<h6>Meals for Breakfast, Lunch, Dinner </h6>
-											<h6>
-												Calories as per your BMI<br />
-											</h6>
+											   <h5>Meals for Breakfast, Lunch, Dinner </h5>
+                                            <h5>
+                                                Calories as per your BMI<br />
+                                            </h5>
 											
 											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan1id','plan1weeks','plan1cost');">order now</a>
 										</div>
@@ -194,10 +197,10 @@ $.get("Menu_Options.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<h6>Meals for Breakfast, Lunch, Dinner </h6>
-											<h6>
-												Calories as per your BMI<br />
-											</h6>
+											   <h5>Meals for Breakfast, Lunch, Dinner </h5>
+                                            <h5>
+                                                Calories as per your BMI<br />
+                                            </h5>
 											
 											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan2id','plan2weeks','plan2cost');">order now</a>
 									
@@ -215,10 +218,10 @@ $.get("Menu_Options.jsp", function (data) {
 												
 												</span> <span class="per-day">/day</span>
 											</div>
-											<h6>Meals for Breakfast, Lunch, Dinner </h6>
-											<h6>
-												Calories as per your BMI<br />
-											</h6>
+											   <h5>Meals for Breakfast, Lunch, Dinner </h5>
+                                            <h5>
+                                                Calories as per your BMI<br />
+                                            </h5>
 											
 											<a href="#" class="btn box-btn order-now-btn test-uppercase" onclick="submitform('plan3id','plan3weeks','plan3cost');">order now</a>
 									

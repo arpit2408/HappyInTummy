@@ -181,7 +181,7 @@ $.get("Header.jsp", function (data) {
 								</fieldset>
 								
 								<fieldset>
-									<input id="Email" placeholder="E-mail Format: xxx@xxx.xxx"  type="email" class="form-control"/>
+									<input id="Email" placeholder="E-mail Format: example@email.com"  type="email" class="form-control"/>
 									 <span class="errorspan" id="emailerror"></span>
 								</fieldset>
 								
@@ -233,8 +233,12 @@ $.get("Header.jsp", function (data) {
 									</div>
 								</div>
 								</fieldset>
+								<div class="row" style="width:40%;margin-left:25%;margin-bottom: 50px;">
 								
-									 <input type="button" class="btn" id="usrsubmit" onclick="submitform();" value="Next"/>
+								<input type="button" class="btn" style="font-size: 1.3em;" id="usrsubmit" onclick="submitform();" value="Next"/>
+								
+								</div>
+								
 							
 							
 							
@@ -287,7 +291,7 @@ $.get("Header.jsp", function (data) {
 								<!-- <input class="form-control" id="datem" name="datem" 
                             		       placeholder="Date of Birth" type="text"/> -->
                             	<div class="form-group">
-                            	<label style="font-family: 'Raleway', Serif !important;"> Date of Birth
+                            	<label style="font-family: 'Raleway', Serif !important;color: #AED581"> Date of Birth
                             	</label>
 						        <input type="date" id = "datem" placeholder="Date of Birth" />  
 					             <span class="errorspan" id="txtdoberrorm"></span>
@@ -314,8 +318,12 @@ $.get("Header.jsp", function (data) {
 									<input type="text"  class="form-control" id="Zipm" placeholder="ZIP Code" />
 									<span class="errorspan" id="zipCodeerrorm"></span>
 								</fieldset>
+								<div class="row" style="width:60%;margin-left:20%;margin-bottom: 50px;">
 								
-									 <input type="button" class="btn" id="usrsubmitm" onclick="submitformForMobile();" value="Next"/>
+								<input type="button" class="btn" style="font-size: 1.3em;" id="usrsubmitm" onclick="submitformForMobile();" value="Next"/>
+								
+								</div>
+									 
 								
 							
 							
@@ -329,15 +337,6 @@ $.get("Header.jsp", function (data) {
 		</section>
 		<!-- =============== plan steps block ends ================== --> 
 		</main>
-
-
-		<!-- ============== footer block starts ============== -->
-		<footer class="limited-footer">
-			<div class="container">&copy; 2017 MIS Copyrights.</div>
-			
-		</footer>
-		<!-- ============== footer block ends ============== -->
-
 
 	</div>
 	<script>

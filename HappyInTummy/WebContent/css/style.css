@@ -462,6 +462,18 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .steps-wrapper {background: #fdfdfd;}
 .steps-wrapper a{white-space: nowrap;}
 
+/*========================##Begin: Contact Us page =======================*/
+.left-image{padding-top:7%;}
+.left-image img{float:left;}
+.right-form {padding-top:5%;}
+.right-form h3{font-family: 'Raleway', sans-serif !important;}
+.right-form .errortip {font-family : 'Raleway'; color: #800000;}
+.right-form .input{max-width:70%;padding-right:30%;}
+.right-form .inputbtn{max-width:70%;padding-right:10%;text-align:center;}
+/*========================##End: Contact Us page =========================*/
+/*========================##Begin: Manage order page =======================*/
+
+/*========================##End: Manage order page =========================*/
 
 /*======================= ## Choose plan about us page ==================*/
 .radio-btn input[type=radio] {margin-top: 0;opacity: 0;position: relative;border: 1px solid #cecece;height: 50px;width: 100%;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;padding: 30px 30px;}
@@ -489,7 +501,7 @@ ul.steps li.current a, ul.steps li.completed a, ul.steps li:hover a {color: #60b
 .right-image {padding: 0;}
 .right-image img {float: right;}
 .right-image figure {margin-bottom: 0;margin-left: 20px;margin-right: 40px;}
-.radiochecked {border: 1px solid #60ba62;outline: none;color: #60ba62;}
+
 
 /*======================= ## Choose plan select program page ==================*/
 .choose-plan-page main {margin-bottom: 0;}
@@ -568,32 +580,6 @@ footer.limited-footer {font-family: 'Raleway', sans-serif;background: #fdfdfd;pa
 .pricing-banner .price-box-wrap {background: #fff;}
 .pricing-banner .banner-text {margin: auto;left: 0;right: 0;padding: 0 15px;}
 
-/*======================= # Contact us page  ==================*/
-.contact-us-page {color: #575757;}
-.map-block, .map-wrap {height: 436px;overflow: hidden;}
-.map-wrap iframe {height: 100%;}
-.contact-form h2 {margin-bottom: 60px;text-align: center;}
-.map-block figure {text-align: center;}
-.map-wrap {border-top: 1px solid #ddd;}
-
-/*======================= ## Contact form ==================*/
-.contact-form .location, .contact-form .phone, .contact-form .mailto-link, .contact-form .tel-link {font-family: 'Raleway', sans-serif;}
-.contact-form .mailto-link {color: #68bd6a;}
-.contact-form .tel-link:hover {color: #68bd6a;}
-.contact-form .mailto-link:hover {color: #575757;}
-.contact-form .tel-link {color: #575757;}
-.contact-form .location img, .contact-form .phone img {margin: 0 20px 10px 0;float: left;position: relative;top: 14px;}
-.contact-form .location {margin-bottom: 20px;}
-.contact-left-text>p {padding-right: 19%;}
-.contact-right-form fieldset {margin-bottom: 32px;}
-.contact-right-form input, .contact-right-form select, .contact-right-form textarea {padding: 20px 25px;}
-.contact-right-form textarea {height: 152px;}
-.contact-right-form .btn {width: 100%;border-radius: 0;padding: 17px;font-size: 16px;}
-.contact-right-form ::-webkit-input-placeholder {color: #848484;}
-.contact-right-form :-moz-placeholder {/* Firefox 18- */color: #848484;}
-.contact-right-form ::-moz-placeholder {/* Firefox 19+ */color: #848484;}
-.contact-right-form :-ms-input-placeholder {color: #848484;}
-.contact-right-form form fieldset:last-child {margin-bottom: 0;}
 .sample-menu-banner {height: 149px;overflow: hidden;width: 100%;}
 .select-menu-block select {text-align: center;}
 .sample-menu-banner figure img {position: absolute;left: -9999px;right: -9999px;margin: auto;}
@@ -860,12 +846,6 @@ header.green {background: #60ba62;}
   .block-wrap .btn.btn-big {  padding: 15px 30px;}
 } 
 
-@media (max-width: 1050px){
- 
-  .contact-block form fieldset:first-child {width: 48.1%;}
-  .contact-block form fieldset:last-child {width: 232px;}
-  .banner-text h1 { line-height: 45px; margin-bottom: 10px;}
-}
 
 @media (max-width: 992px){
   .steps-wrapper ul li a{display:block;width:100%;float:left;}
@@ -923,8 +903,7 @@ header.green {background: #60ba62;}
   .about-us-block article p {padding: 0 25px;}
   .media-partner {padding: 35px 0 25px;}
   .about-us-banner.banner-image img {width: 157%;}
-  .contact-right-form input, .contact-right-form select, .contact-right-form textarea {padding: 10px 15px;}
-  .contact-right-form .btn {padding: 8px;font-size: 14px;}
+  
   .navbar-default .navbar-nav>li>a {font-size: 11px;}
   header.green .navbar-default .navbar-nav>li {padding: 20px 3px;}
   .search-section form input {padding: 8px 20px;background-position: 94% 9px;background-size: 14px;}
@@ -1033,8 +1012,9 @@ header.green {background: #60ba62;}
   h1 {font-size: 20px;line-height: 27px;}
   .wrapper {padding-top: 0;}
   .menu-single-banner .bannerwrap {width: 100%;}
-  .blog-right-sidebar, .select-program-block .left-image-block figure, .right-form-block h3 br, .featured-menu-slider .bx-controls, .right-image, .download-popup .left-mobile {display: none;}
-  h2, h3 {font-size: 18px;line-height: 25px;}
+   .blog-right-sidebar, .select-program-block .left-image-block figure, .right-form-block h3 br, .featured-menu-slider .bx-controls, .right-image, .left-image, .download-popup .left-mobile {display: none;}  
+   .right-form {padding-left:15%;}    
+   h2, h3 {font-size: 18px;line-height: 25px;}
   h4 {font-size: 17px;line-height: 24px;}
   .blog-block {padding: 30px 0 40px;}
   .featured-menu-carousel {padding-top: 25px;}
@@ -1052,23 +1032,23 @@ header.green {background: #60ba62;}
   .blog-block .top-text-header {margin-bottom: 12px;}
   .article-tags {margin-top: 5px;}
   .blog-left-content-wrap .social-links, .article-tags a:first-child, .social-links ul li:first-child, div.comment, .comment-respond, .blog-left-content-full div.comment, .blog-left-content-full .comment-respond {margin-left: 0;}
-  .contact-form h2, .blog-admin {text-align: left;}
+ 
   .about-us-block article p {padding: 0;}
   .member-info, .member-wrap .social-links, .newsletter-popup .modal-body {padding: 15px;}
   .top-text, .subscribe-block .top-text, .subscribe-form {width: 100%;}
   body {line-height: 25px;}
   .block.select-menu-block {padding-bottom: 10px;}
-  .contact-left-text>p {padding-right: 0;}
+ 
   .small-image-group {padding-right: 15px;}
   .big-image {padding-left: 15px;}
   .navbar-collapse {margin: 0;}
   .row .features-item:last-child, main, .menu-listing .menu-item:last-child, .food-listing-group .food-listing-row:last-child, .sidebar-wrap .sidebar-widget:last-child, .comment-header .comment-author, .menu-item-wrap h4, .food-image figure, .feature-item-wrap figure, .featured-menu-slider ul.bxslider1 li:last-child, .team-member-block .top-text-header p, .row .pricing-box:last-child, .row .blog-single:last-child, .featured-menu-block .top-text-header h4, .featured-menu-carousel .top-text-header h4, .popular-tags ul li {margin-bottom: 0;}
-  p, .food-tab, .pricing-box, .blog-single, .download-app-block .left-mobile, .select-payment-btns, .menu-single-left, .download-app-wrap .contact-block {margin-bottom: 20px;}
+  p, .food-tab, .pricing-box, .blog-single, .download-app-block .left-mobile, .select-payment-btns, .menu-single-left {margin-bottom: 20px;}
   .navbar-header {margin: 0 0 17px;}
   .about-us-content {padding-bottom: 30px;}
   .logo-block, .logo-block figure, .about-us-banner.banner-image, .blog-banner {margin-top: 0;}
-  .top-text, .contact-left-text .phone, .menu-item, .blog-left-content-wrap article, .sidebar-widget, .how-it-works-block .feature-item-wrap, .text-center.img-text-center {margin-bottom: 30px;}
-  figure, .top-description h2, .top-description>p, .contact-form h2, .sample-menu-page h3, .team-member-block .top-text-header h4, .member-wrap figure, .team-member-col, .instagram-block .top-text-header, .how-it-works-block .row .col-sm-4:last-child .feature-item-wrap, .left-form h5, .left-form fieldset, .step2 h3, .select-program-btn, .select-payment-btn, .top-description h3.no-sub-text, fieldset, .blog-banner-main .banner-text h1 {margin-bottom: 10px;}
+  .top-text,  .menu-item, .blog-left-content-wrap article, .sidebar-widget, .how-it-works-block .feature-item-wrap, .text-center.img-text-center {margin-bottom: 30px;}
+  figure, .top-description h2, .top-description>p, .sample-menu-page h3, .team-member-block .top-text-header h4, .member-wrap figure, .team-member-col, .instagram-block .top-text-header, .how-it-works-block .row .col-sm-4:last-child .feature-item-wrap, .left-form h5, .left-form fieldset, .step2 h3, .select-program-btn, .select-payment-btn, .top-description h3.no-sub-text, fieldset, .blog-banner-main .banner-text h1 {margin-bottom: 10px;}
   .select-program-btn a {padding: 8px;}
   .testimonial-wrap .testimonial-box-wrap:first-child {margin-bottom: 50px;}
   .home-banner3.home-banner .banner-text h1 {margin-bottom: 10px;}
@@ -1116,7 +1096,7 @@ header.green {background: #60ba62;}
   .btn, input[type=submit], button {padding: 5px 22px;}
   .big-buttons-group .border-btn-x-big {margin: 0 0 15px;}
   .map-block, .map-wrap {height: 260px;overflow: hidden;}
-  .contact-form .location img, .contact-form .phone img {margin: 0 10px 10px 0;top: 6px;}
+  
   .sample-menu-banner {height: 200px;}
   .home-page header, .pricing-page header {position: relative;}
   .sample-menu-banner figure img {position: relative;left: 0;right: 0;width: 220%;}
@@ -1241,11 +1221,7 @@ header.green {background: #60ba62;}
   .blog-single-wrap figure {border-radius: 0;height: auto;margin-bottom: 0;}
   .blog-description {border-radius: 0;width: 100%;margin-top: 0;}
   .close svg {width: 22px;}
-  .download-popup .download-app-wrap {padding-left: 0;margin-top: 0;}
-  .contact-block form fieldset:first-child {width: 100%;margin: 0 0 15px;}
-  .download-popup .contact-block form fieldset:last-child {width: 100%;margin: 0;}
-  .download-popup .contact-block input, .download-popup .contact-block form fieldset:last-child input[type=submit] {padding: 11px;font-size: 13px;}
-  .download-popup .modal-dialog {margin-top: 24%;}
+
   .modal-content button.close {right: 10px;top: 5px;}
   .newsletter-popup .modal-body h1 {font-size: 26px;line-height: 36px;}
   fieldset input, fieldset textarea, fieldset select {padding: 11px;}
@@ -1625,19 +1601,19 @@ header.green {background: #60ba62;}
 #chooseprogram .col-sm-1::-moz-placeholder {
   color: #AED581;
   opacity: 1;
-  font-size: 1.3em;
+  
 }
 #chooseprogram .col-sm-1:-ms-input-placeholder {
   color: #AED581;
   opacity: 1;
-  font-size: 1.3em;
+  
   
 }
  
 #chooseprogram .col-sm-1::-webkit-input-placeholder {
   color:#AED581;
   opacity: 1;
-  font-size: 1.3em;
+
 }
  
 #contactUS .form-control::-moz-placeholder {
@@ -1655,24 +1631,24 @@ header.green {background: #60ba62;}
 #contactUS  .form-control::-webkit-input-placeholder {
   color:#AED581;
   opacity: 1;
-  font-size: 1.3em;
+
 }
 #myform ..form-control::-moz-placeholder {
   color: #AED581;
   opacity: 1;
-  font-size: 1.3em;
+
 }
 #myform .form-control:-ms-input-placeholder {
   color: #AED581;
   opacity: 1;
-  font-size: 1.3em;
+
   
 }
  
 #myform  .form-control::-webkit-input-placeholder {
   color:#AED581;
   opacity: 1;
-  font-size: 1.3em;
+
 }
 
 .has-error label.error {
@@ -1686,10 +1662,7 @@ header.green {background: #60ba62;}
     color: #3c763d;
 
 }
-.form-group .control-label:after {
-  content:"  *";
-  color:#800000;
-}
+
 
 .errorspan{
 	color: #800000;
