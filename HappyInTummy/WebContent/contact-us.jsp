@@ -21,7 +21,7 @@
  <link href="css/style.css" rel="stylesheet">  
   
  <!-- montserrat font embed -->  
- <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700' rel='stylesheet' type='text/css'>  
+ <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700' rel='stylesheet' type='text/css'>  
  
  <style>  
  /******* loader image before page load ******/  
@@ -29,10 +29,10 @@
  </style>  
   
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
- 
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-<!-- Bootstrap Date-Picker Plugin -->
+  <!--Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <script src="Fillform.js" type="text/javascript"></script>
 
@@ -66,10 +66,7 @@ if($('#desktopView').css('display') == 'block'){
 <form id="contactUS" action ="EditUserDetails" method ="post">
 	<div class="se-pre-con"></div>
 
-	<div>
-
-<!-- ============== Header starts ============== -->
-	<header  id="websiteHeader"></header>
+	<div id="websiteHeader" style="z-index: 1111;"></div>
 <!-- ============== Header ends ============== -->
 
  <!-- main wrapper of the site starts -->  
@@ -127,7 +124,7 @@ if($('#desktopView').css('display') == 'block'){
 
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->  
-   
+  
   <script src="js/jquery-ui-1.9.2.custom.js"></script>  
 
   <script src="js/bootstrap.min.js"></script>  
