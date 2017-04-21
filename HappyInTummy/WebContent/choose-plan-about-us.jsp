@@ -73,18 +73,7 @@ $(document).ready(function(){
 	    };
 	    date_input.datepicker(options);
 	}
-	if($('#mobileView').css('display') == 'block'){
-	    var date_input=$('input[name="datem"]'); //our date input has the name "date"
-	    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-	    var options={
-	      format: 'mm/dd/yyyy',
-	      container: container,
-	      todayHighlight: true,
-	      autoclose: true,
-	      endDate: d,   
-	    };
-	    date_input.datepicker(options);
-		}
+	
  });
   
   
@@ -348,6 +337,9 @@ $.get("Header.jsp", function (data) {
 	<!-- main wrapper of the site ends -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	
+	
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	
 	<script src="js/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
 	

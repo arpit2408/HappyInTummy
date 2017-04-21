@@ -156,7 +156,7 @@ function submitform()
 </head>
 
 <body >
-<div id="websiteHeader" style="z-index: 1111;"></div>
+<header  id="websiteHeader"></header>
 
 <div class="container wrapper" >
 	
@@ -300,7 +300,7 @@ function submitform()
 		<span class="glyphicon glyphicon-thumbs-up"></span> Submit </a>
 	</div>
 	<div class="col-md-2">
-	<a href="contact-us.html" class="btn btn-danger">
+	<a href="contact-us.jsp" class="btn btn-danger">
 		<span class="glyphicon glyphicon-remove-sign"></span> Cancel </a>
 	</div>
 	</div>
@@ -313,9 +313,23 @@ function submitform()
 <div id="footer">
     </div>
 </body>
+
 <script type="text/javascript">
 	$.get("footer.html", function(data) {
 		$("#footer").replaceWith(data);
 	});
 </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
+	
+	<script src="js/wow.min.js" type="text/javascript"></script>
+	
+	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+	<script src="js/jquery.featureCarousel.js" type="text/javascript"></script>
+	<script src="js/jquery.bxslider.js" type="text/javascript"></script>
+	<script src="js/owl.carousel.js" type="text/javascript"></script>
+	<script src="js/jquery.waypoints.js" type="text/javascript"></script>
+	<script src="js/jquery.counterup.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
 </html>
