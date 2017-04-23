@@ -65,19 +65,20 @@
 							<div class="input-group" style="margin-bottom: 20px;">
 								<div id="radioBtn" class="btn-group">
 									<div class="row">
-										<span class="buttonstyle btn btn-primary btn-sm fa fa-check-circle active"
-											data-toggle="estadotwo" data-value="Y"
-											id="vegmenuid" onclick="getAccMenu(this)">
-											Vegan</span>
-									</div>
-									<div class="row">
 
-										<span class="buttonstyle btn btn-danger btn-sm notActive "
+										<span class="buttonstyle btn btn-danger btn-sm active fa fa-check-circle"
 											data-toggle="estadotwo" data-value="N"
 											
 											id="nonvegmenuid" onclick="getAccMenu(this)">
 											Non-Vegetarian</span>
 									</div>
+									<div class="row">
+										<span class="buttonstyle btn btn-primary btn-sm notActive "
+											data-toggle="estadotwo" data-value="Y"
+											id="vegmenuid" onclick="getAccMenu(this)">
+											Vegan</span>
+									</div>
+									
 									<div class="row ">
 										<span class="buttonstyle btn btn-info btn-sm notActive"
 											data-toggle="estadotwo" data-value="Q"
@@ -119,13 +120,13 @@
 					</div>
 					<!-- == menu listing starts == -->
 					<div id="vegmenu" class="row menu-listing"
-						style="margin-top: 14px; padding-left: 22px;">
+						style="margin-top: 14px; padding-left: 22px;display:none;">
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/V_D_14.jpg" alt="Menu image" /></a> </figure>
+									src="images/L1.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -134,7 +135,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/V_D_4.jpg" alt="Menu image" /></a> </figure>
+									 src="images/L2.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -143,14 +144,14 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/V_D_1.jpg" alt="Menu image" /></a> </figure>
+									 src="images/NewVegan1.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-1 menu-item wow fadeInUp"></div>
 					</div>
 					<div id="nonvegmenu" class="row menu-listing"
-						style="margin-top: 14px; padding-left: 22px;display:none;">
+						style="margin-top: 14px; padding-left: 22px;">
 
 
 
@@ -158,7 +159,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/NV_D_36.jpg" alt="Menu image" /></a> </figure>
+									 src="images/NV_D_36.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -167,7 +168,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/NV_D_37.jpg" alt="Menu image" /></a> </figure>
+									 src="images/NV_D_37.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -176,7 +177,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/NV_L_1.jpg" alt="Menu image" /></a> </figure>
+									 src="images/NV_L_1.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -189,7 +190,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/GV_BK_3.jpg" alt="Menu image" /></a> </figure>
+									 src="images/GV_BK_3.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -198,7 +199,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/GV_L_3.jpg" alt="Menu image" /></a> </figure>
+									 src="images/GV_L_3.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>
@@ -207,7 +208,7 @@
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
 							<div class="text-center menu-item-wrap">
 								<figure> <a href="#"><img class="img-responsive"
-									src="images/GV_BK_2.jpg" alt="Menu image" /></a> </figure>
+									 src="images/NewGV1.jpg" alt="Menu image" /></a> </figure>
 
 							</div>
 						</div>

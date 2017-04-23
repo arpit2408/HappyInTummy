@@ -10,9 +10,9 @@
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
 <link rel="shortcut icon" type="image/png" href="favicon.png" />
 <title>Happy Tummy</title>
- 
+ <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <!-- style lists -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 <link href="css/bootstrap.min.css" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet">
 <link rel="stylesheet"
@@ -147,7 +147,7 @@ $.get("Header.jsp", function (data) {
 							<fieldset>
 									
 										<div class="col-sm-12 col-sm-6 pull-left" style="margin-left: -16px;">
-											<div class="light-font radio-btn">
+											<div class="light-font radio-btn checked">
 
 												<input  class="radio-class" type="radio" id="Male" name="gender"
 													value="Male"  checked = "checked"/> <span style="font-weight:bold;margin-top: -3px;">Men</span>
@@ -339,7 +339,7 @@ $.get("Header.jsp", function (data) {
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	
 	
-	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	
 	
 	<script src="js/jquery-ui-1.9.2.custom.js" type="text/javascript"></script>
 	

@@ -750,7 +750,7 @@ header.green {background: #60ba62;}
   main {position: relative;z-index: 111;background: #fff;margin-bottom: 231px;}
   header {z-index: 1111;}
   .banner .bannerwrap {position: fixed;width: 100%;height: inherit;background: #fff;}
-  footer {z-index: 0;height: 232px;position: fixed;width: 100%;bottom: 0;}
+  footer {z-index: 0;height: 159px;position: fixed;width: 100%;bottom: 0;}
   .about-us-block article {-webkit-column-count: 2; -moz-column-count: 2;column-count: 2;}
   /** remove if you don't want parallax effect on header, banner, main content and footer **/
   .collapse{display: block;}
@@ -772,7 +772,7 @@ header.green {background: #60ba62;}
   .banner-image img {width: 110%;height: auto;}
   .top-text {width: 75%;}
   .subscribe-block .top-text, .subscribe-form {width: 70%;}
-  footer {height: 249px;}
+  footer {height: 159px;}
   main {margin-bottom: 249px;}
   .big-image figure {height: 430px;}
   .small-image-wrap figure {height: 200px;}
@@ -1507,7 +1507,19 @@ header.green {background: #60ba62;}
 	#desktopView{
 		display: none !important;
 	}
+	#InterestedMore{
+		padding-top: 10px !important;
+		height: 14px !important;
+	}
+	.hgodwatissue{
+		padding-left: 47px;
+    	padding-right: 47px;
+    	padding-top: 15px;
+    	padding-bottom: 15px;
+	}
+	
 }
+
 .menulistingLanding {
 		margin-top: 32px;
 	}
@@ -1524,7 +1536,7 @@ header.green {background: #60ba62;}
 	}
 #happyTummyloc {
 	width: 66%;
-    margin-top: 35%;
+    margin-top: 27%;
     margin-left: 9%;
     margin-bottom: 53%;
     height: 35px;
@@ -1539,7 +1551,7 @@ header.green {background: #60ba62;}
 #optionsLandingPage
 {
     height: 161px;
-    margin-top: 133px;
+    margin-top: 12%;
     margin-left: -129px;
 }
 .required-field::after { 
@@ -1731,8 +1743,8 @@ header.green {background: #60ba62;}
 #footer {
     border-top: 5px solid #CDB380;
     background: #033649 none repeat scroll 0% 0%;
-    padding-top: 30px;
-    margin-top: 60px;
+    padding-top: 10px;
+    margin-top: 4px;
     clear: both;
     color: #AAA;
     display: block;
@@ -1766,3 +1778,4 @@ header.green {background: #60ba62;}
     background: #031634 none repeat scroll 0% 0%;
     padding: 10px 0px;
 }
+
