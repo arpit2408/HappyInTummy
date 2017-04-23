@@ -107,7 +107,7 @@ function setPlans(data) {
 
 </script>
 
-<body onload="getPlans();setCorrectActionAfterSubmit('SelectProgram')" class="home-page home-version1-page">
+<body onload="getPlans();" class="home-page home-version1-page">
 <script>
 $.get("Header.jsp", function (data) {
     $("#websiteHeader").replaceWith(data);
@@ -125,9 +125,8 @@ $.get("Header.jsp", function (data) {
 				style="visibility: visible; padding-top: 30px;padding-bottom: 60px;">
 				<label style="font-size: 1.5em;padding-right:15px;">Select Preference: </label>
 				<select id="prefidplan" onchange="getPlans();">
-					
-					<option value="1" selected="selected">Vegan</option>
-					<option value="2">Non-Vegetarian</option>
+					<option value="2" selected="selected">Non-Vegetarian</option>	
+					<option value="1" >Vegan</option>
 					<option value="3">Gluten-free</option>
 				</select>
 
@@ -139,7 +138,7 @@ $.get("Header.jsp", function (data) {
 				<div class="step-content">
 				<form id="chooseplan" method="POST" action="${pageContext.request.contextPath}/choose-plan-checkout.jsp">
 					<!-- <h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;" class="col-sm-12"> Our meals are so healthy, you might not like it ;)  </h3> -->
-					<h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label> Place order to get customized meals and promotional discount</label></h3>
+					<h3 class="text-center" style="font-size: 1.4em;font-family: 'Raleway', sans-serif !important;color:#60ba62" class="col-sm-12"><label style="padding-left:3%;padding-right:3%"> Place order to get customized meals and promotional discount</label></h3>
 					
 						<!-- ============== pricing block starts ============== -->
 						<section class="block pricing-block">

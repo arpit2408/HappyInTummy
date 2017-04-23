@@ -1,3 +1,6 @@
+/*Created by Rini Shaji
+ * to fetch user details from database
+ * and display in Manage Orders screen*/
 package happytummy.servlet;
 
 import happytummy.beans.User;
@@ -53,11 +56,7 @@ public class EditUserDetails extends HttpServlet {
 			String errorString = null;
 			String dob=null;
 			String emailID=request.getParameter("email");
-			/*if (request.getParameter("date")==null){
-				dob=request.getParameter("datem");
-			}else{
-				dob=request.getParameter("date");
-			}	*/		
+				
 			dob=request.getParameter("dob");
 			User user=new User();
 			try{

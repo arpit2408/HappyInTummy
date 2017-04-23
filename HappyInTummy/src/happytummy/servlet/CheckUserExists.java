@@ -1,3 +1,6 @@
+/*Created by Rini Shaji
+ * to check if the Email ID and date of birth 
+ * corresponds to an existing Customer */ 
 package happytummy.servlet;
 
 import happytummy.connect.ConnectionUtils;

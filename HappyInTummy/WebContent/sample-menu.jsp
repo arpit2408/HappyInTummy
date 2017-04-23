@@ -203,8 +203,9 @@
 				<label style="font-size: 1.5em;padding-right:15px;">Select Preference: </label>
 				<select id="prefid" onchange="showhideonchange();">
 					<!-- <option value="">Select Program</option> -->
-					<option value="1" selected="selected">Vegan</option>
-					<option value="2">Non-Vegetarian</option>
+					
+					<option value="2"  selected="selected">Non-Vegetarian</option>
+					<option value="1">Vegan</option>
 					<option value="3">Gluten-free</option>
 				</select>
 

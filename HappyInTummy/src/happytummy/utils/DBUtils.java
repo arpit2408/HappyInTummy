@@ -17,7 +17,7 @@ import happytummy.beans.User;
 
  
 public class DBUtils {
-
+/*added by Rini to check if user is active or not and has active order or not*/
 public static String userExists(Connection conn, String emailID, String dob) throws SQLException {
 	 	  String output=null;	
 		  String sql = "select Customer_ID from happytummy.customerdetails where "; //need to work on this
@@ -40,7 +40,7 @@ public static String userExists(Connection conn, String emailID, String dob) thr
 	    	}
 		  return output;
 }
- 
+/*ended by Rini*/ 
   public static List<MenuItems> queryMenu(Connection conn,int preference) throws SQLException {
       String sql = "select Item_ID, Item_Name,Item_Desc,Calorie,Proteins,Fats,Carbohydrates,Image_Name,Meal_Type from happytummy.fooditems where Preference_ID="+preference+" and portion="+2;
       System.out.println("sql "+sql);
@@ -85,7 +85,7 @@ public static String userExists(Connection conn, String emailID, String dob) thr
 	  }
       return list;
   }
-  /*started by Rini 04/12*/
+/*added by Rini to fetch active order of the customer */
   public static String getActiveOrderID(Connection conn, String customerID)throws SQLException{
 	  String activeOrderID="Invalid";
 	  StringBuilder sql=new StringBuilder();
@@ -113,7 +113,10 @@ public static String userExists(Connection conn, String emailID, String dob) thr
 	  }
 	  return activeOrderID ;
   }
+ /* ended by Rini*/
   
+ /* added by Rini to update the customer's details
+  * and cancel the order if the corresponding option is selected*/ 
   public static int updateInfo(Connection conn, String customerID, String orderID, String street, String city, String state, String zip, String phone, boolean cancelOrder)throws SQLException{
 	  int returnValue=0;
 	  StringBuilder sql=new StringBuilder();
@@ -158,7 +161,8 @@ public static String userExists(Connection conn, String emailID, String dob) thr
 	  
 	  return returnValue;
   }
-  /*ended by Rini 04/12*/
+/*ended by Rini*/
+  
   public static User getUserDetails(Connection conn, String emailID, String dob) throws SQLException {
 	  StringBuilder sql=new StringBuilder();
 	  sql.append("select c.Customer_ID, c.Customer_Name,DATE_FORMAT(c.DOB,'%d-%b-%Y')'c.DOB', ");
