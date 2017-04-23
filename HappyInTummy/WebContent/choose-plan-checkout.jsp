@@ -153,8 +153,8 @@ $.get("Header.jsp", function (data) {
 											</div>
 										</div>
 										
-										<div class="col-xs-12 col-sm-6 fadeInRight select-payment-btn" style="border:1px solid ;">
-											<div class="light-font radio-btn">
+										<div class="col-xs-12 col-sm-6 fadeInRight select-payment-btn" >
+											<div class="light-font radio-btn" style="border:1px solid ;">
 												<input  class="radio-btn" type="radio" id="Bank" name="payment"
 													value="Bank" /> <svg xmlns="http://www.w3.org/2000/svg" width="27" height="35"
 												viewBox="0 0 27 35"> <path id="Bank_Transfer_Icon" data-name="Bank Transfer Icon"
