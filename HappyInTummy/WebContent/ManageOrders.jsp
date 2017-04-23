@@ -54,6 +54,7 @@ function isValidStreet(){
 }
 function isValidCity(){
 	document.getElementById("cityTip").innerHTML = "";
+	document.getElementById("newCity").value=document.getElementById("City").value;
 	var city = document.getElementById("City").value;	
 	var regExCity=/^[a-zA-Z][a-zA-Z\s]+$/;
 	
@@ -76,9 +77,9 @@ function isValidCity(){
 }
 function isValidmCity(){
 	document.getElementById("mcityTip").innerHTML = "";
+	document.getElementById("newCity").value=document.getElementById("mCity").value;	
 	var city = document.getElementById("mCity").value;	
 	var regExCity=/^[a-zA-Z][a-zA-Z\s]+$/;
-	
 	
 	if (city==""){
 		document.getElementById("mcityTip").innerHTML="Enter city.";
@@ -98,6 +99,7 @@ function isValidmCity(){
 }
 function isValidState(){
 	document.getElementById("stateTip").innerHTML ="";
+	document.getElementById("newState").value=document.getElementById("State").value;
 	var state = document.getElementById("State").value;		
 	var regExState=/^[a-zA-Z][a-zA-Z\s]+$/;
 	
@@ -118,6 +120,7 @@ function isValidState(){
 }
 function isValidmState(){
 	document.getElementById("mstateTip").innerHTML ="";
+	document.getElementById("newState").value=document.getElementById("mState").value;
 	var state = document.getElementById("mState").value;		
 	var regExState=/^[a-zA-Z][a-zA-Z\s]+$/;
 	
@@ -138,6 +141,7 @@ function isValidmState(){
 }
 function isValidZip(){
 	document.getElementById("zipTip").innerHTML="";
+	document.getElementById("newZip").value=document.getElementById("ZIP Code").value;
 	var zip = document.getElementById("ZIP Code").value;	
 	var regExZip=/^\s*\d{5}\s*$/;
 	
@@ -156,6 +160,7 @@ function isValidZip(){
 }
 function isValidmZip(){
 	document.getElementById("mzipTip").innerHTML="";
+	document.getElementById("newZip").value=document.getElementById("mZIP Code").value;
 	var zip = document.getElementById("mZIP Code").value;	
 	var regExZip=/^\s*\d{5}\s*$/;
 	
@@ -235,7 +240,10 @@ function submitform()
 action="${pageContext.request.contextPath}/UpdateUserDetails" method="post" style="padding-top:50px;">
 	
 <input type="hidden" name="customerID" value="${ user.customer_id }">
-	
+<input type="hidden" id="newCity" name="newCity">
+<input type="hidden" id="newState" name="newState">
+<input type="hidden" id="newZip" name="newZip">
+
 <!-- Name -->
 <fieldset>
 <div class="col-sm-7">
