@@ -596,7 +596,7 @@ public static String userExists(Connection conn, String emailID, String dob) thr
 		  // create a Statement from the connection
 		  Statement statement = conn.createStatement();
 		  java.sql.Date sqlDate = new java.sql.Date(birthDate.getTime()); 
-		  ResultSet checkExistingEntry=statement.executeQuery("select customer_id from happytummy.customerdetails where Email_Id='"+email+"' and DOB='"+sqlDate+"'");
+		  ResultSet checkExistingEntry=statement.executeQuery("select customer_id from happytummy.customerdetails where Email_Id='"+email+"'");
 		  while(checkExistingEntry.next())
 		  {
 			  cust_id=checkExistingEntry.getInt(1);
