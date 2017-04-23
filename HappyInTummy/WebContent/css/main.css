@@ -763,24 +763,7 @@ img{
 	text-indent: -9000px;
 	position: relative;
 }
-#clients li a.tt-themeforest{
-	background: transparent url(../img/client/client1.png) no-repeat top left;
-}
-#clients li a.tt-envato{
-	background: transparent url(../img/client/client2.png) no-repeat top left;
-}
-#clients li a.tt-activeden{
-	background: transparent url(../img/client/client3.png) no-repeat top left;
-}
-#clients li a.tt-audioj{
-	background: transparent url(../img/client/client4.png) no-repeat top left;
-}
-#clients li a.tt-graphicriver{
-	background: transparent url(../img/client/client5.png) no-repeat ;
-}
-#clients li a.tt-theme{
-	background: transparent url(../img/client/client6.png) no-repeat top left;
-}
+
 #clients li a span{
 	width: 150px;
 	height: 150px;
@@ -808,24 +791,7 @@ img{
 	transition: all 0.3s ease-in-out;
 	opacity: 0;
 }
-#clients li a span.clent1{
-	background:url(../img/client/image1.png) no-repeat;
-}
-#clients li a span.clent2{
-	background:url(../img/client/image2.png) no-repeat;
-}
-#clients li a span.clent3{
-	background:url(../img/client/image3.png) no-repeat;
-}
-#clients li a span.clent4{
-	background:url(../img/client/image4.jpg) no-repeat;
-}
-#clients li a span.clent5{
-	background:url(../img/client/image5.jpg) no-repeat;
-}
-#clients li a span.clent6{
-	background:url(../img/client/image6.jpg) no-repeat;
-}
+
 #clients li a:hover span{
 	opacity: 0.9;
 	bottom: 70px;
@@ -908,13 +874,7 @@ img{
 /* end mobile description */
 
 
-/* start twitter-feed */
-#contact .container-full{
-	background:url(../img/bg-carousel.jpg) no-repeat;
-	height: 400px;
-	width: 100%;
-	min-width: 50%;
-}
+
 
 #contact .carousel-control{
 	background-image: none;
