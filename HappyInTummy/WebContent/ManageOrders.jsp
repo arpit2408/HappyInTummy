@@ -372,9 +372,11 @@ action="${pageContext.request.contextPath}/UpdateUserDetails" method="post" styl
 <!--Checkboxto cancel order Cancellation Option-->
 <fieldset>
 <div class="col-sm-7">					
-<div class="checkbox">				
-	<input type="checkbox" class="checkbox col-sm-2" name="Cancel Order" id="Cancel Order" value="1"> 
-		<span class="col-sm-1"></span>
+<div class="checkbox">	
+<span class="col-sm-1"></span>			
+	<input type="checkbox" class="checkbox col-sm-1 checkboxManage" name="Cancel Order" 
+	style="margin-left: -4px;" id="Cancel Order" value="1"> 
+		
 		<label class="col-sm-5" for="Cancel Order">Cancel my order</label>
 	</div>
 </div>

@@ -1405,7 +1405,7 @@ header.green {background: #60ba62;}
 @media (max-width: 768px){
 	.logo-block img {
 	    transform: none;
-	    width: 28%;
+	    width: 24%;
 	    height: 33%;
 	    float: left;
 	    padding-top: 14px;
@@ -1516,9 +1516,17 @@ header.green {background: #60ba62;}
     	padding-top: 15px;
     	padding-bottom: 15px;
 	}
-	
+	.checkboxManage{
+		margin-left: -147px !important;
+    	margin-top: -26px !important;
+	}
+	#prefid{
+		margin-left: 2px !important;
+	}
 }
-
+#prefid{
+		margin-left: -13px;
+	}
 .menulistingLanding {
 		margin-top: 32px;
 	}
