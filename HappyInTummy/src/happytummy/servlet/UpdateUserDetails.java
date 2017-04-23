@@ -53,9 +53,9 @@ public class UpdateUserDetails extends HttpServlet {
 			String errorString = null;
 			String customerID=request.getParameter("customerID");
 			String street=request.getParameter("Street Address");
-			String city=request.getParameter("newCity");
-			String state=request.getParameter("newState");
-			String zip=request.getParameter("newZip");
+			String city=request.getParameter("City");
+			String state=request.getParameter("State");
+			String zip=request.getParameter("ZIP Code");
 			String phone=request.getParameter("Phone number");
 			String orderCancel=request.getParameter("Cancel Order");
 			if (orderCancel!=null){
