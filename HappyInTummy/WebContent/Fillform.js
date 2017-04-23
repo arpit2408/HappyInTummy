@@ -1718,64 +1718,71 @@ function setCorrectAction(e){
 		return true;
 	}
 	
-	function fieldValidations() {
-	document.getElementById("formtip").innerHTML="";
-	if (!isValidEmail()){
-		return false;
-	}
-	
-	if($('#desktopView').css('display') == 'block'){
-				
-		if(!isValidDOB()){
-			return false;
-		}	
-		var dataStringdesk = "email_id=" + document.getElementById("email").value+"&dob=" + document.getElementById("date").value;
-		document.getElementById("dob").value=document.getElementById("date").value;
-		$.ajax({
-	    	url: 'CheckUserExists',
-		    type: 'POST',      
-		    cache: false,
-		    data :  dataStringdesk,
-	    	
-	    	dataType:"json",
-	    	success:function(data){ 
-	    		if (data.user=="No User"){
-	    			document.getElementById("msgs").innerHTML="Did you put in the right details?";
-	    		}else if(data.user=="No Oder") {
-	    			document.getElementById("msgs").innerHTML="You do not have an active order.";
-	    		}else{
-	    			document.forms.contactUS.submit();
-	    		}
-	    	}    	
-	    }); 
-	}
-	
-	if($('#mobileView').css('display') == 'block'){
-	
-		if(!isValidMDOB()){
-			return false;
-		}	
-		var dataString = "email_id=" + document.getElementById("email").value+"&dob=" + document.getElementById("datem").value;
-		document.getElementById("dob").value=document.getElementById("datem").value;
-		$.ajax({
-	    	url: 'CheckUserExists',
-		    type: 'POST',      
-		    cache: false,
-		    data :  dataString,
-	    	
-	    	dataType:"json",
-	    	success:function(data){ 
-	    		if (data.user=="No User"){
-	    			document.getElementById("msgs").innerHTML="Did you put in the right details?";
-	    		}else if(data.user=="No Oder") {
-	    			document.getElementById("msgs").innerHTML="You do not have an active order.";
-	    		}else{
-	    			document.forms.contactUS.submit();
-	    		}
-	    	}    	
-	    }); 
-	}
-	
-
-    	return true;
-	}
+	/* function fieldValidations()added by Rini for contact-us.jsp validations*/    
+	 
+    function fieldValidations() {
+ 
+    if (!isValidEmail()){
+        return false;
+    }
+    
+    if($('#desktopView').css('display') == 'block'){
+                
+        if(!isValidDOB()){
+            return false;
+        }   
+        var dataStringdesk = "email_id=" + document.getElementById("email").value+"&dob=" + document.getElementById("date").value;
+        document.getElementById("dob").value=document.getElementById("date").value;
+        $.ajax({
+            url: 'CheckUserExists',
+            type: 'POST',      
+            cache: false,
+            data :  dataStringdesk,
+            
+            dataType:"json",
+            success:function(data){ 
+                if (data.user=="No User"){
+                    document.getElementById("msgs").style.color="#800000";
+                    document.getElementById("msgs").innerHTML="Did you put in the right details?";
+                }else if(data.user=="No Oder") {
+                    document.getElementById("msgs").style.color="#800000";
+                    document.getElementById("msgs").innerHTML="You do not have an active order.";
+                }else{
+                    document.forms.contactUS.submit();
+                }
+            }       
+        }); 
+    }
+    
+    if($('#mobileView').css('display') == 'block'){
+    
+        if(!isValidMDOB()){
+            return false;
+        }   
+        var dataString = "email_id=" + document.getElementById("email").value+"&dob=" + document.getElementById("datem").value;
+        document.getElementById("dob").value=document.getElementById("datem").value;
+        $.ajax({
+            url: 'CheckUserExists',
+            type: 'POST',      
+            cache: false,
+            data :  dataString,
+            
+            dataType:"json",
+            success:function(data){ 
+                if (data.user=="No User"){
+                    document.getElementById("msgs").style.color="#800000";
+                    document.getElementById("msgs").innerHTML="Did you put in the right details?";
+                }else if(data.user=="No Oder") {
+                    document.getElementById("msgs").style.color="#800000";
+                    document.getElementById("msgs").innerHTML="You do not have an active order.";
+                }else{
+                    document.forms.contactUS.submit();
+                }
+            }       
+        }); 
+    }
+    
+ 
+        return true;
+    }
+/* function fieldValidations()ended by Rini */

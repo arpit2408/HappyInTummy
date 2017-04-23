@@ -1,3 +1,4 @@
+<!-- Created by Rini Shaji  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -67,61 +68,69 @@ if($('#desktopView').css('display') == 'block'){
 	<div class="se-pre-con"></div>
 
 	<div id="websiteHeader" style="z-index: 1111;"></div>
-<!-- ============== Header ends ============== -->
-
- <!-- main wrapper of the site starts -->  
- <div class="wrapper">  
+<div class="wrapper"></div>
  
- <main>  
+<!-- main wrapper of the site starts -->  
  
- <!-- ============== Contact form block starts ============== -->  
+ 
+<main>  
+ 
+ 
  <section class="block contact-form">  
- <div class="step-content" style="padding-bottom:20px"> 
+ <div class="step-content" style="padding-bottom:180px"> 
  <div class="step1"> 
  <div class="col-sm-1"></div>
- <div class="col-sm-5 wow fadeInLeft left-image">
- <figure>
- <img class="img-responsive" src="images/food-delivery.png" alt="Meal delivery service"/>
- </figure>
+ <div class="col-sm-4 wow fadeInLeft left-image">
+     <figure>
+     <img class="img-responsive" src="images/deliverygirl.png" alt="Meal delivery service"/>
+     </figure>
  </div>    
- <div class="col-sm-6 wow fadeInRight right-form"> 
- 	<h3 id="msgs" class="wow fadeInUp wrapper" style="font-family: 'Raleway', Serif !important;color: #60ba62">
-    	Hi dear, so glad to see you again!</h3>    
-
- <fieldset>
- 	<div class="errortip" id="formtip" ></div>
- </fieldset>  
- <fieldset>
-	 <input class="form-control" id ="email" name="email" type="email" placeholder="Your Email ID" required="required" onblur="isValidEmail()"/>
-	 <div class="errortip" id="emailtip"></div>
- </fieldset>  
- <fieldset>
- 	<div id="desktopView">
- 	<input class="form-control" id ="date" name="date" type="text" placeholder="Date of Birth" required="required" />
- 	</div>
- 	<div id="mobileView">
-	<label style="font-family: 'Raleway', Serif !important;color: #AED581"> Date of Birth
-                            	</label>
- 	<input class="form-control" id ="datem" name="datem" type="date" required="required" />
- 	</div>
- 	<div class="errortip" id="dobtip"></div>
- </fieldset>
- <input type="hidden" name="dob" id="dob">
- <fieldset>
- 	<input class="inputbtn btn" type="button" value="Manage Your Order" onClick="fieldValidations();" />
- </fieldset>  
-  
- </div>  
- </div>  
- </div>  
- </section>  
- <!-- ============== Contact form block ends ============== -->  
- </main>  
+ <div class="col-sm-5 wow fadeInRight right-form"> 
  
+ <h3 id="msgs" class="wow fadeInUp wrapper"> Hi dear, so glad to see you again!</h3>
+     
+ <fieldset>
+ <div class="col-sm-7">
+ 
+ 
+    <input class="form-control" id ="email" name="email" type="email" placeholder="Your Email ID" required="required" onblur="isValidEmail()"/>
+    <div class="errortip" id="emailtip"></div>
+</div>
+</fieldset>
+ 
+ <fieldset>
+ <div class="col-sm-7">
+    <div id="desktopView">
+    <input class="form-control" id ="date" name="date" type="text" placeholder="Date of Birth" required="required" />
+    </div>
+    <div id="mobileView">
+    <label style="font-family: 'Raleway', Serif !important;color: #AED581"> Date of Birth </label>
+ 
+    <input class="form-control" id ="datem" name="datem" type="date" required="required" />
+    </div>
+    <div class="errortip" id="dobtip"></div>
+    </div>
+ </fieldset>
+ 
+ <input type="hidden" name="dob" id="dob">
+ 
+ <fieldset>
+  <div class="col-sm-7">
+    <input class="btn" type="button" value="Manage Your Order" onClick="fieldValidations();" />
+  </div>
+ </fieldset>  
   
  </div>  
+ </div>  
+ </div>  
+ </section>   
+ 
+ </main>   
+ 
+ 
+ 
  <!-- main wrapper of the site ends -->  
-
+ 
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->  
   

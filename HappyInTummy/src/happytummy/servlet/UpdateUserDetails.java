@@ -1,3 +1,5 @@
+/*Created by Rini Shaji
+ * to update the database with the customer details*/
 package happytummy.servlet;
 
 import happytummy.beans.User;
@@ -62,6 +64,8 @@ public class UpdateUserDetails extends HttpServlet {
 			try{	
 				if (cancelOrder){
 					activeOrderID=DBUtils.getActiveOrderID(conn, customerID);
+					conn = ConnectionUtils.getConnection();
+					conn.setAutoCommit(false);
 					if (!activeOrderID.equals("Invalid")){
 						if (activeOrderID.equals("None")){
 							cancelOrder=false;

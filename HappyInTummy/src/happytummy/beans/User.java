@@ -1,3 +1,5 @@
+/*Created by Rini Shaji 
+ * to display Customer details on Manage Orders screen*/
 package happytummy.beans;
 
 public class User {

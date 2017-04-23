@@ -62,20 +62,21 @@ $.get("Header.jsp", function (data) {
  
  <!-- ============== Contact form block starts ============== -->  
  <section class="block contact-form">  
- <div class="container">  
+ <div class="step-content" style="padding-bottom:20px"> 
+ <div class="step1"> 
+ <div class="col-sm-1"></div>
+ <div class="col-sm-4 wow fadeInLeft left-image">
+	 <figure>
+	 <img class="img-responsive" src="images/healthy-lifestyle.jpg" alt="Oops Smiley"/>
+	 </figure>
+ </div>    
+ <div class="col-sm-5 wow fadeInRight right-form">   
  <h3 class="wow fadeInUp wrapper" style="font-size: 1.5em; font-family: 'Raleway', sans-serif !important;color:#60ba62">${displayMessage}</h3>  
- <div class="row wrapper">  
- <div class="col-xs-12 col-sm-3"></div>
- <div class="col-xs-12 col-sm-9 ">  
- <form>  
-
- </form>  
  </div>  
  </div>  
  </div>  
- </section>  
- <!-- ============== Contact form block ends ============== -->  
- </main>  
+ </section>   
+ </main>   
   
   
  <!-- ============== footer block starts ============== -->  
