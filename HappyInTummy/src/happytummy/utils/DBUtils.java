@@ -618,7 +618,7 @@ public static String userExists(Connection conn, String emailID, String dob) thr
 			  String updateCustomer="UPDATE happytummy.customerdetails"+
 				" SET  customer_Name = '"+ name+"',  Age = "+age+",Gender = '"+gender+"',"+
 				" Height = "+ height+", Weight = "+ weight+",Address = '"+address+"', Phone ='"+phone +"',"+
-				" Zip = "+Integer.parseInt(zip)+", Payment ='"+payment+"',city = '"+city+"', State = '"+state+"'"+
+				" Zip = "+Integer.parseInt(zip)+", Payment ='"+payment+"',city = '"+city+"', State = '"+state+"' ,DOB = '"+ sqlDate+"'"+
 				" WHERE Customer_ID =  "+cust_id;
 			  System.out.println(updateCustomer+"updated in order_ids");
 			  updated=statement.executeUpdate(updateCustomer);
