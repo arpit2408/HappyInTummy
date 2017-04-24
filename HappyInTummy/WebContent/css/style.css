@@ -1402,6 +1402,23 @@ header.green {background: #60ba62;}
 #mobileRadio {
 		display: none ;
 	}
+@media (min-width: 1900px){
+	footer {
+		height:300px !important;
+		margin-top: 178px !important;
+	}
+	#happyTummyad {
+		height:58px !important;
+	}
+	img {
+		width:116% !important;
+	}
+	.menu-item-wrapsl figure {
+		height: 465px !important;
+		overflow: hidden;
+		margin-bottom: 5px !important;
+	}
+}
 @media (max-width: 768px){
 	.logo-block img {
 	    transform: none;

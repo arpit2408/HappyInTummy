@@ -124,7 +124,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									src="images/L1.jpg" alt="Menu image" /></a> </figure>
 
@@ -133,7 +133,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									 src="images/L2.jpg" alt="Menu image" /></a> </figure>
 
@@ -142,7 +142,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									 src="images/NewVegan1.jpg" alt="Menu image" /></a> </figure>
 
@@ -157,7 +157,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									 src="images/NV_D_36.jpg" alt="Menu image" /></a> </figure>
 
@@ -166,7 +166,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									 src="images/NV_D_37.jpg" alt="Menu image" /></a> </figure>
 
@@ -175,7 +175,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									 src="images/NV_L_1.jpg" alt="Menu image" /></a> </figure>
 
@@ -188,7 +188,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									 src="images/GV_BK_3.jpg" alt="Menu image" /></a> </figure>
 
@@ -197,7 +197,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									 src="images/GV_L_3.jpg" alt="Menu image" /></a> </figure>
 
@@ -206,7 +206,7 @@
 
 						<div 
 							class="col-xs-12 col-sm-4 menu-item wow fadeInUp menulistingLanding">
-							<div class="text-center menu-item-wrap">
+							<div class="text-center menu-item-wrapsl">
 								<figure> <a href="#"><img class="img-responsive"
 									 src="images/NewGV1.jpg" alt="Menu image" /></a> </figure>
 
